@@ -48,7 +48,6 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Task 2: Download and stage data to be processed](#task-2--download-and-stage-data-to-be-processed)
         - [Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-3--install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
         - [Task 4: Create an Azure data factory](#task-4--create-an-azure-data-factory)
-        - [](#)
     - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3--develop-a-data-factory-pipeline-for-data-movement)
         - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1--create-copy-pipeline-using-the-copy-data-wizard)
     - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4--operationalize-ml-scoring-with-azure-ml-and-data-factory)
@@ -564,7 +563,6 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
     ![In the Microsoft Integration Runtime Configuration Manager, on the Home tab is a message that the Node is connected to the cloud service.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image34.png "Microsoft Integration Runtime Configuration Manager ")
 
-###  
 
 ## Exercise 3: Develop a data factory pipeline for data movement
 
