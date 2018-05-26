@@ -2,9 +2,9 @@
 
 # Big data and visualization
 
-## Whiteboard design session trainer guide
+**Whiteboard design session trainer guide**
 
-## April 2018
+**April 2018**
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -15,36 +15,32 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-## Contents
+**Contents**
 
 <!-- TOC -->
 
 - [Big data and visualization](#big-data-and-visualization)
-    - [Whiteboard design session trainer guide](#whiteboard-design-session-trainer-guide)
-    - [April 2018](#april-2018)
-    - [Contents](#contents)
     - [Trainer information](#trainer-information)
-    - [Role of the trainer](#role-of-the-trainer)
+        - [Role of the trainer](#role-of-the-trainer)
         - [Whiteboard design session flow](#whiteboard-design-session-flow)
-        - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-        - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+        - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+        - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-        - [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator-subject-matter-expert-sme-presentation-of-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
@@ -56,7 +52,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 Thank you for taking time to support the whiteboard design sessions as a trainer!
 
-## Role of the trainer
+### Role of the trainer
 
 An amazing trainer:
 
@@ -84,15 +80,16 @@ An amazing trainer:
 
 Each whiteboard design session uses the following flow:
 
-**Step 1: Review the customer case study (15 minutes)**
+**Step 1: Review the customer case study**
 
-Outcome: Analyze your customer's needs
+**Outcome** 
 
--   Customer's background, situation, needs and technical requirements
-
--   Current customer infrastructure and architecture
-
--   Potential issues, objectives and blockers
+Analyze your customer’s needs.
+Time frame: 15 minutes 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+1. Meet your table participants and trainer 
+2. Read all of the directions for steps 1–3 in the student guide 
+3. As a table team, review the following customer case study
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
@@ -148,7 +145,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 -   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
-***Have fun**! Encourage participants to have fun and share!*
+**Have fun**! Encourage participants to have fun and share!*
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
@@ -188,23 +185,18 @@ This whiteboard design session is designed to provide exposure to many of Micros
 
 -   Azure App Service
 
+
 ## Step 1: Review the customer case study 
 
-**Outcome**
+**Outcome** 
 
-Analyze your customer's needs.
+Analyze your customer’s needs.
+Time frame: 15 minutes 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+1. Meet your table participants and trainer 
+2. Read all of the directions for steps 1–3 in the student guide 
+3. As a table team, review the following customer case study
 
-### Facilitator/subject matter expert (SME) presentation of customer case study 
-
-Timeframe: 15 minutes
-
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
-
-1.  Meet your table participants and trainer.
-
-2.  Read all of the directions for Steps 1--3 in the Student guide.
-
-1.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -230,44 +222,44 @@ Additionally, they receive current and forecasted weather data from a third-part
 
 ```
     {
-              "date": {
-                "epoch": "1444701600",
-                "pretty": "7:00 PM PDT on October 12, 2015",
-                "day": 12,
-                "month": 10,
-                "year": 2015,
-                "yday": 284,
-                "hour": 19,
-                "min": "00",
-                "sec": 0,
-                "ampm": "PM",
-                "tz_short": "PDT",
-                "tz_long": "America/Los_Angeles"
-              },
-              "high": {
-                "fahrenheit": "64",
-                "celsius": "18"
-              },
-              "low": {
-                "fahrenheit": "54",
-                "celsius": "12"
-              },
-              "conditions": "Overcast",
-              "maxwind": {
-                "mph": 15,
-                "kph": 24,
-                "dir": "SSW",
-                "degrees": 209
-              },
-              "avewind": {
-                "mph": 10,
-                "kph": 16,
-                "dir": "SSW",
-                "degrees": 209
-              },
-              "avehumidity": 70,
-              "maxhumidity": 0,
-              "minhumidity": 0
+        "date": {
+        "epoch": "1444701600",
+        "pretty": "7:00 PM PDT on October 12, 2015",
+        "day": 12,
+        "month": 10,
+        "year": 2015,
+        "yday": 284,
+        "hour": 19,
+        "min": "00",
+        "sec": 0,
+        "ampm": "PM",
+        "tz_short": "PDT",
+        "tz_long": "America/Los_Angeles"
+        },
+        "high": {
+        "fahrenheit": "64",
+        "celsius": "18"
+        },
+        "low": {
+        "fahrenheit": "54",
+        "celsius": "12"
+        },
+        "conditions": "Overcast",
+        "maxwind": {
+        "mph": 15,
+        "kph": 24,
+        "dir": "SSW",
+        "degrees": 209
+        },
+        "avewind": {
+        "mph": 10,
+        "kph": 16,
+        "dir": "SSW",
+        "degrees": 209
+        },
+        "avehumidity": 70,
+        "maxhumidity": 0,
+        "minhumidity": 0
     }
 ```
 
@@ -313,18 +305,15 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome**
+**Outcome** 
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Design a solution and prepare to present a solution to the target customer audience in a 15-minute chalk-talk format.
-
-Timeframe: 60 minutes
+Time frame: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
-
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
-
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
 **Design**
@@ -404,14 +393,14 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
 ## Step 3: Present the solution
 
 **Outcome**
+ 
+Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Prepare to present a solution to the target customer audience in a 15-minute chalk-talk format.
+Time frame: 30 minutes
 
-**Presentation**
+**Presentation** 
 
-Timeframe: 30 minutes
-
-**Directions**
+Directions
 
 1.  Pair with another table.
 
@@ -429,7 +418,7 @@ Timeframe: 30 minutes
 
 ##  Wrap-up 
 
-Timeframe: 15 minutes
+Time frame: 15 minutes
 
 -   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
 
@@ -456,7 +445,7 @@ Timeframe: 15 minutes
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and timeframes of the whiteboard design session.
+-   Briefly review the steps and Time frames of the whiteboard design session.
 
 -   Ready, set, go! Let the table participants begin.
 
@@ -492,7 +481,7 @@ Timeframe: 15 minutes
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group to hear a SME share the following preferred solution.
+-   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
 
 ##  Preferred target audience
 
