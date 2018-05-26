@@ -1,10 +1,18 @@
 ![](images/HeaderPic.png "Microsoft Cloud Workshops")
 
-# Big data and visualization
+<div class="MCWHeader1">
+Big data and visualization
+</div>
 
-## Hands-on lab step-by-step
+<div class="MCWHeader2">
+Hands-on lab unguided
+</div>
 
-## April 2018
+<div class="MCWHeader3">
+April 2018
+</div>
+
+
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -15,58 +23,54 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-## Contents
+**Contents**
 
 <!-- TOC -->
 
-- [Big data and visualization](#big-data-and-visualization)
-    - [Hands-on lab step-by-step](#hands-on-lab-step-by-step)
-    - [April 2018](#april-2018)
-    - [Contents](#contents)
 - [Big data and visualization hands-on lab unguided](#big-data-and-visualization-hands-on-lab-unguided)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Deploy HDInsight cluster, Azure ML, and Storage Accounts to Azure](#task-1--deploy-hdinsight-cluster--azure-ml--and-storage-accounts-to-azure)
-        - [Task 2: Register for a trial API account at WeatherUnderground.com](#task-2--register-for-a-trial-api-account-at-weatherundergroundcom)
-        - [Task 3: Deploy Lab Virtual Machine (Lab VM) to Azure](#task-3--deploy-lab-virtual-machine-lab-vm-to-azure)
-        - [Task 4: Install Power BI Desktop on the Lab VM](#task-4--install-power-bi-desktop-on-the-lab-vm)
-        - [Task 5: Install an SSH client](#task-5--install-an-ssh-client)
-    - [Exercise 1: Build a Machine Learning Model](#exercise-1--build-a-machine-learning-model)
-        - [Task 1: Navigate to Machine Learning Studio](#task-1--navigate-to-machine-learning-studio)
-        - [Task 2: Upload the sample datasets](#task-2--upload-the-sample-datasets)
-        - [Task 3: Start a new experiment](#task-3--start-a-new-experiment)
-        - [Task 4: Prepare flight delay data](#task-4--prepare-flight-delay-data)
-        - [Task 5: Prepare the weather data](#task-5--prepare-the-weather-data)
-        - [Task 6: Join the flight and weather datasets](#task-6--join-the-flight-and-weather-datasets)
-        - [Task 7: Train the model](#task-7--train-the-model)
-        - [Task 8: Operationalize the experiment](#task-8--operationalize-the-experiment)
-    - [Exercise 2: Setup Azure Data Factory](#exercise-2--setup-azure-data-factory)
-        - [Task 1: Connect to the Lab VM](#task-1--connect-to-the-lab-vm)
-        - [Task 2: Download and stage data to be processed](#task-2--download-and-stage-data-to-be-processed)
-        - [Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-3--install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
-        - [Task 4: Create an Azure data factory](#task-4--create-an-azure-data-factory)
-    - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3--develop-a-data-factory-pipeline-for-data-movement)
-        - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1--create-copy-pipeline-using-the-copy-data-wizard)
-    - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4--operationalize-ml-scoring-with-azure-ml-and-data-factory)
-        - [Task 1: Create Azure ML Linked Service](#task-1--create-azure-ml-linked-service)
-        - [Task 2: Create Azure ML input dataset](#task-2--create-azure-ml-input-dataset)
-        - [Task 3: Create Azure ML scored dataset](#task-3--create-azure-ml-scored-dataset)
-        - [Task 4: Create Azure ML predictive pipeline](#task-4--create-azure-ml-predictive-pipeline)
-        - [Task 5: Monitor pipeline activities](#task-5--monitor-pipeline-activities)
-    - [Exercise 5: Summarize data using HDInsight Spark](#exercise-5--summarize-data-using-hdinsight-spark)
-        - [Task 1: Install pandas on the HDInsight cluster](#task-1--install-pandas-on-the-hdinsight-cluster)
-        - [Task 2: Summarize delays by airport](#task-2--summarize-delays-by-airport)
-    - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6--visualizing-in-power-bi-desktop)
-        - [Task 1: Connect to the Lab VM](#task-1--connect-to-the-lab-vm)
-        - [Task 2: Connect to HDInsight Spark using Power BI Desktop](#task-2--connect-to-hdinsight-spark-using-power-bi-desktop)
-        - [Task 3: Create Power BI report](#task-3--create-power-bi-report)
-    - [Exercise 7: Deploy intelligent web app](#exercise-7--deploy-intelligent-web-app)
-        - [Task 1: Deploy web app from GitHub](#task-1--deploy-web-app-from-github)
+        - [Task 1: Deploy HDInsight cluster, Azure ML, and Storage Accounts to Azure](#task-1-deploy-hdinsight-cluster-azure-ml-and-storage-accounts-to-azure)
+        - [Task 2: Register for a trial API account at WeatherUnderground.com](#task-2-register-for-a-trial-api-account-at-weatherundergroundcom)
+        - [Task 3: Deploy Lab Virtual Machine (Lab VM) to Azure](#task-3-deploy-lab-virtual-machine-lab-vm-to-azure)
+        - [Task 4: Install Power BI Desktop on the Lab VM](#task-4-install-power-bi-desktop-on-the-lab-vm)
+        - [Task 5: Install an SSH client](#task-5-install-an-ssh-client)
+    - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
+        - [Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
+        - [Task 2: Upload the sample datasets](#task-2-upload-the-sample-datasets)
+        - [Task 3: Start a new experiment](#task-3-start-a-new-experiment)
+        - [Task 4: Prepare flight delay data](#task-4-prepare-flight-delay-data)
+        - [Task 5: Prepare the weather data](#task-5-prepare-the-weather-data)
+        - [Task 6: Join the flight and weather datasets](#task-6-join-the-flight-and-weather-datasets)
+        - [Task 7: Train the model](#task-7-train-the-model)
+        - [Task 8: Operationalize the experiment](#task-8-operationalize-the-experiment)
+    - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
+        - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
+        - [Task 2: Download and stage data to be processed](#task-2-download-and-stage-data-to-be-processed)
+        - [Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-3-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+        - [Task 4: Create an Azure data factory](#task-4-create-an-azure-data-factory)
+    - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3-develop-a-data-factory-pipeline-for-data-movement)
+        - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
+    - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4-operationalize-ml-scoring-with-azure-ml-and-data-factory)
+        - [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
+        - [Task 2: Create Azure ML input dataset](#task-2-create-azure-ml-input-dataset)
+        - [Task 3: Create Azure ML scored dataset](#task-3-create-azure-ml-scored-dataset)
+        - [Task 4: Create Azure ML predictive pipeline](#task-4-create-azure-ml-predictive-pipeline)
+        - [Task 5: Monitor pipeline activities](#task-5-monitor-pipeline-activities)
+    - [Exercise 5: Summarize data using HDInsight Spark](#exercise-5-summarize-data-using-hdinsight-spark)
+        - [Task 1: Install pandas on the HDInsight cluster](#task-1-install-pandas-on-the-hdinsight-cluster)
+        - [Task 2: Summarize delays by airport](#task-2-summarize-delays-by-airport)
+    - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6-visualizing-in-power-bi-desktop)
+        - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm-1)
+        - [Task 2: Connect to HDInsight Spark using Power BI Desktop](#task-2-connect-to-hdinsight-spark-using-power-bi-desktop)
+        - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
+    - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+        - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
     - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete resource group](#task-1--delete-resource-group)
+        - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
 <!-- /TOC -->
 
