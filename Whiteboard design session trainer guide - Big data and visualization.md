@@ -635,7 +635,7 @@ Yes, Power BI is a good option for AWT. Power BI can perform what is called a Di
 
     DataGuise provides the DGSecure product line that provides support for the automated detection of sensitive information at the time of data ingest by means of its DGSecure Ingest Agents (which include agents for relational databases, FTP, and Apache Flume). In addition, sensitive information can also be identified after it is stored in HDFS or Blob by using a Hadoop or HDInsight cluster to run periodic map/reduce scans for sensitive data on disk. The actions taken after discovery of sensitive data can range from flagging the data as sensitive (for monitoring and notification purposes), to modifying the data where the sensitive data is masked or encrypted and then updated in the data store. Finally, DGMonitor provides the ability to centralize monitoring of access to sensitive data, as well as raising alerts when suspicious activity is detected.
     
-    ![Details of the DgSecure Architecture diagram are described in the previous text.](images/Whiteboarddesignsessiontrainerguide-Bigdataandvisualizationimages/media/image11.tiff "DgSecure Architecture diagram")
+    ![Details of the DgSecure Architecture diagram are described in the previous text.](images/Whiteboarddesignsessiontrainerguide-Bigdataandvisualizationimages/media/image11.png "DgSecure Architecture diagram")
 
 7.  Is HDInsight our only option for running SQL on Hadoop solutions in Azure?
 
