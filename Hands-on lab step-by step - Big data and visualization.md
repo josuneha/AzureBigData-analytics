@@ -30,45 +30,39 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Deploy HDInsight cluster, Azure ML, and Storage Accounts to Azure](#task-1-deploy-hdinsight-cluster-azure-ml-and-storage-accounts-to-azure)
-        - [Task 2: Register for a trial API account at WeatherUnderground.com](#task-2-register-for-a-trial-api-account-at-weatherundergroundcom)
-        - [Task 3: Deploy Lab Virtual Machine (Lab VM) to Azure](#task-3-deploy-lab-virtual-machine-lab-vm-to-azure)
-        - [Task 4: Install Power BI Desktop on the Lab VM](#task-4-install-power-bi-desktop-on-the-lab-vm)
-        - [Task 5: Install an SSH client](#task-5-install-an-ssh-client)
-    - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
-        - [Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
-        - [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
-        - [Task 3: Start a new experiment](#task-3-start-a-new-experiment)
-        - [Task 4: Prepare flight delay data](#task-4-prepare-flight-delay-data)
-        - [Task 5: Prepare the weather data](#task-5-prepare-the-weather-data)
-        - [Task 6: Join the Flight and Weather datasets](#task-6-join-the-flight-and-weather-datasets)
-        - [Task 7: Train the model](#task-7-train-the-model)
-        - [Task 8: Operationalize the experiment](#task-8-operationalize-the-experiment)
-    - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
-        - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
-        - [Task 2: Download and stage data to be processed](#task-2-download-and-stage-data-to-be-processed)
-        - [Task 3: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-3-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
-        - [Task 4: Create an Azure Data Factory](#task-4-create-an-azure-data-factory)
-    - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3-develop-a-data-factory-pipeline-for-data-movement)
-        - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
-    - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4-operationalize-ml-scoring-with-azure-ml-and-data-factory)
-        - [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
-        - [Task 2: Create Azure ML input dataset](#task-2-create-azure-ml-input-dataset)
-        - [Task 3: Create Azure ML scored dataset](#task-3-create-azure-ml-scored-dataset)
-        - [Task 4: Create Azure ML predictive pipeline](#task-4-create-azure-ml-predictive-pipeline)
-        - [Task 5: Monitor pipeline activities](#task-5-monitor-pipeline-activities)
-    - [Exercise 5: Summarize data using HDInsight Spark](#exercise-5-summarize-data-using-hdinsight-spark)
-        - [Task 1: Install pandas on the HDInsight cluster](#task-1-install-pandas-on-the-hdinsight-cluster)
-        - [Task 2: Summarize delays by airport](#task-2-summarize-delays-by-airport)
-    - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6-visualizing-in-power-bi-desktop)
-        - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm-1)
-        - [Task 2: Connect to HDInsight Spark using Power BI Desktop](#task-2-connect-to-hdinsight-spark-using-power-bi-desktop)
-        - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-    - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
-        - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
+    - [Exercise 1: Build a Machine Learning Model](#exercise-1--build-a-machine-learning-model)
+        - [Task 1: Navigate to Machine Learning Studio](#task-1--navigate-to-machine-learning-studio)
+        - [Task 2: Upload the Sample Datasets](#task-2--upload-the-sample-datasets)
+        - [Task 3: Start a new experiment](#task-3--start-a-new-experiment)
+        - [Task 4: Prepare flight delay data](#task-4--prepare-flight-delay-data)
+        - [Task 5: Prepare the weather data](#task-5--prepare-the-weather-data)
+        - [Task 6: Join the Flight and Weather datasets](#task-6--join-the-flight-and-weather-datasets)
+        - [Task 7: Train the model](#task-7--train-the-model)
+        - [Task 8: Operationalize the experiment](#task-8--operationalize-the-experiment)
+    - [Exercise 2: Setup Azure Data Factory](#exercise-2--setup-azure-data-factory)
+        - [Task 1: Connect to the Lab VM](#task-1--connect-to-the-lab-vm)
+        - [Task 2: Download and stage data to be processed](#task-2--download-and-stage-data-to-be-processed)
+        - [Task 3: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-3--install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+        - [Task 4: Create an Azure Data Factory](#task-4--create-an-azure-data-factory)
+    - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3--develop-a-data-factory-pipeline-for-data-movement)
+        - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1--create-copy-pipeline-using-the-copy-data-wizard)
+    - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4--operationalize-ml-scoring-with-azure-ml-and-data-factory)
+        - [Task 1: Create Azure ML Linked Service](#task-1--create-azure-ml-linked-service)
+        - [Task 2: Create Azure ML input dataset](#task-2--create-azure-ml-input-dataset)
+        - [Task 3: Create Azure ML scored dataset](#task-3--create-azure-ml-scored-dataset)
+        - [Task 4: Create Azure ML predictive pipeline](#task-4--create-azure-ml-predictive-pipeline)
+        - [Task 5: Monitor pipeline activities](#task-5--monitor-pipeline-activities)
+    - [Exercise 5: Summarize data using HDInsight Spark](#exercise-5--summarize-data-using-hdinsight-spark)
+        - [Task 1: Install pandas on the HDInsight cluster](#task-1--install-pandas-on-the-hdinsight-cluster)
+        - [Task 2: Summarize delays by airport](#task-2--summarize-delays-by-airport)
+    - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6--visualizing-in-power-bi-desktop)
+        - [Task 1: Connect to the Lab VM](#task-1--connect-to-the-lab-vm)
+        - [Task 2: Connect to HDInsight Spark using Power BI Desktop](#task-2--connect-to-hdinsight-spark-using-power-bi-desktop)
+        - [Task 3: Create Power BI report](#task-3--create-power-bi-report)
+    - [Exercise 7: Deploy intelligent web app](#exercise-7--deploy-intelligent-web-app)
+        - [Task 1: Deploy web app from GitHub](#task-1--deploy-web-app-from-github)
     - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete resource group](#task-1-delete-resource-group)
+        - [Task 1: Delete resource group](#task-1--delete-resource-group)
 
 <!-- /TOC -->
 
@@ -124,173 +118,6 @@ The solution begins with loading their historical data into blob storage using A
 
     a.  Trial subscriptions will not work
 
-## Before the hands-on lab
-
-Duration: 45 minutes
-
-In this exercise, you will set up your environment for use in the rest of the hands-on lab. You should follow all the steps provided in the Before the Hands-on Lab section to prepare your environment *before* attending the hands-on lab.
-
-### Task 1: Deploy HDInsight cluster, Azure ML, and Storage Accounts to Azure
-
-1.  CTRL+Click the **Deploy to Azure** button below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an Azure Resource Management (ARM) template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below.
-
-    ![Screenshot of the Deploy to Azure button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image3.png "Deploy to Azure button")
-
-2.  In the Custom deployment blade that appears, enter the following values:
-
-    a.  Subscription: Select your subscription
-
-    b.  Resource group: Use and existing Resource group or create a new one by entering a unique name, such as **"bigdatalab-\[your intials or first name\]".**
-
-    c.  Location: Select a location for the Resource group. Recommend using East US, East US 2, West Central US, or West US 2, as some resources, such as Data Factory, are only available in those regions.
-
-    d.  App name: Enter a unique name, such as your initials or first name. This value must be between 3 and 10 characters long, and should not contain any special characters. Note the name, as you will need to use it in your Lab VM deployment in Task 3 as well.
-
-    e.  Cluster Login User Name: Enter a name, or accept the default. Note all references to this in the lab use the default user name, **demouser,** so if you change it, please note it for future reference throughout the lab.
-
-    f.  Cluster Login Password: Enter a password, or accept the default. Note all references to this in the lab use the default password, **Password.1!!**, so if you change it, please note it for future reference throughout the lab.
-
-    g.  Check the box to agree to the terms.
-
-    h.  Select **Purchase**. 
-    
-    ![Fields in the Custom deployment blade are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image4.png "Custom deployment blade")
-
-3.  The deployment will take about 15 minutes to complete.
-
-4.  Wait for the deployment to complete before attempting to deploy the Lab Virtual Machine in Task 3, as it depends on the Virtual Network created by this deployment. In the meantime, you can move on to the next task, Task 2, while this deployment is ongoing.
-
-### Task 2: Register for a trial API account at WeatherUnderground.com
-
-To retrieve the 10-day hourly weather forecast, you will use an API from WeatherUnderground.com. There is a free developer version that provides you access to the API you need for this hands-on lab.
-
-1.  Navigate to <https://www.wunderground.com/signup>
-
-2.  Complete the Create an Account form by providing your email address and a password, and agreeing to the terms. Select Sign up for free.
-
-    ![Complete the Weather Underground API key sign up form.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image5.png "Create an account form")
-
-3.  Navigate to <https://www.wunderground.com/login>.
-
-4.  Once logged into Weather Underground navigate to <http://www.wunderground.com/weather/api/>.
-
-5.  Select **Explore My Options**.
-
-    ![Screenshot of the Explore My Options button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image6.png "Explore My Options button")
-
-6.  On the Get Your API Key page, select **Anvil Plan**.
-    
-    ![Screenshot of the Anvil Plan option.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image7.png "Anvil Plan option")
-
-7.  Scroll down until you see the area titled How much will you use our service? Ensure **Developer** is selected. ![On the Get Your API Key page, in the table under How much will you use our service, Developer is selected, with Monthly Pricing cost of \$0, Calls Per Day is 500, and Calls Per Minute is 10.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image8.png "Pricing table")
-
-8.  Select **Purchase Key**.
-
-    ![Next to Your Selected Plan : Anvil Developer, the Purchase Key is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image9.png "Your selected plan confirmation")
-
-9.  Complete the brief contact form. For Project Name and Project Web use the input **MCW** (Microsoft Cloud Workshop). When answering where will the API be used, select **Website**. For Will the API be used for commercial use and Will the API be used for manufacturing mobile chip processing, select **No**. Select **Purchase Key**.
-
-    ![The Contact form displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image10.png "Contact form")
-
-10.  You should be taken to a page that displays your key, like the following. Take note of your API Key. It is available from the text box labeled **Key ID**.
-
-     ![On the Key page, a message displays that your have successfully subscribed to your billing plan. The API Key displays, as the option to edit it. ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image11.png "Key page")
-
-11. To verify that your API Key is working, modify the following URL to include your API Key: [http://api.wunderground.com/api/\<YOURAPIKEY\>/hourly10day/q/SEATAC.json](http://api.wunderground.com/api/%3cYOURAPIKEY%3e/hourly10day/q/SEATAC.json)
-
-12. Open your modified link in a browser, you should get a JSON result showing the 10-day, hourly weather forecast for the Seattle-Tacoma International Airport.![Sample JSON-formatted response from the Weather Underground API.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image12.png "JSON results")
-
-### Task 3: Deploy Lab Virtual Machine (Lab VM) to Azure
-
-1.  CTRL+Click the **Deploy to Azure** button below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an ARM template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below. ![Screenshot of the Deploy to Azure button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image3.png "Deploy to Azure button")
-
-2.  In the Custom deployment blade that appears, enter the following values:
-
-    a.  Subscription: Select your subscription
-
-    b.  Resource group: Choose Use Existing, and select the same resource group you used when deploying your HDInsight cluster and Azure ML workspace, above.
-
-    c.  Location: The location should be automatically selected to be the same as your Resource Group.
-
-    d.  App name: IMPORTANT: You must enter the same App name you used in the deployment above in Task
-
-    e.  VM User Name: Enter a name, or accept the default. Note all references to this in the lab use the default user name, demouser, so if you change it, please note it for future reference throughout the lab.
-
-    f.  VM Password: Enter a password, or accept the default. Note all references to this in the lab use the default password, Password.1!!, so if you change it, please not it for future reference throughout the lab.
-
-    g.  Check the box to agree to the terms.
-
-    h.  Select **Purchase**. 
-    
-    ![The Custom deployment blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image13.png "Custom deployment blade")
-
-3.  The deployment will take about 10 minutes to complete.
-
-### Task 4: Install Power BI Desktop on the Lab VM
-
-1.  Connect to the Lab VM. (If you are already, connected to your Lab VM, skip to Step 7.)
-
-2.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list. ![In the Azure Portal menu on the left, Resource groups is selected. In the Resource groups blade, bigdata displays in the search field. Under results, bigdatakyle is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image14.png "Azure Portal")
-
-3.  Next, select your lab virtual machine from the list. 
-    
-    ![In the list of virtual machines, kylelab is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image15.png "Virtual Machine list")
-
-4.  On your Lab VM blade, select **Connect** from the top menu. 
-
-    ![The Connect button is selected on the Lab VM blade menu bar.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image16.png "Lab VM blade menu bar")
-
-5.  Download and open the RDP file.
-
-6.  Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
-
-    -   User name: demouser
-
-    -   Password: Password.1!!
-
-7.  In a web browser on the Lab VM navigate to the Power BI Desktop download page <https://powerbi.microsoft.com/en-us/desktop/>
-
-8.  Select the Download Free link in the middle of the page.
-
-    ![Screenshot of the Power BI Desktop download free page.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image17.png "Power BI Desktop download free page")
-
-9.  Run the installer.
-
-10. Select Next on the welcome screen. 
-
-    ![The Microsoft Power BI Desktop Setup Wizard Welcome Page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image18.png "Microsoft Power BI Desktop Setup Wizard Welcome Page")
-
-11. Accept the license agreement, and select Next. 
-
-    ![The Accept check box and Next button are selected on the Software License Terms Page.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image19.png "Software License Terms Page")
-
-12. Leave the default destination folder, and select Next. 
-
-    ![The destination on the Destination Folder Page is set to C:\\Program Files\\Microsoft Power BI Desktop\\.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image20.png "Destination Folder Page")
-
-13. Make sure the Create a desktop shortcut box is checked, and select Install. 
-
-    ![On the Ready to install page, the check box for Create a desktop shortcut is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image21.png "Ready to install page")
-
-14. Uncheck Launch Microsoft Power BI Desktop, and select Finish. 
-
-    ![On the Setup Wizard Completed page, the check box is cleared for Launch Microsoft Power BI Desktop. ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image22.png "Setup Wizard Completed page")
-
-### Task 5: Install an SSH client
-
-In this task, you will download, and install the Git Bash SSH client. This will be used to interact with the HDInsight cluster.
-
-1.  On your Lab VM, open a browser, and navigate to <https://git-scm.com/downloads> to download Git Bash. ![The Git Bash downloads web page displays with the Download 2.15.1 for Windows button selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image23.png "Git Bash downloads web page")
-
-2.  Select the Download 2.xx.x for Windows button.
-
-3.  Run the downloaded installer, selecting Next on each screen to accept the defaults. On the last screen, select Install to complete the installation.
-
-4.  When the install is complete, uncheck View Release Notes, and select Finish.
-
-    ![The Completing the Get Setup Wizard page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image24.png "Completing the Get Setup Wizard page")
-
-You should follow all these steps provided *before* attending the Hands-on lab.
 
 ## Exercise 1: Build a Machine Learning Model
 
