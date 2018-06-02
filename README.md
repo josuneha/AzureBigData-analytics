@@ -34,12 +34,13 @@ This hands-on lab is designed to provide exposure to many of Microsoft's transfo
 
 
 ## Azure services and related products
-- Media Services
-- Logic Apps
-- Functions
-- Video Indexer API
-- App Services
-
+- Azure SQL Data Warehouse
+- Azure ML
+- Azure Storage
+- Azure Active Directory
+- Power BI
+- HDInsight Spark
+- Web Apps
 
 # Contributing
 
