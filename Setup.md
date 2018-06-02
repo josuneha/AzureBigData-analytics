@@ -19,7 +19,7 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
 1.  CTRL+Click the **Deploy to Azure** button below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an Azure Resource Management (ARM) template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below.
 
-    ![Screenshot of the Deploy to Azure button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image3.png "Deploy to Azure button")
+    ![Screenshot of the Deploy to Azure button.](images/Setup/image3.png "Deploy to Azure button")
 
 2.  In the Custom deployment blade that appears, enter the following values:
 
@@ -39,7 +39,7 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
     h.  Select **Purchase**. 
     
-    ![Fields in the Custom deployment blade are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image4.png "Custom deployment blade")
+    ![Fields in the Custom deployment blade are set to the previously defined settings.](images/Setup/image4.png "Custom deployment blade")
 
 3.  The deployment will take about 15 minutes to complete.
 
@@ -53,7 +53,7 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
 2.  Complete the Create an Account form by providing your email address and a password, and agreeing to the terms. Select Sign up for free.
 
-    ![Complete the Weather Underground API key sign up form.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image5.png "Create an account form")
+    ![Complete the Weather Underground API key sign up form.](images/Setup/image5.png "Create an account form")
 
 3.  Navigate to <https://www.wunderground.com/login>.
 
@@ -61,33 +61,33 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
 5.  Select **Explore My Options**.
 
-    ![Screenshot of the Explore My Options button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image6.png "Explore My Options button")
+    ![Screenshot of the Explore My Options button.](images/Setup/image6.png "Explore My Options button")
 
 6.  On the Get Your API Key page, select **Anvil Plan**.
     
-    ![Screenshot of the Anvil Plan option.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image7.png "Anvil Plan option")
+    ![Screenshot of the Anvil Plan option.](images/Setup/image7.png "Anvil Plan option")
 
-7.  Scroll down until you see the area titled How much will you use our service? Ensure **Developer** is selected. ![On the Get Your API Key page, in the table under How much will you use our service, Developer is selected, with Monthly Pricing cost of \$0, Calls Per Day is 500, and Calls Per Minute is 10.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image8.png "Pricing table")
+7.  Scroll down until you see the area titled How much will you use our service? Ensure **Developer** is selected. ![On the Get Your API Key page, in the table under How much will you use our service, Developer is selected, with Monthly Pricing cost of \$0, Calls Per Day is 500, and Calls Per Minute is 10.](images/Setup/image8.png "Pricing table")
 
 8.  Select **Purchase Key**.
 
-    ![Next to Your Selected Plan : Anvil Developer, the Purchase Key is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image9.png "Your selected plan confirmation")
+    ![Next to Your Selected Plan : Anvil Developer, the Purchase Key is selected.](images/Setup/image9.png "Your selected plan confirmation")
 
 9.  Complete the brief contact form. For Project Name and Project Web use the input **MCW** (Microsoft Cloud Workshop). When answering where will the API be used, select **Website**. For Will the API be used for commercial use and Will the API be used for manufacturing mobile chip processing, select **No**. Select **Purchase Key**.
 
-    ![The Contact form displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image10.png "Contact form")
+    ![The Contact form displays.](images/Setup/image10.png "Contact form")
 
 10.  You should be taken to a page that displays your key, like the following. Take note of your API Key. It is available from the text box labeled **Key ID**.
 
-     ![On the Key page, a message displays that your have successfully subscribed to your billing plan. The API Key displays, as the option to edit it. ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image11.png "Key page")
+     ![On the Key page, a message displays that your have successfully subscribed to your billing plan. The API Key displays, as the option to edit it. ](images/Setup/image11.png "Key page")
 
 11. To verify that your API Key is working, modify the following URL to include your API Key: [http://api.wunderground.com/api/\<YOURAPIKEY\>/hourly10day/q/SEATAC.json](http://api.wunderground.com/api/%3cYOURAPIKEY%3e/hourly10day/q/SEATAC.json)
 
-12. Open your modified link in a browser, you should get a JSON result showing the 10-day, hourly weather forecast for the Seattle-Tacoma International Airport.![Sample JSON-formatted response from the Weather Underground API.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image12.png "JSON results")
+12. Open your modified link in a browser, you should get a JSON result showing the 10-day, hourly weather forecast for the Seattle-Tacoma International Airport.![Sample JSON-formatted response from the Weather Underground API.](images/Setup/image12.png "JSON results")
 
 ### Task 3: Deploy Lab Virtual Machine (Lab VM) to Azure
 
-1.  CTRL+Click the **Deploy to Azure** button below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an ARM template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below. ![Screenshot of the Deploy to Azure button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image3.png "Deploy to Azure button")
+1.  CTRL+Click the **Deploy to Azure** button below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an ARM template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below. ![Screenshot of the Deploy to Azure button.](images/Setup/image3.png "Deploy to Azure button")
 
 2.  In the Custom deployment blade that appears, enter the following values:
 
@@ -107,7 +107,7 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
     h.  Select **Purchase**. 
     
-    ![The Custom deployment blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image13.png "Custom deployment blade")
+    ![The Custom deployment blade fields are set to the previously defined settings.](images/Setup/image13.png "Custom deployment blade")
 
 3.  The deployment will take about 10 minutes to complete.
 
@@ -115,15 +115,15 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
 1.  Connect to the Lab VM. (If you are already, connected to your Lab VM, skip to Step 7.)
 
-2.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list. ![In the Azure Portal menu on the left, Resource groups is selected. In the Resource groups blade, bigdata displays in the search field. Under results, bigdatakyle is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image14.png "Azure Portal")
+2.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list. ![In the Azure Portal menu on the left, Resource groups is selected. In the Resource groups blade, bigdata displays in the search field. Under results, bigdatakyle is selected.](images/Setup/image14.png "Azure Portal")
 
 3.  Next, select your lab virtual machine from the list. 
     
-    ![In the list of virtual machines, kylelab is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image15.png "Virtual Machine list")
+    ![In the list of virtual machines, kylelab is selected.](images/Setup/image15.png "Virtual Machine list")
 
 4.  On your Lab VM blade, select **Connect** from the top menu. 
 
-    ![The Connect button is selected on the Lab VM blade menu bar.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image16.png "Lab VM blade menu bar")
+    ![The Connect button is selected on the Lab VM blade menu bar.](images/Setup/image16.png "Lab VM blade menu bar")
 
 5.  Download and open the RDP file.
 
@@ -137,35 +137,35 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
 8.  Select the Download Free link in the middle of the page.
 
-    ![Screenshot of the Power BI Desktop download free page.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image17.png "Power BI Desktop download free page")
+    ![Screenshot of the Power BI Desktop download free page.](images/Setup/image17.png "Power BI Desktop download free page")
 
 9.  Run the installer.
 
 10. Select Next on the welcome screen. 
 
-    ![The Microsoft Power BI Desktop Setup Wizard Welcome Page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image18.png "Microsoft Power BI Desktop Setup Wizard Welcome Page")
+    ![The Microsoft Power BI Desktop Setup Wizard Welcome Page displays.](images/Setup/image18.png "Microsoft Power BI Desktop Setup Wizard Welcome Page")
 
 11. Accept the license agreement, and select Next. 
 
-    ![The Accept check box and Next button are selected on the Software License Terms Page.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image19.png "Software License Terms Page")
+    ![The Accept check box and Next button are selected on the Software License Terms Page.](images/Setup/image19.png "Software License Terms Page")
 
 12. Leave the default destination folder, and select Next. 
 
-    ![The destination on the Destination Folder Page is set to C:\\Program Files\\Microsoft Power BI Desktop\\.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image20.png "Destination Folder Page")
+    ![The destination on the Destination Folder Page is set to C:\\Program Files\\Microsoft Power BI Desktop\\.](images/Setup/image20.png "Destination Folder Page")
 
 13. Make sure the Create a desktop shortcut box is checked, and select Install. 
 
-    ![On the Ready to install page, the check box for Create a desktop shortcut is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image21.png "Ready to install page")
+    ![On the Ready to install page, the check box for Create a desktop shortcut is selected.](images/Setup/image21.png "Ready to install page")
 
 14. Uncheck Launch Microsoft Power BI Desktop, and select Finish. 
 
-    ![On the Setup Wizard Completed page, the check box is cleared for Launch Microsoft Power BI Desktop. ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image22.png "Setup Wizard Completed page")
+    ![On the Setup Wizard Completed page, the check box is cleared for Launch Microsoft Power BI Desktop. ](images/Setup/image22.png "Setup Wizard Completed page")
 
 ### Task 5: Install an SSH client
 
 In this task, you will download, and install the Git Bash SSH client. This will be used to interact with the HDInsight cluster.
 
-1.  On your Lab VM, open a browser, and navigate to <https://git-scm.com/downloads> to download Git Bash. ![The Git Bash downloads web page displays with the Download 2.15.1 for Windows button selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image23.png "Git Bash downloads web page")
+1.  On your Lab VM, open a browser, and navigate to <https://git-scm.com/downloads> to download Git Bash. ![The Git Bash downloads web page displays with the Download 2.15.1 for Windows button selected.](images/Setup/image23.png "Git Bash downloads web page")
 
 2.  Select the Download 2.xx.x for Windows button.
 
@@ -173,6 +173,6 @@ In this task, you will download, and install the Git Bash SSH client. This will 
 
 4.  When the install is complete, uncheck View Release Notes, and select Finish.
 
-    ![The Completing the Get Setup Wizard page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image24.png "Completing the Get Setup Wizard page")
+    ![The Completing the Get Setup Wizard page displays.](images/Setup/image24.png "Completing the Get Setup Wizard page")
 
 You should follow all these steps provided *before* attending the Hands-on lab.
