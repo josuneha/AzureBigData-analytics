@@ -34,35 +34,83 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Requirements](#requirements)
     - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
         - [Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
+            - [Tasks to complete:](#tasks-to-complete)
+            - [Exit criteria:](#exit-criteria)
         - [Task 2: Upload the sample datasets](#task-2-upload-the-sample-datasets)
+            - [Tasks to complete:](#tasks-to-complete-1)
+            - [Exit criteria:](#exit-criteria-1)
         - [Task 3: Start a new experiment](#task-3-start-a-new-experiment)
+            - [Tasks to complete:](#tasks-to-complete-2)
+            - [Exit criteria:](#exit-criteria-2)
         - [Task 4: Prepare flight delay data](#task-4-prepare-flight-delay-data)
+            - [Tasks to complete:](#tasks-to-complete-3)
+            - [Exit criteria:](#exit-criteria-3)
         - [Task 5: Prepare the weather data](#task-5-prepare-the-weather-data)
+            - [Tasks to complete:](#tasks-to-complete-4)
+            - [Exit criteria:](#exit-criteria-4)
         - [Task 6: Join the flight and weather datasets](#task-6-join-the-flight-and-weather-datasets)
+            - [Tasks to complete:](#tasks-to-complete-5)
+            - [Exit criteria:](#exit-criteria-5)
         - [Task 7: Train the model](#task-7-train-the-model)
+            - [Tasks to complete:](#tasks-to-complete-6)
+            - [Exit criteria:](#exit-criteria-6)
         - [Task 8: Operationalize the experiment](#task-8-operationalize-the-experiment)
+            - [Tasks to complete:](#tasks-to-complete-7)
+            - [Exit criteria:](#exit-criteria-7)
     - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
         - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
+            - [Tasks to complete:](#tasks-to-complete-8)
+            - [Exit criteria:](#exit-criteria-8)
         - [Task 2: Download and stage data to be processed](#task-2-download-and-stage-data-to-be-processed)
+            - [Tasks to complete:](#tasks-to-complete-9)
+            - [Exit criteria:](#exit-criteria-9)
         - [Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-3-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+            - [Tasks to complete:](#tasks-to-complete-10)
+            - [Exit criteria:](#exit-criteria-10)
         - [Task 4: Create an Azure data factory](#task-4-create-an-azure-data-factory)
+            - [Tasks to complete:](#tasks-to-complete-11)
+            - [Exit criteria:](#exit-criteria-11)
     - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3-develop-a-data-factory-pipeline-for-data-movement)
         - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
+            - [Tasks to complete:](#tasks-to-complete-12)
+            - [Exit criteria:](#exit-criteria-12)
     - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4-operationalize-ml-scoring-with-azure-ml-and-data-factory)
         - [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
+            - [Tasks to complete:](#tasks-to-complete-13)
+            - [Exit criteria:](#exit-criteria-13)
         - [Task 2: Create Azure ML input dataset](#task-2-create-azure-ml-input-dataset)
+            - [Tasks to complete:](#tasks-to-complete-14)
+            - [Exit criteria:](#exit-criteria-14)
         - [Task 3: Create Azure ML scored dataset](#task-3-create-azure-ml-scored-dataset)
+            - [Tasks to complete:](#tasks-to-complete-15)
+            - [Exit criteria:](#exit-criteria-15)
         - [Task 4: Create Azure ML predictive pipeline](#task-4-create-azure-ml-predictive-pipeline)
+            - [Tasks to complete:](#tasks-to-complete-16)
+            - [Exit criteria:](#exit-criteria-16)
         - [Task 5: Monitor pipeline activities](#task-5-monitor-pipeline-activities)
+            - [Tasks to complete:](#tasks-to-complete-17)
+            - [Exit criteria:](#exit-criteria-17)
     - [Exercise 5: Summarize data using HDInsight Spark](#exercise-5-summarize-data-using-hdinsight-spark)
         - [Task 1: Install pandas on the HDInsight cluster](#task-1-install-pandas-on-the-hdinsight-cluster)
+            - [Tasks to complete:](#tasks-to-complete-18)
+            - [Exit criteria:](#exit-criteria-18)
         - [Task 2: Summarize delays by airport](#task-2-summarize-delays-by-airport)
+            - [Tasks to complete:](#tasks-to-complete-19)
+            - [Exit criteria:](#exit-criteria-19)
     - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6-visualizing-in-power-bi-desktop)
         - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm-1)
+            - [Tasks to complete:](#tasks-to-complete-20)
+            - [Exit criteria:](#exit-criteria-20)
         - [Task 2: Connect to HDInsight Spark using Power BI Desktop](#task-2-connect-to-hdinsight-spark-using-power-bi-desktop)
+            - [Tasks to complete:](#tasks-to-complete-21)
+            - [Exit criteria:](#exit-criteria-21)
         - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
+            - [Tasks to complete:](#tasks-to-complete-22)
+            - [Exit criteria:](#exit-criteria-22)
     - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
         - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
+            - [Tasks to complete:](#tasks-to-complete-23)
+            - [Exit criteria:](#exit-criteria-23)
     - [After the hands-on lab](#after-the-hands-on-lab)
         - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
@@ -129,17 +177,17 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 ### Task 1: Navigate to Machine Learning Studio
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Launch ML Studio.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have an open ML Studio session in your browser.
 
 ### Task 2: Upload the sample datasets
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Download three CSV sample datasets from <http://bit.ly/2wGAqrl>.
 
@@ -153,7 +201,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 -   Upload the sample CSVs as Datasets in ML Studio.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   The three sample CSV files are uploaded and available as datasets in ML Studio. 
 
@@ -161,19 +209,19 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 ### Task 3: Start a new experiment
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Create a new blank Experiment in ML Studio. You should follow the detailed step-by-step instructions for this Task, available in the step-by-step guide.
 
 -   Provide the experiment a name, such as AdventureWorks Travel.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have a new named experiment.
 
 ### Task 4: Prepare flight delay data
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Add the FlightDelaysWithAirportCodes dataset to your experiment.
 
@@ -185,13 +233,13 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     -   Pare down columns to only those needed for our model: \"OriginAirportCode\",\"OriginLatitude\", \"OriginLongitude\", \"Month\", \"DayofMonth\", \"CRSDepHour\", \"DayOfWeek\", \"Carrier\", \"DestAirportCode\", \"DestLatitude\", \"DestLongitude\", \"DepDel15\"
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have an Experiment with cleaned up data from the FlightDelaysWithAirportCodes dataset.
 
 ### Task 5: Prepare the weather data
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Update the ML Experiment within ML Studio to prepare the FlightWeatherWithAirportCodes dataset.
 
@@ -209,13 +257,13 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     -   Eliminate unneeded columns from the dataset: \'AirportCode\', \'Month\', \'Day\', \'Hour\', \'WindSpeed\', \'SeaLevelPressure\', \'HourlyPrecip\'
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have an experiment with munged data from the FlightWeatherWithAirportCodes dataset.
 
 ### Task 6: Join the flight and weather datasets
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Join the two datasets -the prepared data from the FlightDelaysWithAirportCodes and FlightWeatherWithAirportCodes datasets. Join on these columns:
 
@@ -231,7 +279,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     -   OriginLatitude, OriginLongitude, DestLatitude, and DestLongitude from the joined data.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have an experiment that has a single dataset, which provides information about flights and weather at the time of departure.
 
@@ -245,7 +293,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 ### Task 7: Train the model
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Complete the experiment by training a model using a Two-Class Logistic Regression.
 
@@ -257,7 +305,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 -   For this task, you should follow the detailed steps in the step-by-step guide for this lab.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You should be able to evaluate your model's performance, and verify that its predictions are performing better than random.
 
@@ -271,7 +319,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 ### Task 8: Operationalize the experiment
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Operationalize the model by packaging it up as a Predictive Web Service.
 
@@ -313,7 +361,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 -   Navigate to the Consume tab of the deployed web service to acquire the Primary Key and Batch Requests URI .
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   Your predictive experiment should appear as follows:
 
@@ -331,31 +379,31 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
 ### Task 1: Connect to the Lab VM
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Initiate an RDP connection to the Lab VM you created in the Before the Lab section.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You are logged into your Lab VM.
 
 ### Task 2: Download and stage data to be processed
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Download and extract the ZIP containing sample data to a folder named C:\\Data on your Lab VM. The data can be downloaded from <http://bit.ly/2zi4Sqa>.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have a folder containing sample data files, partitioned by year and month on the C:\\ drive of your Lab VM.
 
 ### Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Download and install the latest version of Azure Data Factory Integration Runtime from <https://www.microsoft.com/en-us/download/details.aspx?id=39717>
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   The Azure Data Factory Integration Runtime is installed and running on your system. Keep in open for now. We will come back to this screen once we have provisioned the Data Factory in Azure, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
 
@@ -363,13 +411,13 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
 ### Task 4: Create an Azure data factory
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Provision a new Azure Data Factory (ADF) in your Azure subscription.
 
 -   Create a new Integration Runtime (gateway), and connect it to the Azure Data Factory Integration Runtime running on your Lab VM.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You can navigate to the overview blade for ADF.
 
@@ -386,7 +434,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 ### Task 1: Create copy pipeline using the Copy Data Wizard
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Use the Copy Data (Preview) tool in ADF to generate a Copy Pipeline, moving data from your "on-premises" Lab VM, to Azure Storage account ending in "sparkstorage" that was provisioned in the lab setup.
 
@@ -418,7 +466,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     -   Deploy the pipeline.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   The sample data copied to the C:\\ drive of your Lab VM has been successfully moved to Azure storage using an ADF copy activity and pipeline.
 
@@ -430,55 +478,55 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 ### Task 1: Create Azure ML Linked Service
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Create a new Azure ML Linked Service in ADF, and link it to your ML Predictive Web Service with the Batch Request URL and API key.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have a Linked Service connected to your ML web service.
 
 ### Task 2: Create Azure ML input dataset
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Author a new ADF dataset for providing blob input to an ML Predictive pipeline.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have a dataset connected to the storage location of the sample data uploaded by the Copy data pipeline created previously.
 
 ### Task 3: Create Azure ML scored dataset
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Author another ADF dataset, also connected to Azure Storage for outputting CSV files containing our sample data, along with Scored fields from our ML model.
 
 -   The dataset should write all files to the same folder, and append the year and date to the file name.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   Your ADF contains an output dataset pointing to a folder location in storage where all scored files can be written. The files should all be written to the same directory.
 
 ### Task 4: Create Azure ML predictive pipeline
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Create a new Pipeline in ADF, containing an AzureMLBatchExecution activity with the ML Input Dataset and ML Scored Dataset as input and output parameters.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   Upon completion, you should be able to launch the Monitor & Manage window from ADF and observe your activities in a Ready state, and your scored data should reside in the target folder in your Azure storage account.
 
 ### Task 5: Monitor pipeline activities
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Launch the Monitor & Manage window from ADF, and observe your pipelines.
 
 -   Ensure the pipelines are running, and the activities is in an In progress or Ready state.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You should see that your pipelines are In progress or completed (Ready).
 
@@ -490,7 +538,7 @@ In this exercise, you will prepare a summary of flight delay data in HDFS using 
 
 ### Task 1: Install pandas on the HDInsight cluster
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Create an SSH connection to the HDInsight cluster.
 
@@ -498,13 +546,13 @@ In this exercise, you will prepare a summary of flight delay data in HDFS using 
 
 -   Install the latest version of pandas on the cluster
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   The version of pandas is updated to a version which supports the 'api' module.
 
 ### Task 2: Summarize delays by airport
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Navigate to your HDInsight Spark cluster in the Azure portal.
 
@@ -526,7 +574,7 @@ In this exercise, you will prepare a summary of flight delay data in HDFS using 
     Having Sum(DelayPredicted) > 1
     ```
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You can run the following query and see similar results:\
     ![The Query Results are in a table that display information for four airports. Columns are: OriginAirportCode, OriginLatLong, Month, Day, Hour, NumDelays, and AvgDelayProbability.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image36.png "Query Results")
@@ -537,29 +585,29 @@ In this exercise, you will prepare a summary of flight delay data in HDFS using 
 
 ### Task 1: Connect to the Lab VM
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Create an RDP connection to your Lab VM.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You are logged into your Lab VM.
 
 ### Task 2: Connect to HDInsight Spark using Power BI Desktop
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Launch Power BI Desktop.
 
 -   Connect to your HDInsight Spark instance, and query the Hive tables you created in the previous exercise.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You have successfully connected to your HDInsight Spark cluster, and have the fields from the flightdelaysummary Hive table loaded in the report design surface.
 
 ### Task 3: Create Power BI report
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Generate a Power BI report containing Map, Stacked Column Chart, and Treemap visualizations of the flight delay summary data.
 
@@ -569,7 +617,7 @@ In this exercise, you will prepare a summary of flight delay data in HDFS using 
 
 -   The Treemap visual display details about the number of delays associated with a particular airport.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You should have a Power BI report generated, contain three interlinked tiles, displaying flight delay details.
 
@@ -583,7 +631,7 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 ### Task 1: Deploy web app from GitHub
 
-*Tasks to complete*:
+#### Tasks to complete:
 
 -   Navigate to the AdventureWorks README page (<https://github.com/ZoinerTejada/mcw-big-data-and-visualization/blob/master/AdventureWorksTravel/README.md>), and deploy a web app to Azure using an ARM template.
 
@@ -591,7 +639,7 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 -   Enter your Weather Underground API key as part of the deployment process.
 
-*Exit criteria*:
+#### Exit criteria:
 
 -   You are able to successfully navigate to the deployed web app, and test various airport connections to view weather and delay prediction details.
 
