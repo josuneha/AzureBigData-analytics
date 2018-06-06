@@ -8,7 +8,7 @@
 
 ## Before the hands-on lab
 
-Duration: 45 minutes
+Duration: 60 minutes
 
 In this exercise, you will set up your environment for use in the rest of the hands-on lab. You should follow all the steps provided in the Before the Hands-on Lab section to prepare your environment _before_ attending the hands-on lab.
 
@@ -203,7 +203,7 @@ Before using the Azure Machine Learning Workbench on the Data Science VM, you wi
 
     <https://aka.ms/azureml-wb-msi>
 
-        > **NOTE: Do not** use the AzureML Workbench Setup link that is present on the desktop. This will download an old version of the Workbench.
+        **NOTE: Do not** use the AzureML Workbench Setup link that is present on the desktop. This will download an old version of the Workbench.
 
 8.  Double-click the downloaded file to install the Workbench.
 
