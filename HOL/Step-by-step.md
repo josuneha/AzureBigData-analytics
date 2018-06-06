@@ -1,27 +1,20 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshop](../media/ms-cloud-workshop.png "Microsoft Cloud Workshop")
 
-<div class="MCWHeader1">
-Big data and visualization
-</div>
+[Legal notice](../legal.md)
 
-<div class="MCWHeader2">
-Hands-on lab step-by-step
-</div>
+Updated May 2018
 
-<div class="MCWHeader3">
-April 2018
-</div>
+# Big data and visualization hands-on lab step-by-step
 
-Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
+AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
-Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
+They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
-The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
-© 2018 Microsoft Corporation. All rights reserved.
+In this workshop, you will deploy a web app using Machine Learning (ML) to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your Machine Learning model.
 
-Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+If you have not yet completed the steps to set up your environment in [Before the hands-on lab](./Setup.md), you will need to do that before proceeding.
 
-**Contents**
+## Contents
 
 <!-- TOC -->
 
@@ -65,60 +58,6 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
 <!-- /TOC -->
-
-
-# Big data and visualization hands-on lab step-by-step 
-
-## Abstract and learning objectives 
-
-In this workshop, you will deploy a web app using Machine Learning (ML) to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your Machine Learning model.
-
-By attending this workshop, you will be better able to build a complete Azure Machine Learning (ML) model for predicting if an upcoming flight will experience delays. In addition, you will learn to:
-
--   Integrate the Azure ML web service in a Web App for both one at a time and batch predictions
-
--   Use Azure Data Factory (ADF) for data movement and operationalizing ML scoring
-
--   Summarize data with HDInsight and Spark SQL
-
--   Visualize batch predictions on a map using Power BI
-
-This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. The goal is to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible. The lab architecture is below and includes:
-
--   Azure Machine Learning (Azure ML)
-
--   Azure Data Factory (ADF)
-
--   Azure Storage
-
--   HDInsight Spark
-
--   Power BI Desktop
-
--   Azure App Service
-
-## Overview
-
-AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
-
-They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
-
-In this hands-on lab, attendees will build an end-to-end solution to predict flight delays, accounting for the weather forecast.
-
-## Solution architecture
-
-Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
-
-![The Solution Architecture diagram begins with Lab VM, then flows to Data Factory File Copy Pipeline, which flows to Storage for copied, raw file. This flows to Data Factory Batch Scoring pipeline, which includes Deployed ML Predictive Model (Batch). The pipeline flows to Storage for scored data, which flows to Spark for data processing. Power BI Report reads data from Spark, then sends the data on to Flight Booking Web App. Deployed ML Predictive Model (Request/Response) real-time scoring also sends data to the Flight Booking Web App, which then flows to the End User.](media/image2.png "Solution Architecture diagram")
-
-The solution begins with loading their historical data into blob storage using Azure Data Factory (ADF). By setting up a pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, AWT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Azure Machine Learning (Azure ML) would be used to develop a two-class classification machine learning model, which would then be operationalized as a Predictive Web Service using ML Studio. After operationalizing the ML model, a second ADF pipeline, using a Linked Service pointing to Azure ML's Batch Execution API and an AzureMLBatchExecution activity, would be used to apply the operational model to data as it is moved to the proper location in Azure storage. The scored data in Azure storage can be explored and prepared using Spark SQL on HDInsight, and the results visualized using a map visualization in Power BI.
-
-## Requirements
-
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
-
-    a.  Trial subscriptions will not work
-
 
 ## Exercise 1: Build a Machine Learning Model
 

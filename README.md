@@ -6,45 +6,47 @@ In this workshop, you will deploy a web app using Machine Learning (ML) to predi
 
 By attending this workshop, you will be better able to build a complete Azure Machine Learning (ML) model for predicting if an upcoming flight will experience delays. In addition, you will learn to:
 
--   Integrate the Azure ML web service in a Web App for both one at a time and batch predictions
+* Integrate the Azure ML web service in a Web App for both one at a time and batch predictions
 
--   Use Azure Data Factory (ADF) for data movement and operationalizing ML scoring
+* Use Azure Data Factory (ADF) for data movement and operationalizing ML scoring
 
--   Summarize data with HDInsight and Spark SQL
+* Summarize data with HDInsight and Spark SQL
 
--   Visualize batch predictions on a map using Power BI
+* Visualize batch predictions on a map using Power BI
 
 ## Whiteboard Design Session
+
 TBD
 
-## Hand-on Lab
+## Hands-on Lab
+
 This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. The goal is to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible. The lab architecture is below and includes:
 
--   Azure Machine Learning (Azure ML)
+* Azure Machine Learning (Azure ML)
 
--   Azure Data Factory (ADF)
+* Azure Data Factory (ADF)
 
--   Azure Storage
+* Azure Storage
 
--   HDInsight Spark
+* HDInsight Spark
 
--   Power BI Desktop
+* Power BI Desktop
 
--   Azure App Service
-
+* Azure App Service
 
 ## Azure services and related products
-- Azure SQL Data Warehouse
-- Azure ML
-- Azure Storage
-- Azure Active Directory
-- Power BI
-- HDInsight Spark
-- Web Apps
+
+* Azure SQL Data Warehouse
+* Azure ML
+* Azure Storage
+* Azure Active Directory
+* Power BI
+* HDInsight Spark
+* Web Apps
 
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
@@ -55,4 +57,3 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
