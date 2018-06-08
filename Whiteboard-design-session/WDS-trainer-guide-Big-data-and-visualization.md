@@ -276,7 +276,7 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 ### Infographic for common scenarios
 
-![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/image2.png 'Data Analytics diagram')
+![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
 
 ## Step 2: Design a proof of concept solution
 
@@ -487,7 +487,7 @@ _Data preparation_
 
 1.  What service would you recommend AWT capitalize on to explore the flat files they get from the United States Department of Transportation (USDOT) using SQL?
 
-Because of their interest in exploring and preparing the flat files using SQL, the best choice here is to use Azure Databricks. It is Microsoft's premier Apache Spark hosted solution that will also be the platform for building and training the machine learning model for flight delay predictions, based on the same data that it was used to prepare. This offers a single platform for data preparation and machine learning, within a collaborative environment that appeals to both data scientists and data engineers.
+    Because of their interest in exploring and preparing the flat files using SQL, the best choice here is to use Azure Databricks. It is Microsoft's premier Apache Spark hosted solution that will also be the platform for building and training the machine learning model for flight delay predictions, based on the same data that it was used to prepare. This offers a single platform for data preparation and machine learning, within a collaborative environment that appeals to both data scientists and data engineers.
 
 2.  What specific configuration would you use? What components of Azure Databricks would you use to allow AWT analysts to query and prep the data? How would they author and execute these data prep tasks?
 

@@ -154,7 +154,7 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 ### Infographic for common scenarios
 
-![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](images/Whiteboarddesignsessiontrainerguide-Bigdataandvisualizationimages/media/image2.png 'Data Analytics diagram')
+![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
 
 ## Step 2: Design a proof of concept solution
 
