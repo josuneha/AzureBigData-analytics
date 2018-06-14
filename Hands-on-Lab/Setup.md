@@ -24,19 +24,19 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
     Set the following configuration on the Basics tab:
 
-    * Name: Enter **LabDSVM**
+    - Name: Enter **LabDSVM**
 
-    * VM disk type: Select **SSD**
+    - VM disk type: Select **SSD**
 
-    * User name: Enter **demouser**
+    - User name: Enter **demouser**
 
-    * Password: Enter **Password.1!!**
+    - Password: Enter **Password.1!!**
 
-    * Subscription: Select the subscription you are using for this hands-on lab.
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    * Resource Group: Select Create new, and enter **hands-on-lab** as the name of the new resource group.
+    - Resource Group: Select Create new, and enter **hands-on-lab** as the name of the new resource group.
 
-    * Location: Select a region close to you.
+    - Location: Select a region close to you.
 
     ![The Basics blade fields fields display the previously mentioned settings.](media/dsvm-basics-blade.png)
 
@@ -93,15 +93,15 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
 3.  Set the following configuration on the Azure Databricks Service creation form:
 
-    * Name: Enter a unique name as indicated by a green checkmark.
+    - Name: Enter a unique name as indicated by a green checkmark.
 
-    * Subscription: Select the subscription you are using for this hands-on lab.
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    * Resource Group: Select the same resource group you created at the beginning of this lab.
+    - Resource Group: Select the same resource group you created at the beginning of this lab.
 
-    * Location: Select a region close to you.
+    - Location: Select a region close to you.
 
-    * Pricing: Select Standard.
+    - Pricing: Select Premium.
 
     ![Complete the Azure Databricks Service creation form with the options as outlined above.](media/azure-databricks-create-blade.png)
 
@@ -119,27 +119,27 @@ Create a new Azure Storage account that will be used to store historic and score
 
 3.  Set the following configuration on the Azure Databricks Service creation form:
 
-    * Name: Enter a unique name as indicated by a green checkmark.
+    - Name: Enter a unique name as indicated by a green checkmark.
 
-    * Deployment model: Resource manager.
+    - Deployment model: Resource manager.
 
-    * Account kind: Blob storage.
+    - Account kind: Blob storage.
 
-    * Location: Select the same region you used for Azure Databricks.
+    - Location: Select the same region you used for Azure Databricks.
 
-    * Replication: Read-access geo-redundant storage (RA-GRS).
+    - Replication: Read-access geo-redundant storage (RA-GRS).
 
-    * Performance: Standard.
+    - Performance: Standard.
 
-    * Access tier: Hot.
+    - Access tier: Hot.
 
-    * Secure transfer required: Disabled.
+    - Secure transfer required: Disabled.
 
-    * Subscription: Select the subscription you are using for this hands-on lab.
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    * Resource Group: Select the same resource group you created at the beginning of this lab.
+    - Resource Group: Select the same resource group you created at the beginning of this lab.
 
-    * Virtual networks: Disabled.
+    - Virtual networks: Disabled.
 
     ![Complete the Azure storage account creation form with the options as outlined above.](media/azure-storage-create-blade.png)
 
@@ -175,17 +175,17 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
 3.  Set the following configuration on the Data Factory creation form:
 
-    * Name: Enter a unique name as indicated by a green checkmark.
+    - Name: Enter a unique name as indicated by a green checkmark.
 
-    * Deployment model: Resource manager.
+    - Deployment model: Resource manager.
 
-    * Subscription: Select the subscription you are using for this hands-on lab.
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    * Resource Group: Select the same resource group you created at the beginning of this lab.
+    - Resource Group: Select the same resource group you created at the beginning of this lab.
 
-    * Version: V2.
+    - Version: V2.
 
-    * Location: Select the same region you used for Azure Databricks.
+    - Location: Select the same region you used for Azure Databricks.
 
     ![Complete the Azure Data Factory creation form with the options as outlined above.](media/azure-data-factory-create-blade.png)
 
@@ -213,9 +213,9 @@ Before using the Azure Machine Learning Workbench on the Data Science VM, you wi
 
 6.  Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
 
-    * User name: demouser
+    - User name: demouser
 
-    * Password: Password.1!!
+    - Password: Password.1!!
 
 7.  Using Firefox (already installed on the machine), download the Azure Machine Learning Workbench from:
 
@@ -249,27 +249,27 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
 4.  On the ML Experimentation blade, provide the following:
 
-    * Experimentation account name: Provide a name for your experimentation account.
+    - Experimentation account name: Provide a name for your experimentation account.
 
-    * Subscription: Select your Azure subscription.
+    - Subscription: Select your Azure subscription.
 
-    * Resource group: Select the resource group you previously created.
+    - Resource group: Select the resource group you previously created.
 
-    * Location: Select the region nearest to where you deployed your Data Science VM. It’s OK if they are not in exactly the same region, but try to select a region that is close to minimize latency.
+    - Location: Select the region nearest to where you deployed your Data Science VM. It’s OK if they are not in exactly the same region, but try to select a region that is close to minimize latency.
 
-    * Number of seats: Leave at 2.
+    - Number of seats: Leave at 2.
 
-    * Storage account: Select create new and provide a unique name for the new storage account.
+    - Storage account: Select create new and provide a unique name for the new storage account.
 
-    * Workspace for Experimentation account: Provide a unique name for the workspace.
+    - Workspace for Experimentation account: Provide a unique name for the workspace.
 
-    * Assign owner for the workspace: Leave the owner assigned to you.
+    - Assign owner for the workspace: Leave the owner assigned to you.
 
-    * Create Model Management account: Leave checked.
+    - Create Model Management account: Leave checked.
 
-    * Account name: Provide a name for your model management account.
+    - Account name: Provide a name for your model management account.
 
-    * Model Management pricing tier: Select the S1 pricing tier.
+    - Model Management pricing tier: Select the S1 pricing tier.
 
     ![Complete the form using the options as outlined above](media/machine-learning-experimentation-creation-form.png)
 
@@ -303,27 +303,31 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 5.  On the Create New Cluster form, provide the following:
 
-    * Cluster Type: Standard.
+    - Cluster Type: Standard.
 
-    * Cluster Name: lab.
+    - Cluster Name: lab.
 
-    * Databricks Runtime Version: 4.1 (includes Apache Spark 2.3.0, Scala 2.11).
+    - Databricks Runtime Version: 3.4 (includes Apache Spark 2.2.0, Scala 2.11).
 
-    * Python Version: 2.
+      **Note:** Select 3.4 and not a newer version such as 4.1. This is so that the exported machine learning model will be compatible with the version of Spark currently installed on DSVM.
 
-    * Driver Type: Same as worker.
+    - Python Version: 2.
 
-    * Worker Type: Standard_F4s.
+    - Driver Type: Same as worker.
 
-    * Min Workers: 2.
+    - Worker Type: Standard_F4s.
 
-    * Max Workers: 8.
+    - Min Workers: 2.
 
-    * Enable Autoscaling: Leave checked.
+    - Max Workers: 8.
 
-    * Auto Termination: Check the box and enter 120.
+    - Enable Autoscaling: Leave checked.
 
-    * Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following: `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key. **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
+    - Auto Termination: Check the box and enter 120.
+
+    - Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following: `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
+
+      **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
 
     ![Complete the form using the options as outlined above](media/azure-databricks-create-cluster-form.png)
 
