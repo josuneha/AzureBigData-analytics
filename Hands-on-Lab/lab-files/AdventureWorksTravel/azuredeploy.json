@@ -1,5 +1,6 @@
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema":
+    "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "siteName": {
@@ -14,16 +15,12 @@
     },
     "sku": {
       "type": "string",
-      "allowedValues": [
-        "Free"
-      ],
+      "allowedValues": ["Free"],
       "defaultValue": "Free"
     },
     "workerSize": {
       "type": "string",
-      "allowedValues": [
-        "0"
-      ],
+      "allowedValues": ["0"],
       "defaultValue": "0"
     },
     "repoUrl": {
@@ -35,10 +32,7 @@
     "mlApiKey": {
       "type": "string"
     },
-    "mlWorkspaceId": {
-      "type": "string"
-    },
-    "mlServiceId": {
+    "mlUrl": {
       "type": "string"
     },
     "weatherApiKey": {
@@ -46,8 +40,7 @@
     }
   },
 
-  "variables": {
-  },
+  "variables": {},
 
   "resources": [
     {
@@ -89,12 +82,8 @@
                 "value": "[parameters('mlApiKey')]"
               },
               {
-                "name": "mlWorkspaceId",
-                "value": "[parameters('mlWorkspaceId')]"
-              },
-              {
-                "name": "mlServiceId",
-                "value": "[parameters('mlServiceId')]"
+                "name": "mlUrl",
+                "value": "[parameters('mlUrl')]"
               },
               {
                 "name": "weatherApiKey",
