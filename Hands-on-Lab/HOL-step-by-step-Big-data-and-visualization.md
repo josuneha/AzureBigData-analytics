@@ -25,26 +25,26 @@ If you have not yet completed the steps to set up your environment in [Before th
     - [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
     - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
     - [Task 4: Configure your Machine Learning environment](#task-4-configure-your-machine-learning-environment)
-  - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3-deploy-your-machine-learning-model-with-azure-ml)
-    - [Task 1: Edit the scoring and configuration files](#task-1-edit-the-scoring-and-configuration-files)
-    - [Task 2: Deploy the model](#task-2-deploy-the-model)
   - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
     - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
     - [Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
     - [Task 3: Configure Azure Data Factory](#task-3-configure-azure-data-factory)
-  - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3-develop-a-data-factory-pipeline-for-data-movement)
+  - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3-deploy-your-machine-learning-model-with-azure-ml)
+    - [Task 1: Edit the scoring and configuration files](#task-1-edit-the-scoring-and-configuration-files)
+    - [Task 2: Deploy the model](#task-2-deploy-the-model)
+  - [Exercise 4: Develop a data factory pipeline for data movement](#exercise-4-develop-a-data-factory-pipeline-for-data-movement)
     - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
-  - [Exercise 4: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-4-operationalize-ml-scoring-with-azure-databricks-and-data-factory)
+  - [Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5-operationalize-ml-scoring-with-azure-databricks-and-data-factory)
     - [Task 1: Create Azure Databricks Linked Service](#task-1-create-azure-databricks-linked-service)
     - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2-complete-the-batchscore-azure-databricks-notebook-code)
     - [Task 3: Trigger workflow](#task-3-trigger-workflow)
-  - [Exercise 5: Summarize data using Azure Databricks](#exercise-5-summarize-data-using-azure-databricks)
+  - [Exercise 6: Summarize data using Azure Databricks](#exercise-6-summarize-data-using-azure-databricks)
     - [Task 1: Summarize delays by airport](#task-1-summarize-delays-by-airport)
-  - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6-visualizing-in-power-bi-desktop)
+  - [Exercise 7: Visualizing in Power BI Desktop](#exercise-7-visualizing-in-power-bi-desktop)
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+  - [Exercise 8: Deploy intelligent web app](#exercise-8-deploy-intelligent-web-app)
     - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resource group](#task-1-delete-resource-group)
@@ -203,6 +203,122 @@ In this exercise, attendees will implement a classification experiment. They wil
     ```bash
     az ml env show -g <resourceGroupName> -n <clusterName>
     ```
+
+## Exercise 2: Setup Azure Data Factory
+
+Duration: 20 minutes
+
+In this exercise, you will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. You will create a Data Factory service, and then install the Data Management Gateway which is the agent that facilitates data movement from on-premises to Microsoft Azure.
+
+### Task 1: Download and stage data to be processed
+
+1.  Sign into the Lab VM (DSVM) and open a web browser.
+
+2.  Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>.
+
+3.  Extract it to a new folder called **C:\\Data**.
+
+### Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM
+
+1.  To download the latest version of Azure Data Factory Integration Runtime, go to <https://www.microsoft.com/en-us/download/details.aspx?id=39717>
+
+    ![The Azure Data Factory Integration Runtime Download webpage displays.](media/image112.png 'Azure Data Factory Integration Runtime Download webpage')
+
+2.  Select Download, then choose the download you want from the next screen.
+
+    ![Under Choose the download you want, IntegrationRuntime_3.0.6464.2 (64-bit).msi is selected.](media/image113.png 'Choose the download you want section')
+
+3.  Run the installer, once downloaded.
+
+4.  When you see the following screen, select Next.
+
+    ![The Welcome page in the Microsoft Integration Runtime Setup Wizard displays.](media/image114.png 'Microsoft Integration Runtime Setup Wizard')
+
+5.  Check the box to accept the terms and select Next.
+
+    ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](media/image115.png 'End-User License Agreement page')
+
+6.  Accept the default Destination Folder, and select Next.
+
+    ![On the Destination folder page, the destination folder is set to C;\Program Files\Microsoft Integration Runtime\ and the Next button is selected.](media/image116.png 'Destination folder page')
+
+7.  Select Install to complete the installation.
+
+    ![On the Ready to install Microsoft Integration Runtime page, the Install button is selected.](media/image117.png 'Ready to install page')
+
+8.  Select Finish once the installation has completed.
+
+    ![On the Completed the Microsoft Integration Runtime Setup Wizard page, the Finish button is selected.](media/image118.png 'Completed the Wizard page')
+
+9.  After clicking Finish, the following screen will appear. Keep it open for now. You will come back to this screen once the Data Factory in Azure has been provisioned, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
+
+    ![The Microsoft Integration Runtime Configuration Manager, Register Integration Runtime page displays.](media/image119.png 'Register Integration Runtime page')
+
+### Task 3: Configure Azure Data Factory
+
+1.  Launch a new browser window, and navigate to the Azure portal (<https://portal.azure.com>). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft account. This will be based on which account was used to provision your Azure subscription that is being used for this lab.
+
+1.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
+
+1.  Next, select your Azure Data Factory service from the list.
+
+1.  On the Data Factory blade, select **Author & Monitor** under Actions.
+
+    ![In the Azure Data Factory blade, under Actions, the Author & Monitor option is selected.](media/adf-author-monitor.png 'Author & Monitor')
+
+1.  A new page will open in another tab or new window. Within the Azure Data Factory site, select **Author** (the pencil icon) on the left-hand menu.
+
+    ![Select Author from the left-hand menu](media/adf-home-author-link.png 'Author link on ADF home page')
+
+1.  Now, select **Connections** at the bottom of Factory Resources (1), then select the **Integration Runtimes** tab (2), and finally select **+ New** (3).
+
+    ![Select Connections at the bottom of the page, then select the Integration Runtimes tab, and select New.](media/adf-new-ir.png 'Steps to create a new Integation Runtime connection')
+
+1.  In the Integration Runtime Setup blade that appears, select "Perform data movement and dispatch activities to external computes", then select **Next**.
+
+    ![Select Perform data movement and dispatch activities to external computes](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
+
+1.  Select **Private Network** then select **Next**.
+
+    ![Select Private Network then Next](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
+
+1.  Enter a **Name**, such as bigdatagateway-\[initials\], and select **Next**.
+
+    ![Enter a Name and select Next](media/adf-ir-setup-3.png 'Integration Runtime Setup step 3')
+
+1.  Under Option 2: Manual setup, copy the Key1 authentication key value by selecting the Copy button, then select **Finish**.
+
+    ![Copy the Key1 value](media/adf-ir-setup-4.png 'Integration Runtime Setup step 4')
+
+1.  _Don't close the current screen or browser session._
+
+1.  Go back to the Remote Desktop session of the **Lab VM.**
+
+1.  Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen.
+
+    ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime page displays.](media/image127.png 'Microsoft Integration Runtime Configuration Manager')
+
+1.  Select **Register**.
+
+1.  It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by clicking the **Cancel** button.
+
+1.  The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
+
+    ![The Microsoft Integration Runtime Configuration Manager New Integration Runtime (Self-hosted) Node page displays.](media/adf-ir-self-hosted-node.png 'Microsoft Integration Runtime Configuration Manager')
+
+1.  You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
+
+    ![The Microsoft Integration Runtime Configuration Manager Node is connected to the cloud service page displays with connection details.](media/adf-ir-launch-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
+
+    ![The Microsoft Integration Runtime Configuration Manager details](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
+
+1.  You can now return to the Azure portal, and view the Integration Runtime you just configured.
+
+    ![You can view your Integration Runtime you just configured](media/adf-ir-running.png 'Integration Runtime in running state')
+
+1.  Select the Azure Data Factory Overview button on the left-hand menu. Leave this open for the next exercise.
+
+    ![Select the Azure Data Factory Overview button on the left-hand menu](media/adf-overview.png 'ADF Overview')
 
 ## Exercise 3: Deploy your machine learning model with Azure ML
 
@@ -452,123 +568,7 @@ In this exercise, you will deploy your trained machine learning model to Azure C
 
     ![Copy the PrimaryKey value for later reference](media/aml-service-keys.png 'az ml service keys realtime command')
 
-## Exercise 2: Setup Azure Data Factory
-
-Duration: 20 minutes
-
-In this exercise, you will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. You will create a Data Factory service, and then install the Data Management Gateway which is the agent that facilitates data movement from on-premises to Microsoft Azure.
-
-### Task 1: Download and stage data to be processed
-
-1.  Sign into the Lab VM (DSVM) and open a web browser.
-
-2.  Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>.
-
-3.  Extract it to a new folder called **C:\\Data**.
-
-### Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM
-
-1.  To download the latest version of Azure Data Factory Integration Runtime, go to <https://www.microsoft.com/en-us/download/details.aspx?id=39717>
-
-    ![The Azure Data Factory Integration Runtime Download webpage displays.](media/image112.png 'Azure Data Factory Integration Runtime Download webpage')
-
-2.  Select Download, then choose the download you want from the next screen.
-
-    ![Under Choose the download you want, IntegrationRuntime_3.0.6464.2 (64-bit).msi is selected.](media/image113.png 'Choose the download you want section')
-
-3.  Run the installer, once downloaded.
-
-4.  When you see the following screen, select Next.
-
-    ![The Welcome page in the Microsoft Integration Runtime Setup Wizard displays.](media/image114.png 'Microsoft Integration Runtime Setup Wizard')
-
-5.  Check the box to accept the terms and select Next.
-
-    ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](media/image115.png 'End-User License Agreement page')
-
-6.  Accept the default Destination Folder, and select Next.
-
-    ![On the Destination folder page, the destination folder is set to C;\Program Files\Microsoft Integration Runtime\ and the Next button is selected.](media/image116.png 'Destination folder page')
-
-7.  Select Install to complete the installation.
-
-    ![On the Ready to install Microsoft Integration Runtime page, the Install button is selected.](media/image117.png 'Ready to install page')
-
-8.  Select Finish once the installation has completed.
-
-    ![On the Completed the Microsoft Integration Runtime Setup Wizard page, the Finish button is selected.](media/image118.png 'Completed the Wizard page')
-
-9.  After clicking Finish, the following screen will appear. Keep it open for now. You will come back to this screen once the Data Factory in Azure has been provisioned, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
-
-    ![The Microsoft Integration Runtime Configuration Manager, Register Integration Runtime page displays.](media/image119.png 'Register Integration Runtime page')
-
-### Task 3: Configure Azure Data Factory
-
-1.  Launch a new browser window, and navigate to the Azure portal (<https://portal.azure.com>). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft account. This will be based on which account was used to provision your Azure subscription that is being used for this lab.
-
-1.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
-
-1.  Next, select your Azure Data Factory service from the list.
-
-1.  On the Data Factory blade, select **Author & Monitor** under Actions.
-
-    ![In the Azure Data Factory blade, under Actions, the Author & Monitor option is selected.](media/adf-author-monitor.png 'Author & Monitor')
-
-1.  A new page will open in another tab or new window. Within the Azure Data Factory site, select **Author** (the pencil icon) on the left-hand menu.
-
-    ![Select Author from the left-hand menu](media/adf-home-author-link.png 'Author link on ADF home page')
-
-1.  Now, select **Connections** at the bottom of Factory Resources (1), then select the **Integration Runtimes** tab (2), and finally select **+ New** (3).
-
-    ![Select Connections at the bottom of the page, then select the Integration Runtimes tab, and select New.](media/adf-new-ir.png 'Steps to create a new Integation Runtime connection')
-
-1.  In the Integration Runtime Setup blade that appears, select "Perform data movement and dispatch activities to external computes", then select **Next**.
-
-    ![Select Perform data movement and dispatch activities to external computes](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
-
-1.  Select **Private Network** then select **Next**.
-
-    ![Select Private Network then Next](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
-
-1.  Enter a **Name**, such as bigdatagateway-\[initials\], and select **Next**.
-
-    ![Enter a Name and select Next](media/adf-ir-setup-3.png 'Integration Runtime Setup step 3')
-
-1.  Under Option 2: Manual setup, copy the Key1 authentication key value by selecting the Copy button, then select **Finish**.
-
-    ![Copy the Key1 value](media/adf-ir-setup-4.png 'Integration Runtime Setup step 4')
-
-1.  _Don't close the current screen or browser session._
-
-1.  Go back to the Remote Desktop session of the **Lab VM.**
-
-1.  Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen.
-
-    ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime page displays.](media/image127.png 'Microsoft Integration Runtime Configuration Manager')
-
-1.  Select **Register**.
-
-1.  It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by clicking the **Cancel** button.
-
-1.  The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
-
-    ![The Microsoft Integration Runtime Configuration Manager New Integration Runtime (Self-hosted) Node page displays.](media/adf-ir-self-hosted-node.png 'Microsoft Integration Runtime Configuration Manager')
-
-1.  You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
-
-    ![The Microsoft Integration Runtime Configuration Manager Node is connected to the cloud service page displays with connection details.](media/adf-ir-launch-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
-
-    ![The Microsoft Integration Runtime Configuration Manager details](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
-
-1.  You can now return to the Azure portal, and view the Integration Runtime you just configured.
-
-    ![You can view your Integration Runtime you just configured](media/adf-ir-running.png 'Integration Runtime in running state')
-
-1.  Select the Azure Data Factory Overview button on the left-hand menu. Leave this open for the next exercise.
-
-    ![Select the Azure Data Factory Overview button on the left-hand menu](media/adf-overview.png 'ADF Overview')
-
-## Exercise 3: Develop a data factory pipeline for data movement
+## Exercise 4: Develop a data factory pipeline for data movement
 
 Duration: 20 minutes
 
@@ -718,7 +718,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![Select Edit Pipeline on the bottom of the page](media/adf-copy-data-deployment.png 'Deployment page')
 
-## Exercise 4: Operationalize ML scoring with Azure Databricks and Data Factory
+## Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory
 
 Duration: 20 minutes
 
@@ -812,65 +812,65 @@ We need to complete the notebook code for the batch scoring. For simplicity, we 
 
 1.  Paste the below into the first cell:
 
-```python
-from pyspark.ml import Pipeline, PipelineModel
-from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler, Bucketizer
-from pyspark.sql.functions import array, col, lit
-from pyspark.sql.types import *
-```
+    ```python
+    from pyspark.ml import Pipeline, PipelineModel
+    from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler, Bucketizer
+    from pyspark.sql.functions import array, col, lit
+    from pyspark.sql.types import *
+    ```
 
 1.  Add a new cell below and paste the following. Replace STORAGE-ACCOUNT-NAME with the name of your storage account. You can find this in the Azure portal by locating the storage account that you created in the lab setup, within your resource group. The container name is set to the default used for this lab. If yours is different, update the containerName variable accordingly.
 
-```python
-accountName = "STORAGE-ACCOUNT-NAME"
-containerName = "sparkcontainer"
-```
+    ```python
+    accountName = "STORAGE-ACCOUNT-NAME"
+    containerName = "sparkcontainer"
+    ```
 
 1.  Paste the following into a new cell to define the schema for the CSV files:
 
-```python
-data_schema = StructType([
-        StructField('OriginAirportCode',StringType()),
-        StructField('Month', IntegerType()),
-        StructField('DayofMonth', IntegerType()),
-        StructField('CRSDepHour', IntegerType()),
-        StructField('DayOfWeek', IntegerType()),
-        StructField('Carrier', StringType()),
-        StructField('DestAirportCode', StringType()),
-        StructField('DepDel15', IntegerType()),
-        StructField('WindSpeed', DoubleType()),
-        StructField('SeaLevelPressure', DoubleType()),  
-        StructField('HourlyPrecip', DoubleType())])
-```
+    ```python
+    data_schema = StructType([
+            StructField('OriginAirportCode',StringType()),
+            StructField('Month', IntegerType()),
+            StructField('DayofMonth', IntegerType()),
+            StructField('CRSDepHour', IntegerType()),
+            StructField('DayOfWeek', IntegerType()),
+            StructField('Carrier', StringType()),
+            StructField('DestAirportCode', StringType()),
+            StructField('DepDel15', IntegerType()),
+            StructField('WindSpeed', DoubleType()),
+            StructField('SeaLevelPressure', DoubleType()),  
+            StructField('HourlyPrecip', DoubleType())])
+    ```
 
 1.  Paste the following into a new cell to create a new DataFrame from the CSV files, applying the schema:
 
-```python
-dfDelays = spark.read.csv("wasbs://" + containerName + "@" + accountName + ".blob.core.windows.net/FlightsAndWeather/*/*/FlightsAndWeather.csv",
-                    schema=data_schema,
-                    sep=",",
-                    header=True)
-```
+    ```python
+    dfDelays = spark.read.csv("wasbs://" + containerName + "@" + accountName + ".blob.core.windows.net/FlightsAndWeather/*/*/FlightsAndWeather.csv",
+                        schema=data_schema,
+                        sep=",",
+                        header=True)
+    ```
 
 1.  Paste the following into a new cell to load the trained machine learning model you created earlier in the lab:
 
-```python
-# Load the saved pipeline model
-model = PipelineModel.load("/dbfs/FileStore/models/pipelineModel")
-```
+    ```python
+    # Load the saved pipeline model
+    model = PipelineModel.load("/dbfs/FileStore/models/pipelineModel")
+    ```
 
 1.  Paste the following into a new cell to make a prediction against the loaded data set:
 
-```python
-# Make a prediction against the dataset
-prediction = model.transform(dfDelays)
-```
+    ```python
+    # Make a prediction against the dataset
+    prediction = model.transform(dfDelays)
+    ```
 
 1.  Paste the following into a new cell to save the scored data into a new global table:
 
-```python
-prediction.write.mode("overwrite").saveAsTable("scoredflights")
-```
+    ```python
+    prediction.write.mode("overwrite").saveAsTable("scoredflights")
+    ```
 
 ### Task 3: Trigger workflow
 
@@ -888,7 +888,7 @@ prediction.write.mode("overwrite").saveAsTable("scoredflights")
 
     ![View your pipeline activity](media/adf-ml-monitor.png 'Monitor')
 
-## Exercise 5: Summarize data using Azure Databricks
+## Exercise 6: Summarize data using Azure Databricks
 
 Duration: 20 minutes
 
@@ -919,18 +919,18 @@ In this exercise, you will prepare a summary of flight delay data using Spark SQ
 
 1.  Next, you will create a table that summarizes the flight delays data. Instead of containing one row per flight, this new summary table will contain one row per origin airport at a given hour, along with a count of the quantity of anticipated delays. We also join the `airport_code_location_lookup_clean` table you created at the beginning of the lab, so we can extract the airport coordinates. In a new cell below the results of our previous cell, paste the following text, and run the cell.
 
-```
-%sql
-SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,
-    CONCAT(Latitude, ',', Longitude) OriginLatLong
-    FROM scoredflights s
-    INNER JOIN airport_code_location_lookup_clean a
-    ON s.OriginAirportCode = a.Airport
-    WHERE Month = 4
-    GROUP BY OriginAirportCode, OriginLatLong, Month, DayofMonth, CRSDepHour
-    Having Sum(prediction) > 1
-    ORDER BY NumDelays DESC
-```
+    ```
+    %sql
+    SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,
+        CONCAT(Latitude, ',', Longitude) OriginLatLong
+        FROM scoredflights s
+        INNER JOIN airport_code_location_lookup_clean a
+        ON s.OriginAirportCode = a.Airport
+        WHERE Month = 4
+        GROUP BY OriginAirportCode, OriginLatLong, Month, DayofMonth, CRSDepHour
+        Having Sum(prediction) > 1
+        ORDER BY NumDelays DESC
+    ```
 
 1.  Execution of this cell should return a results table like the following.
 
@@ -940,30 +940,30 @@ SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDel
 
 1.  To accomplish this, paste the text below into a new cell, and run the cell.
 
-```python
-summary = spark.sql("SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,     CONCAT(Latitude, ',', Longitude) OriginLatLong FROM scoredflights s INNER JOIN airport_code_location_lookup_clean a ON s.OriginAirportCode = a.Airport WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, DayofMonth, CRSDepHour  Having Sum(prediction) > 1 ORDER BY NumDelays DESC")
-```
+    ```python
+    summary = spark.sql("SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,     CONCAT(Latitude, ',', Longitude) OriginLatLong FROM scoredflights s INNER JOIN airport_code_location_lookup_clean a ON s.OriginAirportCode = a.Airport WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, DayofMonth, CRSDepHour  Having Sum(prediction) > 1 ORDER BY NumDelays DESC")
+    ```
 
 1.  Paste the text below to save the DataFrame as into a global table, then run the cell.
 
-```python
-summary.write.mode("overwrite").saveAsTable("flight_delays_summary")
-```
+    ```python
+    summary.write.mode("overwrite").saveAsTable("flight_delays_summary")
+    ```
 
 1.  Execute the following to verify the table has data:
 
-```python
-%sql
-select * from flight_delays_summary
-```
+    ```python
+    %sql
+    select * from flight_delays_summary
+    ```
 
 1.  Select various visualizations underneath the displayed grid.
 
-## Exercise 6: Visualizing in Power BI Desktop
+## Exercise 7: Visualizing in Power BI Desktop
 
 Duration: 20 minutes
 
-In this exercise, you will create visualizations in Power BI Desktop, then export them to Power BI online.
+In this exercise, you will create visualizations in Power BI Desktop.
 
 ### Task 1: Obtain the JDBC connection string to your Azure Databricks cluster
 
@@ -1095,7 +1095,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![The Power BI Save as window displays.](media/image197.png 'Power BI Save as window')
 
-## Exercise 7: Deploy intelligent web app
+## Exercise 8: Deploy intelligent web app
 
 Duration: 20 minutes
 
@@ -1103,13 +1103,13 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 ### Task 1: Deploy web app from GitHub
 
-1.  Navigate to <lab-files/AdventureWorksTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal.
+1.  Navigate to <https://github.com/Microsoft/MCW-Big-Data-and-Visualization/blob/may-2018-update/Hands-on-Lab/lab-files/AdventureWorksTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal.
 
 2.  Read through the README information on the GitHub page.
 
 3.  Click the **Deploy to Azure** button.
 
-    ![Screenshot of the Deploy to Azure button.](media/image3.png 'Deploy to Azure button')
+    ![Screenshot of the Deploy to Azure button.](media/deploy-to-azure-button.png 'Deploy to Azure button')
 
 4.  On the following page, ensure the fields are populated correctly.
 
@@ -1121,19 +1121,11 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
     d. Finally, enter the ML API and Weather API information.
 
-Note: Recall that you recorded the ML API information back in Exercise 1, Task 9.
+    Note: Recall that you recorded the ML API information in the Machine Learning model deployment exercise.
 
-- This information can be obtained on your Machine Learning web service page (<https://services.azureml.net>, then go to the Consume tab.
+    Note: Also, recall that you obtained the Weather API key back in the prerequisite steps for the lab. Insert that key into the Weather Api Key field.
 
-- The Primary Key listed is your ML API key
-
-- In the Request-Response URL, the GUID after subscriptions/ is your ML Workspace Id
-
-- In the Request-Response URL, the GUID after services/ is your ML Service Id![Fields in the Basic consumption page display the previously defined settings.](media/image198.png 'Basic consumption page')
-
-  e. Also, recall that you obtained the Weather API key back in the Task 3 of the prerequisite steps for the lab. Insert that key into the Weather Api Key field.
-
-  ![Fields on the Deploy to Azure page are populated with the previously copied information.](media/image199.png 'Deploy to Azure page')
+![Fields on the Deploy to Azure page are populated with the previously copied information.](media/azure-deployment-form.png 'Deploy to Azure page')
 
 5.  Select **Next**, and on the following screen, select **Deploy**.
 
