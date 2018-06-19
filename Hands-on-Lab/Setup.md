@@ -217,19 +217,25 @@ Before using the Azure Machine Learning Workbench on the Data Science VM, you wi
 
     - Password: Password.1!!
 
-7.  Using Firefox (already installed on the machine), download the Azure Machine Learning Workbench from:
+7.  **If you cannot Remote Desktop into the DSVM** due to the following error, **"CredSSP encryption oracle remediation"**, do one of the following:
+
+    - Option 1: Follow this link to workaround the issue: <https://support.microsoft.com/en-us/help/4295591/credssp-encryption-oracle-remediation-error-when-to-rdp-to-azure-vm>
+
+    - Option 2: Install the [Microsoft Remote Desktop app](https://www.microsoft.com/store/productId/9WZDNCRFJ3PS) from the Microsoft Store. The CredSSP issue appears to only affect the Remote Desktop Connection client installed with Windows.
+
+8.  Using Firefox (already installed on the machine), download the Azure Machine Learning Workbench from:
 
     <https://aka.ms/azureml-wb-msi>
 
         **NOTE: Do not** use the AzureML Workbench Setup link that is present on the desktop. This will download an old version of the Workbench.
 
-8.  Double-click the downloaded file to install the Workbench.
+9.  Double-click the downloaded file to install the Workbench.
 
-9.  At the **Open File – Security Warning** dialog, select **Run**.
+10. At the **Open File – Security Warning** dialog, select **Run**.
 
     ![Select Run from the Azure Machine Learning Workbench security dialog](media/azure-ml-workbench-security-warning.png)
 
-10. Step through all the prompts leaving all values at their defaults to complete the Workbench installation. The installation will take about **25 minutes**. Use the **X** to close the install when it is finished.
+11. Step through all the prompts leaving all values at their defaults to complete the Workbench installation. The installation will take about **25 minutes**. Use the **X** to close the install when it is finished.
 
     ![Let the Azure ML Workbench installation run to completion, then use the X to close the install](media/azure-ml-workbench-install-successful.png)
 
