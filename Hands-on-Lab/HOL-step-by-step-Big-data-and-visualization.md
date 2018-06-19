@@ -59,17 +59,45 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 ### Task 1: Create your Azure Machine Learning project
 
-1.  From your Lab VM (DSVM), launch the _Azure Machine Learning Workbench_. You should see a desktop icon for the application, or find it under the Start menu.
+1.  Connect to the Lab VM (DSVM). (If you are already connected to your DSVM, skip to Step 8.)
 
-2.  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Setup.md) setup.
+2.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
-3.  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench.
+3.  Next, select your lab Data Science Virtual Machine (DSVM) from the list.
 
-4.  Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then click **Create** (5).
+    ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png)
+
+4.  On your Lab DSVM blade, select **Connect** from the top menu.
+
+    ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png)
+
+5.  In the dialog that appears, accept the defaults and select **Download RDP File**. Open the file once downloaded.
+
+    ![Select Download RDP File](media/lab-dsvm-download-rdp-file.png)
+
+6.  Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
+
+    - User name: demouser
+
+    - Password: Password.1!!
+
+7.  **If you cannot Remote Desktop into the DSVM** due to the following error, **"CredSSP encryption oracle remediation"**, do one of the following:
+
+    - Option 1: Follow this link to workaround the issue: <https://support.microsoft.com/en-us/help/4295591/credssp-encryption-oracle-remediation-error-when-to-rdp-to-azure-vm>
+
+    - Option 2: Install the [Microsoft Remote Desktop app](https://www.microsoft.com/store/productId/9WZDNCRFJ3PS) from the Microsoft Store. The CredSSP issue appears to only affect the Remote Desktop Connection client installed with Windows.
+
+1)  From your Lab VM (DSVM), launch the _Azure Machine Learning Workbench_. You should see a desktop icon for the application, or find it under the Start menu.
+
+2)  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Setup.md) setup.
+
+3)  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench.
+
+4)  Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then click **Create** (5).
 
     ![Create new project in the Azure Machine Learning Workbench](media/create-new-workbench-project.png)
 
-5.  This will create the following new file path with a default project structure: C:\HOL\FlightDelays.
+5)  This will create the following new file path with a default project structure: C:\HOL\FlightDelays.
 
     ![Project structure generated after creating new Workbench project](media/new-project-structure.png)
 

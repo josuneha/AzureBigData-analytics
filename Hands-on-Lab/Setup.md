@@ -195,7 +195,7 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
 Before using the Azure Machine Learning Workbench on the Data Science VM, you will need to take the one-time action of double-clicking on the AzureML Workbench Setup icon on the desktop to install your instance of the workbench.
 
-1.  Connect to the Lab DSVM. (If you are already, connected to your DSVM, skip to Step 7.)
+1.  Connect to the Lab DSVM. (If you are already connected to your DSVM, skip to Step 8.)
 
 2.  From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
