@@ -159,7 +159,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
     ![Select Access keys from left-hand menu - copy storage account name - copy key](media/azure-storage-access-keys.png)
 
-4.  Select **Containers** (1) from the left-hand menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container.
+4.  Select **Containers** (1) from the left-hand menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container. Please note: in some cases, you will not see Containers in the left-hand menu. Instead, select "Browse Blobs" underneath the Blob Service heading.
 
     ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 

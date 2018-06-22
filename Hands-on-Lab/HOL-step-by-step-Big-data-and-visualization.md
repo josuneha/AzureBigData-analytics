@@ -137,7 +137,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 8.  Select your cluster to preview the table, then select **Preview Table**
 
-9.  Change the Table Name to \"flight_weather_with_airport_code\" and select the checkmark for **First row is header**. Select **Create Table**.
+9.  Change the Table Name to \"flight_delays_with_airport_codes\" and select the checkmark for **First row is header**. Select **Create Table**.
 
     ![Rename table and check the first row is header checkbox](media/flight-delays-attributes.png)
 
