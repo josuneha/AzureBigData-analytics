@@ -1,10 +1,17 @@
 ![Microsoft Cloud Workshop](../media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
-[Legal notice](../legal.md)
+Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
-Updated May 2018
+Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
+
+The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+© 2018 Microsoft Corporation. All rights reserved.
+
+Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 # Big data and visualization hands-on lab step-by-step
+
+Updated May 2018
 
 AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
@@ -55,7 +62,7 @@ If you have not yet completed the steps to set up your environment in [Before th
 
 Duration: 60 minutes
 
-In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then, they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
+In this exercise, you will implement a classification experiment. You will load the training data from your local machine into a dataset. Then, you will explore the data to identify the primary components you should use for prediction, and use two different algorithms for predicting the classification. You will then evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
 ### Task 1: Create your Azure Machine Learning project
 
@@ -556,7 +563,7 @@ In this exercise, you will deploy your trained machine learning model to Azure C
 
 ### Task 2: Deploy the model
 
-1.  Open a new Command Prompt from the Azure Machine Learning Workbench, as outlined in Task 1111.
+1.  Open a new Command Prompt from the Azure Machine Learning Workbench.
 
 2.  Associate your Model Management account, using the account name you created during setup when you provisioned the Machine Learning Experimentation service. Also be sure to use your same resource group you've been using throughout the lab:
 
@@ -1163,7 +1170,7 @@ Note: If you run into errors during the deployment that indicate a bad request o
 
 7.  After a short time, the deployment will complete, and you will be presented with a link to your newly deployed web application. CTRL+Click to open it in a new tab.
 
-8.  Try a few different combinations of origin, destination, date, and time in the application. The information you are shown is the result of both the ML API you published, as well as information retrieved from the Weather Underground API.
+8.  Try a few different combinations of origin, destination, date, and time in the application. The information you are shown is the result of both the ML API you published, as well as information retrieved from the DarkSky API.
 
 9.  Congratulations! You have built and deployed an intelligent system to Azure.
 

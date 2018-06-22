@@ -1,18 +1,4 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
-
-<div class="MCWHeader1">
-Big data and visualization
-</div>
-
-<div class="MCWHeader2">
-Hands-on lab unguided
-</div>
-
-<div class="MCWHeader3">
-April 2018
-</div>
-
-
+![Microsoft Cloud Workshop](../media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -23,557 +9,690 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-**Contents**
+# Big data and visualization hands-on lab unguided
 
-<!-- TOC -->
-
-- [Big data and visualization hands-on lab unguided](#big-data-and-visualization-hands-on-lab-unguided)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Overview](#overview)
-    - [Solution architecture](#solution-architecture)
-    - [Requirements](#requirements)
-    - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
-        - [Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
-        - [Task 2: Upload the sample datasets](#task-2-upload-the-sample-datasets)
-        - [Task 3: Start a new experiment](#task-3-start-a-new-experiment)
-        - [Task 4: Prepare flight delay data](#task-4-prepare-flight-delay-data)
-        - [Task 5: Prepare the weather data](#task-5-prepare-the-weather-data)
-        - [Task 6: Join the flight and weather datasets](#task-6-join-the-flight-and-weather-datasets)
-        - [Task 7: Train the model](#task-7-train-the-model)
-        - [Task 8: Operationalize the experiment](#task-8-operationalize-the-experiment)
-    - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
-        - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
-        - [Task 2: Download and stage data to be processed](#task-2-download-and-stage-data-to-be-processed)
-        - [Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-3-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
-        - [Task 4: Create an Azure data factory](#task-4-create-an-azure-data-factory)
-    - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-3-develop-a-data-factory-pipeline-for-data-movement)
-        - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
-    - [Exercise 4: Operationalize ML scoring with Azure ML and Data Factory](#exercise-4-operationalize-ml-scoring-with-azure-ml-and-data-factory)
-        - [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
-        - [Task 2: Create Azure ML input dataset](#task-2-create-azure-ml-input-dataset)
-        - [Task 3: Create Azure ML scored dataset](#task-3-create-azure-ml-scored-dataset)
-        - [Task 4: Create Azure ML predictive pipeline](#task-4-create-azure-ml-predictive-pipeline)
-        - [Task 5: Monitor pipeline activities](#task-5-monitor-pipeline-activities)
-    - [Exercise 5: Summarize data using HDInsight Spark](#exercise-5-summarize-data-using-hdinsight-spark)
-        - [Task 1: Install pandas on the HDInsight cluster](#task-1-install-pandas-on-the-hdinsight-cluster)
-        - [Task 2: Summarize delays by airport](#task-2-summarize-delays-by-airport)
-    - [Exercise 6: Visualizing in Power BI Desktop](#exercise-6-visualizing-in-power-bi-desktop)
-        - [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm-1)
-        - [Task 2: Connect to HDInsight Spark using Power BI Desktop](#task-2-connect-to-hdinsight-spark-using-power-bi-desktop)
-        - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-    - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
-        - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete resource group](#task-1-delete-resource-group)
-
-<!-- /TOC -->
-
-
-# Big data and visualization hands-on lab unguided 
-
-## Abstract and learning objectives 
-
-In this workshop, you will deploy a web app using Machine Learning (ML) to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your Machine Learning model.
-
-By attending this workshop, you will be better able to build a complete Azure Machine Learning (ML) model for predicting if an upcoming flight will experience delays. In addition, you will learn to:
-
--   Integrate the Azure ML web service in a Web App for both one at a time and batch predictions
-
--   Use Azure Data Factory (ADF) for data movement and operationalizing ML scoring
-
--   Summarize data with HDInsight and Spark SQL
-
--   Visualize batch predictions on a map using Power BI
-
-This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. The goal is to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible. The lab architecture is below and includes:
-
--   Azure Machine Learning (Azure ML)
-
--   Azure Data Factory (ADF)
-
--   Azure Storage
-
--   HDInsight Spark
-
--   Power BI Desktop
-
--   Azure App Service
-
-## Overview
+Updated May 2018
 
 AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
 They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
-In this hands-on lab, attendees will build an end-to-end solution to predict flight delays, accounting for the weather forecast.
+In this workshop, you will deploy a web app using Machine Learning (ML) to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your Machine Learning model.
 
-## Solution architecture
+If you have not yet completed the steps to set up your environment in [Before the hands-on lab](./Setup.md), you will need to do that before proceeding.
 
-Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
+**Contents**
 
-![The Solution Architecture diagram begins with Lab VM, then flows to Data Factory File Copy Pipeline, which flows to Storage for copied, raw file. This flows to Data Factory Batch Scoring pipeline, which includes Deployed ML Predictive Model (Batch). The pipeline flows to Storage for scored data, which flows to Spark for data processing. Power BI Report reads data from Spark, then sends the data on to Flight Booking Web App. Deployed ML Predictive Model (Request/Response) real-time scoring also sends data to the Flight Booking Web App, which then flows to the End User.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image2.png "Solution Architecture diagram")
+<!-- TOC -->
 
-The solution begins with loading their historical data into blob storage using Azure Data Factory (ADF). By setting up a pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, AWT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Azure Machine Learning (Azure ML) would be used to develop a two-class classification machine learning model, which would then be operationalized as a Predictive Web Service using ML Studio. After operationalizing the ML model, a second ADF pipeline, using a Linked Service pointing to Azure ML's Batch Execution API and an AzureMLBatchExecution activity, would be used to apply the operational model to data as it is moved to the proper location in Azure storage. The scored data in Azure storage can be explored and prepared using Spark SQL on HDInsight, and the results visualized using a map visualization in Power BI.
+- [Big data and visualization hands-on lab unguided](#big-data-and-visualization-hands-on-lab-unguided)
+  - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
+    - [Task 1: Create your Azure Machine Learning project](#task-1-create-your-azure-machine-learning-project)
+    - [Task 2: Upload the sample datasets](#task-2-upload-the-sample-datasets)
+    - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
+    - [Task 4: Configure your Machine Learning environment](#task-4-configure-your-machine-learning-environment)
+  - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
+    - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
+    - [Task 2: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+    - [Task 3: Configure Azure Data Dactory](#task-3-configure-azure-data-dactory)
+  - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3-deploy-your-machine-learning-model-with-azure-ml)
+    - [Task 1: Edit the scoring and configuration files](#task-1-edit-the-scoring-and-configuration-files)
+    - [Task 2: Deploy the model](#task-2-deploy-the-model)
+  - [Exercise 4: Develop a data factory pipeline for data movement](#exercise-4-develop-a-data-factory-pipeline-for-data-movement)
+    - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
+  - [Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5-operationalize-ml-scoring-with-azure-databricks-and-data-factory)
+    - [Task 1: Create Azure Databricks Linked Service](#task-1-create-azure-databricks-linked-service)
+    - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2-complete-the-batchscore-azure-databricks-notebook-code)
+    - [Task 3: Trigger workflow](#task-3-trigger-workflow)
+  - [Exercise 6: Summarize data using Azure Databricks](#exercise-6-summarize-data-using-azure-databricks)
+    - [Task 1: Summarize delays by airport](#task-1-summarize-delays-by-airport)
+  - [Exercise 7: Visualizing in Power BI Desktop](#exercise-7-visualizing-in-power-bi-desktop)
+    - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
+    - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
+    - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
+  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+    - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
+  - [After the hands-on lab](#after-the-hands-on-lab)
+    - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
-## Requirements
-
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
-
-    a.  Trial subscriptions will not work
+<!-- /TOC -->
 
 ## Exercise 1: Build a Machine Learning Model
 
 Duration: 60 minutes
 
-In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then, they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
+In this exercise, you will implement a classification experiment. You will load the training data from your local machine into a dataset. Then, you will explore the data to identify the primary components you should use for prediction, and use two different algorithms for predicting the classification. You will then evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
-### Task 1: Navigate to Machine Learning Studio
+### Task 1: Create your Azure Machine Learning project
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Launch ML Studio.
+- Launch Azure Machine Learning Workbench from within your DSVM.
+- Sign in with your Azure account when prompted.
+- Create a new project named "FlightDelays", setting the project directory to "C:\HOL", and using the Blank Project template.
 
-*Exit criteria*:
+_Exit criteria_:
 
--   You have an open ML Studio session in your browser.
+- You have the following new file path with a default project structure: C:\HOL\FlightDelays.
+
+  ![Project structure generated after creating new Workbench project](media/new-project-structure.png)
 
 ### Task 2: Upload the sample datasets
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Download three CSV sample datasets from <http://bit.ly/2wGAqrl>.
+- Download three CSV sample datasets from <http://bit.ly/2wGAqrl>.
 
--   Extract the ZIP, and verify you have the following files:
+- Extract the ZIP, and verify you have the following files:
 
-    -   FlightDelaysWithAirportCodes.csv
+  - FlightDelaysWithAirportCodes.csv
 
-    -   FlightWeatherWithAirportCodes.csv
+  - FlightWeatherWithAirportCodes.csv
 
-    -   AirportCodeLocationClean.csv
+  - AirportCodeLocationClean.csv
 
--   Upload the sample CSVs as Datasets in ML Studio.
+- Upload the sample CSVs as new tables within your Azure Databricks workspace.
 
-*Exit criteria*:
+_Exit criteria_:
 
--   The three sample CSV files are uploaded and available as datasets in ML Studio. 
+- There should be a total of three files that are uploaded. Each table should be named as follows:
 
-    ![In the left pane of the Microsoft Azure Machine Learning page, Datasets is selected. In the right pane, under My Datasets, three .csv files display: AirportCodeLocationLookupClean, FlightDelaysWithAirportCodes, and FlightWeatherWithAirportCode.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image26.png "Microsoft Azure Machine Learning  page")
+  - flightweatherwithairportcode_csv to **flight_weather_with_airport_code**
+  - flightdelayswithairportcodes_csv to **flight_delays_with_airport_codes**
+  - airportcodelocationlookupclean_csv to **airport_code_location_lookup_clean**
 
-### Task 3: Start a new experiment
+  ![Azure Databricks tables shown after all three files uploaded](media/uploaded-data-files.png 'Uploaded data files')
 
-*Tasks to complete*:
+### Task 3: Open Azure Databricks and complete lab notebooks
 
--   Create a new blank Experiment in ML Studio. You should follow the detailed step-by-step instructions for this Task, available in the step-by-step guide.
+_Tasks to complete_:
 
--   Provide the experiment a name, such as AdventureWorks Travel.
+- Download the following files:
 
-*Exit criteria*:
+  - [01 Prepare Flight Data.dbc](lab-files/01 Prepare Flight Data.dbc)
+  - [02 Predict Flight Delays.dbc](lab-files/02 Predict Flight Delays.dbc)
 
--   You have a new named experiment.
+- Import those notebooks into your Azure Databricks workspace.
 
-### Task 4: Prepare flight delay data
+- Attach your cluster to the notebooks when after opening, and complete them in order. Make sure to complete all of the **#TODO:** lines.
 
-*Tasks to complete*:
+_Exit criteria_:
 
--   Add the FlightDelaysWithAirportCodes dataset to your experiment.
+- You have successfully run each cell of both notebooks without errors. If you get stuck at any point, you can download and compare against the "complete" versions of those notebooks.
 
--   Prepare the data using an Execute R Script module.
+### Task 4: Configure your Machine Learning environment
 
-    -   Remove rows with missing values
+_Tasks to complete_:
 
-    -   Generate a new column, named "CRSDepHour," which contains the rounded down value representing just the hour from CRSDepTime
+- From your Lab VM (DSVM), browse to the download folder in File Explorer, and extract **flight_delays.zip** in place. This file was downloaded at the end of the **02 Predict Flight Delays complete** notebook.
 
-    -   Pare down columns to only those needed for our model: \"OriginAirportCode\",\"OriginLatitude\", \"OriginLongitude\", \"Month\", \"DayofMonth\", \"CRSDepHour\", \"DayOfWeek\", \"Carrier\", \"DestAirportCode\", \"DestLatitude\", \"DestLongitude\", \"DepDel15\"
+- Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder, then paste it into C:\HOL\FlightDelays.
 
-*Exit criteria*:
+- Open the Command Prompt using the File menu within the Azure Machine Learning Workbench (making sure your project is first selected).
 
--   You have an Experiment with cleaned up data from the FlightDelaysWithAirportCodes dataset.
+- Execute the following to update/install the Azure CLI packages:
 
-### Task 5: Prepare the weather data
+  ```bash
+  pip install azure-cli azure-cli-ml azure-ml-api-sdk
+  ```
 
-*Tasks to complete*:
+- Execute the following to upgrade the `pyspark` version:
 
--   Update the ML Experiment within ML Studio to prepare the FlightWeatherWithAirportCodes dataset.
+  ```bash
+  pip install pyspark --upgrade
+  ```
 
--   Prepare the data using an Execute Python Script module.
+- Set up your machine learning environment with the following command:
 
-    -   WindSpeed: Replace missing values with 0.0, and "M" values with 0.005
+  ```bash
+  az ml env setup -c -n <environment name> --location <location> --resource-group <yourresourcegroupname>
+  ```
 
-    -   HourlyPrecip: Replace missing values with 0.0, and "T" values with 0.005
+      Replace the tokens above with appropriate values:
 
-    -   SeaLevelPressure: Replace "M" values with 29.92 (the average pressure)
+      - For <environment name> enter flightdelays, or something similar. This value can only contain lowercase alphanumeric characters.
+      - For <location>, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
+      - For <yourresourcegroupname>, enter the resource group name you've been using for this lab.
 
-    -   Convert WindSpeed, HourlyPrecip, and SeaLevelPressure to numeric columns
+- Sign into Azure using your web browser if prompted.
 
-    -   Round "Time" column down to the nearest hour, and add value to a new column named "Hour"
+- Select your subscription name back in the command prompt.
 
-    -   Eliminate unneeded columns from the dataset: \'AirportCode\', \'Month\', \'Day\', \'Hour\', \'WindSpeed\', \'SeaLevelPressure\', \'HourlyPrecip\'
+_Exit criteria_:
 
-*Exit criteria*:
-
--   You have an experiment with munged data from the FlightWeatherWithAirportCodes dataset.
-
-### Task 6: Join the flight and weather datasets
-
-*Tasks to complete*:
-
--   Join the two datasets -the prepared data from the FlightDelaysWithAirportCodes and FlightWeatherWithAirportCodes datasets. Join on these columns:
-
-    -   Left columns: OriginAirportCode, Month, DayofMonth, and CRSDepHour
-
-    -   Right columns: AirportCode, Month, Day, and Hour
-
--   Convert the following columns to categorical:
-
-    -   DayOfWeek, Carrier, DestAirportCode, and OriginAirportCode
-
--   Omit the following columns:
-
-    -   OriginLatitude, OriginLongitude, DestLatitude, and DestLongitude from the joined data.
-
-*Exit criteria*:
-
--   You have an experiment that has a single dataset, which provides information about flights and weather at the time of departure.
-
--   Your data should look like:
-
-    ![The Results dataset displays data statistics and visualizations for airports.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image27.png "Results dataset")
-
--   The model should look like:
-
-    ![The Data model diagram begins at the top with FlightDelaysWithAirportCodes on the left, and FlightWeatherWithAirportCodes on the right. FlightDelaysWithAirportCodes points down to Execute R Script, which points to Join Data. FlightWeatherWithAirportCodes on the right points down to Execute Python Script, which also points to Join Data. Join Data then points to Edit Metadata, which points to Select Columns in Dataset.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image28.png "Predictive Experiment data model diagram")
-
-### Task 7: Train the model
-
-*Tasks to complete*:
-
--   Complete the experiment by training a model using a Two-Class Logistic Regression.
-
-    -   Split the data so 70% is used for training and 30% is used for testing.
-
-    -   Score the model
-
-    -   Evaluate the model performance
-
--   For this task, you should follow the detailed steps in the step-by-step guide for this lab.
-
-*Exit criteria*:
-
--   You should be able to evaluate your model's performance, and verify that its predictions are performing better than random.
-
--   Use the Score Model module and select **Visualize** to see the results of its predictions. **You should have a total of 13 columns**.
-
-    ![Prediction results for AdventureWorks Travel display.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image29.png "Prediction results")
-
--   Examining the visualization for the Evaluate model, you should see performance similar to the following:\
-    
-    ![Evaluation results for Adventureworks Travel display in line graph format, with True Positive Rate over False Positive Rate. The line curves upward from left to right.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image30.png "Evaluation results ")
-
-### Task 8: Operationalize the experiment
-
-*Tasks to complete*:
-
--   Operationalize the model by packaging it up as a Predictive Web Service.
-
--   Clean up the web service inputs and data flow:
-
-    -   Connect the Web service input to the Edit Metadata below the Join Data module.
-
-    -   In between the Join Data and the Metadata Editor modules, drop a Select Columns in Dataset module. Connect the Join Data module's output to the Select Columns module's input, and the Select Columns output to the Edit Metadata module's input.
-
-        -   Exclude these columns: **DepDel15, OriginLatitude, OriginLongitude, DestLatitude,** and **DestLongitude**.
-
-    -   Select the Select Columns in Dataset module that comes after the Metadata Editor module, and delete it.
-
-    -   Connect the output of the Edit Metadata module directly to the right input of the Score Model module.
-
-    -   Add the latitude and longitude columns from the data set back with a lookup:
-
-        -   Drag the AirportCodeLocationLookupClean dataset on to the design surface, positioning it below and to the right of the Score Model module.
-
-        -   Add a Join Data module, and position it below and to the left of the AirportCodeLocationLookupClean module. In the **Properties** panel for the Join Data module, for the Join key columns for L set the selected columns to **OriginAirportCode**. For the Join key columns for R, set the Selected columns to **AIRPORT**. Uncheck Keep right key columns in joined table.
-
-    -   Connect the output of the Score Model module to the leftmost input of the Join Data module and the output of the dataset to the rightmost input of the Join Data module.
-
-    -   Add a Select Columns in Dataset module beneath the Join Data module. In the Property panel, begin with All Columns, and set the Selected columns to Exclude the columns: AIRPORT\_ID and DISPLAY\_AIRPORT\_NAME.
-
-    -   Connect the Join Data output to the input of the Select Columns in Dataset module.
-
-    -   Add an Edit Metadata module. In the **Properties** panel for the Metadata Editor, use the column selector to set the Selected columns to LATITUDE and LONGITUDE. In the New column names enter: **OriginLatitude**, **OriginLongitude.**
-
-    -   Connect the output of the Select Columns in Dataset module to the input of the Edit Metadata module.
-
-    -   Connect the output of the Edit Metadata to the input of the web service output module.
-
--   Run the experiment
-
--   Select **Deploy Web Service**, **Deploy Web Service \[NEW\] Preview**
-
--   Deploy the web service
-
--   Navigate to the Consume tab of the deployed web service to acquire the Primary Key and Batch Requests URI .
-
-*Exit criteria*:
-
--   Your predictive experiment should appear as follows:
-
-    ![The Predictive Experiment diagram picks back up at Select Columns in Dataset. With Web service input, they both flow into Edit Metadata. With Big Data Hands-on Lab, they both flow into Score Model. With AirportCodeLocationLookup, they both flow into Join Data. Join Data flows down to Select Columns in Dataset, which flows down into Edit Metadata, and ends at Web Service output.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image31.png "Predictive Experiment diagram")
-
--   You should be able to view the Web Service dashboard for your deployed Predictive Web Service, similar to the following:
-
-    ![The Web Service dashboard for Big Data hands-on Lab \[Predictive Exp.\] displays.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image32.png "Web Service dashboard")
+- The ACS cluster is successfully created. It will take **10-20 minutes** to complete. Periodically check the status with `az ml env show -g <resourceGroupName> -n <clusterName>` and move on to the next exercise while waiting.
 
 ## Exercise 2: Setup Azure Data Factory
 
 Duration: 20 minutes
 
-In this exercise, attendees will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. You will create a Data Factory service, and then install the Data Management Gateway which is the agent that facilitates data movement from on-premises to Microsoft Azure.
+In this exercise, you will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. You will create a Data Factory service, and then install the Data Management Gateway which is the agent that facilitates data movement from on-premises to Microsoft Azure.
 
-### Task 1: Connect to the Lab VM
+### Task 1: Download and stage data to be processed
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Initiate an RDP connection to the Lab VM you created in the Before the Lab section.
+- Initiate an RDP connection to the Lab VM (DSVM) you created in the Before the Lab section.
 
-*Exit criteria*:
+- Download and extract the ZIP containing sample data to a folder named C:\\Data on your Lab VM. The data can be downloaded from <http://bit.ly/2zi4Sqa>.
 
--   You are logged into your Lab VM.
+_Exit criteria_:
 
-### Task 2: Download and stage data to be processed
+- You have a folder containing sample data files, partitioned by year and month on the C:\\ drive of your Lab VM.
 
-*Tasks to complete*:
+### Task 2: Install and configure Azure Data Factory Integration Runtime on the lab VM
 
--   Download and extract the ZIP containing sample data to a folder named C:\\Data on your Lab VM. The data can be downloaded from <http://bit.ly/2zi4Sqa>.
+_Tasks to complete_:
 
-*Exit criteria*:
+- Download and install the latest version of Azure Data Factory Integration Runtime from <https://www.microsoft.com/en-us/download/details.aspx?id=39717>
 
--   You have a folder containing sample data files, partitioned by year and month on the C:\\ drive of your Lab VM.
+_Exit criteria_:
 
-### Task 3: Install and configure Azure Data Factory Integration Runtime on the lab VM
+- The Azure Data Factory Integration Runtime is installed and running on your system. Keep in open for now. We will come back to this screen once we have provisioned the Data Factory in Azure, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
 
-*Tasks to complete*:
+  ![The Microsoft Integration Runtime Configuration Manager, Register Integration Runtime page displays.](media/image119.png 'Register Integration Runtime page')
 
--   Download and install the latest version of Azure Data Factory Integration Runtime from <https://www.microsoft.com/en-us/download/details.aspx?id=39717>
+### Task 3: Configure Azure Data Dactory
 
-*Exit criteria*:
+_Tasks to complete_:
 
--   The Azure Data Factory Integration Runtime is installed and running on your system. Keep in open for now. We will come back to this screen once we have provisioned the Data Factory in Azure, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
+- Create a new Integration Runtime (gateway), and connect it to the Azure Data Factory Integration Runtime running on your Lab VM.
 
-    ![The Microsoft Integration Runtime Configuration Manager page displays.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image33.png "Microsoft Integration Runtime Configuration Manager page")
+_Exit criteria_:
 
-### Task 4: Create an Azure data factory
+- You have authored an Integration Runtime in ADF, and successfully connected it to the ADF Integration Runtime on your Lab VM. You should see a screen like the following:
 
-*Tasks to complete*:
+  ![The Microsoft Integration Runtime Configuration Manager details](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
--   Provision a new Azure Data Factory (ADF) in your Azure subscription.
-
--   Create a new Integration Runtime (gateway), and connect it to the Azure Data Factory Integration Runtime running on your Lab VM.
-
-*Exit criteria*:
-
--   You can navigate to the overview blade for ADF.
-
--   You have authored an Integration Runtime in ADF, and successfully connected it to the ADF Integration Runtime on your Lab VM. You should see a screen like the following:
-
-    ![In the Microsoft Integration Runtime Configuration Manager, on the Home tab is a message that the Node is connected to the cloud service.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image34.png "Microsoft Integration Runtime Configuration Manager ")
-
-
-## Exercise 3: Develop a data factory pipeline for data movement
+## Exercise 3: Deploy your machine learning model with Azure ML
 
 Duration: 20 minutes
 
-In this exercise, you will create an Azure Data Factory pipeline to copy data (.CSV file) from an on-premises server (Lab VM) to Azure Blob Storage. The goal of the exercise is to demonstrate data movement from an on-premises location to Azure Storage (via the Integration Runtime). You will see how assets are created, deployed, executed, and monitored.
+In this exercise, you will deploy your trained machine learning model to Azure Container Services with the help of Azure Machine Learning Model Management.
+
+### Task 1: Edit the scoring and configuration files
+
+_Tasks to complete_:
+
+- Open the Azure Machine Learning Workbench and then open the Command Prompt.
+
+- Execute the following to update/install the Azure CLI packages:
+
+  ```bash
+  pip install azure-cli azure-cli-ml azure-ml-api-sdk
+  ```
+
+- Execute the following to upgrade the `pyspark` version:
+
+  ```bash
+  pip install pyspark --upgrade
+  ```
+
+- After the package installation is complete, execute the following command from the command prompt to launch a local instance of Jupyter notebooks:
+
+  ```bash
+  jupyter notebook
+  ```
+
+- This command will launch Jupyter in a new web browser. If prompted, select **Firefox** as your default web browser.
+
+  ![Local instance of Jupyter running within the web browser](media/jupyter-in-browser.png)
+
+- Create a new Jupyter notebook with the **Python 3 Spark - local** kernel.
+
+- Create the same methods we will use in our score.py file to test them out locally. Paste the following code into the first cell and execute:
+
+  ```python
+  def init():
+  # read in the model file
+  from pyspark.ml import Pipeline, PipelineModel
+  from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler, Bucketizer
+  global pipeline
+
+  pipeline = PipelineModel.load('pipelineModel')
+
+  def generate_api_schema():
+      from azureml.api.schema.dataTypes import DataTypes
+      from azureml.api.schema.sampleDefinition import SampleDefinition
+      from azureml.api.realtime.services import generate_schema
+      import os
+      print("create schema")
+      sample_input = "{\"OriginAirportCode\":\"SAT\",\"Month\":5,\"DayofMonth\":5,\"CRSDepHour\":13,\"DayOfWeek\":7,\"Carrier\":\"MQ\",\"DestAirportCode\":\"ORD\",\"WindSpeed\":9,\"SeaLevelPressure\":30.03,\"HourlyPrecip\":0}"
+      inputs = {"input_df": SampleDefinition(DataTypes.STANDARD, sample_input)}
+      os.makedirs('outputs', exist_ok=True)
+      print(generate_schema(inputs=inputs, filepath="outputs/schema.json", run_func=run))
+
+  def run(input_df):
+      from pyspark.context import SparkContext
+      from pyspark.sql.session import SparkSession
+      sc = SparkContext.getOrCreate()
+      spark = SparkSession(sc)
+      response = ''
+
+      try:
+          import json
+          # Set inferSchema=true to prevent the float values from being seen as strings
+          # which can later cause the VectorAssembler to throw an error: 'Data type StringType is not supported.'
+          df = spark.read.option("inferSchema", "true").json(sc.parallelize([input_df]))
+
+          #Get prediction results for the dataframe
+          score = pipeline.transform(df)
+          predictions = score.collect()
+          #response = df
+          #Get each scored result
+          for pred in predictions:
+              confidence = str(pred['probability'][0]) if pred['prediction'] == 0 else str(pred['probability'][1])
+              response += "{\"prediction\":" + str(pred['prediction']) + ",\"probability\":" +  confidence + "},"
+          # Remove the last comma
+          response = response[:-1]
+      except Exception as e:
+          return (str(e))
+
+      # Return results
+      return response
+  ```
+
+- Paste the following into the second cell:
+
+  ```python
+  testInput = "{\"OriginAirportCode\":\"SAT\",\"Month\":5,\"DayofMonth\":5,\"CRSDepHour\":13,\"DayOfWeek\":7,\"Carrier\":\"MQ\",\"DestAirportCode\":\"ORD\",\"WindSpeed\":9,\"SeaLevelPressure\":30.03,\"HourlyPrecip\":0}"
+  testInput2 = "{\"OriginAirportCode\":\"ATL\",\"Month\":2,\"DayofMonth\":5,\"CRSDepHour\":8,\"DayOfWeek\":4,\"Carrier\":\"MQ\",\"DestAirportCode\":\"MCO\",\"WindSpeed\":3,\"SeaLevelPressure\":31.03,\"HourlyPrecip\":0}"
+  # test init() in local notebook# test  
+  init()
+
+  # test run() in local notebook
+  run("[" + testInput + "," + testInput2 + "]")
+  ```
+
+- Run the cell. This tests the `run()` method, passing in two test parameters. One should return a prediction of 1, and the other 0, though your results may vary. Your output should look similar to the following: `'{"prediction":1.0,"probability":0.560342524075},{"prediction":0.0,"probability":0.69909752}'`. If everything works as expected, then we are ready to modify the score.py file. Save and close this notebook to return to the Jupyter home page.
+
+- Open **score.py**. Replace the file contents with the following:
+
+  ```python
+  # This script generates the scoring file
+  # necessary to operationalize your model
+  from azureml.api.schema.dataTypes import DataTypes
+  from pyspark.ml import Pipeline, PipelineModel
+  from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler
+  from pyspark.context import SparkContext
+  from pyspark.sql.session import SparkSession
+  sc = SparkContext.getOrCreate()
+  spark = SparkSession(sc)
+
+  # Prepare the web service definition by authoring
+  # init() and run() functions. Test the functions
+  # before deploying the web service.
+
+  model = None
+
+  def init():
+      # read in the model file
+      global pipeline
+      pipeline = PipelineModel.load("pipelineModel")
+
+  def run(input_df):
+      response = ''
+
+      try:
+          import json
+          # Set inferSchema=true to prevent the float values from being seen as strings
+          # which can later cause the VectorAssembler to throw an error: 'Data type StringType is not supported.'
+          df = spark.read.option("inferSchema", "true").json(sc.parallelize([input_df]))
+
+          #Get prediction results for the dataframe
+          score = pipeline.transform(df)
+          predictions = score.collect()
+          #response = df
+          #Get each scored result
+          for pred in predictions:
+              confidence = str(pred['probability'][0]) if pred['prediction'] == 0 else str(pred['probability'][1])
+              response += "{\"prediction\":" + str(pred['prediction']) + ",\"probability\":" +  confidence + "},"
+          # Remove the last comma
+          response = response[:-1]
+      except Exception as e:
+          return (str(e))
+
+      # Return results
+      return response
+  ```
+
+- **Save** your changes.
+
+- From the Jupyter home page, open the **aml_config** folder, then open **conda_dependencies.yml**.
+
+  ![Open the aml_config/conda_dependencies.yml file](media/jupyter-conda-dependencies.png 'Jupyter UI with file list')
+
+- Replace the file contents with the following:
+
+  ```yml
+  # Conda environment specification. The dependencies defined in this file will
+  # be automatically provisioned for managed runs. These include runs against
+  # the localdocker, remotedocker, and cluster compute targets.
+
+  # Note that this file is NOT used to automatically manage dependencies for the
+  # local compute target. To provision these dependencies locally, run:
+  # conda env update --file conda_dependencies.yml
+
+  # Details about the Conda environment file format:
+  # https://conda.io/docs/using/envs.html#create-environment-file-by-hand
+
+  # For managing Spark packages and configuration, see spark_dependencies.yml.
+
+  # Version of this configuration file's structure and semantics in AzureML.
+  # This directive is stored in a comment to preserve the Conda file structure.
+  # [AzureMlVersion] = 2
+
+  name: project_environment
+  dependencies:
+    # The python interpreter version.
+    # Currently Azure ML Workbench only supports 3.5.2.
+    - python=3.5.2
+
+    # Required for Jupyter Notebooks.
+    - ipykernel=4.6.1
+
+    - pip:
+      # Required packages for AzureML execution, history, and data preparation.
+      - --index-url https://azuremldownloads.azureedge.net/python-repository/preview
+      - --extra-index-url https://pypi.python.org/simple
+      - azureml-requirements
+
+      # The API for Azure Machine Learning Model Management Service.
+      # Details: https://github.com/Azure/Machine-Learning-Operationalization
+      - azure-ml-api-sdk==0.1.0a11
+      - azureml.datacollector==0.1.0a13
+      - pyspark
+  ```
+
+- **Save** your changes. Close conda_dependencies.yml.
+
+_Exit criteria_:
+
+- You are able to successfully test the ML scoring in the new notebook you created.
+
+- The score.py and conda_dependencies.yml files have been updated.
+
+### Task 2: Deploy the model
+
+_Tasks to complete_:
+
+- Open a new Command Prompt from the Azure Machine Learning Workbench and execute the following:
+
+```bash
+az ml account modelmanagement set -n <youracctname> -g <yourresourcegroupname>
+```
+
+```bash
+az ml env set -n <yourclustername> -g <yourresourcegroupname>
+```
+
+```bash
+az ml service create realtime --model-file pipelineModel -f score.py -n pred -c aml_config\conda_dependencies.yml -r spark-py
+```
+
+- **Copy the Scoring URL** to Notepad or similar for later reference.
+
+- Generate your service keys. **Copy the PrimaryKey value** to Notepad or similar for later reference.
+
+_Exit criteria_:
+
+- You are able to successfully test your scoring service with: `az ml service run realtime -i pred.[flightdelays-xyz.location] -d "{\"OriginAirportCode\":\"SAT\",\"Month\":5,\"DayofMonth\":5,\"CRSDepHour\":13,\"DayOfWeek\":7,\"Carrier\":\"MQ\",\"DestAirportCode\":\"ORD\",\"WindSpeed\":9,\"SeaLevelPressure\":30.03,\"HourlyPrecip\":0}"`
+
+- You have recorded your Scoring URL and service key values for later reference.
+
+## Exercise 4: Develop a data factory pipeline for data movement
+
+Duration: 20 minutes
+
+In this exercise, you will create an Azure Data Factory pipeline to copy data (.CSV files) from an on-premises server (Lab VM) to Azure Blob Storage. The goal of the exercise is to demonstrate data movement from an on-premises location to Azure Storage (via the Integration Runtime).
 
 ### Task 1: Create copy pipeline using the Copy Data Wizard
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Use the Copy Data (Preview) tool in ADF to generate a Copy Pipeline, moving data from your "on-premises" Lab VM, to Azure Storage account ending in "sparkstorage" that was provisioned in the lab setup.
+- Use the Copy Data tool in ADF to generate a Copy Pipeline, moving data from your "on-premises" Lab VM, to the Azure Storage account that was provisioned in the lab setup.
 
-    -   The pipeline should run regularly, once per month
+  - The pipeline should run regularly, once per month
 
-    -   Start date is 03/01/2017 12:00 am
+  - Start date is 03/01/2017 12:00 am
 
-    -   For the source:
+  - For the source:
 
-        -   Use a File System source
+    - Use a File System source
 
-        -   Choose the path C:\\Data\\FlightsAndWeather
+    - Choose the path C:\\Data\\FlightsAndWeather
 
-        -   Ensure files copied recursively
+    - Ensure files copied recursively
 
-    -   For the destination:
+  - For the destination:
 
-        -   Use Azure Blob Storage
+    - Use Azure Blob Storage
 
-        -   Make sure you select the storage account with the **sparkstorage** suffix.
+    - Make sure you select the storage account you created during lab setup
 
-        -   The folder path should be something like: sparkcontainer/FlightsAndWeather/{yyyy}/{MM}/
+    - The folder path should be something like: sparkcontainer/FlightsAndWeather/{yyyy}/{MM}/
 
-        -   Add a header to the file
+    - Add a header to the file
 
-        -   Skip all incompatible rows
+    - Set the Copy performance settings to have a degree of copy parallelism of 10 and to skip incompatible rows
 
-        -   Set the Copy Settings to have concurrency of 10 and execution priority order of OldestFirst.
+    - Update the Copy settings to set the number of retries to 3
 
-    -   Deploy the pipeline.
+  - Deploy the pipeline.
 
-*Exit criteria*:
+_Exit criteria_:
 
--   The sample data copied to the C:\\ drive of your Lab VM has been successfully moved to Azure storage using an ADF copy activity and pipeline.
+- On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed.
 
-## Exercise 4: Operationalize ML scoring with Azure ML and Data Factory
+  ![Select Edit Pipeline on the bottom of the page](media/adf-copy-data-deployment.png 'Deployment page')
 
-Duration: 20 minutes
-
-In this exercise, you will extend the Data Factory to operationalize the scoring of data using the previously created Azure Machine Learning (ML) model.
-
-### Task 1: Create Azure ML Linked Service
-
-*Tasks to complete*:
-
--   Create a new Azure ML Linked Service in ADF, and link it to your ML Predictive Web Service with the Batch Request URL and API key.
-
-*Exit criteria*:
-
--   You have a Linked Service connected to your ML web service.
-
-### Task 2: Create Azure ML input dataset
-
-*Tasks to complete*:
-
--   Author a new ADF dataset for providing blob input to an ML Predictive pipeline.
-
-*Exit criteria*:
-
--   You have a dataset connected to the storage location of the sample data uploaded by the Copy data pipeline created previously.
-
-### Task 3: Create Azure ML scored dataset
-
-*Tasks to complete*:
-
--   Author another ADF dataset, also connected to Azure Storage for outputting CSV files containing our sample data, along with Scored fields from our ML model.
-
--   The dataset should write all files to the same folder, and append the year and date to the file name.
-
-*Exit criteria*:
-
--   Your ADF contains an output dataset pointing to a folder location in storage where all scored files can be written. The files should all be written to the same directory.
-
-### Task 4: Create Azure ML predictive pipeline
-
-*Tasks to complete*:
-
--   Create a new Pipeline in ADF, containing an AzureMLBatchExecution activity with the ML Input Dataset and ML Scored Dataset as input and output parameters.
-
-*Exit criteria*:
-
--   Upon completion, you should be able to launch the Monitor & Manage window from ADF and observe your activities in a Ready state, and your scored data should reside in the target folder in your Azure storage account.
-
-### Task 5: Monitor pipeline activities
-
-*Tasks to complete*:
-
--   Launch the Monitor & Manage window from ADF, and observe your pipelines.
-
--   Ensure the pipelines are running, and the activities is in an In progress or Ready state.
-
-*Exit criteria*:
-
--   You should see that your pipelines are In progress or completed (Ready).
-
-## Exercise 5: Summarize data using HDInsight Spark
+## Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory
 
 Duration: 20 minutes
 
-In this exercise, you will prepare a summary of flight delay data in HDFS using Spark SQL.
+In this exercise, you will extend the Data Factory to operationalize the scoring of data using the previously created machine learning model within an Azure Databricks notebook.
 
-### Task 1: Install pandas on the HDInsight cluster
+### Task 1: Create Azure Databricks Linked Service
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Create an SSH connection to the HDInsight cluster.
+- Create a new folder named "adf" within the Azure Databricks Workspace folder. Add a new python notebook to that folder named "BatchScore".
 
-    -   Use password: Abc!1234567890
+- Create a new Azure Databricks Linked Service in ADF by adding a new Notebook activity to the design surface, named BatchScore. Choose existing for the job cluster, selecting the same region as your Azure Databricks workspace.
 
--   Install the latest version of pandas on the cluster
+  - Generate an Azure Databricks user token and use that as your access token for the linked Azure Databricks service.
 
-*Exit criteria*:
+  - Input your cluster Id, which is found within the Tags tab of your cluster within the Azure Databricks UI.
 
--   The version of pandas is updated to a version which supports the 'api' module.
+  - Set the Notebook path to **/adf/BatchScore**.
 
-### Task 2: Summarize delays by airport
+- Publish your pipeline.
 
-*Tasks to complete*:
+_Exit criteria_:
 
--   Navigate to your HDInsight Spark cluster in the Azure portal.
+- You have an Azure Databricks Notebook Activity attached to your Copy Activity, and your pipeline has been published.
 
--   Open a new Jupyter Notebook, using a Spark kernel.
+  ![Attach the copy activity to the notebook and then publish](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
--   Generate Hive tables from your Scored Flight and Weather data, which can be queried using Spark SQL.
+### Task 2: Complete the BatchScore Azure Databricks notebook code
 
--   Load the data from the path \"/ScoredFlightsAndWeather/\*.csv\" and define a DataFrame with a schema and save it as a table called FlightDelays. The schema should look like the following:
+We need to complete the notebook code for the batch scoring. For simplicity, we will persist the values in a new global persistent Databricks table. In production data workloads, you may save the scored data to Blob Storage, Azure Cosmos DB, or other serving layer. Another implementation detail we are skipping for the lab is processing only new files. This can be accomplished by creating a widget in the notebook that accepts a path parameter that is passed in from Azure Data Factory.
 
-    ![Screenshot of the FlightDelays schema.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image35.png "FlightDelays schema")
+_Tasks to complete_:
 
--   Save a Hive table named FlightDelaysSummary that represents the following query:
+- Go back to your Azure Databricks workspace and update your new BatchScore notebook by adding the following cells:
+
+  ```python
+  from pyspark.ml import Pipeline, PipelineModel
+  from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler, Bucketizer
+  from pyspark.sql.functions import array, col, lit
+  from pyspark.sql.types import *
+  ```
+
+- Add a new cell below and paste the following. Replace STORAGE-ACCOUNT-NAME with the name of your storage account. You can find this in the Azure portal by locating the storage account that you created in the lab setup, within your resource group. The container name is set to the default used for this lab. If yours is different, update the containerName variable accordingly.
+
+  ```python
+  accountName = "STORAGE-ACCOUNT-NAME"
+  containerName = "sparkcontainer"
+  ```
+
+- Paste the following into a new cell to define the schema for the CSV files:
+
+  ```python
+  data_schema = StructType([
+          StructField('OriginAirportCode',StringType()),
+          StructField('Month', IntegerType()),
+          StructField('DayofMonth', IntegerType()),
+          StructField('CRSDepHour', IntegerType()),
+          StructField('DayOfWeek', IntegerType()),
+          StructField('Carrier', StringType()),
+          StructField('DestAirportCode', StringType()),
+          StructField('DepDel15', IntegerType()),
+          StructField('WindSpeed', DoubleType()),
+          StructField('SeaLevelPressure', DoubleType()),  
+          StructField('HourlyPrecip', DoubleType())])
+  ```
+
+- Paste the following into a new cell to create a new DataFrame from the CSV files, applying the schema:
+
+  ```python
+  dfDelays = spark.read.csv("wasbs://" + containerName + "@" + accountName + ".blob.core.windows.net/FlightsAndWeather/*/*/FlightsAndWeather.csv",
+                      schema=data_schema,
+                      sep=",",
+                      header=True)
+  ```
+
+- Paste the following into a new cell to load the trained machine learning model you created earlier in the lab, **finishing the TODO item**:
+
+  ```python
+  # Load the saved pipeline model
+  model = #TODO: Complete this line using PipelineModel.load and pointing it to the DBFS file location where you saved your pipeline model
+  ```
+
+- Paste the following into a new cell to make a prediction against the loaded data set, **finishing the TODO item**:
+
+  ```python
+  # Make a prediction against the dataset
+  prediction = #TODO: Execute a transform from your model, passing in dfDelays
+  ```
+
+1.  Paste the following into a new cell to save the scored data into a new global table, **finishing the TODO item**:
+
+    ```python
+    prediction.write.mode("overwrite"). #TODO: Complete this line to save as a global table named "scoredflights"
     ```
-    %%sql
-    SELECT  OriginAirportCode, OriginLatLong, Month, Day, Hour, Sum(DelayPredicted) NumDelays, Avg(DelayProbability) AvgDelayProbability 
-    FROM FlightDelays 
+
+_Exit criteria_:
+
+- Your BatchScore notebook is completed with no errors.
+
+### Task 3: Trigger workflow
+
+_Tasks to complete_:
+
+- Within Azure Data Factory, manually trigger your pipeline. Enter **3/1/2017** into the windowStart parameter before you run.
+
+_Exit criteria_:
+
+- When you monitor your pipeline activity, you see a successful run of your pipeline.
+
+![View your pipeline activity](media/adf-ml-monitor.png 'Monitor')
+
+## Exercise 6: Summarize data using Azure Databricks
+
+Duration: 20 minutes
+
+In this exercise, you will prepare a summary of flight delay data using Spark SQL.
+
+### Task 1: Summarize delays by airport
+
+_Tasks to complete_:
+
+- Navigate to your Azure Databricks workspace in the Azure portal.
+
+- Create a new python notebook.
+
+- Save a new global table named flight_delays_summary that represents the following query:
+
+  ```sql
+  SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,
+    CONCAT(Latitude, ',', Longitude) OriginLatLong
+    FROM scoredflights s
+    INNER JOIN airport_code_location_lookup_clean a
+    ON s.OriginAirportCode = a.Airport
     WHERE Month = 4
-    GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour
-    Having Sum(DelayPredicted) > 1
-    ```
+    GROUP BY OriginAirportCode, OriginLatLong, Month, DayofMonth, CRSDepHour
+    Having Sum(prediction) > 1
+    ORDER BY NumDelays DESC
+  ```
 
-*Exit criteria*:
+_Exit criteria_:
 
--   You can run the following query and see similar results:\
-    ![The Query Results are in a table that display information for four airports. Columns are: OriginAirportCode, OriginLatLong, Month, Day, Hour, NumDelays, and AvgDelayProbability.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image36.png "Query Results")
+- You have created flight delays summary global table, which can be queried from Power BI Desktop.
 
--   You have created flight delays summary Hive table, which can be queried from Power BI Desktop.
+## Exercise 7: Visualizing in Power BI Desktop
 
-## Exercise 6: Visualizing in Power BI Desktop
+Duration: 20 minutes
 
-### Task 1: Connect to the Lab VM
+In this exercise, you will create visualizations in Power BI Desktop.
 
-*Tasks to complete*:
+### Task 1: Obtain the JDBC connection string to your Azure Databricks cluster
 
--   Create an RDP connection to your Lab VM.
+Before you begin, you must first obtain the JDBC connection string to your Azure Databricks cluster.
 
-*Exit criteria*:
+_Tasks to complete_:
 
--   You are logged into your Lab VM.
+- In Azure Databricks, go to Clusters and select your cluster.
 
-### Task 2: Connect to HDInsight Spark using Power BI Desktop
+- On the cluster edit page, scroll down and select the JDBC/ODBC tab.
 
-*Tasks to complete*:
+  ![Select the JDBC/ODBC tab](media/databricks-power-bi-jdbc.png 'JDBC strings')
 
--   Launch Power BI Desktop.
+- On the JDBC/ODBC tab, copy and save the JDBC URL.
 
--   Connect to your HDInsight Spark instance, and query the Hive tables you created in the previous exercise.
+  - Construct the JDBC server address that you will use when you set up your Spark cluster connection in Power BI Desktop.
 
-*Exit criteria*:
+  - Take the JDBC URL that you copied and saved in step 3 and do the following:
 
--   You have successfully connected to your HDInsight Spark cluster, and have the fields from the flightdelaysummary Hive table loaded in the report design surface.
+  - Replace jdbc:hive2 with https.
+
+  - Remove everything in the path between the port number and sql, retaining the components indicated by the boxes in the image below.
+
+  ![Select the parts to create the Power BI connection string](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
+
+_Exit criteria_:
+
+- You have created a JDBC connection string similar to <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/0614-124738-doubt405> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/lab> (if you choose the aliased version).
+
+### Task 2: Connect to Azure Databricks using Power BI Desktop
+
+_Tasks to complete_:
+
+- Launch Power BI Desktop.
+
+- Connect to your Azure Databricks Spark instance, and query the global tables you created in the previous exercise.
+
+_Exit criteria_:
+
+- You have successfully connected to your Azure Databricks cluster, and have the fields from the flight_delay_summary global table loaded in the report design surface.
 
 ### Task 3: Create Power BI report
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Generate a Power BI report containing Map, Stacked Column Chart, and Treemap visualizations of the flight delay summary data.
+- Generate a Power BI report containing Map, Stacked Column Chart, and Treemap visualizations of the flight delay summary data.
 
--   The Map visualization should represent the number of delays, based on the location of the airport.
+- The Map visualization should represent the number of delays, based on the location of the airport.
 
--   The Stacked Column Chart should provide information about the probability of a delay, based on the day.
+- The Stacked Column Chart should provide information about the probability of a delay, based on the day.
 
--   The Treemap visual display details about the number of delays associated with a particular airport.
+- The Treemap visual display details about the number of delays associated with a particular airport.
 
-*Exit criteria*:
+_Exit criteria_:
 
--   You should have a Power BI report generated, contain three interlinked tiles, displaying flight delay details.
+- You should have a Power BI report generated, contain three interlinked tiles, displaying flight delay details.
 
-    ![The Power BI report has a Map visualization, Stacked column chart, and treemap visualization.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image37.png "Power BI report")
+  ![The Report design surface now displays the map of the United States with dots, a stacked bar chart, and a Treeview.](media/pbi-desktop-full-report.png 'Report design surface')
 
 ## Exercise 7: Deploy intelligent web app
 
@@ -583,21 +702,19 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 ### Task 1: Deploy web app from GitHub
 
-*Tasks to complete*:
+_Tasks to complete_:
 
--   Navigate to the AdventureWorks README page (<https://github.com/ZoinerTejada/mcw-big-data-and-visualization/blob/master/AdventureWorksTravel/README.md>), and deploy a web app to Azure using an ARM template.
+- Navigate to the AdventureWorks README page (<https://github.com/ZoinerTejada/mcw-big-data-and-visualization/blob/master/AdventureWorksTravel/README.md>), and deploy a web app to Azure using an ARM template.
 
--   Provide your ML API key, and service details, which can be retrieved from <https://services.azureml.net>, and looking at your web service.
+- Provide your ML API details, which was captured during the Machine Learning model deployment exercise.
 
--   Enter your Weather Underground API key as part of the deployment process.
+- Enter your DarkSky API key as part of the deployment process.
 
-*Exit criteria*:
+_Exit criteria_:
 
--   You are able to successfully navigate to the deployed web app, and test various airport connections to view weather and delay prediction details.
+- You are able to successfully navigate to the deployed web app, and test various airport connections to view weather and delay prediction details.
 
-    ![The AdventureWorks Travel webpage displays.](images/Hands-onlabunguided-Bigdataandvisualizationimages/media/image38.png "AdventureWorks Travel webpage")
-
-## After the hands-on lab 
+## After the hands-on lab
 
 Duration: 10 minutes
 
@@ -611,5 +728,4 @@ In this exercise, attendees will deprovision any Azure resources that were creat
 
 3.  Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**.
 
-You should follow all steps provided *after* attending the Hands-on lab.
-
+You should follow all steps provided _after_ attending the Hands-on lab.
