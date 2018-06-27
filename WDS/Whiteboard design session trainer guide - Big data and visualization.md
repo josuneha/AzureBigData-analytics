@@ -17,6 +17,7 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -28,24 +29,24 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 - [Trainer information](#trainer-information)
     - [Role of the trainer](#role-of-the-trainer)
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
-    - [Wrap-up](#wrap-up-1)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
@@ -61,25 +62,25 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
--   Creates a safe environment in which learning can take place.
+-   Creates a safe environment in which learning can take place
 
--   Stimulates the participant's thinking.
+-   Stimulates the participant's thinking
 
--   Involves the participant in the learning process.
+-   Involves the participant in the learning process
 
--   Manages the learning process (on time, on topic, and adjusting to benefit participants).
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants)
 
--   Ensures individual participant accountability.
+-   Ensures individual participant accountability
 
--   Ties it all together for the participant.
+-   Ties it all together for the participant
 
--   Provides insight and experience to the learning process.
+-   Provides insight and experience to the learning process
 
--   Effectively leads the whiteboard design session discussion.
+-   Effectively leads the whiteboard design session discussion
 
--   Monitors quality and appropriateness of participant deliverables.
+-   Monitors quality and appropriateness of participant deliverables
 
--   Effectively leads the feedback process.
+-   Effectively leads the feedback process
 
 ## Whiteboard design session flow 
 
@@ -91,7 +92,7 @@ Each whiteboard design session uses the following flow:
 
 Analyze your customer’s needs.
 Time frame: 15 minutes 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
 1. Meet your table participants and trainer 
 2. Read all of the directions for steps 1–3 in the student guide 
 3. As a table team, review the following customer case study
@@ -126,15 +127,15 @@ Outcome: Present solution to your customer
 
 Before conducting your first whiteboard design session:
 
--   Read the Student guide (including the case study) and Trainer guide.
+-   Read the Student guide (including the case study) and Trainer guide
 
--   Become familiar with all key points and activities.
+-   Become familiar with all key points and activities
 
--   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
 
--   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas
 
--   Make notes for later.
+-   Make notes for later
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -202,7 +203,6 @@ Directions: With all participants in the session, the facilitator/SME presents a
 2. Read all of the directions for steps 1–3 in the student guide 
 3. As a table team, review the following customer case study
 
-
 ### Customer situation
 
 AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
@@ -224,43 +224,44 @@ In addition, for all data since 2003, each row includes new fields describing th
 They receive updates to this data monthly, where the flight data and other related files total about 1 GB. In total their solution currently manages about 2 TB worth of data.
 
 Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport, and provides forecasts up to 10 days. They have a history of the historical weather condition for each flight as CSV files, but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
+  
 
 ```
     {
         "date": {
-        "epoch": "1444701600",
-        "pretty": "7:00 PM PDT on October 12, 2015",
-        "day": 12,
-        "month": 10,
-        "year": 2015,
-        "yday": 284,
-        "hour": 19,
-        "min": "00",
-        "sec": 0,
-        "ampm": "PM",
-        "tz_short": "PDT",
-        "tz_long": "America/Los_Angeles"
+          "epoch": "1444701600",
+          "pretty": "7:00 PM PDT on October 12, 2015",
+          "day": 12,
+          "month": 10,
+          "year": 2015,
+          "yday": 284,
+          "hour": 19,
+          "min": "00",
+          "sec": 0,
+          "ampm": "PM",
+          "tz_short": "PDT",
+          "tz_long": "America/Los_Angeles"
         },
         "high": {
-        "fahrenheit": "64",
-        "celsius": "18"
+          "fahrenheit": "64",
+          "celsius": "18"
         },
         "low": {
-        "fahrenheit": "54",
-        "celsius": "12"
+          "fahrenheit": "54",
+          "celsius": "12"
         },
         "conditions": "Overcast",
         "maxwind": {
-        "mph": 15,
-        "kph": 24,
-        "dir": "SSW",
-        "degrees": 209
+          "mph": 15,
+          "kph": 24,
+          "dir": "SSW",
+          "degrees": 209
         },
         "avewind": {
-        "mph": 10,
-        "kph": 16,
-        "dir": "SSW",
-        "degrees": 209
+          "mph": 10,
+          "kph": 16,
+          "dir": "SSW",
+          "degrees": 209
         },
         "avehumidity": 70,
         "maxhumidity": 0,
@@ -272,17 +273,17 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 ### Customer needs 
 
-1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
+1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
 
-2.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
+1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
 
-3.  Want to understand how they will load their large quantity of historical data into Azure.
+1.  Want to understand how they will load their large quantity of historical data into Azure
 
-4.  Need to be able to query the weather forecast and use it as input to their flight delay predictions.
+1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
 
-5.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
+1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
 
-6.  Need web-based visualizations of the flight delay predictions.
+1.  Need web-based visualizations of the flight delay predictions
 
 ### Customer objections 
 
@@ -313,13 +314,13 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 **Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
-2.  What customer business needs do you need to address with your solution?
+1. Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
+2. What customer business needs do you need to address with your solution?
 
 **Design**
 
@@ -385,15 +386,13 @@ Directions: With all participants at your table, respond to the following questi
 
 **Prepare**
 
-Directions: With all participants at your table:
+Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution.
+1. Identify any customer needs that are not addressed with the proposed solution 
+2. Identify the benefits of your solution 
+3. Determine how you will respond to the customer’s objections 
 
-2.  Identify the benefits of your solution.
-
-3.  Determine how you will respond to the customer's objections.
-
-Prepare a 15-minute chalk-talk style presentation to the customer.
+Prepare a 15-minute chalk-talk style presentation to the customer. 
 
 ## Step 3: Present the solution
 
@@ -401,31 +400,25 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
-Directions
+Directions:
+1. Pair with another table
+2. One table is the Microsoft team and the other table is the customer
+3. The Microsoft team presents their proposed solution to the customer
+4. The customer makes one of the objections from the list of objections
+5. The Microsoft team responds to the objection
+6. The customer team gives feedback to the Microsoft team 
+7. Tables switch roles and repeat Steps 2–6
 
-1.  Pair with another table.
-
-2.  One table is the Microsoft team and the other table is the customer.
-
-3.  The Microsoft team presents their proposed solution to the customer.
-
-4.  The customer makes one of the objections from the list of objections.
-
-5.  The Microsoft team responds to the objection.
-
-6.  The customer team gives feedback to the Microsoft team.
-
-7.  Tables switch roles and repeat Steps 2--6.
 
 ##  Wrap-up 
 
-Time frame: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+-   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
 
 ##  Additional references
 
@@ -446,47 +439,47 @@ Time frame: 15 minutes
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer.
+-   Check in with your table participants to introduce yourself as the trainer
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and Time frames of the whiteboard design session.
+-   Briefly review the steps and Time frames of the whiteboard design session
 
--   Ready, set, go! Let the table participants begin.
+-   Ready, set, go! Let the table participants begin
 
 ## Step 2: Design a proof of concept solution
 
--   Check in with your tables to ensure that they are transitioning from step to step on time.
+-   Check in with your tables to ensure that they are transitioning from step to step on time
 
--   Provide some feedback on their responses to the business needs and design.
+-   Provide some feedback on their responses to the business needs and design
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own
+      
+-   Provide feedback for their responses to the customer's objections
 
--   Provide feedback for their responses to the customer's objections.
-
-    -   Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own
 
 ## Step 3: Present the solution
 
--   Determine which table will be paired with your table before Step 3 begins.
+-   Determine which table will be paired with your table before Step 3 begins
 
--   For the first round, assign one table as the Microsoft team and the other table as the customer.
+-   For the first round, assign one table as the Microsoft team and the other table as the customer
 
--   Have the Microsoft team present their solution to the customer team.
+-   Have the Microsoft team present their solution to the customer team
 
-    -   Have the customer team provide one objection for the Microsoft team to respond to.
+    -   Have the customer team provide one objection for the Microsoft team to respond to
 
-    -   The presentation and objections should be no longer than 10 minutes.
+    -   The presentation and objections should be no longer than 10 minutes
 
--   Have participants on the customer team give feedback to the Microsoft team.
+-   Have participants on the customer team give feedback to the Microsoft team
 
-    -   The feedback should be no longer than 5 minutes.
+    -   The feedback should be no longer than 5 minutes
 
-    -   If needed, the trainer may also provide feedback.
+    -   If needed, the trainer may also provide feedback
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
+-   Have the table participants reconvene with the larger session group to hear the facilitator or SME share the following preferred solution
 
 ##  Preferred target audience
 
@@ -525,7 +518,7 @@ The primary audience is the business decision makers and technology decision mak
 
 1.  What service would you recommend AWT capitalize on to explore the flat files they get from the United States Department of Transportation (USDOT) using SQL?
 
-They could use either HDInsight or SQL Data Warehouse (SQL DW), as both provide support for SQL over HDFS (Hadoop Distributed File System).
+    They could use either HDInsight or SQL Data Warehouse (SQL DW), as both provide support for SQL over HDFS (Hadoop Distributed File System).
 
 2.  If you suggested HDInsight, what specific configuration would you use? What components of the Hadoop stack would you use to allow AWT analysts to query and prep the data? How would they author and execute these data prep tasks?
 
@@ -591,7 +584,7 @@ They could use either HDInsight or SQL Data Warehouse (SQL DW), as both provide 
 
 1.  Is Power BI an option for AWT to use in visualizing the flight delays?
 
-Yes, Power BI is a good option for AWT. Power BI can perform what is called a Direct Query against HDInsight Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark.
+    Yes, Power BI is a good option for AWT. Power BI can perform what is called a Direct Query against HDInsight Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark.
 
 2.  If so, explain:
 
