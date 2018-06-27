@@ -41,7 +41,7 @@ In this exercise, you will set up your environment for use in the rest of the ha
     
     ![Fields in the Custom deployment blade are set to the previously defined settings.](images/Setup/image4.png "Custom deployment blade")
 
-1.  The deployment will take about 15 minutes to complete
+3.  The deployment will take about 15 minutes to complete
 
 4.  Wait for the deployment to complete before attempting to deploy the Lab Virtual Machine in Task 3, as it depends on the Virtual Network created by this deployment. In the meantime, you can move on to the next task, Task 2, while this deployment is ongoing.
 
@@ -55,21 +55,21 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
     ![Complete the Weather Underground API key sign up form.](images/Setup/image5.png "Create an account form")
 
-1.  Navigate to <https://www.wunderground.com/login>
+3.  Navigate to <https://www.wunderground.com/login>
 
-1.  Once logged into Weather Underground navigate to <http://www.wunderground.com/weather/api/>
+4.  Once logged into Weather Underground navigate to <http://www.wunderground.com/weather/api/>
 
-1.  Select **Explore My Options**
+5.  Select **Explore My Options**
 
     ![Screenshot of the Explore My Options button.](images/Setup/image6.png "Explore My Options button")
 
-1.  On the Get Your API Key page, select **Anvil Plan**
+6.  On the Get Your API Key page, select **Anvil Plan**
     
     ![Screenshot of the Anvil Plan option.](images/Setup/image7.png "Anvil Plan option")
 
 7.  Scroll down until you see the area titled How much will you use our service? Ensure **Developer** is selected. ![On the Get Your API Key page, in the table under How much will you use our service, Developer is selected, with Monthly Pricing cost of \$0, Calls Per Day is 500, and Calls Per Minute is 10.](images/Setup/image8.png "Pricing table")
 
-1.  Select **Purchase Key**
+8.  Select **Purchase Key**
 
     ![Next to Your Selected Plan : Anvil Developer, the Purchase Key is selected.](images/Setup/image9.png "Your selected plan confirmation")
 
@@ -109,23 +109,23 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
     
     ![The Custom deployment blade fields are set to the previously defined settings.](images/Setup/image13.png "Custom deployment blade")
 
-1.  The deployment will take about 10 minutes to complete
+3.  The deployment will take about 10 minutes to complete
 
 ### Task 4: Install Power BI Desktop on the Lab VM
 
 1.  Connect to the Lab VM (If you are already, connected to your Lab VM, skip to Step 7)
 
-1.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list ![In the Azure Portal menu, Resource groups is selected. In the Resource groups blade, bigdata displays in the search field. Under results, bigdatakyle is selected.](images/Setup/image14.png "Azure Portal")
+2.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list ![In the Azure Portal menu, Resource groups is selected. In the Resource groups blade, bigdata displays in the search field. Under results, bigdatakyle is selected.](images/Setup/image14.png "Azure Portal")
 
-1.  Next, select your lab virtual machine from the list 
+3.  Next, select your lab virtual machine from the list 
     
     ![In the list of virtual machines, kylelab is selected.](images/Setup/image15.png "Virtual Machine list")
 
-1.  On your Lab VM blade, select **Connect** from the top menu 
+4.  On your Lab VM blade, select **Connect** from the top menu 
 
     ![The Connect button is selected on the Lab VM blade menu bar.](images/Setup/image16.png "Lab VM blade menu bar")
 
-1.  Download and open the RDP file
+5.  Download and open the RDP file
 
 6.  Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
 
@@ -135,29 +135,29 @@ To retrieve the 10-day hourly weather forecast, you will use an API from Weather
 
 7.  In a web browser on the Lab VM navigate to the Power BI Desktop download page <https://powerbi.microsoft.com/en-us/desktop/>
 
-1.  Select the Download Free link in the middle of the page
+8.  Select the Download Free link in the middle of the page
 
     ![Screenshot of the Power BI Desktop download free page.](images/Setup/image17.png "Power BI Desktop download free page")
 
-1.  Run the installer
+9.  Run the installer
 
-1. Select Next on the welcome screen 
+10. Select Next on the welcome screen 
 
     ![The Microsoft Power BI Desktop Setup Wizard Welcome Page displays.](images/Setup/image18.png "Microsoft Power BI Desktop Setup Wizard Welcome Page")
 
-1. Accept the license agreement, and select Next 
+11. Accept the license agreement, and select Next 
 
     ![The Accept check box and Next button are selected on the Software License Terms Page.](images/Setup/image19.png "Software License Terms Page")
 
-1. Leave the default destination folder, and select Next 
+12. Leave the default destination folder, and select Next 
 
     ![The destination on the Destination Folder Page is set to C:\\Program Files\\Microsoft Power BI Desktop\\.](images/Setup/image20.png "Destination Folder Page")
 
-1. Make sure the create a desktop shortcut box is checked, and select Install
+13. Make sure the create a desktop shortcut box is checked, and select Install
 
     ![On the Ready to install page, the check box for Create a desktop shortcut is selected.](images/Setup/image21.png "Ready to install page")
 
-1. Uncheck Launch Microsoft Power BI Desktop, and select Finish 
+14. Uncheck Launch Microsoft Power BI Desktop, and select Finish 
 
     ![On the Setup Wizard Completed page, the check box is cleared for Launch Microsoft Power BI Desktop. ](images/Setup/image22.png "Setup Wizard Completed page")
 
@@ -167,11 +167,11 @@ In this task, you will download, and install the Git Bash SSH client. This will 
 
 1.  On your Lab VM, open a browser, and navigate to <https://git-scm.com/downloads> to download Git Bash. ![The Git Bash downloads web page displays with the Download 2.15.1 for Windows button selected.](images/Setup/image23.png "Git Bash downloads web page")
 
-1.  Select the Download 2.xx.x for Windows button
+2.  Select the Download 2.xx.x for Windows button
 
 3.  Run the downloaded installer, selecting Next on each screen to accept the defaults. On the last screen, select Install to complete the installation.
 
-1.  When the install is complete, uncheck View Release Notes, and select Finish
+4.  When the install is complete, uncheck View Release Notes, and select Finish
 
     ![The Completing the Get Setup Wizard page displays.](images/Setup/image24.png "Completing the Get Setup Wizard page")
 
