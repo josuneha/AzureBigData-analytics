@@ -133,19 +133,19 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     ![In the Resource group, the kyleml machine learning studio workspace in South Central US is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image25.png "Resource group")
 
-1.  On the Machine Learning Studio workspace blade, select **Launch Machine Learning Studio** ![In the Machine Learning Studio workspace blade, Launch Machine Learning Studio is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image26.png "Machine Learning Studio workspace blade")
+2.  On the Machine Learning Studio workspace blade, select **Launch Machine Learning Studio** ![In the Machine Learning Studio workspace blade, Launch Machine Learning Studio is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image26.png "Machine Learning Studio workspace blade")
 
-1.  Sign in
+3.  Sign in
 
     ![Sign In link for ML Studio](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image27.png "Resource Group")
 
-1.  If you have multiple Azure ML workspaces, choose the one you created for this hands-on lab from the drop-down menu near the top of Azure Machine Learning Studio ![kyleml is selected from the Azure Machine Learning Studio drop-down menu.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image28.png "Azure Machine Learning Studio drop-down menu")
+4.  If you have multiple Azure ML workspaces, choose the one you created for this hands-on lab from the drop-down menu near the top of Azure Machine Learning Studio ![kyleml is selected from the Azure Machine Learning Studio drop-down menu.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image28.png "Azure Machine Learning Studio drop-down menu")
 
 ### Task 2: Upload the sample datasets
 
 1.  Before you begin creating a machine learning experiment, there are three datasets you need to load
 
-1.  Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown)
+2.  Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown)
 
 3.  Extract the ZIP and verify you have the following files:
 
@@ -155,17 +155,17 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 -   AirportCodeLocationLookupClean.csv
 
-1.  In the Machine Learning Studio browser window, select **+ NEW** at the bottom. ![In the Azure Machine Learning Studio browser window, the New button is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image29.png "Azure Machine Learning Studio browser window")
+4.  In the Machine Learning Studio browser window, select **+ NEW** at the bottom. ![In the Azure Machine Learning Studio browser window, the New button is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image29.png "Azure Machine Learning Studio browser window")
 
-1.  Select **Dataset** under New, and then select **From Local File**
+5.  Select **Dataset** under New, and then select **From Local File**
     
     ![Under the New button, Dataset and From Local File are selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image30.png "New button")
 
-1.  In the dialog that appears, select **Choose File**, browse to the FlightDelaysWithAirportCodes.csv file you downloaded in the previous step, and select **Open**
+6.  In the dialog that appears, select **Choose File**, browse to the FlightDelaysWithAirportCodes.csv file you downloaded in the previous step, and select **Open**
 
     ![In the File Explorer window,the FlightDelaysWithAirportCode.csv file being selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image31.png "File Explorer")
 
-1.  Change the name of the dataset to \"FlightDelaysWithAirportCodes,\" and select the checkmark to upload the data into a new dataset
+7.  Change the name of the dataset to \"FlightDelaysWithAirportCodes,\" and select the checkmark to upload the data into a new dataset
 
     ![On the Upload a new dataset page, in the Enter a Name for the New Dataset field, FlightDelaysWithAirportCodes is typed. At the bottom, the check mark is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image32.png "Upload a new dataset page")
 
@@ -177,11 +177,11 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 1.  Select **+ NEW** in the command bar at the bottom of the page, and select **Experiment**
 
-1.  From the options that appear, select **Blank Experiment**
+2.  From the options that appear, select **Blank Experiment**
 
     ![In the Machine Learning Studio browser window, under New, Experiment is selected. In the gallery, Blank Experiment displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image34.png "Machine Learning Studio browser window")
 
-1.  Give your new experiment a name, such as AdventureWorks Travel by editing the \"Experiment created on \...\" label near the top of the design surface 
+3.  Give your new experiment a name, such as AdventureWorks Travel by editing the \"Experiment created on \...\" label near the top of the design surface 
 
     ![In the Machine Learning Studio browser window, AdventureWorks Travel displays in the right pane.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image35.png "Machine Learning Studio browser window")
 
@@ -191,17 +191,17 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     ![In the Search field, flightdelay is typed. Under My Datasets, FlightDelaysWithAirportCodes is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image36.png "Search field")
 
-1.  Select and drag the **FlightDelaysWithAirportCodes** module onto the design surface
+2.  Select and drag the **FlightDelaysWithAirportCodes** module onto the design surface
 
     ![FlightDelaysWithAirportCodes displays on the design surface.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image37.png "Design surface")
 
-1.  Next, you will explore the Flight delays datasets to understand what kind of cleanup (e.g., data munging) will be necessary
+3.  Next, you will explore the Flight delays datasets to understand what kind of cleanup (e.g., data munging) will be necessary
 
-1.  Hover over the output port of the **FlightDelaysWithAirportCodes** module 
+4.  Hover over the output port of the **FlightDelaysWithAirportCodes** module 
     
     ![A callout points to the output port of the FlightDelaysWithAirportCodes module.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image38.png "Design surface")
 
-1.  Right-click on the port and select **Visualize**
+5.  Right-click on the port and select **Visualize**
 
     ![Visualize is selected from the FlightDelaysWithAirportCodes output port drop-down menu.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image39.png "drop-down menu")
 
@@ -217,9 +217,9 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     ![In the FlightDelaysWithAirportCodes dataset, the CRSDepTime column is circled.. ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image42.png "FlightDelaysWithAirportCodes dataset ")
 
-1.  Finally, we do not need all 20 columns present in the FlightDelaysWithAirportCodes dataset, so we will need to pare down the columns in the dataset to the 12
+9.  Finally, we do not need all 20 columns present in the FlightDelaysWithAirportCodes dataset, so we will need to pare down the columns in the dataset to the 12
 
-1. Close the Visualize dialog, and go back to the design surface
+10. Close the Visualize dialog, and go back to the design surface
 
 11. To perform our data munging, we have multiple options, but in this case, we've chosen to use an **Execute R Script** module, which will perform the following tasks:
 
@@ -229,15 +229,15 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     c.  Pare down columns to only those needed for our model
 
-1. To add the module, search for **Execute R Script** by entering "Execute R" into the Search experiment items box
+12. To add the module, search for **Execute R Script** by entering "Execute R" into the Search experiment items box
 
     ![Execute R is typed in the search field. Below, under R Language Modules, Execute R Script is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image43.png "Search field")
 
-1. Drag this module on to the design surface beneath your FlightDelaysWithAirportCodes dataset. Select the small circle at the bottom of the FlightDelaysWithAirportCodes dataset, drag and release when your mouse is over the circle found in the top of the Execute R Script module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the Execute R Script module, meaning data from the dataset will flow along this path.
+13. Drag this module on to the design surface beneath your FlightDelaysWithAirportCodes dataset. Select the small circle at the bottom of the FlightDelaysWithAirportCodes dataset, drag and release when your mouse is over the circle found in the top of the Execute R Script module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the Execute R Script module, meaning data from the dataset will flow along this path.
 
     ![On the Design Surface, an arrow points from FlightDelaysWithAirportCodes to Execute R Script.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image44.png "Design Surface")
 
-1. In the **Properties** panel for **Execute R Script** module, select the **Double Windows** icon to maximize the script editor
+14. In the **Properties** panel for **Execute R Script** module, select the **Double Windows** icon to maximize the script editor
 
     ![In the Properties panel, the Double Windows icon is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image45.png "Properties panel")
 
@@ -259,33 +259,33 @@ In this exercise, attendees will implement a classification experiment. They wil
     maml.mapOutputPort("ds.flights");
     ```
 
-1. Select the check mark to save the script (Do not worry if the formatting is off before selecting the check mark)
+16. Select the check mark to save the script (Do not worry if the formatting is off before selecting the check mark)
 
     ![In the R Script Script Editor, the check mark at the bottom is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image46.png "Script Editor")
 
-1. Select **Save** on the command bar at the bottom to save your in-progress experiment
+17. Select **Save** on the command bar at the bottom to save your in-progress experiment
 
     ![Screenshot of the Save icon on the command bar.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image47.png "Save icon")
 
-1. Select **Run** in the command bar at the bottom to run the experiment
+18. Select **Run** in the command bar at the bottom to run the experiment
 
     ![Screenshot of the Run icon on the command bar.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image48.png "Run icon")
 
-1. When the experiment is finished running, you will see a finished message in the top corner of the design surface, and green check marks over all modules that ran
+19. When the experiment is finished running, you will see a finished message in the top corner of the design surface, and green check marks over all modules that ran
 
     ![On the Design Surface, an arrow points from FlightDelaysWithAirportCodes to Execute R Script, which has a green check mark circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image49.png "Design Surface")
 
-1. You should run your experiment whenever you need to update the metadata describing what data is flowing through the modules, so that newly added modules can be aware of the shape of your data (most modules have dialogs that can suggest columns, but before they can make suggestions you need to have run your experiment)
+20. You should run your experiment whenever you need to update the metadata describing what data is flowing through the modules, so that newly added modules can be aware of the shape of your data (most modules have dialogs that can suggest columns, but before they can make suggestions you need to have run your experiment)
 
-1. To verify the results of our R script, right-click the output port (Result Dataset) of the Execute R Script module and select **Visualize**
+21. To verify the results of our R script, right-click the output port (Result Dataset) of the Execute R Script module and select **Visualize**
 
     ![Visualize is selected from the Execute R Script Output port drop-down menu.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image50.png "Output port drop-down menu")
 
-1. In the dialog that appears, scroll over to DepDel15 and select the column. In the statistics you should see that Missing Values reads 0. 
+22. In the dialog that appears, scroll over to DepDel15 and select the column. In the statistics you should see that Missing Values reads 0. 
 
     ![In the Results Dataset for Execute R Script, under Statistics, Missing Values is now 0.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image51.png "Results Dataset ")
 
-1. Now, select the CRSDepHour column, and verify that our new column contains the rounded hour values from our CRSDepTime column 
+23. Now, select the CRSDepHour column, and verify that our new column contains the rounded hour values from our CRSDepTime column 
 
     ![In the Results Dataset for Execute R Script, the CRSDepHour column is circled, and now displays times rounded to the nearest hour.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image52.png "Results Dataset ")
 
@@ -293,7 +293,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     ![In the Results Dataset for Execute R Script, the number of columns is now 12.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image53.png "Results Dataset ")
 
-1. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data
+25. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data
 
 ### Task 5: Prepare the weather data
 
@@ -301,7 +301,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     ![On the Design Surface, FlightDelaysWithAirportCodes and FlightWeatherWithAirportCodes display side by side.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image54.png "Design Surface")
 
-1.  Right-click the output port of the **FlightWeatherWithAirportCodes** dataset and select **Visualize** 
+2.  Right-click the output port of the **FlightWeatherWithAirportCodes** dataset and select **Visualize** 
 
     ![The Dataset for FlightWeatherWithAirportCode displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image55.png "Dataset")
 
@@ -333,11 +333,11 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     f.  Eliminate unneeded columns from the dataset
 
-1.  Add an **Execute Python Script** by searching for Python
+8.  Add an **Execute Python Script** by searching for Python
 
     ![ML Studio is showning searching for Execute Python Script](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image59.png "Azure Machine Learning Studio")
 
-1.  Add the module below the **FlightWeatherWithAirportCode** module, and connect the output port of the **FlightWeatherWithAirportCode** module to the first input port of the Execute Python Script module 
+9.  Add the module below the **FlightWeatherWithAirportCode** module, and connect the output port of the **FlightWeatherWithAirportCode** module to the first input port of the Execute Python Script module 
 
     ![On the Design Surface, FlightWeatherWithAirportCode has an arrow pointing to Execute Python Script, which has a green check mark.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image60.png "Design Surface")
 
@@ -349,7 +349,7 @@ In this exercise, attendees will implement a classification experiment. They wil
 
     ![In the Properties panel, the Python version is set to Anaconda 4.0/Python 3.5, and the double windows icon is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image61.png "Properties panel")
 
-1. Paste in the following script into the Python script window, and select the checkmark at the bottom of the dialog box (press CTRL+A to select all then CTRL+V to paste and then immediately select the checkmark \-- don\'t worry if the formatting is off before hitting the checkmark)
+11. Paste in the following script into the Python script window, and select the checkmark at the bottom of the dialog box (press CTRL+A to select all then CTRL+V to paste and then immediately select the checkmark \-- don\'t worry if the formatting is off before hitting the checkmark)
     ```
     # imports 
     import pandas as pd
@@ -397,11 +397,11 @@ In this exercise, attendees will implement a classification experiment. They wil
 
 Note: If you receive an error in the Python script that .to\_numeric does not exist, go back and verify that you selected the proper Python version.
 
-1. Right-click the first output port of the Execute Python Script module, and select Visualize 
+13. Right-click the first output port of the Execute Python Script module, and select Visualize 
 
     ![In the Results dataset for Execute Python Script, the columns value, which is 7, is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image63.png "Results dataset")
 
-1. In the statistics, verify that there are now only the 7 columns we are interested in, and that WindSpeed, SeaLevelPressure, and HourlyPrecip are now all Numeric Feature types and that they have no missing values 
+14. In the statistics, verify that there are now only the 7 columns we are interested in, and that WindSpeed, SeaLevelPressure, and HourlyPrecip are now all Numeric Feature types and that they have no missing values 
 
     ![The Missing Values (0) and Feature Type (Numeric Feature) line items display.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image64.png "Statistics section")
 
@@ -417,15 +417,15 @@ Note: If you receive an error in the Python script that .to\_numeric does not ex
 
     ![The Join Data Propties dialog from ML Studio is shown. The Launch column selector is being selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image66.png "Join Data Properties dialog box")
 
-1.  Set the Join key columns for L to include **OriginAirportCode, Month, DayofMonth,** and **CRSDepHour**, and select the check box on the bottom 
+4.  Set the Join key columns for L to include **OriginAirportCode, Month, DayofMonth,** and **CRSDepHour**, and select the check box on the bottom 
 
     ![On the Properties Panel, under Select columns, By name is selected. Under Selected columns, AirportCode, Month, Day, and Hour are circled. At the bottom, the check box is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image67.png "Properties Panel")
 
-1.  Select **Launch Column selector** under **Join key columns for R**. Set the join key columns for R to include **AirportCode,** **Month, Day,** and **Hour,** and select the check box on the bottom. 
+5.  Select **Launch Column selector** under **Join key columns for R**. Set the join key columns for R to include **AirportCode,** **Month, Day,** and **Hour,** and select the check box on the bottom. 
 
     ![On the Properties Panel, under Select columns,in the left pane, By name is selected. In the pane, under Selected columns, OriginAirportCode, Month, DayofMonth, and CRSDepHour are circled. At the bottom, the check box is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image68.png "Properties panel")
 
-1.  Leave the Join Type at Inner Join, and uncheck **Keep right key columns in joined table** (so that we do not include the redundant values of AirportCode, Month, Day, and Hour) 
+6.  Leave the Join Type at Inner Join, and uncheck **Keep right key columns in joined table** (so that we do not include the redundant values of AirportCode, Month, Day, and Hour) 
 
     ![The Properties panel displays with the previously mentioned settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image69.png "Properties panel")
 
@@ -433,11 +433,11 @@ Note: If you receive an error in the Python script that .to\_numeric does not ex
 
     ![On the Design Surface, Join Data points down to Edit Metadata.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image70.png "Design Surface")
 
-1.  On the **Properties** panel of the Edit Metadata module, select **Launch column selector** and set the Selected columns to **DayOfWeek, Carrier, DestAirportCode, and OriginAirportCode**, and select the checkbox on the bottom 
+8.  On the **Properties** panel of the Edit Metadata module, select **Launch column selector** and set the Selected columns to **DayOfWeek, Carrier, DestAirportCode, and OriginAirportCode**, and select the checkbox on the bottom 
 
     ![On the Properties Panel, under Select columns, in the left pane, With Rules is selected. In the right pane, all fields display with the previously mentioned settings. At the bottom, the check box is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image71.png "Properties Panel")
 
-1.  Set the Categorical drop down to **Make categorical** 
+9.  Set the Categorical drop down to **Make categorical** 
 
     ![The Properties Panel displays with the previously mentioned settings, and the Categorical field, which is set to Make categorical, is circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image72.png "Properties Panel")
 
@@ -445,17 +445,17 @@ Note: If you receive an error in the Python script that .to\_numeric does not ex
 
     ![On the Design surface, Edit Metadata points down to Select Columns in Dataset.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image73.png "Design surface")
 
-1. Launch the column selector, and choose **Begin With** **All Columns**, choose **Exclude** and set the selected columns to exclude: **OriginLatitude, OriginLongitude, DestLatitude**, and **DestLongitude** 
+11. Launch the column selector, and choose **Begin With** **All Columns**, choose **Exclude** and set the selected columns to exclude: **OriginLatitude, OriginLongitude, DestLatitude**, and **DestLongitude** 
 
     ![The Select columns section, in the left pane, With Rules is selected. In the right pane, fields displays with the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image74.png "Select columns section")
 
 1. Save your experiment
 
-1. **Run** the experiment, to verify everything works as expected, and when completed select Visualize by right-clicking on the output of the **Select Columns in Dataset** module. You will see the joined datasets as output
+2. **Run** the experiment, to verify everything works as expected, and when completed select Visualize by right-clicking on the output of the **Select Columns in Dataset** module. You will see the joined datasets as output
 
     ![The Results dataset for Select Columns in Dataset display.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image75.png "Results dataset")
 
-1. The model should now look like the following 
+3. The model should now look like the following 
 
     ![This section of the Design surface begins on the left with FlightDelaysWithAirportCodes, which has an arrow pointing down to Execute R Script, which has an arrow pointing down to Join Data. On the right, FlightWeatherWithAirportCodes points down to Execute Python Script, which joins Execute R Script in pointing down to Join Data. Join Data points down to Edit Metadata, which points down to Select Columns in Dataset.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image76.png "Design Surface")
 
@@ -473,11 +473,11 @@ The typical pattern is to split the historical data so a portion is shown to the
 
     ![On the Properties Panel for the Split Data module, the Fraction of rows in the first output dataset field is set to 0, and is circled. The Random seed field is set to 7634, and is also circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image78.png "Properties Panel")
 
-1.  Next, add a Train Model module and connect it to output 1 of the Split Data module
+3.  Next, add a Train Model module and connect it to output 1 of the Split Data module
 
     ![On the Design Surface, Split Data has an arrow pointing down to Train Model.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image79.png "Design Surface")
 
-1.  On the **Properties** panel for the Train Model module, set the Selected columns to **DepDel15**
+4.  On the **Properties** panel for the Train Model module, set the Selected columns to **DepDel15**
 
     ![Under Train Model, under Label column, under Selected columns, Column names is DepDel15.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image80.png "Train Model section")
 
@@ -489,25 +489,25 @@ The typical pattern is to split the historical data so a portion is shown to the
 
     ![In addition to the previously described Design Surface, both Train Model and Split Data both have arrows pointing down to Score Model.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image82.png "Design Surface")
 
-1.  Save the experiment
+7.  Save the experiment
 
-1.  Run the experiment
+8.  Run the experiment
 
 9.  When the experiment is finished running (which takes a few minutes), right-click on the output port of the Score Model module and select **Visualize** to see the results of its predictions. **You should have a total of 13 columns**.
 
     ![In the Scored Dataset for Score Model, the number of columns is 13.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image83.png "Scored dataset")
 
-1. If you scroll so that you can see the last two columns, observe there are Scored Labels and Scored Probabilities columns. The former is the prediction (1 for predicting delay, 0 for predicting no delay) and the latter is the probability of the prediction. In the following screenshot, **for example**, the last row shows a delay predication with a 53.1% probability.
+10. If you scroll so that you can see the last two columns, observe there are Scored Labels and Scored Probabilities columns. The former is the prediction (1 for predicting delay, 0 for predicting no delay) and the latter is the probability of the prediction. In the following screenshot, **for example**, the last row shows a delay predication with a 53.1% probability.
 
     ![Scored Labels and Scored Probabilities columns display.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image84.png "Scored Labels and Scored Probabilities columns")
 
-1. While this view enables you to see the prediction results for the first 100 rows, if you want to get more detailed statistics across the prediction results to evaluate your model's performance, you can use the Evaluate Model module.
+11. While this view enables you to see the prediction results for the first 100 rows, if you want to get more detailed statistics across the prediction results to evaluate your model's performance, you can use the Evaluate Model module.
 
 12. Drag an Evaluate Model module on to the design surface beneath the Score Model module. Connect the output of the Score Model module to the leftmost input of the Evaluate Model module.
 
     ![On the Design Surface, Score Model has an arrow pointing down to Evaluate Model.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image85.png "Design Surface")
 
-1. Run the experiment
+13. Run the experiment
 
 14. When the experiment is finished running, right-click the output of the Evaluate Model module and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the ROC chart that tells us that at least our model (the blue curve) is performing better than random (the light gray straight line going from 0,0 to 1,1)---which is a good start for our first model!
 
@@ -519,21 +519,21 @@ The typical pattern is to split the historical data so a portion is shown to the
 
 1.  Now that we have a functioning model, let us package it up into a predictive experiment that can be called as a web service
 
-1.  In the command bar at the bottom, select **Set Up Web Service** and then select **Predictive Web Service \[Recommended\]** (If Predictive Web Service is grayed out, run the experiment again) 
+2.  In the command bar at the bottom, select **Set Up Web Service** and then select **Predictive Web Service \[Recommended\]** (If Predictive Web Service is grayed out, run the experiment again) 
     
     ![On the Command bar, Set Up Web Service is selected. From it\'s sub-menu, Predictive Web Service \[Recommended\] is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image88.png "Command bar")
 
-1.  A copy of your training experiment is created, and a new tab labeled Predictive Experiment is added, which contains the trained model wrapped between web service input (e.g. the web service action you invoke with parameters) and web service output modules (e.g., how the result of scoring the parameters are returned) 
+3.  A copy of your training experiment is created, and a new tab labeled Predictive Experiment is added, which contains the trained model wrapped between web service input (e.g. the web service action you invoke with parameters) and web service output modules (e.g., how the result of scoring the parameters are returned) 
 
     ![The Design Surface for Big Data Hands-on Lab \[Predicitive Exp.\] now displays from the beginning Web service input through Web service output.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image89.png "Design Surface")
 
-1.  We will make some adjustments to the web service input and output modules to control the parameters we require and the results we return
+4.  We will make some adjustments to the web service input and output modules to control the parameters we require and the results we return
 
-1.  Move the Web Service Input module down, so it is to the side of the Join Data module. Connect the output of the Web service input module to input of the Edit Metadata module.
+5.  Move the Web Service Input module down, so it is to the side of the Join Data module. Connect the output of the Web service input module to input of the Edit Metadata module.
     
     ![On this Design Surface, Web service input has an arrow pointing down to Edit Metadata.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image90.png "Design Surface")
 
-1.  Right-click the line connecting the Join Data module and the Edit Metadata module and select **Delete**
+6.  Right-click the line connecting the Join Data module and the Edit Metadata module and select **Delete**
 
     ![On this Design Surface, Web service input has an arrow pointing down to Edit Metadata. This time, however, Edit Metadata has a warning icon, a red circle with an exclamation point in it.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image91.png "Design Surface")
 
@@ -541,65 +541,65 @@ The typical pattern is to split the historical data so a portion is shown to the
 
     ![The Select Columns in Dataset module has been added to the map in between the Join Data and the Edit Metadata.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image92.png "Design surface")
 
-1.  Select the **Select Columns in Dataset module**, and in the **Properties** panel choose **Launch column select. In the Select column** dialog select **All Columns** for Begin With and then select **Exclude**. Enter columns **DepDel15, OriginLatitude, OriginLongitude, DestLatitude,** and **DestLongitude**. 
+8.  Select the **Select Columns in Dataset module**, and in the **Properties** panel choose **Launch column select. In the Select column** dialog select **All Columns** for Begin With and then select **Exclude**. Enter columns **DepDel15, OriginLatitude, OriginLongitude, DestLatitude,** and **DestLongitude**. 
 
     ![The Properties Panel for Select columns fields display the previously mentioned settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image93.png "Properties Panel")
 
-1.  This configuration will update the web service metadata so that these columns do not appear as required input parameters for the web service
+9.  This configuration will update the web service metadata so that these columns do not appear as required input parameters for the web service
 
     ![In the Select Columns in Dataset Section, under Select columns\\All columns, DepDel15, OriginLatitude, OriginLongitude, DestLatitude, and DestLongitude are listed under column names to be excluded.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image94.png "Select Columns in Dataset Section")
 
-1. Select the **Select Columns in Dataset** module that comes after the **Edit Metadata** module, and delete it
+10. Select the **Select Columns in Dataset** module that comes after the **Edit Metadata** module, and delete it
 
-1. Connect the output of the **Edit Metadata** module directly to the side input of the Score Model module
+11. Connect the output of the **Edit Metadata** module directly to the side input of the Score Model module
 
     ![On this Design surface, Select Columns in Dataset on the left, and Web service input on the right both have arrows pointing to Edit Metadata, which in turn has an arrow pointing to Score Model. AdventureWorks Travel (trai\...) also has an arrow pointing to Score Model](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image95.png "Design surface")
 
-1. As we removed the latitude and longitude columns from the dataset to remove them as input to the web service, we have to add them back in before we return the result so that the results can be easily visualized on a map
+12. As we removed the latitude and longitude columns from the dataset to remove them as input to the web service, we have to add them back in before we return the result so that the results can be easily visualized on a map
 
-1. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**
+13. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**
 
-1. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below and to the side of the Score Model module
+14. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below and to the side of the Score Model module
 
     ![On this Design Surface, AirportCodeLocationLookup is listed under Score Model, although no arrow joins them.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image96.png "Design Surface")
 
-1. Add a **Join Data** module, and position it below and to the side of the **AirportCodeLocationLookupClean** module
+15. Add a **Join Data** module, and position it below and to the side of the **AirportCodeLocationLookupClean** module
 
     ![The Join Data module is shown below and to the left of the AirportCodeLocationLookupClean module which is below and to the side of the Score Model module.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image97.png "Design surface")
 
-1. Connect the output of the **Score Model** module to the leftmost input of the **Join Data** module and the output of the **AirportCodeLocationLookupClean** to the rightmost input of the **AirportCodeLocationLookupClean** module
+16. Connect the output of the **Score Model** module to the leftmost input of the **Join Data** module and the output of the **AirportCodeLocationLookupClean** to the rightmost input of the **AirportCodeLocationLookupClean** module
 
     ![On this Design Surface, both Score Model and AirportCodeLocationLookup have arrows pointing down to Join Data.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image98.png "Design Surface")
 
-1. Choose the **Join Data** module, and in the **Properties** panel for the **Join key columns for L** launch the column selector and then under Begin With choose **No Columns** and set the Include column names to **OriginAirportCode,** then select the Check to confirm. For the **Join key columns for R**, launch the column selector move **AIRPORT** over to the Selected Column side and select the Check to confirm. Uncheck **Keep right key columns** in joined table.
+17. Choose the **Join Data** module, and in the **Properties** panel for the **Join key columns for L** launch the column selector and then under Begin With choose **No Columns** and set the Include column names to **OriginAirportCode,** then select the Check to confirm. For the **Join key columns for R**, launch the column selector move **AIRPORT** over to the Selected Column side and select the Check to confirm. Uncheck **Keep right key columns** in joined table.
 
     ![Fields in the Join Data section are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image99.png "Join Data section")
 
-1. Add **a Select Columns in Dataset** module beneath the **Join Data** module. Connect the **Join Data** output to the input of the **Select Columns in Dataset** module
+18. Add **a Select Columns in Dataset** module beneath the **Join Data** module. Connect the **Join Data** output to the input of the **Select Columns in Dataset** module
 
     ![The new Select Columns in Dataset module is shown believe the Join Data module. The output of the Join Data is connected to the input of the Select Columns in Dataset.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image100.png "Design surface")
 
-1. Select the **Select Columns in Dataset** module, and in the **Property** panel, under Begin With select **All Columns,** and set the Selected columns to **Exclude** the columns: **AIRPORT\_ID** and **DISPLAY\_AIRPORT\_NAME** and select the Check to confirm
+19. Select the **Select Columns in Dataset** module, and in the **Property** panel, under Begin With select **All Columns,** and set the Selected columns to **Exclude** the columns: **AIRPORT\_ID** and **DISPLAY\_AIRPORT\_NAME** and select the Check to confirm
 
     ![Under Project Columns, under select columns\\Selected columns\\All columns, both the columns AIRPORT\_ID and DISPLAY\_AIRPORT\_NAME are set to be excluded: ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image101.png "Project Columns section")
 
-1. Add an **Edit Metadata** module below the **Select Columns in Dataset**. Connect the output of the **Select Columns in Dataset** module to the input of the **Edit Metadata** module
+20. Add an **Edit Metadata** module below the **Select Columns in Dataset**. Connect the output of the **Select Columns in Dataset** module to the input of the **Edit Metadata** module
 
     ![The Select Columns in Dataset module is shown connected to the new Edit Metadata module. The output of the Join Data is connected to the input of the Select Columns in Dataset. The output of the Select Columns in Dataset is connected to the input of the Edit Metadata module.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image102.png "Design surface")
 
-1. Choose the **Edit Metadata** and in the **Properties** under Begin With, select No Columns and then include the column names **LATITUDE** and **LONGITUDE** and then choose the Checkmark to confirm. Back in the properites for the Edit Metadata, in the New column names enter: **OriginLatitude**, **OriginLongitude**
+21. Choose the **Edit Metadata** and in the **Properties** under Begin With, select No Columns and then include the column names **LATITUDE** and **LONGITUDE** and then choose the Checkmark to confirm. Back in the properites for the Edit Metadata, in the New column names enter: **OriginLatitude**, **OriginLongitude**
 
     ![In the Metadata Editor, fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image103.png "Metadata Editor")
 
-1. Connect the output of the Edit Metadata to the input of the web service output module
+22. Connect the output of the Edit Metadata to the input of the web service output module
 
     ![On this Design Surface, Edit Metadata points down to Web service output.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image104.png "Design Surface")
 
-1. Run the experiment
+23. Run the experiment
 
     ![The experience map is shown after the new Predictive expertient run.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image105.png "Design surface")
 
-1. When the experiment is finished running, select **Deploy Web Service**, **Deploy Web Service \[NEW\] Preview**
+24. When the experiment is finished running, select **Deploy Web Service**, **Deploy Web Service \[NEW\] Preview**
 
     ![On the Menu bar, Deploy Web Service is selected, and from it\'s sub-menu, Deploy Web Service \[New\] Preview is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image106.png "Menu bar")
 
@@ -607,11 +607,11 @@ The typical pattern is to split the historical data so a portion is shown to the
 
     ![The Deploy as a Web Service page is shown with the Create New price plan selected, the Plan Name is Dev Test and the Standard DevTest Monthly plan has been chosen.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image107.png "Deploy experiment as a web service page")
 
-1. Scroll down and select **Deploy**
+26. Scroll down and select **Deploy**
 
     ![The deploy button is shown being selected after the web service was setup.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image108.png "Deploy button")
 
-1. When the deployment is complete, you will be taken to the Web Service Quickstart page. Select the **Consume** tab.
+27. When the deployment is complete, you will be taken to the Web Service Quickstart page. Select the **Consume** tab.
 
     [On the Web Service Quickstart page, the Consume tab is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image109.png "Web Service Quickstart page")
 
@@ -631,19 +631,19 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
 1.  **Note**: If you are already, connected to your Lab VM, skip to Task 2
 
-1.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list
+2.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list
 
     ![On the Azure Portal, in the left menu, Resource groups is selected. In the Resource groups blade, bigdata is typed in the Subscriptions search field. In the results, bigdatakyle is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image14.png "Azure Portal")
 
-1.  Next, select your lab virtual machine from the list 
+3.  Next, select your lab virtual machine from the list 
 
     ![the kylelab virtual machine is selected from Lab virtual machine list.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image15.png "Lab virtual machine list")
 
-1.  On your Lab VM blade, select **Connect** from the top menu
+4.  On your Lab VM blade, select **Connect** from the top menu
 
     ![On the top menu of the Lab VM blade, the Connect button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image16.png "Lab VM blade")
 
-1.  Download and open the RDP file
+5.  Download and open the RDP file
 
 6.  Select Connect, and enter the following credentials:
 
@@ -655,9 +655,9 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
 1.  Once you have logged into the Lab VM, open a web browser
 
-1.  Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>
+2.  Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>
 
-1.  Extract it to a new folder called **C:\\Data**
+3.  Extract it to a new folder called **C:\\Data**
 
 ### Task 3: Install and configure Azure Data Factory Integration Runtime on the Lab VM
 
@@ -665,33 +665,33 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
     ![The Azure Data Factory Integration Runtime Download webpage displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image112.png "Azure Data Factory Integration Runtime Download webpage")
 
-1.  Select Download, then choose the download you want from the next screen
+2.  Select Download, then choose the download you want from the next screen
 
     ![Under Choose the download you want, IntegrationRuntime\_3.0.6464.2 (64-bit).msi is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image113.png "Choose the download you want section")
 
-1.  Run the installer, once downloaded
+3.  Run the installer, once downloaded
 
-1.  When you see the following screen, select Next
+4.  When you see the following screen, select Next
 
     ![The Welcome page in the Microsoft Integration Runtime Setup Wizard displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image114.png "Microsoft Integration Runtime Setup Wizard")
 
-1.  Check the box to accept the terms and select Next
+5.  Check the box to accept the terms and select Next
 
     ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image115.png "End-User License Agreement page")
 
-1.  Accept the default Destination Folder, and select Next
+6.  Accept the default Destination Folder, and select Next
 
     ![On the Destination folder page, the destination folder is set to C;\\Program Files\\Microsoft Integration Runtime\\ and the Next button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image116.png "Destination folder page")
 
-1.  Select Install to complete the installation 
+7.  Select Install to complete the installation 
 
     ![On the Ready to install Microsoft Integration Runtime page, the Install button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image117.png "Ready to install page")
 
-1.  Select Finish once the installation has completed
+8.  Select Finish once the installation has completed
 
     ![On the Completed the Microsoft Integration Runtime Setup Wizard page, the Finish button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image118.png "Completed the Wizard page")
 
-1.  After selecting Finish, the following screen will appear. Keep it open for now. You will come back to this screen once the Data Factory in Azure has been provisioned, and obtain the gateway key so we can connect Data Factory to this "on-premises" server
+9.  After selecting Finish, the following screen will appear. Keep it open for now. You will come back to this screen once the Data Factory in Azure has been provisioned, and obtain the gateway key so we can connect Data Factory to this "on-premises" server
 
     ![The Microsoft Integration Runtime Configuration Manager, Register Integration Runtime page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image119.png "Register Integration Runtime page")
 
@@ -699,7 +699,7 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
 1.  Launch a new browser window, and navigate to the Azure portal (<https://portal.azure.com>). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft account. This will be based on which account was used to provision your Azure subscription that is being used for this lab.
 
-1.  From the top corner of the Azure portal, select **+ Create a resource**, and select **Data + Analytics**, then select **Data Factory**
+2.  From the top corner of the Azure portal, select **+ Create a resource**, and select **Data + Analytics**, then select **Data Factory**
 
     ![The Azure Portal is shown creating a Data Factory.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image120.png "Azure Portal")
 
@@ -719,37 +719,37 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
     ![The New Data Factory blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image121.png "New Data Factory blade")
 
-1.  Once the deployment is completed, you will receive a notification that it succeeded
+4.  Once the deployment is completed, you will receive a notification that it succeeded
 
     ![Under Notifications, a Deployment succeeded message displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image122.png "Deployment succeeded message")
 
-1.  Select the **Go to resource button**, to navigate to the newly created Data Factory
+5.  Select the **Go to resource button**, to navigate to the newly created Data Factory
 
-1.  On the Data Factory blade, select **Author and Deploy** under Actions
+6.  On the Data Factory blade, select **Author and Deploy** under Actions
 
     ![In the bigdata-adf blade, under Actions, the Author and deploy option is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image123.png "bigdata-adf blade")
 
-1.  Next, select **...More**, then New integration runtime (gateway)
+7.  Next, select **...More**, then New integration runtime (gateway)
     
     ![To the right of New data store, the More ellipses is selected. From its sub-menu, New integration runtime (gateway) is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image124.png "New integration runtime option")
 
-1.  Enter an **Integration runtime name**, such as bigdatagateway-\[initials\], and select **OK** 
+8.  Enter an **Integration runtime name**, such as bigdatagateway-\[initials\], and select **OK** 
 
     ![In the New integration runtime (gateway) blade, Create is selected. In the Create blade, the Integration runtime name field is set to bigdatagateway-kyle.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image125.png "New integration runtime (gateway), and Create blades")
 
-1.  On the Configure screen, copy the key1 value by selecting the Copy button, then select OK
+9.  On the Configure screen, copy the key1 value by selecting the Copy button, then select OK
 
     ![In the New integration runtime (gateway) blade, Configure is selected. In the Configure blade, under Authentication Key, the key1 key and its copy button are circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image126.png "New integration runtime (gateway), and Configure blades")
 
-1. *Don't close the current screen or browser session*
+10. *Don't close the current screen or browser session*
 
-1. Go back to the Remote Deskop session of the **Lab VM**
+11. Go back to the Remote Deskop session of the **Lab VM**
 
-1. Paste the **key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen
+12. Paste the **key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen
 
     ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image127.png "Microsoft Integration Runtime Configuration Manager")
 
-1. Select **Register**
+13. Select **Register**
 
 14. It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
 
@@ -757,17 +757,17 @@ In this exercise, attendees will create a baseline environment for Azure Data Fa
 
     ![The Microsoft Integration Runtime Configuration Manager New Integration Runtime (Self-hosted) Node page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image128.png "Microsoft Integration Runtime Configuration Manager")
 
-1. You will then get a screen with a confirmation message 
+16. You will then get a screen with a confirmation message 
 
     ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime (Self-hosted) page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image129.png "Microsoft Integration Runtime Configuration Manager")
 
-1. Select the **Launch Configuration Manager** button to view the connection details
+17. Select the **Launch Configuration Manager** button to view the connection details
 
     ![The Microsoft Integration Runtime Configuration Manager Node is connected to the cloud service page displays with connection details.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image130.png "Microsoft Integration Runtime Configuration Manager")
 
-1. You can now return to the Azure portal, and choose **OK** twice to complete the Integration Runtime setup
+18. You can now return to the Azure portal, and choose **OK** twice to complete the Integration Runtime setup
 
-1. You can view the Integration Runtime by expanding Integration runtimes on the Author and Deploy blade
+19. You can view the Integration Runtime by expanding Integration runtimes on the Author and Deploy blade
 
     ![In the bigdata-adf blade, under New data store, Integration runtimes (Gateways) is expanded, and bigdatagateway-kyle displays below. Both are circled.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image131.png "bigdata-adf blade")
 
@@ -803,9 +803,9 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![Set the ADF pipeline copy activity properties by setting the Task Name to CopyOnPrem2AzurePipeline, adding a description, setting the Task cadence to Run regularly on a Monthly schedule, every 1 month.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image133.png "Properties dialog box")
 
-1.  Select **Next**
+4.  Select **Next**
 
-1.  On the Source screen, select **File System**, then select **Next**
+5.  On the Source screen, select **File System**, then select **Next**
 
     ![The source data store screen is shown and the File system option has been selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image134.png "Source data store")
 
@@ -827,23 +827,23 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
     
     ![On the Copy Data (bigdatalab-adf) Specify File server share connection page, fields are set to the previously defined values.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image135.png "Copy Data (bigdatalab-adf) Specify File page")
 
-1.  On the **Choose the input file or folder** screen, select the folder **FlightsAndWeather**, and select **Choose**
+8.  On the **Choose the input file or folder** screen, select the folder **FlightsAndWeather**, and select **Choose**
 
     ![In the Choose the input file or folder section, the FlightsandWeather folder is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image136.png "Choose the input file or folder page")
 
-1.  On the next screen, check the **Copy files recursively** check box, and select **Next** 
+9.  On the next screen, check the **Copy files recursively** check box, and select **Next** 
 
     ![On the Choose the input file or folder page, the check box for Copy files recursively is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image137.png "Choose the input file or folder page")
 
-1. On the File format settings page, leave the default settings, and select **Next**
+10. On the File format settings page, leave the default settings, and select **Next**
 
     ![The Copy Data (bigdatalab-adf) File format settings page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image138.png " Copy Data (bigdatalab-adf) File format settings page")
 
-1. On the Destination screen, select **Azure Blob Storage**, and select **Next** 
+11. On the Destination screen, select **Azure Blob Storage**, and select **Next** 
     
     ![In the left pane of the Copy Data (bigdatalab-adf) Destination data store page, Destination is selected. On the Connect to a data store tab, Azure Blob Storage is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image139.png "Copy Data (bigdatalab-adf) Destination data store page")
 
-1. On the Specify the Azure Blob storage account screen, enter the following and then choose **Next**
+12. On the Specify the Azure Blob storage account screen, enter the following and then choose **Next**
 
     -   Connection name: **BlobStorageOutput**
 
@@ -867,15 +867,15 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
         ![On the Copy Data (bigdatalab-adf) Choose the output file or folder page, fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image141.png "Copy Data (bigdatalab-adf) Choose the output file or folder page")
 
-1. On the File format settings screen, check the **Add header to file** checkbox, then select **Next** 
+14. On the File format settings screen, check the **Add header to file** checkbox, then select **Next** 
 
     ![On the Copy Data (bigdatalab-adf) File format settings page, the check box for Add header to file is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image142.png "Copy Data (bigdatalab-adf) File format settings page")
 
-1. On the **Settings** screen, select **Skip all incompatible rows** under Actions, then select **Next**
+15. On the **Settings** screen, select **Skip all incompatible rows** under Actions, then select **Next**
     
     ![On the Copy Data (bigdatalab-adf) page, in the left pane, Settings is selected. In the right pane, under Settings, the Actions field is set to Skip all incompatible rows (copy succeeds), and is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image143.png "Copy Data (bigdatalab-adf) Settings page")
 
-1. Review settings on the **Summary** tab, but **DO NOT select Next** 
+16. Review settings on the **Summary** tab, but **DO NOT select Next** 
 
     ![The Copy Data (bigdatalab-adf) page, in the left pane, Summary is selected. In the right pane, Summary details display.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image144.png "Copy Data (bigdatalab-adf) Summary page")
 
@@ -893,15 +893,15 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
         ![In the Copy settings section, the Concurrency and Execution priority order fields are set to the previously defined settings, and are circled. At the top, the Save button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image146.png "Copy settings section")
 
-1. After saving the Copy settings, select **Next** on the Summary tab
+19. After saving the Copy settings, select **Next** on the Summary tab
 
-1. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed
+20. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed
 
     ![On the Copy Data (bigdatalab-adf) page, in the left pane, Deployment is selected. In the right, Deployment complete pane, a list of tasks that passed displays. At the bottom, the live link to Click here to monitor copy pipeline displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image147.png "Copy Data (bigdatalab-adf) Deployment page")
 
-1. Select the **Click here to monitor copy pipeline** link at the bottom of the **Deployment** screen
+21. Select the **Click here to monitor copy pipeline** link at the bottom of the **Deployment** screen
 
-1. Adjust the Start time in the window, as follows, and then select **Apply**
+22. Adjust the Start time in the window, as follows, and then select **Apply**
     
     ![In the bigdatalab-adf / CopyOnPrem2AzurePipeline window, the Start time has been changed to 03/01/2017 12:00 am, and the Apply button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image148.png "bigdatalab-adf / CopyOnPrem2AzurePipeline window")
 
@@ -919,15 +919,15 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 1.  Return to the Azure Data Factory blade in the Azure portal
 
-1.  Select **Author and Deploy** below **Actions** 
+2.  Select **Author and Deploy** below **Actions** 
     
     ![In the Data Factory blade, under Actions, Author and deploy is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image150.png "Data Factory blade")
 
-1.  On the Author and Deploy blade, select **...More**, the select **New Compute** 
+3.  On the Author and Deploy blade, select **...More**, the select **New Compute** 
 
     ![In the Author and Deploy blade, the More ellipses is selected, and from its sub-menu, New compute is eslected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image151.png "Author and Deploy blade")
 
-1.  Select **Azure ML** from the New Compute list
+4.  Select **Azure ML** from the New Compute list
 
     ![Azure ML is selected from the New compute list.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image152.png "New compute list")
 
@@ -957,7 +957,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
     }
     ```
 
-1.  Select **Deploy**
+6.  Select **Deploy**
 
     ![Screenshot of the Deploy button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image153.png "Deploy button")
 
@@ -965,15 +965,15 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 1.  Still on the Author and Deploy blade, select **...More**
 
-1.  To create a new dataset that will be copied into Azure Blob storage, select **New dataset** from the top 
+2.  To create a new dataset that will be copied into Azure Blob storage, select **New dataset** from the top 
     
     ![On the Author and Deploy blade, the More ellipses is selected, and from its drop-down menu, New dataset is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image154.png "Author and Deploy blade")
 
-1.  Select **Azure Blob storage** from the list of available datasets
+3.  Select **Azure Blob storage** from the list of available datasets
 
     ![Azure Blob storage is selected from the New dataset list.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image155.png "New dataset list")
 
-1.  Replace the JSON text in the draft window with following JSON
+4.  Replace the JSON text in the draft window with following JSON
     ```
     {
         "name": "PartitionedBlobInput",
@@ -1016,7 +1016,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
     }
     ```
     
-2.  Select **Deploy**
+5.  Select **Deploy**
 
     ![Screenshot of the Deploy button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image153.png "Deploy button")
 
@@ -1026,11 +1026,11 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![On the Author and Deploy blade, the More ellipses is selected, and from its drop-down menu, New dataset is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image154.png "Author and Deploy blade")
 
-1.  Select **Azure Blob storage** from the list of available datasets
+2.  Select **Azure Blob storage** from the list of available datasets
 
     ![Azure Blob storage is selected from the New dataset list.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image155.png "New dataset list")
 
-1.  Replace the JSON text in the draft window with following JSON
+3.  Replace the JSON text in the draft window with following JSON
     ```
     {
         "name": "ScoredBlobOutput",
@@ -1070,7 +1070,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
         }
     }
     ```
-2.  Select **Deploy**
+4.  Select **Deploy**
 
     ![Screenshot of the Deploy button](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image153.png "Deploy button")
 
@@ -1080,7 +1080,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![On the Author and Deploy blade, the More ellipses is selected, and from its drop-down menu, New pipeline is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image156.png "Author and Deploy blade")
 
-1.  Replace the JSON text in the draft window with following JSON
+2.  Replace the JSON text in the draft window with following JSON
     ```
     {
         "name": "MLPredictivePipeline",
@@ -1129,7 +1129,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
     }
     ```
 
-1.  Select **Deploy**
+3.  Select **Deploy**
 
     ![Screenshot of the Deploy button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image153.png "Deploy button")
 
@@ -1139,23 +1139,23 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 2.  Select **Monitor & Manage** under **Actions**. ![On the Data Factory blade, under Actions, Monitor and Manage is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image157.png "Data Factory blade")
 
-1.  From the Pipelines list select **MLPredictivePipeline**
+3.  From the Pipelines list select **MLPredictivePipeline**
 
     ![The Data factory Resource Explorer is shown and the MLPredictivePipeline has been selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image158.png "Data factory resource explorer")
 
-1.  Right-click on **MLPredictivePipeline** and then select Open **pipeline**
+4.  Right-click on **MLPredictivePipeline** and then select Open **pipeline**
 
     ![The MLPredictivePipeline has been selected and the Open pipeline is shown being clicked.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image159.png "MLPredicitivePipeline right-click menu")
 
-1.  Once again, you need to shift the start time in order to see the items in progress and ready states 
+5.  Once again, you need to shift the start time in order to see the items in progress and ready states 
     
     ![The Start time has been changed to 03/01/2017 12:00 am, and the Apply button is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image160.png "Start time")
 
-1.  The MLPredictive Pipeline should run and show as Ready
+6.  The MLPredictive Pipeline should run and show as Ready
 
     ![A view of the Azure Data Factory dashboard, showing each completed run activity.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image161.png "Azure data factory dashboard")
 
-1.  Close the **Monitor & Manage** browser tab
+7.  Close the **Monitor & Manage** browser tab
 
 ## Exercise 5: Summarize data using HDInsight Spark
 
@@ -1171,13 +1171,13 @@ In this task, you will upgrade the version of panda on the HDInsight cluster, to
     
     ![In the HDInsight cluster blade left menu, Overview is selected. From the top menu, Secure Shell (SSH) is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image162.png "HDInsight cluster blade")
 
-1.  On the SSH + Cluster login blade, select your cluster from the Hostname drop down, then select the copy button next to the SSH command 
+2.  On the SSH + Cluster login blade, select your cluster from the Hostname drop down, then select the copy button next to the SSH command 
 
     ![In the SSH + Cluster login blade, under Connect to cluster using secure shell (SSH), the copy button next to the SSH command is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image163.png "SSH + Cluster login blade")
 
-1.  On your Lab VM, open a new Git Bash terminal window
+3.  On your Lab VM, open a new Git Bash terminal window
 
-1.  At the prompt, paste the SSH command you copied from your HDInsight SSH + Cluster login blade ![The Get Bash Window displays with the copied SSH command.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image164.png "Get Bash Window")
+4.  At the prompt, paste the SSH command you copied from your HDInsight SSH + Cluster login blade ![The Get Bash Window displays with the copied SSH command.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image164.png "Get Bash Window")
 
 5.  Enter yes, if prompted about continuing, and enter the following password for the **sshuser**:
 
@@ -1194,11 +1194,11 @@ In this task, you will upgrade the version of panda on the HDInsight cluster, to
 
     ![In the Resource group list, the HDInsight cluster kylespark is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image165.png "Resource group list")
 
-1.  In the **Quick links** section, select **Cluster dashboard**
+2.  In the **Quick links** section, select **Cluster dashboard**
 
     ![Cluster dashboard is selected in the Quick links section.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image166.png "Quick links section")
 
-1.  From the **Cluster dashboards** blade, select **Jupyter Notebook**
+3.  From the **Cluster dashboards** blade, select **Jupyter Notebook**
 
     ![Jupyter Notebook is selected on the Cluster dashboards blade.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image167.png "Cluster dashboards blade")
 
@@ -1240,22 +1240,22 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
     resultDataFrame.write.mode("overwrite").saveAsTable("FlightDelays")
     ```
 
-1.  The notebook should now look like the image below ![Code displays in the Jupyter notebook.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image169.png "Jupyter notebook code")
+7.  The notebook should now look like the image below ![Code displays in the Jupyter notebook.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image169.png "Jupyter notebook code")
 
-1.  Select the **Run cell** button on the toolbar 
+8.  Select the **Run cell** button on the toolbar 
     
     ![Screenshot of the Run cell button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image170.png "Run cell button")
 
-1.  You will see in asterisk appear between the brackets in front of the cell
+9.  You will see in asterisk appear between the brackets in front of the cell
 
     
     ![In the Jupyter notebook code window, the following code is circled: In \[\*\]:](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image171.png "Jupyter notebook code")
 
-1. This will change to a number once the command is complete
+10. This will change to a number once the command is complete
     
     ![In the Jupyter notebook code window, the circled code has changed to: In \[1\]:](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image172.png "Jupyter notebook code")
 
-1. Below the cell, you will see the output from executing the command 
+11. Below the cell, you will see the output from executing the command 
 
     ![Under Starting Spark application, a table displays with the following columns: ID, YARN Application ID, Kind, State, Spark UI, Driver log, and Current session? ](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image173.png "Output table")
 
@@ -1265,7 +1265,7 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
     SELECT * FROM FlightDelays
     ```
 
-1. Once completed you will see the results displayed as a table 
+13. Once completed you will see the results displayed as a table 
 
     ![In the Results table has the following columns of information: OriginAirportCode, OriginLatLong, Month, Day, Hour, Carrier, DelayPredicted, and DelayProbability.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image174.png "Results table")
 
@@ -1279,29 +1279,29 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
     Having Sum(DelayPredicted) > 1
     ```
 
-1. Execution of this cell should return a results table like the following 
+15. Execution of this cell should return a results table like the following 
 
     ![This Results table now has the following columns: OriginAirportCode, OriginLatLong, Month, Day, Hour, NumDelays, and AvgDelayProbability.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image175.png "Results table")
 
-1. Since the summary data looks good, the final step is to save this summary calculation as a table, which we can later query using Power BI (in the next exercise)
+16. Since the summary data looks good, the final step is to save this summary calculation as a table, which we can later query using Power BI (in the next exercise)
 
-1. To accomplish this, paste the text below into a new cell, and select the **Run** cell button from the toolbar
+17. To accomplish this, paste the text below into a new cell, and select the **Run** cell button from the toolbar
 
     val summary = spark.sqlContext.sql("SELECT  OriginAirportCode, OriginLatLong, Month, Day, Hour, Sum(DelayPredicted) NumDelays, Avg(DelayProbability) AvgDelayProbability FROM FlightDelays WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour Having Sum(DelayPredicted) > 1")
     summary.write.mode("overwrite").saveAsTable("FlightDelaysSummary")
 
-1. To verify the table was successfully created, go to another new cell, and enter the following query
+18. To verify the table was successfully created, go to another new cell, and enter the following query
 
     %%sql
     SELECT * FROM FlightDelaysSummary
 
-1. Select the **Run cell** button on the toolbar 
+19. Select the **Run cell** button on the toolbar 
     
     ![Screenshot of the Run cell button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image170.png "Run cell button")
 
-1. You should see a results table similar to the following ![The same Results Table displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image176.png "Results table")
+20. You should see a results table similar to the following ![The same Results Table displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image176.png "Results table")
 
-1. You can also select Pie, Scatter, Line, Area, and Bar chart visualizations of the dataset
+21. You can also select Pie, Scatter, Line, Area, and Bar chart visualizations of the dataset
 
 ## Exercise 6: Visualizing in Power BI Desktop
 
@@ -1309,19 +1309,19 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
 
 1.  If you are already, connected to your Lab VM, skip to Task 2
 
-1.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list
+2.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list
 
     ![In the left menu of the Azure Portal, Resource groups is selected. In the Resource groups blade, bigdata is typed in the search field, and in the results below, bigdatakyle is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image14.png "Azure Portal")
 
-1.  Next, select your lab virtual machine from the list
+3.  Next, select your lab virtual machine from the list
     
     ![In the Virtual machine list, the kylelab virtual machine is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image15.png "Virtual machine list")
 
-1.  On your Lab VM blade, select **Connect** from the top menu 
+4.  On your Lab VM blade, select **Connect** from the top menu 
 
     ![The Connect button is selected on the Lab VM blade.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image16.png "Lab VM blade")
 
-1.  Download and open the RDP file
+5.  Download and open the RDP file
 
 6.  Select Connect, and enter the following credentials:
 
@@ -1333,23 +1333,23 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
 
 1.  On your Lab VM, launch Power BI Desktop by double-clicking on the desktop shortcut you created in the pre-lab setup
 
-1.  When Power BI Desktop opens, you will need to enter your personal information, or Sign in if you already have an account
+2.  When Power BI Desktop opens, you will need to enter your personal information, or Sign in if you already have an account
 
     ![The Power BI Desktop Welcome page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image177.png "Power BI Desktop Welcome page")
 
-1.  Select Get data on the screen that is displayed next ![On the Power BI Desktop Sign in page, in the left pane, Get data is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image178.png "Power BI Desktop Sign in page")
+3.  Select Get data on the screen that is displayed next ![On the Power BI Desktop Sign in page, in the left pane, Get data is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image178.png "Power BI Desktop Sign in page")
 
-1.  Select **Azure** and select **Azure HDInsight Spark (Beta)** from the list of available data sources
+4.  Select **Azure** and select **Azure HDInsight Spark (Beta)** from the list of available data sources
 
     ![In the left pane of the Get Data page, Azure is selected. In the pane, Azure HDInsight Spark (Beta) is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image179.png "Get Data page")
 
-1.  Select **Connect**
+5.  Select **Connect**
 
-1.  You will receive a prompt warning you that the Spark connector is still in preview. Select **Continue**
+6.  You will receive a prompt warning you that the Spark connector is still in preview. Select **Continue**
     
     ![A warning reminds you that the app is still under development.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image180.png "Preview connector warning")
 
-1.  On the next screen, you will be prompted for your HDInsight Spark cluster URL
+7.  On the next screen, you will be prompted for your HDInsight Spark cluster URL
     
     ![The Azure HDInsight Spark Server page displays, and the Server field is empty.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image181.png "Server page")
 
@@ -1357,13 +1357,13 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
     
     ![In the Essentials section, the Spark cluster URL https://kylespark.azurehdinsight.net is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image182.png "Essentials section")
 
-1.  Copy the URL, and paste it into the Server box on the Power BI Azure HDInsight Spark dialog
+9.  Copy the URL, and paste it into the Server box on the Power BI Azure HDInsight Spark dialog
 
     ![On the Azure HDInsight Spark Server page, the copied URL is now pasted into the Server field.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image183.png "Server page")
 
-1. Select DirectQuery for the Data Connectivity mode, and select **OK**
+10. Select DirectQuery for the Data Connectivity mode, and select **OK**
 
-1. Enter your credentials on the next screen as follows
+11. Enter your credentials on the next screen as follows
 
     a.  User name: **demouser**
 
@@ -1371,13 +1371,13 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
     
     ![The azure/kylespark.azurehdinsight.net sign-in page displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image184.png "Sign-in page")
 
-1. Select **Connect**
+12. Select **Connect**
 
-1. In the Navigator dialog, check the box next to **flightdelayssummary**, and select **Load**
+13. In the Navigator dialog, check the box next to **flightdelayssummary**, and select **Load**
 
     ![In the Navigator dialog box, in the left pane under Display Options, the check box for flightdelayssummary is selected. In the side pane, the table of flight delays summary information displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image185.png "Navigator dialog box")
 
-1. It will take several minutes for the data to load into the Power BI Desktop client
+14. It will take several minutes for the data to load into the Power BI Desktop client
 
 ### Task 3: Create Power BI report
 
@@ -1385,7 +1385,7 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
 
     ![Screenshot of the Fields column.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image186.png "Power BI Desktop Fields")
 
-1.  From the Visualizations area, next to Fields, select the Globe icon to add a Map visualization to the report design surface
+2.  From the Visualizations area, next to Fields, select the Globe icon to add a Map visualization to the report design surface
 
     ![On the Power BI Desktop Visualizations palette, the globe icon is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image187.png "Power BI Desktop Visualizatoins palette")
 
@@ -1397,15 +1397,15 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
 
     ![On the Report design surface, a Map of the United States displays with varying-sized dots over different cities.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image189.png "Report design surface")
 
-1.  Unselect the Map visualization by selecting the white space next to the map in the report area
+5.  Unselect the Map visualization by selecting the white space next to the map in the report area
 
-1.  From the Visualizations area, select the **Stacked Column Chart** icon to add a bar chart visual to the report's design surface
+6.  From the Visualizations area, select the **Stacked Column Chart** icon to add a bar chart visual to the report's design surface
 
     ![The stacked column chart icon is selected on the Visualizations palette.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image190.png "Visualizations palette")
 
-1.  With the Stacked Column Chart still selected, drag the **Day** field and drop it into the **Axis** field located under Visualizations
+7.  With the Stacked Column Chart still selected, drag the **Day** field and drop it into the **Axis** field located under Visualizations
 
-1.  Next, drag the **AvgDelayProbability** field over, and drop it into the **Value** field
+8.  Next, drag the **AvgDelayProbability** field over, and drop it into the **Value** field
 
     ![In the Fields column, the check boxes for AvgDelayProbability and Day are selected. An arrow points from AvgDelayProbability in the Fields column, to AvgDelayProbability in the Visualization\'s Axis field. A second arrow points from Day in the Fields column, to Daly in the Visualization\'s Value field.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image191.png "Visualizations and Fields columns")
 
@@ -1413,27 +1413,27 @@ Note: If you get a 403 -- Forbidden: Access is denied error, try to open the jup
 
     ![On the Report Design Surface, under the map of the United States with dots, a stacked bar chart displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image192.png "Report Design Surface")
 
-1. Unselect the Stacked Column Chart visual by selecting the white space next to the map on the design surface
+10. Unselect the Stacked Column Chart visual by selecting the white space next to the map on the design surface
 
-1. From the Visualizations area, select the Treemap icon to add this visualization to the report 
+11. From the Visualizations area, select the Treemap icon to add this visualization to the report 
 
     ![On the Visualizations palette, the Treemap icon is selected.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image193.png "Visualizations palette")
 
-1. With the Treemap visualization selected, drag the **OriginAirportCode** field into the **Group** field under Visualizations
+12. With the Treemap visualization selected, drag the **OriginAirportCode** field into the **Group** field under Visualizations
 
-1. Next, drag the **NumDelays** field over, and drop it into the **Values** field
+13. Next, drag the **NumDelays** field over, and drop it into the **Values** field
 
     ![In the Fields column, the check boxes for NumDelays and OriginAirportcode are selected. An arrow points from NumDelays in the Fields column, to NumDelays in the Visualization\'s Values field. A second arrow points from OriginAirportcode in the Fields column, to OriginAirportcode in the Visualization\'s Group field.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image194.png "Visualizations and Fields columns")
 
-1. Grab the corner of the Treemap visual on the report design surface, and expand it to fill the area between the map and the edge of the design surface. The report should now look similar to the following. 
+14. Grab the corner of the Treemap visual on the report design surface, and expand it to fill the area between the map and the edge of the design surface. The report should now look similar to the following. 
 
     ![The Report design surface now displays the map of the United States with dots, a stacked bar chart, and a Treeview.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image195.png "Report design surface")
 
-1. You can cross filter any of the visualizations on the report by selecting one of the other visuals within the report, as shown below (This may take a few seconds to change, as the data is loaded) 
+15. You can cross filter any of the visualizations on the report by selecting one of the other visuals within the report, as shown below (This may take a few seconds to change, as the data is loaded) 
 
     ![The map on the Report design surface is now zoomed in on the northeast section of the United States, and the only dot on the map is on Chicago. In the Treeview, all cities except MDW are grayed out. In the stacked bar graph, each bar is now divided into a darker and a lighter color, with the darker color representing the airport.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image196.png "Report design surface")
 
-1. You can save the report, by selecting Save from the File menu, and entering a name and location for the file
+16. You can save the report, by selecting Save from the File menu, and entering a name and location for the file
 
     ![The Power BI Save as window displays.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image197.png "Power BI Save as window")
 
@@ -1447,13 +1447,13 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 1.  Navigate to <https://github.com/ZoinerTejada/mcw-big-data-and-visualization/blob/master/AdventureWorksTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal
 
-1.  Read through the README information on the GitHub page
+2.  Read through the README information on the GitHub page
 
-1.  Choose **Deploy to Azure**
+3.  Choose **Deploy to Azure**
 
     ![Screenshot of the Deploy to Azure button.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image3.png "Deploy to Azure button")
 
-1.  On the following page, ensure the fields are populated correctly
+4.  On the following page, ensure the fields are populated correctly
 
     a.  Ensure the correct Directory and Subscription are selected
 
@@ -1479,13 +1479,13 @@ Note: Recall that you recorded the ML API information back in Exercise 1, Task 9
     
     ![Fields on the Deploy to Azure page are populated with the previously copied information.](images/Hands-onlabstep-bystep-Bigdataandvisualizationimages/media/image199.png "Deploy to Azure page")
 
-1.  Select **Next**, and on the following screen, select **Deploy**
+5.  Select **Next**, and on the following screen, select **Deploy**
 
-1.  The page should begin deploying your application while showing you a status of what is currently happening
+6.  The page should begin deploying your application while showing you a status of what is currently happening
 
 Note: If you run into errors during the deployment that indicate a bad request or unauthorized, verify that the user you are logged into the portal with an account that is either a Service Administrator or a Co-Administrator. You won't have permissions to deploy the website otherwise.
 
-1.  After a short time, the deployment will complete, and you will be presented with a link to your newly deployed web application. CTRL+ select to open it in a new tab
+7.  After a short time, the deployment will complete, and you will be presented with a link to your newly deployed web application. CTRL+ select to open it in a new tab
 
 8.  Try a few different combinations of origin, destination, date, and time in the application. The information you are shown is the result of both the ML API you published, as well as information retrieved from the Weather Underground API.
 
@@ -1501,9 +1501,9 @@ In this exercise, attendees will deprovision any Azure resources that were creat
 
 1.  Using the Azure portal, navigate to the Resource group you used throughout this hands-on lab by selecting **Resource groups** in the menu
 
-1.  Search for the name of your research group and select it from the list
+2.  Search for the name of your research group and select it from the list
 
-1.  Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**
+3.  Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**
 
 You should follow all steps provided *after* attending the Hands-on lab
 
