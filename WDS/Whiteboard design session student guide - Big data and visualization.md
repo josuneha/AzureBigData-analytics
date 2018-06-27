@@ -154,15 +154,15 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
 
-1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
+2.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
 
-1.  Want to understand how they will load their large quantity of historical data into Azure
+3.  Want to understand how they will load their large quantity of historical data into Azure
 
-1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
+4.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
 
-1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
+5.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
 
-1.  Need web-based visualizations of the flight delay predictions
+6.  Need web-based visualizations of the flight delay predictions
 
 ### Customer objections 
 
