@@ -76,8 +76,11 @@ This whiteboard design session is designed to provide exposure to many of Micros
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+
 1. Meet your table participants and trainer 
 2. Read all of the directions for steps 1–3 in the student guide 
 3. As a table team, review the following customer case study
@@ -312,4 +315,4 @@ Timeframe: 15 minutes
 | Travel data | <http://www.transtats.bts.gov/Tables.asp?DB_ID=120/> |
 | Weather data | <http://www.wunderground.com/weather/api/d/docs/> |
 | ARM Templates | <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/> |
-|
+
