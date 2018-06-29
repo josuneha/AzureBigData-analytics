@@ -5,6 +5,7 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -18,32 +19,32 @@ Updated May 2018
 <!-- TOC -->
 
 - [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
-  - [Contents](#contents)
+    - [Contents](#contents)
 - [Trainer information](#trainer-information)
-  - [Role of the trainer](#role-of-the-trainer)
-  - [Whiteboard design session flow](#whiteboard-design-session-flow)
-  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+    - [Role of the trainer](#role-of-the-trainer)
+    - [Whiteboard design session flow](#whiteboard-design-session-flow)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
-  - [Abstract](#abstract)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3-present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Additional references](#additional-references)
-- [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide-1)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-  - [Step 3: Present the solution](#step-3-present-the-solution-1)
-  - [Wrap-up](#wrap-up-1)
-  - [Preferred target audience](#preferred-target-audience)
-  - [Preferred solution](#preferred-solution)
-  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+    - [Abstract](#abstract)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
+- [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Preferred target audience](#preferred-target-audience)
+    - [Preferred solution](#preferred-solution)
+    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -55,25 +56,25 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
-- Creates a safe environment in which learning can take place.
+- Creates a safe environment in which learning can take place
 
-- Stimulates the participant's thinking.
+- Stimulates the participant's thinking
 
-- Involves the participant in the learning process.
+- Involves the participant in the learning process
 
-- Manages the learning process (on time, on topic, and adjusting to benefit participants).
+- Manages the learning process (on time, on topic, and adjusting to benefit participants)
 
-- Ensures individual participant accountability.
+- Ensures individual participant accountability
 
-- Ties it all together for the participant.
+- Ties it all together for the participant
 
-- Provides insight and experience to the learning process.
+- Provides insight and experience to the learning process
 
-- Effectively leads the whiteboard design session discussion.
+- Effectively leads the whiteboard design session discussion
 
-- Monitors quality and appropriateness of participant deliverables.
+- Monitors quality and appropriateness of participant deliverables
 
-- Effectively leads the feedback process.
+- Effectively leads the feedback process
 
 ## Whiteboard design session flow
 
@@ -84,8 +85,10 @@ Each whiteboard design session uses the following flow:
 **Outcome**
 
 Analyze your customer’s needs.
-Time frame: 15 minutes
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
+
+Timeframe: 15 minutes
+
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 
 1.  Meet your table participants and trainer
 2.  Read all of the directions for steps 1–3 in the student guide
@@ -121,15 +124,15 @@ Outcome: Present solution to your customer
 
 Before conducting your first whiteboard design session:
 
-- Read the Student guide (including the case study) and Trainer guide.
+- Read the Student guide (including the case study) and Trainer guide
 
-- Become familiar with all key points and activities.
+- Become familiar with all key points and activities
 
-- Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
+- Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
 
-- Prior to the whiteboard design session, discuss the case study to pick up more ideas.
+- Prior to the whiteboard design session, discuss the case study to pick up more ideas
 
-- Make notes for later.
+- Make notes for later
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -139,7 +142,7 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
-- **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
+- **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing
 
 - **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
@@ -168,8 +171,10 @@ They are looking to pilot a web app that their internal customer service agents 
 **Outcome**
 
 Analyze your customer’s needs.
-Time frame: 15 minutes
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
+
+Timeframe: 15 minutes
+
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 
 1.  Meet your table participants and trainer
 2.  Read all of the directions for steps 1–3 in the student guide
@@ -244,17 +249,17 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 ### Customer needs
 
-1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
+1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
 
-2.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
+1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
 
-3.  Want to understand how they will load their large quantity of historical data into Azure.
+1.  Want to understand how they will load their large quantity of historical data into Azure
 
-4.  Need to be able to query the weather forecast and use it as input to their flight delay predictions.
+1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
 
-5.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
+1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
 
-6.  Need web-based visualizations of the flight delay predictions.
+1.  Need web-based visualizations of the flight delay predictions
 
 ### Customer objections
 
@@ -281,9 +286,10 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 ## Step 2: Design a proof of concept solution
 
 **Outcome**
+
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -354,11 +360,11 @@ _Visualization and reporting_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution.
+1.  Identify any customer needs that are not addressed with the proposed solution
 
-2.  Identify the benefits of your solution.
+1.  Identify the benefits of your solution
 
-3.  Determine how you will respond to the customer's objections.
+1.  Determine how you will respond to the customer's objections
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -368,31 +374,31 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
 
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation**
 
 Directions
 
-1.  Pair with another table.
+1.  Pair with another table
 
-2.  One table is the Microsoft team and the other table is the customer.
+1.  One table is the Microsoft team and the other table is the customer
 
-3.  The Microsoft team presents their proposed solution to the customer.
+1.  The Microsoft team presents their proposed solution to the customer
 
-4.  The customer makes one of the objections from the list of objections.
+1.  The customer makes one of the objections from the list of objections
 
-5.  The Microsoft team responds to the objection.
+1.  The Microsoft team responds to the objection
 
-6.  The customer team gives feedback to the Microsoft team.
+1.  The customer team gives feedback to the Microsoft team
 
-7.  Tables switch roles and repeat Steps 2--6.
+1.  Tables switch roles and repeat Steps 2--6
 
 ## Wrap-up
 
-Time frame: 15 minutes
+Timeframe: 15 minutes
 
-- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
 
 ## Additional references
 
@@ -409,51 +415,52 @@ Time frame: 15 minutes
 | Weather data                    |                                  <https://darksky.net/dev/docs/>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
 
+
 # Big data and visualization whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
-- Check in with your table participants to introduce yourself as the trainer.
+- Check in with your table participants to introduce yourself as the trainer
 
 - Ask, "What questions do you have about the customer case study?"
 
-- Briefly review the steps and Time frames of the whiteboard design session.
+- Briefly review the steps and timeframes of the whiteboard design session
 
-- Ready, set, go! Let the table participants begin.
+- Ready, set, go! Let the table participants begin
 
 ## Step 2: Design a proof of concept solution
 
-- Check in with your tables to ensure that they are transitioning from step to step on time.
+- Check in with your tables to ensure that they are transitioning from step to step on time
 
-- Provide some feedback on their responses to the business needs and design.
+- Provide some feedback on their responses to the business needs and design
 
-  - Try asking questions first that will lead the participants to discover the answers on their own.
+  - Try asking questions first that will lead the participants to discover the answers on their own
 
-- Provide feedback for their responses to the customer's objections.
+- Provide feedback for their responses to the customer's objections
 
-  - Try asking questions first that will lead the participants to discover the answers on their own.
+  - Try asking questions first that will lead the participants to discover the answers on their own
 
 ## Step 3: Present the solution
 
-- Determine which table will be paired with your table before Step 3 begins.
+- Determine which table will be paired with your table before Step 3 begins
 
-- For the first round, assign one table as the Microsoft team and the other table as the customer.
+- For the first round, assign one table as the Microsoft team and the other table as the customer
 
-- Have the Microsoft team present their solution to the customer team.
+- Have the Microsoft team present their solution to the customer team
 
-  - Have the customer team provide one objection for the Microsoft team to respond to.
+  - Have the customer team provide one objection for the Microsoft team to respond to
 
-  - The presentation and objections should be no longer than 10 minutes.
+  - The presentation and objections should be no longer than 10 minutes
 
-- Have participants on the customer team give feedback to the Microsoft team.
+- Have participants on the customer team give feedback to the Microsoft team
 
-  - The feedback should be no longer than 5 minutes.
+  - The feedback should be no longer than 5 minutes
 
-  - If needed, the trainer may also provide feedback.
+  - If needed, the trainer may also provide feedback
 
 ## Wrap-up
 
-- Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
+- Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution
 
 ## Preferred target audience
 
@@ -479,7 +486,7 @@ _Data loading_
 
     AWT should consider using Azure Data Factory (ADF) for copying their historical data into Azure. By setting up a continuous pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, AWT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Once in place, this would allow ADF to copy data from their local data store to a container is blob storage. Their pipeline would be configured to run monthly, as that is the frequency at which new data is received, and this would still allow for all their historical data to be copied without delay.
 
-2.  Update your diagram with the data loading process with the steps you identified.
+1.  Update your diagram with the data loading process with the steps you identified
 
     ![The Data loading process diagram begins with Flight Delay Data and Historical Airport Weather Data flat files. An arrow points from there to ADF Copy Pipeline, which in turn points to Blob Storage.](media/data-loading.png 'Data loading process')
 
@@ -553,7 +560,7 @@ _Visualization and reporting_
 
 1.  Is Power BI an option for AWT to use in visualizing the flight delays?
 
-Yes, Power BI is a good option for AWT. Power BI can perform what is called a Direct Query against Apache Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark.
+    Yes, Power BI is a good option for AWT. Power BI can perform what is called a Direct Query against Apache Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark.
 
 2.  If so, explain:
 
@@ -605,7 +612,7 @@ Yes, Power BI is a good option for AWT. Power BI can perform what is called a Di
 
     No. Azure HDInsight provides an option for running hosted Spark clusters as well. Within HDInsight, you can provision hosted clusters based on Hive, HBase, and others. Hortonworks, Cloudera, and MapR provide fully supported distributions that are available in the Azure Marketplace and provide environments for running HiveQL Spark SQL in Azure.
 
-8.  We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
+1.  We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data
 
     There are two offerings related to Azure Data Lake that should be called out separately. Azure Data Lake Analytics provides a distributed querying engine whose costs are based solely on the number of resources used in the query, the amount of time those resources were made available to the query, and a nominal job completion charge. In its current form, Azure Data Lake Analytics supports only Batch workloads, so it is not the right tool for interactive analytic workloads.
 

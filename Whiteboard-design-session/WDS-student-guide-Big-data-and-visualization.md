@@ -5,11 +5,10 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
-
-# Big data and visualization whiteboard design session student guide
 
 Updated May 2018
 
@@ -18,18 +17,16 @@ Updated May 2018
 <!-- TOC -->
 
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
-  - [Contents](#contents)
-- [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide-1)
-  - [Abstract](#abstract)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3-present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Additional references](#additional-references)
+    - [Abstract](#abstract)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
@@ -46,8 +43,10 @@ They are looking to pilot a web app that their internal customer service agents 
 **Outcome**
 
 Analyze your customer’s needs.
-Time frame: 15 minutes
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
+
+Timeframe: 15 minutes
+
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 
 1.  Meet your table participants and trainer
 2.  Read all of the directions for steps 1–3 in the student guide
@@ -122,17 +121,17 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 
 ### Customer needs
 
-1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
+1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
 
-2.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
+1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
 
-3.  Want to understand how they will load their large quantity of historical data into Azure.
+1.  Want to understand how they will load their large quantity of historical data into Azure
 
-4.  Need to be able to query the weather forecast and use it as input to their flight delay predictions.
+1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
 
-5.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
+1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
 
-6.  Need web-based visualizations of the flight delay predictions.
+1.  Need web-based visualizations of the flight delay predictions
 
 ### Customer objections
 
@@ -159,9 +158,10 @@ Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He ha
 ## Step 2: Design a proof of concept solution
 
 **Outcome**
+
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -232,11 +232,11 @@ _Visualization and reporting_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution.
+1.  Identify any customer needs that are not addressed with the proposed solution
 
-2.  Identify the benefits of your solution.
+1.  Identify the benefits of your solution
 
-3.  Determine how you will respond to the customer's objections.
+1.  Determine how you will respond to the customer's objections
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -246,31 +246,31 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
 
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation**
 
 Directions
 
-1.  Pair with another table.
+1.  Pair with another table
 
-2.  One table is the Microsoft team and the other table is the customer.
+1.  One table is the Microsoft team and the other table is the customer
 
-3.  The Microsoft team presents their proposed solution to the customer.
+1.  The Microsoft team presents their proposed solution to the customer
 
-4.  The customer makes one of the objections from the list of objections.
+1.  The customer makes one of the objections from the list of objections
 
-5.  The Microsoft team responds to the objection.
+1.  The Microsoft team responds to the objection
 
-6.  The customer team gives feedback to the Microsoft team.
+1.  The customer team gives feedback to the Microsoft team
 
-7.  Tables switch roles and repeat Steps 2--6.
+1.  Tables switch roles and repeat Steps 2--6
 
 ## Wrap-up
 
-Time frame: 15 minutes
+Timeframe: 15 minutes
 
-- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
 
 ## Additional references
 
