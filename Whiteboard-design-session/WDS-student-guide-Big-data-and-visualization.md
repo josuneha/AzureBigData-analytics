@@ -270,7 +270,7 @@ Directions
 
 Timeframe: 15 minutes
 
-- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
+Directions:  Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ## Additional references
 
