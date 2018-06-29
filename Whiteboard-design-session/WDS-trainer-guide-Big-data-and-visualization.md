@@ -19,7 +19,6 @@ Updated May 2018
 <!-- TOC -->
 
 - [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
-    - [Contents](#contents)
 - [Trainer information](#trainer-information)
     - [Role of the trainer](#role-of-the-trainer)
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
