@@ -22,7 +22,7 @@ In this workshop, you will deploy a web app using Machine Learning (ML) to predi
 
 If you have not yet completed the steps to set up your environment in [Before the hands-on lab](./Setup.md), you will need to do that before proceeding.
 
-**Contents**
+## Contents
 
 <!-- TOC -->
 
