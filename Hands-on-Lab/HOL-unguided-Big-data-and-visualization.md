@@ -725,8 +725,8 @@ In this exercise, attendees will deprovision any Azure resources that were creat
 
 1.  Using the Azure portal, navigate to the Resource group you used throughout this hands-on lab by selecting **Resource groups** in the left menu
 
-1.  Search for the name of your research group and select it from the list
+2.  Search for the name of your research group and select it from the list
 
-1.  Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**
+3.  Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**
 
 You should follow all steps provided _after_ attending the Hands-on lab.
