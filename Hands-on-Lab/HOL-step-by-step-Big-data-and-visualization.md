@@ -27,34 +27,35 @@ If you have not yet completed the steps to set up your environment in [Before th
 <!-- TOC -->
 
 - [Big data and visualization hands-on lab step-by-step](#big-data-and-visualization-hands-on-lab-step-by-step)
-    - [Exercise 1: Build a Machine Learning Model](#exercise-1--build-a-machine-learning-model)
-        - [Task 1: Create your Azure Machine Learning project](#task-1--create-your-azure-machine-learning-project)
-        - [Task 2: Upload the Sample Datasets](#task-2--upload-the-sample-datasets)
-        - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3--open-azure-databricks-and-complete-lab-notebooks)
-        - [Task 4: Configure your Machine Learning environment](#task-4--configure-your-machine-learning-environment)
-    - [Exercise 2: Setup Azure Data Factory](#exercise-2--setup-azure-data-factory)
-        - [Task 1: Download and stage data to be processed](#task-1--download-and-stage-data-to-be-processed)
-        - [Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-2--install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
-        - [Task 3: Configure Azure Data Factory](#task-3--configure-azure-data-factory)
-    - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3--deploy-your-machine-learning-model-with-azure-ml)
-        - [Task 1: Edit the scoring and configuration files](#task-1--edit-the-scoring-and-configuration-files)
-        - [Task 2: Deploy the model](#task-2--deploy-the-model)
-    - [Exercise 4: Develop a data factory pipeline for data movement](#exercise-4--develop-a-data-factory-pipeline-for-data-movement)
-        - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1--create-copy-pipeline-using-the-copy-data-wizard)
-    - [Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5--operationalize-ml-scoring-with-azure-databricks-and-data-factory)
-        - [Task 1: Create Azure Databricks Linked Service](#task-1--create-azure-databricks-linked-service)
-        - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2--complete-the-batchscore-azure-databricks-notebook-code)
-        - [Task 3: Trigger workflow](#task-3--trigger-workflow)
-    - [Exercise 6: Summarize data using Azure Databricks](#exercise-6--summarize-data-using-azure-databricks)
-        - [Task 1: Summarize delays by airport](#task-1--summarize-delays-by-airport)
-    - [Exercise 7: Visualizing in Power BI Desktop](#exercise-7--visualizing-in-power-bi-desktop)
-        - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1--obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
-        - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2--connect-to-azure-databricks-using-power-bi-desktop)
-        - [Task 3: Create Power BI report](#task-3--create-power-bi-report)
-    - [Exercise 8: Deploy intelligent web app](#exercise-8--deploy-intelligent-web-app)
-        - [Task 1: Deploy web app from GitHub](#task-1--deploy-web-app-from-github)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete resource group](#task-1--delete-resource-group)
+  - [Contents](#contents)
+  - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
+    - [Task 1: Create your Azure Machine Learning project](#task-1-create-your-azure-machine-learning-project)
+    - [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
+    - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
+    - [Task 4: Configure your Machine Learning environment](#task-4-configure-your-machine-learning-environment)
+  - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
+    - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
+    - [Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+    - [Task 3: Configure Azure Data Factory](#task-3-configure-azure-data-factory)
+  - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3-deploy-your-machine-learning-model-with-azure-ml)
+    - [Task 1: Edit the scoring and configuration files](#task-1-edit-the-scoring-and-configuration-files)
+    - [Task 2: Deploy the model](#task-2-deploy-the-model)
+  - [Exercise 4: Develop a data factory pipeline for data movement](#exercise-4-develop-a-data-factory-pipeline-for-data-movement)
+    - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
+  - [Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5-operationalize-ml-scoring-with-azure-databricks-and-data-factory)
+    - [Task 1: Create Azure Databricks Linked Service](#task-1-create-azure-databricks-linked-service)
+    - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2-complete-the-batchscore-azure-databricks-notebook-code)
+    - [Task 3: Trigger workflow](#task-3-trigger-workflow)
+  - [Exercise 6: Summarize data using Azure Databricks](#exercise-6-summarize-data-using-azure-databricks)
+    - [Task 1: Summarize delays by airport](#task-1-summarize-delays-by-airport)
+  - [Exercise 7: Visualizing in Power BI Desktop](#exercise-7-visualizing-in-power-bi-desktop)
+    - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
+    - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
+    - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
+  - [Exercise 8: Deploy intelligent web app](#exercise-8-deploy-intelligent-web-app)
+    - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
+  - [After the hands-on lab](#after-the-hands-on-lab)
+    - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
 <!-- /TOC -->
 
@@ -72,15 +73,15 @@ In this exercise, you will implement a classification experiment. You will load 
 
 3.  Next, select your lab Data Science Virtual Machine (DSVM) from the list
 
-    ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png)
+    ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png "Select Lab DSVM from resource group")
 
 4.  On your Lab DSVM blade, select **Connect** from the top menu
 
-    ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png)
+    ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png "Connect button")
 
 5.  In the dialog that appears, accept the defaults and select **Download RDP File**. Open the file once downloaded.
 
-    ![Select Download RDP File](media/lab-dsvm-download-rdp-file.png)
+    ![Select Download RDP File](media/lab-dsvm-download-rdp-file.png "Select download RDP File")
 
 6.  Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
 
@@ -124,29 +125,29 @@ In this exercise, you will implement a classification experiment. You will load 
 
 4.  From your Lab VM (DSVM), open a browser and navigate to the Azure portal (<https://portal.azure.com>), and navigate to Azure Databricks service under the Resource Group you created when completing the prerequisites for this hands-on lab
 
-    ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png)
+    ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png "Select Azure Databricks")
 
 5.  In the Overview pane of the Azure Databricks service, select **Launch Workspace**
 
-    ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png)
+    ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png "Select Launch Workspace")
 
     Azure Databricks will automatically log you in using Azure Active Directory Single Sign On.
 
-    ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png)
+    ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png "AAD Single Sign On")
 
 6.  Once signed in, select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **+** next to the Tables header.
 
-    ![From the Azure Databricks workspace, select Data, default database, then new table](media/azure-databricks-create-tables.png)
+    ![From the Azure Databricks workspace, select Data, default database, then new table](media/azure-databricks-create-tables.png "Create new table")
 
 7.  Select **Upload File** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI**.
 
-    ![Create a new table using the FlightDelaysWithAirportCodes.csv file](<media/![](media/create-flight-delays-table-ui.png).png>)
+    ![Create a new table using the FlightDelaysWithAirportCodes.csv file](<media/![](media/create-flight-delays-table-ui.png).png> "Create new table")
 
 8.  Select your cluster to preview the table, then select **Preview Table**
 
 9.  Change the Table Name to \"flight_delays_with_airport_codes\" and select the checkmark for **First row is header**. Select **Create Table**.
 
-    ![Rename table and check the first row is header checkbox](media/flight-delays-attributes.png)
+    ![Rename table and check the first row is header checkbox](media/flight-delays-attributes.png "Rename table")
 
 10. Repeat the previous steps for the FlightWeatherWithAirportCode.csv and AirportCodeLocationsClean.csv files, setting the name for each dataset in a similar fashion. There should be a total of three files that are uploaded. Each table should be named as follows:
 
@@ -165,17 +166,17 @@ In this exercise, you will implement a classification experiment. You will load 
 
 2.  Within Azure Databricks, select **Workspace** on the menu, then **Users**, select your user, then select the down arrow on the top of your user workspace. Select **Import**.
 
-    ![Screenshot showing selecting import within the user workspace](media/select-import-in-user-workspace.png)
+    ![Screenshot showing selecting import within the user workspace](media/select-import-in-user-workspace.png "Import")
 
 3.  Within the Import Notebooks dialog, select Import from: file, then drag-and-drop the files or browse to upload each individually
 
-    ![Select import from file](media/import-notebooks.png)
+    ![Select import from file](media/import-notebooks.png "Import from file")
 
 4.  Select **01 Prepare Flight Data complete** to open the notebook
 
 5.  Before you begin, make sure you attach your cluster to the notebook, using the dropdown. You will need to do this for each notebook you open.
 
-    ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png)
+    ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png "Attach cluster to notebook")
 
 6.  Run each cell of the notebook individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
@@ -185,21 +186,21 @@ In this exercise, you will implement a classification experiment. You will load 
 
 1.  From your Lab VM (DSVM), browse to the download folder in File Explorer. Right-click **flight_delays.zip** (which was downloaded at the end of the **02 Predict Flight Delays complete** notebook), then select **Extract All...**.
 
-    ![Right-click downloaded flight_delays.zip file and select Extract All from the context menu](media/downloaded-flight-delays-zip.png)
+    ![Right-click downloaded flight_delays.zip file and select Extract All from the context menu](media/downloaded-flight-delays-zip.png "Extract all")
 
 2.  In the extract dialog, accept the default options and select **Extract**
 
-    ![Extract dialog showing default options](media/extract-flight-delays-dialog.png)
+    ![Extract dialog showing default options](media/extract-flight-delays-dialog.png "Extract dialog")
 
 3.  Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder
 
 4.  Navigate to your project folder (C:\HOL\FlightDelays) and paste the pipelineModel subfolder within
 
-    ![Copy pipelineModel to the FlightDelays project folder](media/model-copied-to-project-folder.png)
+    ![Copy pipelineModel to the FlightDelays project folder](media/model-copied-to-project-folder.png "Model copied to project folder")
 
 5.  Open the Azure Machine Learning Workbench. Select File --> Open Command Prompt.
 
-    ![Open command prompt option in the workbench](media/azure-ml-workbench-open-command-prompt.png)
+    ![Open command prompt option in the workbench](media/azure-ml-workbench-open-command-prompt.png "Open command prompt...")
 
 6.  Execute the following to update/install the Azure CLI packages:
 
