@@ -95,7 +95,7 @@ Directions: With all participants in the session, the facilitator or SME present
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Prepare to present a solution for your target customer audience
+Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 - Determine your target customer audience
 
@@ -147,7 +147,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 - **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
-**Have fun**! Encourage participants to have fun and share!\*
+**Have fun!** Encourage participants to have fun and share!
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
@@ -459,7 +459,7 @@ Timeframe: 15 minutes
 
 ## Wrap-up
 
-- Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution
+Directions:  Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ## Preferred target audience
 
