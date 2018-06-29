@@ -27,7 +27,6 @@ If you have not yet completed the steps to set up your environment in [Before th
 <!-- TOC -->
 
 - [Big data and visualization hands-on lab step-by-step](#big-data-and-visualization-hands-on-lab-step-by-step)
-    - [Contents](#contents)
     - [Exercise 1: Build a Machine Learning Model](#exercise-1--build-a-machine-learning-model)
         - [Task 1: Create your Azure Machine Learning project](#task-1--create-your-azure-machine-learning-project)
         - [Task 2: Upload the Sample Datasets](#task-2--upload-the-sample-datasets)
