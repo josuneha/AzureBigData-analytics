@@ -1,4 +1,4 @@
-# Big Data and visualization
+# Big data and visualization
 
 AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
