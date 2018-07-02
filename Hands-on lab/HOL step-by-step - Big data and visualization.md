@@ -28,6 +28,11 @@ If you have not yet completed the steps to set up your environment in [Before th
 
 - [Big data and visualization hands-on lab step-by-step](#big-data-and-visualization-hands-on-lab-step-by-step)
   - [Contents](#contents)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Overview](#overview)
+  - [Solution architecture](#solution-architecture)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
   - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
     - [Task 1: Create your Azure Machine Learning project](#task-1-create-your-azure-machine-learning-project)
     - [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
@@ -59,6 +64,33 @@ If you have not yet completed the steps to set up your environment in [Before th
 
 <!-- /TOC -->
 
+## Abstract and learning objectives
+
+This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. The goal is to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
+
+## Overview
+
+AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
+
+They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
+
+## Solution architecture
+
+Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
+
+![This is the high-level overview diagram of the end-to-end solution.](../Whiteboard-design-session/media/high-level-overview.png 'High-level overview diagram')
+
+## Requirements
+
+1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
+    a. Trial subscriptions will not work
+
+## Before the hands-on lab
+
+Refer to the Before the hands-on lab setup guide manual before continuing to the lab exercises.
+
+You should follow all the steps provided in the [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md) section to prepare your environment before attending the hands-on lab. Failure to complete the Before the Hands-on Lab setup may result in an inability to complete the lab with in the time allowed.
+
 ## Exercise 1: Build a Machine Learning Model
 
 Duration: 60 minutes
@@ -73,15 +105,15 @@ In this exercise, you will implement a classification experiment. You will load 
 
 3.  Next, select your lab Data Science Virtual Machine (DSVM) from the list
 
-    ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png "Select Lab DSVM from resource group")
+    ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png 'Select Lab DSVM from resource group')
 
 4.  On your Lab DSVM blade, select **Connect** from the top menu
 
-    ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png "Connect button")
+    ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png 'Connect button')
 
 5.  In the dialog that appears, accept the defaults and select **Download RDP File**. Open the file once downloaded.
 
-    ![Select Download RDP File](media/lab-dsvm-download-rdp-file.png "Select download RDP File")
+    ![Select Download RDP File](media/lab-dsvm-download-rdp-file.png 'Select download RDP File')
 
 6.  Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
 
@@ -99,13 +131,13 @@ In this exercise, you will implement a classification experiment. You will load 
 
 2)  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Setup.md) setup.
 
-1)  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench
+3)  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench
 
-8)  Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then select **Create** (5).
+4)  Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then select **Create** (5).
 
     ![Create new project in the Azure Machine Learning Workbench](media/create-new-workbench-project.png)
 
-9)  This will create the following new file path with a default project structure: C:\HOL\FlightDelays
+5)  This will create the following new file path with a default project structure: C:\HOL\FlightDelays
 
     ![Project structure generated after creating new Workbench project](media/new-project-structure.png)
 
@@ -125,29 +157,29 @@ In this exercise, you will implement a classification experiment. You will load 
 
 4.  From your Lab VM (DSVM), open a browser and navigate to the Azure portal (<https://portal.azure.com>), and navigate to Azure Databricks service under the Resource Group you created when completing the prerequisites for this hands-on lab
 
-    ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png "Select Azure Databricks")
+    ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png 'Select Azure Databricks')
 
 5.  In the Overview pane of the Azure Databricks service, select **Launch Workspace**
 
-    ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png "Select Launch Workspace")
+    ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png 'Select Launch Workspace')
 
     Azure Databricks will automatically log you in using Azure Active Directory Single Sign On.
 
-    ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png "AAD Single Sign On")
+    ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png 'AAD Single Sign On')
 
 6.  Once signed in, select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **+** next to the Tables header.
 
-    ![From the Azure Databricks workspace, select Data, default database, then new table](media/azure-databricks-create-tables.png "Create new table")
+    ![From the Azure Databricks workspace, select Data, default database, then new table](media/azure-databricks-create-tables.png 'Create new table')
 
 7.  Select **Upload File** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI**.
 
-    ![Create a new table using the FlightDelaysWithAirportCodes.csv file](<media/![](media/create-flight-delays-table-ui.png).png> "Create new table")
+    ![Create a new table using the FlightDelaysWithAirportCodes.csv file](<media/![](media/create-flight-delays-table-ui.png).png> 'Create new table')
 
 8.  Select your cluster to preview the table, then select **Preview Table**
 
 9.  Change the Table Name to \"flight_delays_with_airport_codes\" and select the checkmark for **First row is header**. Select **Create Table**.
 
-    ![Rename table and check the first row is header checkbox](media/flight-delays-attributes.png "Rename table")
+    ![Rename table and check the first row is header checkbox](media/flight-delays-attributes.png 'Rename table')
 
 10. Repeat the previous steps for the FlightWeatherWithAirportCode.csv and AirportCodeLocationsClean.csv files, setting the name for each dataset in a similar fashion. There should be a total of three files that are uploaded. Each table should be named as follows:
 
@@ -166,17 +198,17 @@ In this exercise, you will implement a classification experiment. You will load 
 
 2.  Within Azure Databricks, select **Workspace** on the menu, then **Users**, select your user, then select the down arrow on the top of your user workspace. Select **Import**.
 
-    ![Screenshot showing selecting import within the user workspace](media/select-import-in-user-workspace.png "Import")
+    ![Screenshot showing selecting import within the user workspace](media/select-import-in-user-workspace.png 'Import')
 
 3.  Within the Import Notebooks dialog, select Import from: file, then drag-and-drop the files or browse to upload each individually
 
-    ![Select import from file](media/import-notebooks.png "Import from file")
+    ![Select import from file](media/import-notebooks.png 'Import from file')
 
 4.  Select **01 Prepare Flight Data complete** to open the notebook
 
 5.  Before you begin, make sure you attach your cluster to the notebook, using the dropdown. You will need to do this for each notebook you open.
 
-    ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png "Attach cluster to notebook")
+    ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
 6.  Run each cell of the notebook individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
@@ -186,21 +218,21 @@ In this exercise, you will implement a classification experiment. You will load 
 
 1.  From your Lab VM (DSVM), browse to the download folder in File Explorer. Right-click **flight_delays.zip** (which was downloaded at the end of the **02 Predict Flight Delays complete** notebook), then select **Extract All...**.
 
-    ![Right-click downloaded flight_delays.zip file and select Extract All from the context menu](media/downloaded-flight-delays-zip.png "Extract all")
+    ![Right-click downloaded flight_delays.zip file and select Extract All from the context menu](media/downloaded-flight-delays-zip.png 'Extract all')
 
 2.  In the extract dialog, accept the default options and select **Extract**
 
-    ![Extract dialog showing default options](media/extract-flight-delays-dialog.png "Extract dialog")
+    ![Extract dialog showing default options](media/extract-flight-delays-dialog.png 'Extract dialog')
 
 3.  Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder
 
 4.  Navigate to your project folder (C:\HOL\FlightDelays) and paste the pipelineModel subfolder within
 
-    ![Copy pipelineModel to the FlightDelays project folder](media/model-copied-to-project-folder.png "Model copied to project folder")
+    ![Copy pipelineModel to the FlightDelays project folder](media/model-copied-to-project-folder.png 'Model copied to project folder')
 
 5.  Open the Azure Machine Learning Workbench. Select File --> Open Command Prompt.
 
-    ![Open command prompt option in the workbench](media/azure-ml-workbench-open-command-prompt.png "Open command prompt...")
+    ![Open command prompt option in the workbench](media/azure-ml-workbench-open-command-prompt.png 'Open command prompt...')
 
 6.  Execute the following to update/install the Azure CLI packages:
 
@@ -322,37 +354,43 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     ![Enter a Name and select Next](media/adf-ir-setup-3.png 'Integration Runtime Setup step 3')
 
-10.  Under Option 2: Manual setup, copy the Key1 authentication key value by selecting the Copy button, then select **Finish**
+10. Under Option 2: Manual setup, copy the Key1 authentication key value by selecting the Copy button, then select **Finish**
+
 
     ![Copy the Key1 value](media/adf-ir-setup-4.png 'Integration Runtime Setup step 4')
 
-11.  _Don't close the current screen or browser session_
+11. _Don't close the current screen or browser session_
 
-12.  Go back to the Remote Desktop session of the **Lab VM**
+12. Go back to the Remote Desktop session of the **Lab VM**
 
-13.  Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen
+13. Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen
+
 
     ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime page displays.](media/image127.png 'Microsoft Integration Runtime Configuration Manager')
 
-14.  Select **Register**
+14. Select **Register**
 
-15.  It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
+15. It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
 
-16.  The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
+16. The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
+
 
     ![The Microsoft Integration Runtime Configuration Manager New Integration Runtime (Self-hosted) Node page displays.](media/adf-ir-self-hosted-node.png 'Microsoft Integration Runtime Configuration Manager')
 
-17.  You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
+17. You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
+
 
     ![The Microsoft Integration Runtime Configuration Manager Node is connected to the cloud service page displays with connection details.](media/adf-ir-launch-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
     ![The Microsoft Integration Runtime Configuration Manager details](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
-18.  You can now return to the Azure portal, and view the Integration Runtime you just configured
+18. You can now return to the Azure portal, and view the Integration Runtime you just configured
+
 
     ![You can view your Integration Runtime you just configured](media/adf-ir-running.png 'Integration Runtime in running state')
 
-19.  Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise
+19. Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise
+
 
     ![Select the Azure Data Factory Overview button on the menu](media/adf-overview.png 'ADF Overview')
 
@@ -666,7 +704,8 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![In the Choose the input file or folder section, the FlightsandWeather folder is selected.](media/adf-copy-data-source-choose-input.png 'Choose the input file or folder page')
 
-10.  On the File format settings page, select the following options:
+10. On the File format settings page, select the following options:
+
 
     - File format: **Text format**
 
@@ -682,15 +721,17 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![Enter the form values](media/adf-copy-data-file-format.png 'File format settings')
 
-11.  Select **Next**
+11. Select **Next**
 
-12.  On the Destination screen, select **+ Create new connection**
+12. On the Destination screen, select **+ Create new connection**
 
-13.  Select **Azure Blob Storage** within the New Linked Service blade, then select **Continue**
+13. Select **Azure Blob Storage** within the New Linked Service blade, then select **Continue**
+
 
     ![Select Azure Blob Storage, then Continue](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
 
-14.  On the New Lined Service (Azure Blob Storage) account screen, enter the following and then choose **Finish**
+14. On the New Lined Service (Azure Blob Storage) account screen, enter the following and then choose **Finish**
+
 
     - Name: **BlobStorageOutput**
 
@@ -702,13 +743,15 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![On the Copy Data New Linked Service Azure Blob storage account page, fields are set to the previously defined settings.](media/adf-copy-data-blob-storage-linked.png 'New Linked Service Blob Storage')
 
-15.  On the Destination data store page, select **Next**
+15. On the Destination data store page, select **Next**
 
-16.  Select **Azure Blob Storage** within the Azure storage service dropdown list, then select **Next**
+16. Select **Azure Blob Storage** within the Azure storage service dropdown list, then select **Next**
+
 
     ![Select Azure Blob Storage](media/adf-copy-data-destination-connection.png 'Connection properties')
 
-17.  From the **Choose the output file or folder** tab, enter the following:
+17. From the **Choose the output file or folder** tab, enter the following:
+
 
     - Folder path: **sparkcontainer/FlightsAndWeather/{Year}/{Month}/**
 
@@ -724,23 +767,28 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
       ![On the Copy Data Choose the output file or folder page, fields are set to the previously defined settings.](media/adf-copy-data-output-file-folder.png 'Choose the output file or folder page')
 
-18.  On the File format settings screen, select the **Text format** file format, and check the **Add header to file** checkbox, then select **Next**
+18. On the File format settings screen, select the **Text format** file format, and check the **Add header to file** checkbox, then select **Next**
+
 
     ![On the Copy Data File format settings page, the check box for Add header to file is selected.](media/adf-copy-data-file-format-settings.png 'File format settings page')
 
-19.  On the **Settings** screen, select **Skip incompatible rows** under Actions. Expand Advanced settings and set Degree of copy parallelism to **10**, then select **Next**.
+19. On the **Settings** screen, select **Skip incompatible rows** under Actions. Expand Advanced settings and set Degree of copy parallelism to **10**, then select **Next**.
+
 
     ![Select Skip incompatible rows and set copy parallelism to 10](media/adf-copy-data-settings.png 'Settings page')
 
-20.  Review settings on the **Summary** tab, but **DO NOT choose Next**
+20. Review settings on the **Summary** tab, but **DO NOT choose Next**
+
 
     ![Summary page](media/adf-copy-data-summary.png 'Summary page')
 
-21.  Scroll down on the summary page until you see the **Copy Settings** section. Select **Edit** next to **Copy Settings**.
+21. Scroll down on the summary page until you see the **Copy Settings** section. Select **Edit** next to **Copy Settings**.
+
 
     ![Scroll down and select Edit within Copy Settings](media/adf-copy-data-review-page.png 'Summary page')
 
-22.  Change the following Copy settings
+22. Change the following Copy settings
+
 
     - Retry: Set to **3**
 
@@ -748,9 +796,10 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
       ![Set retry to 3](media/adf-copy-data-copy-settings.png 'Copy settings')
 
-23.  After saving the Copy settings, select **Next** on the Summary tab
+23. After saving the Copy settings, select **Next** on the Summary tab
 
-24.  On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. Select **Edit Pipeline** to close out of the wizard.
+24. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. Select **Edit Pipeline** to close out of the wizard.
+
 
     ![Select Edit Pipeline on the bottom of the page](media/adf-copy-data-deployment.png 'Deployment page')
 
@@ -802,41 +851,50 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Generate a new token](media/databricks-generate-new-token.png 'Generate New Token')
 
-10.  **Copy** the generated token
+10. **Copy** the generated token
+
 
     ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
 
-11.  Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form
+11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form
+
 
     ![Paste the generated access token](media/adf-ml-access-token.png 'Paste access token')
 
-12.  Leave the form open and switch back to Azure Databricks. Select **Clusters** on the menu, then select your cluster in the list. Select the **Tags** tab and copy the **ClusterId** value.
+12. Leave the form open and switch back to Azure Databricks. Select **Clusters** on the menu, then select your cluster in the list. Select the **Tags** tab and copy the **ClusterId** value.
+
 
     ![Screenshot of the cluster tags tab](media/databricks-cluster-id.png 'Copy the ClusterId value')
 
-13.  Switch back to your Azure Data Factory screen and paste the ClusterId value into the **Existing cluster id** field. Select **Finish**.
+13. Switch back to your Azure Data Factory screen and paste the ClusterId value into the **Existing cluster id** field. Select **Finish**.
+
 
     ![Paste the cluster id and select finish](media/adf-ml-databricks-clusterid.png 'Paste cluster id')
 
-14.  Switch back to Azure Databricks. Select **Workspace** in the menu. Right-click within Workspace, then select **Create** --> **Folder**.
+14. Switch back to Azure Databricks. Select **Workspace** in the menu. Right-click within Workspace, then select **Create** --> **Folder**.
+
 
     ![Right-click within workspace and select Create, Folder](media/databricks-workspace-create-folder.png 'Create folder')
 
-15.  Enter **adf** as the folder name, then select **Create Folder**
+15. Enter **adf** as the folder name, then select **Create Folder**
 
-16.  Select the down arrow next to your new folder. Select **Create** --> **Notebook**.
+16. Select the down arrow next to your new folder. Select **Create** --> **Notebook**.
+
 
     ![Create a new notebook within the new adf folder](media/databricks-create-notebook.png 'Create notebook')
 
-17.  For the name, enter **BatchScore** and make sure Python is selected as the language, and your cluster is selected. Select **Create**.
+17. For the name, enter **BatchScore** and make sure Python is selected as the language, and your cluster is selected. Select **Create**.
+
 
     ![Enter BatchScore as the new notebook name](media/databricks-create-notebook-form.png 'Create Notebook form')
 
-18.  Switch back to your Azure Data Factory screen. Enter **/adf/BatchScore** into the Notebook path field.
+18. Switch back to your Azure Data Factory screen. Enter **/adf/BatchScore** into the Notebook path field.
+
 
     ![Enter /adf/BatchScore into the notebook path](media/adf-ml-notebook-path.png 'Notebook path')
 
-19.  The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All** after making the connection.
+19. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All** after making the connection.
+
 
     ![Attach the copy activity to the notebook and then publish](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
@@ -980,20 +1038,22 @@ In this exercise, you will prepare a summary of flight delay data using Spark SQ
     summary = spark.sql("SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,     CONCAT(Latitude, ',', Longitude) OriginLatLong FROM scoredflights s INNER JOIN airport_code_location_lookup_clean a ON s.OriginAirportCode = a.Airport WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, DayofMonth, CRSDepHour  Having Sum(prediction) > 1 ORDER BY NumDelays DESC")
     ```
 
-10.  Paste the text below to save the DataFrame as into a global table, then run the cell
+10. Paste the text below to save the DataFrame as into a global table, then run the cell
+
 
     ```python
     summary.write.mode("overwrite").saveAsTable("flight_delays_summary")
     ```
 
-11.  Execute the following to verify the table has data:
+11. Execute the following to verify the table has data:
+
 
     ```python
     %sql
     select * from flight_delays_summary
     ```
 
-12.  Select various visualizations underneath the displayed grid
+12. Select various visualizations underneath the displayed grid
 
 ## Exercise 7: Visualizing in Power BI Desktop
 
@@ -1054,11 +1114,13 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 9.  Select the **HTTP** protocol
 
-10.  Select **DirectQuery** for the Data Connectivity mode, and select **OK**. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying
+10. Select **DirectQuery** for the Data Connectivity mode, and select **OK**. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying
+
 
     ![Configure your connection to the Spark cluster](media/pbi-desktop-connect-spark.png 'Spark form')
 
-11.  Enter your credentials on the next screen as follows
+11. Enter your credentials on the next screen as follows
+
 
     a. User name: **token**
 
@@ -1066,13 +1128,14 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![Enter "token" for the user name and paste user token into the password field](media/pbi-desktop-login.png 'Enter credentials')
 
-12.  Select **Connect**
+12. Select **Connect**
 
-13.  In the Navigator dialog, check the box next to **flight_delays_summary**, and select **Load**
+13. In the Navigator dialog, check the box next to **flight_delays_summary**, and select **Load**
+
 
     ![In the Navigator dialog box, in the pane under Display Options, the check box for flight_delays_summary is selected. In the pane, the table of flight delays summary information displays.](media/pbi-desktop-select-table-navigator.png 'Navigator dialog box')
 
-14.  It will take several minutes for the data to load into the Power BI Desktop client
+14. It will take several minutes for the data to load into the Power BI Desktop client
 
 ### Task 3: Create Power BI report
 
@@ -1108,27 +1171,32 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![On the Report Design Surface, under the map of the United States with dots, a stacked bar chart displays.](media/pbi-desktop-stacked-vis.png 'Report Design Surface')
 
-10.  Unselect the Stacked Column Chart visual by selecting on the white space next to the map on the design surface
+10. Unselect the Stacked Column Chart visual by selecting on the white space next to the map on the design surface
 
-11.  From the Visualizations area, select the Treemap icon to add this visualization to the report
+11. From the Visualizations area, select the Treemap icon to add this visualization to the report
+
 
     ![On the Visualizations palette, the Treemap icon is selected.](media/image193.png 'Visualizations palette')
 
-12.  With the Treemap visualization selected, drag the **OriginAirportCode** field into the **Group** field under Visualizations
+12. With the Treemap visualization selected, drag the **OriginAirportCode** field into the **Group** field under Visualizations
 
-13.  Next, drag the **NumDelays** field over, and drop it into the **Values** field
+13. Next, drag the **NumDelays** field over, and drop it into the **Values** field
+
 
     ![In the Fields column, the check boxes for NumDelays and OriginAirportcode are selected. An arrow points from NumDelays in the Fields column, to NumDelays in the Visualization's Values field. A second arrow points from OriginAirportcode in the Fields column, to OriginAirportcode in the Visualization's Group field.](media/pbi-desktop-config-treemap-vis.png 'Visualizations and Fields columns')
 
-14.  Grab the corner of the Treemap visual on the report design surface, and expand it to fill the area between the map and the side edge of the design surface. The report should now look similar to the following.
+14. Grab the corner of the Treemap visual on the report design surface, and expand it to fill the area between the map and the side edge of the design surface. The report should now look similar to the following.
+
 
     ![The Report design surface now displays the map of the United States with dots, a stacked bar chart, and a Treeview.](media/pbi-desktop-full-report.png 'Report design surface')
 
-15.  You can cross filter any of the visualizations on the report by selecting one of the other visuals within the report, as shown below (This may take a few seconds to change, as the data is loaded)
+15. You can cross filter any of the visualizations on the report by selecting one of the other visuals within the report, as shown below (This may take a few seconds to change, as the data is loaded)
+
 
     ![The map on the Report design surface is now zoomed in on the northeast section of the United States, and the only dot on the map is on Chicago. In the Treeview, all cities except ORD are grayed out. In the stacked bar graph, each bar is now divided into a darker and a lighter color, with the darker color representing the airport.](media/pbi-desktop-full-report-filter.png 'Report design surface')
 
-16.  You can save the report, by choosing Save from the File menu, and entering a name and location for the file
+16. You can save the report, by choosing Save from the File menu, and entering a name and location for the file
+
 
     ![The Power BI Save as window displays.](media/image197.png 'Power BI Save as window')
 
