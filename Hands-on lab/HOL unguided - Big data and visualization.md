@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshops')
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -14,49 +14,75 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 Updated May 2018
 
+**Contents**
+
+<!-- TOC -->
+
+- [Big data and visualization hands-on lab unguided](#big-data-and-visualization-hands-on-lab-unguided)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Overview](#overview)
+  - [Solution architecture](#solution-architecture)
+  - [Requirements](#requirements)
+  - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
+    - [Task 1: Create your Azure Machine Learning project](#task-1-create-your-azure-machine-learning-project)
+    - [Task 2: Upload the sample datasets](#task-2-upload-the-sample-datasets)
+    - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
+    - [Task 4: Configure your Machine Learning environment](#task-4-configure-your-machine-learning-environment)
+  - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
+    - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
+    - [Task 2: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+    - [Task 3: Configure Azure Data Dactory](#task-3-configure-azure-data-dactory)
+  - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3-deploy-your-machine-learning-model-with-azure-ml)
+    - [Task 1: Edit the scoring and configuration files](#task-1-edit-the-scoring-and-configuration-files)
+    - [Task 2: Deploy the model](#task-2-deploy-the-model)
+  - [Exercise 4: Develop a data factory pipeline for data movement](#exercise-4-develop-a-data-factory-pipeline-for-data-movement)
+    - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
+  - [Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5-operationalize-ml-scoring-with-azure-databricks-and-data-factory)
+    - [Task 1: Create Azure Databricks Linked Service](#task-1-create-azure-databricks-linked-service)
+    - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2-complete-the-batchscore-azure-databricks-notebook-code)
+    - [Task 3: Trigger workflow](#task-3-trigger-workflow)
+  - [Exercise 6: Summarize data using Azure Databricks](#exercise-6-summarize-data-using-azure-databricks)
+    - [Task 1: Summarize delays by airport](#task-1-summarize-delays-by-airport)
+  - [Exercise 7: Visualizing in Power BI Desktop](#exercise-7-visualizing-in-power-bi-desktop)
+    - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
+    - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
+    - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
+  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+    - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
+  - [After the hands-on lab](#after-the-hands-on-lab)
+    - [Task 1: Delete resource group](#task-1-delete-resource-group)
+
+<!-- /TOC -->
+
+## Abstract and learning objectives
+
+This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. The goal is to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
+
 AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
 They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
 In this workshop, you will deploy a web app using Machine Learning (ML) to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your Machine Learning model.
 
-If you have not yet completed the steps to set up your environment in [Before the hands-on lab](./Setup.md), you will need to do that before proceeding.
+## Overview
 
-## Contents
+AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
-<!-- TOC -->
+They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
-- [Big data and visualization hands-on lab unguided](#big-data-and-visualization-hands-on-lab-unguided)
-  - [Exercise 1: Build a Machine Learning Model](#exercise-1--build-a-machine-learning-model)
-    - [Task 1: Create your Azure Machine Learning project](#task-1--create-your-azure-machine-learning-project)
-    - [Task 2: Upload the sample datasets](#task-2--upload-the-sample-datasets)
-    - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3--open-azure-databricks-and-complete-lab-notebooks)
-    - [Task 4: Configure your Machine Learning environment](#task-4--configure-your-machine-learning-environment)
-  - [Exercise 2: Setup Azure Data Factory](#exercise-2--setup-azure-data-factory)
-    - [Task 1: Download and stage data to be processed](#task-1--download-and-stage-data-to-be-processed)
-    - [Task 2: Install and configure Azure Data Factory Integration Runtime on the lab VM](#task-2--install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
-    - [Task 3: Configure Azure Data Dactory](#task-3--configure-azure-data-dactory)
-  - [Exercise 3: Deploy your machine learning model with Azure ML](#exercise-3--deploy-your-machine-learning-model-with-azure-ml)
-    - [Task 1: Edit the scoring and configuration files](#task-1--edit-the-scoring-and-configuration-files)
-    - [Task 2: Deploy the model](#task-2--deploy-the-model)
-  - [Exercise 4: Develop a data factory pipeline for data movement](#exercise-4--develop-a-data-factory-pipeline-for-data-movement)
-    - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1--create-copy-pipeline-using-the-copy-data-wizard)
-  - [Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5--operationalize-ml-scoring-with-azure-databricks-and-data-factory)
-    - [Task 1: Create Azure Databricks Linked Service](#task-1--create-azure-databricks-linked-service)
-    - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2--complete-the-batchscore-azure-databricks-notebook-code)
-    - [Task 3: Trigger workflow](#task-3--trigger-workflow)
-  - [Exercise 6: Summarize data using Azure Databricks](#exercise-6--summarize-data-using-azure-databricks)
-    - [Task 1: Summarize delays by airport](#task-1--summarize-delays-by-airport)
-  - [Exercise 7: Visualizing in Power BI Desktop](#exercise-7--visualizing-in-power-bi-desktop)
-    - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1--obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
-    - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2--connect-to-azure-databricks-using-power-bi-desktop)
-    - [Task 3: Create Power BI report](#task-3--create-power-bi-report)
-  - [Exercise 7: Deploy intelligent web app](#exercise-7--deploy-intelligent-web-app)
-    - [Task 1: Deploy web app from GitHub](#task-1--deploy-web-app-from-github)
-  - [After the hands-on lab](#after-the-hands-on-lab)
-    - [Task 1: Delete resource group](#task-1--delete-resource-group)
+## Solution architecture
 
-<!-- /TOC -->
+Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
+
+![This is the high-level overview diagram of the end-to-end solution.](../Whiteboard%20design%20session/media/high-level-overview.png 'High-level overview diagram')
+
+## Requirements
+
+1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
+
+    a. Trial subscriptions will not work
+
+1.  Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md)
 
 ## Exercise 1: Build a Machine Learning Model
 
