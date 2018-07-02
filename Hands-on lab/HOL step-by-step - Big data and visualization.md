@@ -14,17 +14,15 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 Updated May 2018
 
-## Contents
+**Contents**
 
 <!-- TOC -->
 
 - [Big data and visualization hands-on lab step-by-step](#big-data-and-visualization-hands-on-lab-step-by-step)
-  - [Contents](#contents)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Requirements](#requirements)
-  - [Before the hands-on lab](#before-the-hands-on-lab)
   - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
     - [Task 1: Create your Azure Machine Learning project](#task-1-create-your-azure-machine-learning-project)
     - [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
@@ -84,11 +82,7 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
     a. Trial subscriptions will not work
 
-## Before the hands-on lab
-
-Refer to the Before the hands-on lab setup guide manual before continuing to the lab exercises.
-
-You should follow all the steps provided in the [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md) section to prepare your environment before attending the hands-on lab. Failure to complete the Before the Hands-on Lab setup may result in an inability to complete the lab with in the time allowed.
+1.  Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md)
 
 ## Exercise 1: Build a Machine Learning Model
 
