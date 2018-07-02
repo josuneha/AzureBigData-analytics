@@ -81,6 +81,7 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 ## Requirements
 
 1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
+
     a. Trial subscriptions will not work
 
 ## Before the hands-on lab
