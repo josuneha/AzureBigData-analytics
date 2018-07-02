@@ -21,7 +21,7 @@ This hands-on lab is designed to provide exposure to many of Microsoft's transfo
 
 Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
 
-![This is the high-level overview diagram of the end-to-end solution.](../Whiteboard-design-session/media/high-level-overview.png 'High-level overview diagram')
+![This is the high-level overview diagram of the end-to-end solution.](../Whiteboard%20design%20session/media/high-level-overview.png 'High-level overview diagram')
 
 ## Requirements
 
