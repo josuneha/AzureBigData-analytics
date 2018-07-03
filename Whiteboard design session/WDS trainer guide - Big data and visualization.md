@@ -24,7 +24,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 # Big data and visualization whiteboard design session trainer guide
 
-## Contents
+**Contents**
 
 <!-- TOC -->
 
