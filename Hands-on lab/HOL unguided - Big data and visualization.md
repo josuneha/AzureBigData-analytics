@@ -136,8 +136,8 @@ _Tasks to complete_:
 
 - Download the following files:
 
-  - [01 Prepare Flight Data.dbc](lab-files/01 Prepare Flight Data.dbc)
-  - [02 Predict Flight Delays.dbc](lab-files/02 Predict Flight Delays.dbc)
+  - [01 Prepare Flight Data.dbc](lab-files/01%20Prepare%20Flight%20Data.dbc)
+  - [02 Predict Flight Delays.dbc](lab-files/02%20Predict%20Flight%20Delays.dbc)
 
 - Import those notebooks into your Azure Databricks workspace
 

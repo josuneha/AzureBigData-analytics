@@ -122,7 +122,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
 1)  From your Lab VM (DSVM), launch the _Azure Machine Learning Workbench_. You should see a desktop icon for the application, or find it under the Start menu.
 
-2)  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Setup.md) setup.
+2)  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md) setup.
 
 3)  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench
 
@@ -186,8 +186,8 @@ In this exercise, you will implement a classification experiment. You will load 
 
 1.  Download the following files:
 
-    - [01 Prepare Flight Data complete.dbc](lab-files/01 Prepare Flight Data complete.dbc)
-    - [02 Predict Flight Delays complete.dbc](lab-files/02 Predict Flight Delays complete.dbc)
+    - [01 Prepare Flight Data complete.dbc](lab-files/01%20Prepare%20Flight%20Data%20complete.dbc)
+    - [02 Predict Flight Delays complete.dbc](lab-files/02%20Predict%20Flight%20Delays%20complete.dbc)
 
 2.  Within Azure Databricks, select **Workspace** on the menu, then **Users**, select your user, then select the down arrow on the top of your user workspace. Select **Import**.
 
