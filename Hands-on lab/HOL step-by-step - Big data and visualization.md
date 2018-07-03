@@ -1207,7 +1207,7 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 ### Task 1: Deploy web app from GitHub
 
-1.  Navigate to <https://github.com/Microsoft/MCW-Big-Data-and-Visualization/blob/may-2018-update/Hands-on-Lab/lab-files/AdventureWorksTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal
+1.  Navigate to <https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/AdventureWorksTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal
 
 2.  Read through the README information on the GitHub page
 
