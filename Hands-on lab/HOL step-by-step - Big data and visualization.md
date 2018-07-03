@@ -1,7 +1,9 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshops')
 
-# Big data and visualization   
-## Hands-on lab step-by-step   
+# Big data and visualization
+
+## Hands-on lab step-by-step
+
 May 2018
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -20,6 +22,8 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
+- [Big data and visualization](#big-data-and-visualization)
+  - [Hands-on lab step-by-step](#hands-on-lab-step-by-step)
 - [Big data and visualization hands-on lab step-by-step](#big-data-and-visualization-hands-on-lab-step-by-step)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
@@ -1008,7 +1012,7 @@ In this exercise, you will prepare a summary of flight delay data using Spark SQ
 
 6.  Next, you will create a table that summarizes the flight delays data. Instead of containing one row per flight, this new summary table will contain one row per origin airport at a given hour, along with a count of the quantity of anticipated delays. We also join the `airport_code_location_lookup_clean` table you created at the beginning of the lab, so we can extract the airport coordinates. In a new cell below the results of our previous cell, paste the following text, and run the cell.
 
-    ```
+    ```sql
     %sql
     SELECT  OriginAirportCode, Month, DayofMonth, CRSDepHour, Sum(prediction) NumDelays,
         CONCAT(Latitude, ',', Longitude) OriginLatLong
