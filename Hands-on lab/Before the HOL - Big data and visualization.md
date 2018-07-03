@@ -5,7 +5,7 @@
 </div>
     
 <div class="MCWHeader2">
-Whiteboard design session trainer guide
+Before the hands-on lab setup guide 
 </div>
 
 <div class="MCWHeader3">
