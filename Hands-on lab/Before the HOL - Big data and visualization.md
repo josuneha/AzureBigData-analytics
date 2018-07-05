@@ -187,7 +187,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
 Create a new Azure Data Factory instance that will be used to orchestrate data transfers for analysis.
 
-1.  In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource**, then type "storage" into the search bar. Select **Storage account - blob, file, table, queue** from the results.
+1.  In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource**, then type "Data Factory" into the search bar. Select **Data Factory** from the results.
 
     ![Select create a resource, type in Data Factory, then select Data Factory from the results list](media/create-azure-data-factory.png)
 
