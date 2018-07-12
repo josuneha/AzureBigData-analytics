@@ -441,12 +441,12 @@ In this exercise, you will deploy your trained machine learning model to Azure C
 
     ```python
     def init():
-    # read in the model file
-    from pyspark.ml import Pipeline, PipelineModel
-    from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler, Bucketizer
-    global pipeline
+        # read in the model file
+        from pyspark.ml import Pipeline, PipelineModel
+        from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler, Bucketizer
+        global pipeline
 
-    pipeline = PipelineModel.load('pipelineModel')
+        pipeline = PipelineModel.load('pipelineModel')
 
     def generate_api_schema():
         from azureml.api.schema.dataTypes import DataTypes
