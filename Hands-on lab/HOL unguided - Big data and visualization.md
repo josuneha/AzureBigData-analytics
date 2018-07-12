@@ -3,7 +3,7 @@
 <div class="MCWHeader1">
 Big data and visualization
 </div>
-    
+
 <div class="MCWHeader2">
 Hands-on lab unguided
 </div>
@@ -28,8 +28,6 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Big data and visualization](#big-data-and-visualization)
-  - [Hands-on lab unguided](#hands-on-lab-unguided)
 - [Big data and visualization hands-on lab unguided](#big-data-and-visualization-hands-on-lab-unguided)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
@@ -162,6 +160,20 @@ _Exit criteria_:
 ### Task 4: Configure your Machine Learning environment
 
 _Tasks to complete_:
+
+- The first thing you need to do before deploying your model is to enable the container-based Resource Providers on your Azure subscription.
+
+- Navigate to the Azure Portal.
+
+- Select All Services, Subscriptions and then select your subscription from the list.
+
+- Under the Settings grouping, select Resource Providers.
+
+  ![Select resource providers in the menu](media/resource-providers-menu.png 'Resource providers in the menu')
+
+- Search for “container” and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
+
+  ![Search for containers and enable all resource providers](media/enable-container-resource-providers.png 'Enable container resource providers')
 
 - From your Lab VM (DSVM), browse to the download folder in File Explorer, and extract **flight_delays.zip** in place. This file was downloaded at the end of the **02 Predict Flight Delays complete** notebook.
 
