@@ -757,7 +757,7 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 _Tasks to complete_:
 
-- Navigate to the AdventureWorks README page (<https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/AdventureWorksTravel/README.md>), and deploy a web app to Azure using an ARM template
+- Navigate to the AdventureWorks README page (<https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md>), and deploy a web app to Azure using an ARM template
 
 - Provide your ML API details, which was captured during the Machine Learning model deployment exercise
 
