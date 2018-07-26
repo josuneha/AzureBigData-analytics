@@ -1,4 +1,4 @@
-# AdventureWorks Travel Intelligent App Deployment
+# Margie's Travel Intelligent App Deployment
 
 ## Part of the Microsoft Cloud Workshops
 

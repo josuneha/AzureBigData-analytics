@@ -30,30 +30,30 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 - [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
 - [Trainer information](#trainer-information)
-    - [Role of the trainer](#role-of-the-trainer)
-    - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+  - [Role of the trainer](#role-of-the-trainer)
+  - [Whiteboard design session flow](#whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
-    - [Abstract](#abstract)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
-- [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Preferred target audience](#preferred-target-audience)
-    - [Preferred solution](#preferred-solution)
-    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+  - [Abstract](#abstract)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
+- [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide-1)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+  - [Step 3: Present the solution](#step-3-present-the-solution-1)
+  - [Wrap-up](#wrap-up-1)
+  - [Preferred target audience](#preferred-target-audience)
+  - [Preferred solution](#preferred-solution)
+  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -171,7 +171,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract
 
-AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
+Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
 
 They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
@@ -191,15 +191,15 @@ Directions: With all participants in the session, the facilitator or SME present
 
 ### Customer situation
 
-AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
+Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
 
-AWT is investigating ways that they can capitalize on their existing data assets to provide new insights that provide them a strategic advantage against their competition. In planning their product, they heard much fanfare about machine learning and came up with the idea of using predictive analytics to help customers best select their travels based on the likelihood of a delay. When reviewing their customer transaction histories, they discovered that their most premium customers often book their travel within 7 days of departure. In speaking with customer service, they learned that these customers often ask questions like, "I don't have to be there until Tuesday, so is it better for me to fly out on Sunday or Monday?"
+MT is investigating ways that they can capitalize on their existing data assets to provide new insights that provide them a strategic advantage against their competition. In planning their product, they heard much fanfare about machine learning and came up with the idea of using predictive analytics to help customers best select their travels based on the likelihood of a delay. When reviewing their customer transaction histories, they discovered that their most premium customers often book their travel within 7 days of departure. In speaking with customer service, they learned that these customers often ask questions like, "I don't have to be there until Tuesday, so is it better for me to fly out on Sunday or Monday?"
 
-While there are many factors that customer service uses to tailor their guidance to the customer (such as cost and travel duration), AWT believes an innovative solution might come in the form of giving the customer an assessment of the risk of encountering flight delays. For low risk flights, the customer may choose to book with a narrower travel window, giving them more precious time at home and less on the road spent arriving too early to a destination. AWT is interested in applying data science to the problem to discover if the weather forecast coupled with their historical flight delay data could be used to provide a meaningful input into the customer's decision-making process.
+While there are many factors that customer service uses to tailor their guidance to the customer (such as cost and travel duration), MT believes an innovative solution might come in the form of giving the customer an assessment of the risk of encountering flight delays. For low risk flights, the customer may choose to book with a narrower travel window, giving them more precious time at home and less on the road spent arriving too early to a destination. MT is interested in applying data science to the problem to discover if the weather forecast coupled with their historical flight delay data could be used to provide a meaningful input into the customer's decision-making process.
 
-AWT plans to pilot this solution internally, whereby the small population of customer support who service AWT's premium tier of business travelers would begin using the solution and offering it as an additional data point for travel optimization. They would like to provide their customer support agents a web-based solution that enables them to map the predicted delays for a particular customer's departure airport(s) of choice.
+MT plans to pilot this solution internally, whereby the small population of customer support who service MT's premium tier of business travelers would begin using the solution and offering it as an additional data point for travel optimization. They would like to provide their customer support agents a web-based solution that enables them to map the predicted delays for a particular customer's departure airport(s) of choice.
 
-AWT has over 30 years of historical flight data provided to them by the United States Department of Transportation (USDOT), which among other data points includes flight delay information for every flight. The data arrives in flat, comma separated value (CSV) files with a schema of the following:
+MT has over 30 years of historical flight data provided to them by the United States Department of Transportation (USDOT), which among other data points includes flight delay information for every flight. The data arrives in flat, comma separated value (CSV) files with a schema of the following:
 
 (Year, Month, DayOfMonth, Airline, TailNum, FlightNum, OriginAirport, DestinationAirport, ScheduledDepartureTime, ActualDepartureTime, ScheduledArrivalTime, DepartureDelay, AirTime, Distance, Cancelled, CancellationCode)
 
@@ -254,7 +254,7 @@ Additionally, they receive current and forecasted weather data from a third-part
     }
 ```
 
-Jack Tradewinds, the CIO of AWT, is looking to modernize their data story. He has heard a great deal of positive news about Spark SQL on HDInsight and its ability to query exactly the type of files he has in a performant way, but also in a way that is more familiar to his analysts and developers because they are all familiar with the SQL syntax that it supports. He would love to understand if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
+Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has heard a great deal of positive news about Spark SQL on HDInsight and its ability to query exactly the type of files he has in a performant way, but also in a way that is more familiar to his analysts and developers because they are all familiar with the SQL syntax that it supports. He would love to understand if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
 
 ### Customer needs
 
@@ -317,49 +317,49 @@ _High-level architecture_
 
 _Data loading_
 
-1.  How would you recommend that AWT get their historical data into Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
+1.  How would you recommend that MT get their historical data into Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
 
 2.  Update your diagram with the data loading process with the steps you identified.
 
 _Data preparation_
 
-1.  What service would you recommend AWT capitalize on to explore the flat files they get from the USDOT using SQL?
+1.  What service would you recommend MT capitalize on to explore the flat files they get from the USDOT using SQL?
 
-2.  What specific configuration would you use? What components of Azure Databricks would you use to allow AWT analysts to query and prep the data? How would they author and execute these data prep tasks?
+2.  What specific configuration would you use? What components of Azure Databricks would you use to allow MT analysts to query and prep the data? How would they author and execute these data prep tasks?
 
-3.  How would you suggest AWT integrate weather forecast data?
+3.  How would you suggest MT integrate weather forecast data?
 
 _Machine learning modeling_
 
-1.  What technology would you recommend that AWT use for implementing their machine learning model?
+1.  What technology would you recommend that MT use for implementing their machine learning model?
 
-2.  How would you guide AWT to load data, so it can be processed by the machine learning model?
+2.  How would you guide MT to load data, so it can be processed by the machine learning model?
 
-3.  What category of machine learning algorithm would you recommend to AWT for use in constructing their model? For this scenario your option is clustering, regression or two-class classification. Why?
+3.  What category of machine learning algorithm would you recommend to MT for use in constructing their model? For this scenario your option is clustering, regression or two-class classification. Why?
 
 4.  Assuming you selected an algorithm that requires training, address the following model design questions:
 
     a. What is the high-level flow of your machine learning model?
 
-    b. What attributes of the flight and weather data do you think AWT should use in predicting flight delays? How would you recommend that AWT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
+    b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
 
     c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
 
-    d. How would you recommend AWT measure the success of their model?
+    d. How would you recommend MT measure the success of their model?
 
 _Operationalizing machine learning_
 
-1.  How can AWT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
+1.  How can MT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
 
-2.  AWT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
+2.  MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
 _Visualization and reporting_
 
-1.  Is Power BI an option for AWT to use in visualizing the flight delays?
+1.  Is Power BI an option for MT to use in visualizing the flight delays?
 
 2.  If so, explain:
 
-    a. How would AWT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
+    a. How would MT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
 
     b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
 
@@ -473,7 +473,7 @@ Directions:  Tables reconvene with the larger group to hear the facilitator/SME 
 
 ## Preferred target audience
 
-Jack Tradewinds, CIO of AdventureWorks Travel (AWT)
+Jack Tradewinds, CIO of Margie's Travel (MT)
 
 The primary audience is the business decision makers and technology decision makers. From the case study scenario, this would include the Director of Analytics. Usually we talk to the infrastructure managers who report to the chief information officers (CIOs), or to application sponsors (like a vice president \[VP\] line of business \[LOB\], or chief marketing officer \[CMO\]), or to those that represent the business unit IT or developers that report to application sponsors.
 
@@ -483,7 +483,7 @@ _High-level architecture_
 
 1.  Without getting into the details (the following sections will address the details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
 
-    After speaking with its supportive team at Microsoft, AWT decided that Azure would in fact be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using Spark SQL on Azure Databricks; train a model within Azure Databricks; export the model, save it to Azure Machine Learning Model Management and operationalize as a containerized web service in Azure Container Service; and visualize the result using a map visualization in Power BI.
+    After speaking with its supportive team at Microsoft, MT decided that Azure would in fact be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using Spark SQL on Azure Databricks; train a model within Azure Databricks; export the model, save it to Azure Machine Learning Model Management and operationalize as a containerized web service in Azure Container Service; and visualize the result using a map visualization in Power BI.
 
     ![This is the high-level overview diagram of the end-to-end solution.](media/high-level-overview.png 'High-level overview diagram')
 
@@ -491,9 +491,9 @@ _NOTE: The preferred solution is only one of many possible, viable approaches._
 
 _Data loading_
 
-1.  How would you recommend that AWT get their historical data into Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
+1.  How would you recommend that MT get their historical data into Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
 
-    AWT should consider using Azure Data Factory (ADF) for copying their historical data into Azure. By setting up a continuous pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, AWT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Once in place, this would allow ADF to copy data from their local data store to a container is blob storage. Their pipeline would be configured to run monthly, as that is the frequency at which new data is received, and this would still allow for all their historical data to be copied without delay.
+    MT should consider using Azure Data Factory (ADF) for copying their historical data into Azure. By setting up a continuous pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, MT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Once in place, this would allow ADF to copy data from their local data store to a container is blob storage. Their pipeline would be configured to run monthly, as that is the frequency at which new data is received, and this would still allow for all their historical data to be copied without delay.
 
 1.  Update your diagram with the data loading process with the steps you identified
 
@@ -501,15 +501,15 @@ _Data loading_
 
 _Data preparation_
 
-1.  What service would you recommend AWT capitalize on to explore the flat files they get from the United States Department of Transportation (USDOT) using SQL?
+1.  What service would you recommend MT capitalize on to explore the flat files they get from the United States Department of Transportation (USDOT) using SQL?
 
     Because of their interest in exploring and preparing the flat files using SQL, the best choice here is to use Azure Databricks. It is Microsoft's premier Apache Spark hosted solution that will also be the platform for building and training the machine learning model for flight delay predictions, based on the same data that it was used to prepare. This offers a single platform for data preparation and machine learning, within a collaborative environment that appeals to both data scientists and data engineers.
 
-2.  What specific configuration would you use? What components of Azure Databricks would you use to allow AWT analysts to query and prep the data? How would they author and execute these data prep tasks?
+2.  What specific configuration would you use? What components of Azure Databricks would you use to allow MT analysts to query and prep the data? How would they author and execute these data prep tasks?
 
     They should use Spark SQL within Databricks notebooks. This gives them a simple, interactive interface that allows them to use programming languages such as Python, Scala, and R to prepare their data and train their data models. When a notebook is created or an existing one is opened, they would need to attach it to a cluster. This provides them with a kernel that gives them a preset sqlContext that can be used to run Hive queries using Spark SQL syntax on the data, which allows the to leverage their existing SQL skills. They would need to create the appropriate external tables atop the flight delay files available in HDFS, which reads from the Azure Storage account attached to their Azure Databricks instance.
 
-3.  How would you suggest AWT integrate weather forecast data?
+3.  How would you suggest MT integrate weather forecast data?
 
     They could retrieve the weather forecast data from a third-party service that provides a REST API. An example of such a service is [darksky.net](https://darksky.net).
 
@@ -517,17 +517,17 @@ _Data preparation_
 
 _Machine learning modeling_
 
-1.  What technology would you recommend that AWT use for implementing their machine learning model?
+1.  What technology would you recommend that MT use for implementing their machine learning model?
 
     The model will first be built and trained within an Azure Databricks notebook. The data scientists can use the programming language of their choice (Python, Scala, R, etc.) as well as Spark SQL to featurize and fit the data into the chosen machine learning algorithm. Machine learning libraries such as Spark MLlib or SciKit-Learn can be used within the notebook to simplify things. Once the model is trained and tested with a sufficient amount of historical data, then the model can be exported for deployment to a web service. The model can also continued to be used within Azure Databricks for batch scoring.
 
-2.  How would you guide AWT to load data, so it can be processed by the machine learning model?
+2.  How would you guide MT to load data, so it can be processed by the machine learning model?
 
     The data used for training could either be uploaded directly to Azure Databricks, creating a new table with the data stored in DBFS (Databricks File System). Then the data can be accessed from this global persistent table using Spark SQL syntax or DataFrames. Alternately, if they need to train the model with a very large amount of data, the data can be stored in Azure Storage, then the Storage account can be mounted to an Azure Databricks cluster. From that point, the data can be accessed using the wasb/wasbs path and loaded into a DataFrame. Alternately, the data can be persistedd into a global table so that it can be easily accessed using Spark SQL syntax and across cluster sessions.
 
-3.  What category of machine learning algorithm would you recommend to AWT for use in constructing their model? For this scenario, your options are clustering, regression or two-class classification. Why?
+3.  What category of machine learning algorithm would you recommend to MT for use in constructing their model? For this scenario, your options are clustering, regression or two-class classification. Why?
 
-    Given that AWT only wants a binary prediction of flight delayed or flight not delayed, they should proceed with a two-class classification algorithm, such as logistic regression.
+    Given that MT only wants a binary prediction of flight delayed or flight not delayed, they should proceed with a two-class classification algorithm, such as logistic regression.
 
 4.  Assuming you selected an algorithm that requires training, address the following model design questions:
 
@@ -537,15 +537,15 @@ _Machine learning modeling_
 
     Once the features have been prepared, you will need to split the data so that the bulk of it (such as 70%) is used to train the model, and the rest of it is used to test, or validate, the model.
 
-    b. What attributes of the flight and weather data do you think AWT should use in predicting flight delays? How would you recommend that AWT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the modules or libraries they could use and how they would apply them against the data.
+    b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the modules or libraries they could use and how they would apply them against the data.
 
-    There are multiple approaches AWT could use to perform feature selection and to identify the data attributes that are the most helpful in accurately predicting a delay. They should start with any domain knowledge they have---this would likely point in the direction of the flight attribute's airline, departure airport, destination airport, and time of day as well as the weather attribute's wind speed, temperature, and precipitation conditions. Additionally, they should identify and remove fields that do not add value (i.e., because they are mostly empty or only have a constant value). They should use Python or R functions, such as `replace` or `na.omit`, respectively, to remove empty rows or replace constant values (such as 'M' for missing data) within the important feature columns. From there, they could construct a preliminary model and validate how it performs against the training data. In additional passes, they might choose to score the effectiveness of their trained model against training and testing data sets to see whether their baseline score is improving or regressing.
+    There are multiple approaches MT could use to perform feature selection and to identify the data attributes that are the most helpful in accurately predicting a delay. They should start with any domain knowledge they have---this would likely point in the direction of the flight attribute's airline, departure airport, destination airport, and time of day as well as the weather attribute's wind speed, temperature, and precipitation conditions. Additionally, they should identify and remove fields that do not add value (i.e., because they are mostly empty or only have a constant value). They should use Python or R functions, such as `replace` or `na.omit`, respectively, to remove empty rows or replace constant values (such as 'M' for missing data) within the important feature columns. From there, they could construct a preliminary model and validate how it performs against the training data. In additional passes, they might choose to score the effectiveness of their trained model against training and testing data sets to see whether their baseline score is improving or regressing.
 
     c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
 
     Data munging can be best accomplished using R or Python, languages familiar to data scientists and developers. These languages provide powerful data transformation capabilities, and allow for flexibility in how data cleanup occurs, while reducing the overall complexity of ML models. These steps should be performed before featurization. You can use a Spark Pipeline to organize your data transformation steps in order.
 
-    d. How would you recommend AWT measure the success of their model?
+    d. How would you recommend MT measure the success of their model?
 
     For a classification model, they should measure the success of their model against a data set whereby a large portion of the data is used for training purposes, but a smaller set is reserved as examples that will be used to "test" the model to see how it performs against a known outcome. The output of the prediction as well as the "correct" output is passed to the one or more binary evaluation metrics which provide scores such as those from the Confusion Matrix, part of the MLlib MulticlassMetrics library, that give a perspective on accuracy and in what situations the models make mistakes.
 
@@ -553,7 +553,7 @@ _Machine learning modeling_
 
 _Operationalizing machine learning_
 
-1.  How can AWT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
+1.  How can MT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
 
     Once they have trained their model, it can be exported to any number of common file formats from within Azure Databricks. The exported model can be attached to the mounted Azure Storage account. Using a machine with the Azure Machine Learning services toolset installed (or preinstalled when using the Data Science Virtual Machine (DSVM)), the exported model can be loaded into Azure Machine Learning Model Management. This provides a single location from which the model can be managed and deployed. It includes nice features such as model versioning, deploying models to multiple environments, automated model retraining, capturing model telementry, and deploying the model into Docker containers.
 
@@ -561,19 +561,19 @@ _Operationalizing machine learning_
 
     ![In the On-Demand Delay Predictions flowchart, a Flight Delays Web Portal icon has one arrow labeled "1. Query for weather forecast," pointing to a 3rd Party API, labeled "Forecasted Airport Weather Data (API). A second arrow labeled "2. Query for delay prediction providing weather forecast and flight data," points to containerized AI Services.](media/on-demand-delay-predictions.png 'On-Demand Delay Predictions flowchart')
 
-2.  AWT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
+2.  MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
     The model should be created in such a way that data is prepared and featurized in a consistent way each time it is executed. This way, it can be used equally well for both interactive and batch scoring. The model should be provided within an Azure Databricks notebook that accepts input parameters that point to the file location of the data that needs to be batch processed. This can be implemented via Azure Data Factory (v2) by adding a Linked Service to Azure Databricks and configuring the path and parameters to send to the notebook. By using ADF, they can apply the operational model to data as it is moved to the proper location in Azure storage. The scored results will be available in Blob storage after processing, and with the scheduled pipeline new data will be processed automatically, on the schedule indicated by the pipeline.
 
 _Visualization and reporting_
 
-1.  Is Power BI an option for AWT to use in visualizing the flight delays?
+1.  Is Power BI an option for MT to use in visualizing the flight delays?
 
-    Yes, Power BI is a good option for AWT. Power BI can perform what is called a Direct Query against Apache Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark.
+    Yes, Power BI is a good option for MT. Power BI can perform what is called a Direct Query against Apache Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark.
 
 2.  If so, explain:
 
-    a. How would AWT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
+    a. How would MT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
 
     The data would be set up as a query against Spark that loads the predicted flight delay for each airport location. They would use the map visualization to display a delay indicator for a particular flight at a particular airport.
 
@@ -631,4 +631,4 @@ _Visualization and reporting_
 
 _"We are flying into the future with Azure, helping our customers more aggressively schedule their travel and optimize their non-travel time."_
 
-Jack Tradewinds, CIO of AdventureWorks Travel
+Jack Tradewinds, CIO of Margie's Travel

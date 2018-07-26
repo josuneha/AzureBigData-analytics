@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head runat="server">
-    <title>AdventureWorks Travel</title>
+    <title>Margie's Travel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -124,7 +124,7 @@
 
     <div class="navbar navbar-default shadow-z-2">
         <div class="navbar-header">
-            <a class="navbar-brand" href="javascript:void(0)" title="AdventureWorks Travel">
+            <a class="navbar-brand" href="javascript:void(0)" title="Margie's Travel">
                 <img src="images/AdventureWorksTravel.png" style="max-width:376px; margin-top: -14px;" /></a>
         </div>
         <%--<div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -154,7 +154,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    Copyright &copy; <%= DateTime.Today.Year.ToString() %>,  |  <a href="#">AdventureWorks Travel, inc.</a>, all rights reserved
+                    Copyright &copy; <%= DateTime.Today.Year.ToString() %>,  |  <a href="#">Margie's Travel, inc.</a>, all rights reserved
                 </div>
                 <div class="col-md-4">
                     <a href="https://darksky.net/" target="_blank"><img src="images/darksky-sm.png" alt="DarkSky" /></a>
