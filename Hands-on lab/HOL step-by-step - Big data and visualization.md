@@ -229,43 +229,46 @@ The first thing you need to do before deploying your model is to enable the cont
 
     ![Select resource providers in the menu](media/resource-providers-menu.png 'Resource providers in the menu')
 
-4.  Search for “container” and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
+4.  Search for "container" and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
 
     ![Search for containers and enable all resource providers](media/enable-container-resource-providers.png 'Enable container resource providers')
 
-5.  From your Lab VM (DSVM), browse to the download folder in File Explorer. Right-click **flight_delays.zip** (which was downloaded at the end of the **02 Predict Flight Delays complete** notebook), then select **Extract All...**.
+5.  Search for and enable the **Microsoft.MachineLearningServices** service provider.
+
+6.  From your Lab VM (DSVM), browse to the download folder in File Explorer. Right-click **flight_delays.zip** (which was downloaded at the end of the **02 Predict Flight Delays complete** notebook), then select **Extract All...**.
 
     ![Right-click downloaded flight_delays.zip file and select Extract All from the context menu](media/downloaded-flight-delays-zip.png 'Extract all')
 
-6.  In the extract dialog, accept the default options and select **Extract**
+7.  In the extract dialog, accept the default options and select **Extract**
 
     ![Extract dialog showing default options](media/extract-flight-delays-dialog.png 'Extract dialog')
 
-7.  Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder
+8.  Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder
 
-8.  Navigate to your project folder (C:\HOL\FlightDelays) and paste the pipelineModel subfolder within
+9.  Navigate to your project folder (C:\HOL\FlightDelays) and paste the pipelineModel subfolder within
 
     ![Copy pipelineModel to the FlightDelays project folder](media/model-copied-to-project-folder.png 'Model copied to project folder')
 
-9.  Open the Azure Machine Learning Workbench. Select File --> Open Command Prompt.
+10. Open the Azure Machine Learning Workbench. Select File --> Open Command Prompt.
+
 
     ![Open command prompt option in the workbench](media/azure-ml-workbench-open-command-prompt.png 'Open command prompt...')
 
-10. Execute the following to update/install the Azure CLI packages:
+11. Execute the following to update/install the Azure CLI packages:
 
 
     ```bash
     pip install azure-cli azure-cli-ml azure-ml-api-sdk
     ```
 
-11. Execute the following to upgrade the `pyspark` version:
+12. Execute the following to upgrade the `pyspark` version:
 
 
     ```bash
     pip install pyspark --upgrade
     ```
 
-12. Set up your machine learning environment with the following command:
+13. Set up your machine learning environment with the following command:
 
 
     ```bash
@@ -278,15 +281,15 @@ The first thing you need to do before deploying your model is to enable the cont
         - For <location>, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
         - For <yourresourcegroupname>, enter the resource group name you've been using for this lab.
 
-13. If prompted, copy the URL presented and sign in using your web browser
+14. If prompted, copy the URL presented and sign in using your web browser
 
-14. Enter the code provided in the command prompt
+15. Enter the code provided in the command prompt
 
-15. Return to the command prompt, which should automatically update after you log in
+16. Return to the command prompt, which should automatically update after you log in
 
-16. At the "Subscription set to <subscription name>" prompt, enter Y if the subscription name is correct, or N to select the subscription to use from a list
+17. At the "Subscription set to <subscription name>" prompt, enter Y if the subscription name is correct, or N to select the subscription to use from a list
 
-17. It will take **10-20 minutes** for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:
+18. It will take **10-20 minutes** for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:
 
     ```bash
     az ml env show -g <resourceGroupName> -n <clusterName>

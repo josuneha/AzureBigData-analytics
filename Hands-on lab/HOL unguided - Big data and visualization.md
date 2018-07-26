@@ -171,9 +171,11 @@ _Tasks to complete_:
 
   ![Select resource providers in the menu](media/resource-providers-menu.png 'Resource providers in the menu')
 
-- Search for “container” and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
+- Search for "container" and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
 
   ![Search for containers and enable all resource providers](media/enable-container-resource-providers.png 'Enable container resource providers')
+
+- Search for and enable the **Microsoft.MachineLearningServices** service provider.
 
 - From your Lab VM (DSVM), browse to the download folder in File Explorer, and extract **flight_delays.zip** in place. This file was downloaded at the end of the **02 Predict Flight Delays complete** notebook.
 
