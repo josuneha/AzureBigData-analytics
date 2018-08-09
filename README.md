@@ -15,25 +15,20 @@ They are looking to pilot a web app that their internal customer service agents 
 
 ### Workshop
 
-In this workshop, you will deploy a web app using Machine Learning services to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your Machine Learning model.
+In this workshop, you will deploy a web app using Machine Learning Services to predict travel delays given flight delay data and weather conditions. Plan a bulk data import operation, followed by preparation, such as cleaning and manipulating the data for testing, and training your machine learning model.
 
-By attending this workshop, you will be better able to build a complete machine learning model in Azure Databricks for predicting if an upcoming flight will experience delays. In addition, you will learn to:
-
-- Store the trained model in Azure Machine Learning Model Management, then deploy to Docker containers for scalable on-demand predictions
-
-- Use Azure Data Factory (ADF) for data movement and operationalizing ML scoring
-
-- Summarize data with Azure Databricks and Spark SQL
-
-- Visualize batch predictions on a map using Power BI
+At the end of this workshop, you will be better able to build a complete machine learning model in Azure Databricks for predicting if an upcoming flight will experience delays. In addition, you will learn to store the trained model in Azure Machine Learning Model Management, then deploy to Docker containers for scalable on-demand predictions, use Azure Data Factory (ADF) for data movement and operationalizing ML scoring, summarize data with Azure Databricks and Spark SQL, and visualize batch predictions on a map using Power BI.
 
 ### Whiteboard Design Session
+In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays. 
 
-In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays. You will also include a web application that obtains weather forecasts from a 3rd party, collects flight information from end users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays, and orchestrating the collection and batch scoring of historic and new flight delay data.
+At the end of this whiteboard design session you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays, and orchestrating the collection and batch scoring of historic and new flight delay data.
 
 ### Hands-on Lab
 
-This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. The goal is to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
+This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. 
+
+By the end of the lab, you will be able to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
 
 ## Azure services and related products
 
@@ -45,6 +40,7 @@ This hands-on lab is designed to provide exposure to many of Microsoft's transfo
 - Azure App Service
 
 ## Azure solution
+Machine Learning
 
 ## Related references
 
