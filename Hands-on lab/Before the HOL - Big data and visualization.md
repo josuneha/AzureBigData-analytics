@@ -329,15 +329,13 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 5.  On the Create New Cluster form, provide the following:
 
-    - Cluster Type: Standard
-
     - Cluster Name: lab
 
-    - Databricks Runtime Version: 3.4 (includes Apache Spark 2.2.0, Scala 2.11)
+    - Cluster Type: Standard
 
-      **Note:** Select 3.4 and not a newer version such as 4.1. This is so that the exported machine learning model will be compatible with the version of Spark currently installed on DSVM.
+    - Databricks Runtime Version: 4.1 (includes Apache Spark 2.3.0, Scala 2.11)
 
-    - Python Version: 2
+    - Python Version: 3
 
     - Driver Type: Same as worker
 
