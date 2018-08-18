@@ -46,7 +46,7 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
     - Name: Enter **LabDSVM**
 
-    - VM disk type: Select **SSD**
+    - VM disk type: Select **Premium SSD**
 
     - User name: Enter **demouser**
 
@@ -137,7 +137,7 @@ Create a new Azure Storage account that will be used to store historic and score
 
 2.  Select Create on the bottom of the blade that follows
 
-3.  Set the following configuration on the Azure Databricks Service creation form:
+3.  Set the following configuration on the Azure Storage account creation form:
 
     - Name: Enter a unique name as indicated by a green checkmark
 
@@ -179,7 +179,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
     ![Select Access keys from menu - copy storage account name - copy key](media/azure-storage-access-keys.png)
 
-4.  Select **Containers** (1) from the menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container. Please note: in some cases, you will not see Containers in the menu. Instead, select "Browse Blobs" underneath the Blob Service heading.
+4.  Select **Containers** (1) from the menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container. Please note: in some cases, you will not see Containers in the menu. Instead, select "Blobs" underneath the Blob Service heading.
 
     ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 
@@ -295,7 +295,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
     - Account name: Provide a name for your model management account
 
-    - Model Management pricing tier: Select the S1 pricing tier
+    - Model Management pricing tier: Select the DEVTEST pricing tier
 
     ![Complete the form using the options as outlined above](media/machine-learning-experimentation-creation-form.png)
 
