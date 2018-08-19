@@ -369,7 +369,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     ![Select Perform data movement and dispatch activities to external computes](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
 
-8.  Select **Private Network** then select **Next**
+8.  Select **Self-Hosted** then select **Next**
 
     ![Select Private Network then Next](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
 
@@ -635,7 +635,7 @@ In this exercise, you will deploy your trained machine learning model to Azure C
 
     ![Associate model management account command](media/associate-model-management.png)
 
-3.  Set the environment. This sets the context for the remaining commands. The <environment name> is the value used in Exercise 1, Task 4, Step 8 above. The <yourresourcegroupname> value should be your lab resource group.
+3.  Set the environment. This sets the context for the remaining commands. The **yourclustername** is the value used in Exercise 1, Task 4, Step 13 above. The **yourresourcegroupname** value should be your lab resource group.
 
     ```bash
     az ml env set -n <yourclustername> -g <yourresourcegroupname>
