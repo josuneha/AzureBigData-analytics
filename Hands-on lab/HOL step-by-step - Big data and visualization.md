@@ -273,9 +273,9 @@ The first thing you need to do before deploying your model is to enable the cont
 
     Replace the tokens above with appropriate values:
 
-    - For <environment name> enter flightdelays, or something similar. This value can only contain lowercase alphanumeric characters.
-    - For <location>, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
-    - For <yourresourcegroupname>, enter the resource group name you've been using for this lab.
+    - For **environment name** enter flightdelays, or something similar. This value can only contain lowercase alphanumeric characters.
+    - For **location**, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
+    - For **yourresourcegroupname**, enter the resource group name you've been using for this lab.
 
     > When you run the above command, the prompt tells you the subscription is set to XYZ. If you select "N" to continue with the subscription, you may encounter a UnicodeEncodeError when it attempts to parse your subscription list. If this happens, manually set the subscription first using the following command, then rerun the az ml env setup command:
 
