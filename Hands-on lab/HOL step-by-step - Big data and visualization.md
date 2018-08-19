@@ -1144,7 +1144,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     a. User name: **token**
 
-    b. Password: Create a new personal access token, following the same steps you took when you connected Azure Databricks to Azure Data Factory. **Paste the new token here**.
+    b. Password: Remember that ADF Access token we generated and asked you to paste in Notepad, that is the password.
+
+     ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
 
     ![Enter "token" for the user name and paste user token into the password field](media/pbi-desktop-login.png 'Enter credentials')
 
