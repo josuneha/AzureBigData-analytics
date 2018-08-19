@@ -768,11 +768,6 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 15. On the Destination data store page, select **Next**
 
-16. Select **Azure Blob Storage** within the Azure storage service dropdown list, then select **Next**
-
-
-    ![Select Azure Blob Storage](media/adf-copy-data-destination-connection.png 'Connection properties')
-
 17. From the **Choose the output file or folder** tab, enter the following:
 
 
@@ -784,9 +779,9 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Month: Select **MM** from the drop down
 
-    - Select **Next**
-
     - Copy behavior: **Merge files**
+    
+    - Select **Next**
 
       ![On the Copy Data Choose the output file or folder page, fields are set to the previously defined settings.](media/adf-copy-data-output-file-folder.png 'Choose the output file or folder page')
 
@@ -850,7 +845,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Type BatchScore as the Name under the General tab](media/adf-ml-notebook-general.png 'Databricks Notebook General Tab')
 
-5.  Select the **Settings** tab, and select **+ New** next to the Linked service drop down. Here, you will configure a new linked service which will serve as the connection to your Databricks cluster.
+5.  Select the **Azure Databricks** tab, and select **+ New** next to the Databricks Linked service drop down. Here, you will configure a new linked service which will serve as the connection to your Databricks cluster.
 
     ![Screenshot of the Settings tab](media/adf-ml-settings-new-link.png 'Databricks Notebook Settings Tab')
 
@@ -859,8 +854,9 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
     - Name: enter a name, such as AzureDatabricks
     - Connect via integration runtime: Leave set to Default
     - Account selection method: Select From Azure subscription
+    - Choose your Azure Subscription
+    - Pick your Databricks workspace to populate the Domain automatically
     - Select cluster: choose Existing cluster
-    - Domain/Region: select the region where your cluster resides
 
     ![Screenshot showing filled out form with defined parameters](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
 
@@ -906,7 +902,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Create a new notebook within the new adf folder](media/databricks-create-notebook.png 'Create notebook')
 
-17. For the name, enter **BatchScore** and make sure Python is selected as the language, and your cluster is selected. Select **Create**.
+17. For the name, enter **BatchScore** and make sure Python is selected as the language. Select **Create**.
 
 
     ![Enter BatchScore as the new notebook name](media/databricks-create-notebook-form.png 'Create Notebook form')
