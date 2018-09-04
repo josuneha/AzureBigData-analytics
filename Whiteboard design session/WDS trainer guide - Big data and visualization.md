@@ -274,7 +274,7 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 ### Customer objections
 
-1.  We have heard that creating a machine learning model takes a month to build and another 2--3 months to operationalize so that it is useable from our production systems. Is this true?
+1.  We have heard that creating a machine learning model takes a month to build and another 2-3 months to operationalize so that it is useable from our production systems. Is this true?
 
 2.  Once our model is operationalized, how do we retrain and redeploy it? Will this process break clients currently accessing the deployed model?
 
@@ -371,11 +371,11 @@ _Visualization and reporting_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution
+1.  Identify any customer needs that are not addressed with the proposed solution.
 
-1.  Identify the benefits of your solution
+2.  Identify the benefits of your solution.
 
-1.  Determine how you will respond to the customer's objections
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -431,47 +431,43 @@ Timeframe: 15 minutes
 
 ## Step 1: Review the customer case study
 
-- Check in with your table participants to introduce yourself as the trainer
+- Check in with your table participants to introduce yourself as the trainer.
 
 - Ask, "What questions do you have about the customer case study?"
 
-- Briefly review the steps and timeframes of the whiteboard design session
+- Briefly review the steps and timeframes of the whiteboard design session.
 
-- Ready, set, go! Let the table participants begin
+- Ready, set, go! Let the table participants begin.
 
 ## Step 2: Design a proof of concept solution
 
-- Check in with your tables to ensure that they are transitioning from step to step on time
+- Check in with your tables to ensure that they are transitioning from step to step on time.
 
-- Provide some feedback on their responses to the business needs and design
+- Provide some feedback on their responses to the business needs and design.
 
-  - Try asking questions first that will lead the participants to discover the answers on their own
+  - Try asking questions first that will lead the participants to discover the answers on their own.
 
-- Provide feedback for their responses to the customer's objections
+- Provide feedback for their responses to the customer's objections.
 
-  - Try asking questions first that will lead the participants to discover the answers on their own
+  - Try asking questions first that will lead the participants to discover the answers on their own.
 
 ## Step 3: Present the solution
 
-- Determine which table will be paired with your table before Step 3 begins
+- Determine which table will be paired with your table before Step 3 begins.
 
-- For the first round, assign one table as the Microsoft team and the other table as the customer
+- For the first round, assign one table as the Microsoft team and the other table as the customer.
 
-- Have the Microsoft team present their solution to the customer team
+- Have the Microsoft team present their solution to the customer team.
 
-  - Have the customer team provide one objection for the Microsoft team to respond to
+  - Have the customer team provide one objection for the Microsoft team to respond to.
 
-  - The presentation and objections should be no longer than 10 minutes
+  - The presentation and objections and feedback should take no longer than 15 minutes.
 
-- Have participants on the customer team give feedback to the Microsoft team
-
-  - The feedback should be no longer than 5 minutes
-
-  - If needed, the trainer may also provide feedback
+  - If needed, the trainer may also provide feedback.
 
 ## Wrap-up
 
-Directions:  Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
+Directions: Have the table participants reconvene with the larger group to hear the facilitator/SME share the following preferred solution.
 
 ## Preferred target audience
 
@@ -593,7 +589,7 @@ _Visualization and reporting_
 
 ## Checklist of preferred objection handling
 
-1.  We have heard that creating a machine learning model takes a month to build and another 2--3 months to operationalize so that it is useable from our production systems. Is this true?
+1.  We have heard that creating a machine learning model takes a month to build and another 2-3 months to operationalize so that it is useable from our production systems. Is this true?
 
     This is true in the traditional process for creating machine learning models, whereby the data scientist creates a model (e.g., in R) and then hands it over to developers who translate it into Java or C\#---which can take months to get the translation correct and performant. With Azure Machine Learning Model Management, you can deploy Docker-based container images with a single command to Azure Container Service managed by the ML Compute environment. During the process, a REST API for the deployed model is generated along with a swagger document. This makes it very easy for clients to consume the model.
 
@@ -623,7 +619,7 @@ _Visualization and reporting_
 
     No. Azure HDInsight provides an option for running hosted Spark clusters as well. Within HDInsight, you can provision hosted clusters based on Hive, HBase, and others. Hortonworks, Cloudera, and MapR provide fully supported distributions that are available in the Azure Marketplace and provide environments for running HiveQL Spark SQL in Azure.
 
-1.  We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data
+8.  We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data
 
     There are two offerings related to Azure Data Lake that should be called out separately. Azure Data Lake Analytics provides a distributed querying engine whose costs are based solely on the number of resources used in the query, the amount of time those resources were made available to the query, and a nominal job completion charge. In its current form, Azure Data Lake Analytics supports only Batch workloads, so it is not the right tool for interactive analytic workloads.
 
