@@ -20,11 +20,33 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 © 2018 Microsoft Corporation. All rights reserved.
 
+**Contents**
+
+<!-- TOC -->
+
+- [Big data and visualization before the hands-on lab setup guide](#big-data-and-visualization)
+    - [Requirements](#requirements)
+    - [Before the hands-on lab](#before-the-hands-on-lab)
+        - [Task 1: Deploy Data Science Virtual Machine (DSVM) cluster to Azure](#task-1-deploy-data-science-virtual-machine-(dsvm)- cluster-to-azure)
+        - [Task 2: Register for a trial API account at darksky.net](#task-2-task-register-for-a-trial-API-account-at-darksky.net)
+        - [Task 3: Provision Azure Databricks](#task-3-task-provision-azure-databricks)
+        - [Task 4: Create Azure Storage account](#task-4-task-create-azure-storage-account)
+        - [Task 5: Retrieve Azure Storage account information and create container](#task-5-task-retrieve-azure-storage-account-information-and-create-container)
+        - [Task 6: Provision Azure Data Factory](#task-6-task-Provision-azure-data-factory)
+        - [Task 7: Initialize Azure Machine Learning Workbench on the Lab DSVM](#task-7-task-initialize-azure-machine-learning-workbench-on-the-lab-dsvm)
+        - [Task 8: Provision Azure Machine Learning Experimentation service](#task-8-task-provision-azure-machine-learning-experimentation-service)
+        - [Task 9: Create an Azure Databricks cluster](#task-9-task-create-an-azure-databricks-cluster)
+
+
+<!-- /TOC -->
+
+# Big data and visualization before the hands-on lab setup guide 
+
 ## Requirements
 
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
+1.  Microsoft Azure subscription must be pay-as-you-go or MSDN.
 
-    a. Trial subscriptions will not work
+    a. Trial subscriptions will not work.
 
 ## Before the hands-on lab
 
@@ -38,39 +60,39 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
     ![Select Data Science Virtual Machine - Windows 2016](media/new-dsvm.png)
 
-2.  Select Create on the bottom of the blade that follows
+2.  Select Create on the bottom of the blade that follows.
 
     ![Select the create button at the bottom of the blade that follows.](media/create-resource-manager.png)
 
     Set the following configuration on the Basics tab:
 
-    - Name: Enter **LabDSVM**
+    - Name: Enter **LabDSVM**.
 
-    - VM disk type: Select **Premium SSD**
+    - VM disk type: Select **Premium SSD**.
 
-    - User name: Enter **demouser**
+    - User name: Enter **demouser**.
 
-    - Password: Enter **Password.1!!**
+    - Password: Enter **Password.1!!*
 
-    - Subscription: Select the subscription you are using for this hands-on lab
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    - Resource Group: Select Create new, and enter **hands-on-lab** as the name of the new resource group
+    - Resource Group: Select Create new, and enter **hands-on-lab** as the name of the new resource group.
 
-    - Location: Select a region close to you
+    - Location: Select a region close to you.
 
     ![The Basics blade fields fields display the previously mentioned settings.](media/dsvm-basics-blade.png)
 
-3.  Select **OK** to move to the next step
+3.  Select **OK** to move to the next step.
 
-4.  On the Choose a size blade, select an F8s size, or another one with at least 8 VCPUs and 16 GB RAM
+4.  On the Choose a size blade, select an F8s size, or another one with at least 8 VCPUs and 16 GB RAM.
 
     ![Select an F8s size](media/dsvm-size.png)
 
-5.  Choose **Select** to move on to the Settings blade
+5.  Choose **Select** to move on to the Settings blade.
 
-6.  Accept all the default values on the Settings blade, and select **OK**
+6.  Accept all the default values on the Settings blade, and select **OK**.
 
-7.  Select Create on the Create blade to provision the virtual machine
+7.  Select Create on the Create blade to provision the virtual machine.
 
     ![The Create blade shows that validation passed, and provides the offer details.](media/dsvm-create.png)
 
@@ -80,8 +102,9 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
 To retrieve the 7-day hourly weather forecast, you will use an API from darksky.net. There is a free trial version that provides you access to the API you need for this hands-on lab.
 
-1.  Navigate to <https://darksky.net/dev>
-2.  Select TRY FOR FREE
+1.  Navigate to <https://darksky.net/dev>.
+
+2.  Select TRY FOR FREE.
 
     ![Select the TRY FOR FREE button on the Dark Sky dev page](media/dark-sky-api-try-for-free.png)
 
@@ -109,23 +132,23 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
     ![Select create a resource, type in Azure Databricks, then select it from the results list](media/create-azure-databricks-resource.png)
 
-2.  Select Create on the bottom of the blade that follows
+2.  Select Create on the bottom of the blade that follows.
 
 3.  Set the following configuration on the Azure Databricks Service creation form:
 
-    - Name: Enter a unique name as indicated by a green checkmark
+    - Name: Enter a unique name as indicated by a green checkmark.
 
-    - Subscription: Select the subscription you are using for this hands-on lab
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    - Resource Group: Select the same resource group you created at the beginning of this lab
+    - Resource Group: Select the same resource group you created at the beginning of this lab.
 
-    - Location: Select a region close to you
+    - Location: Select a region close to you.
 
-    - Pricing: Select Premium
+    - Pricing: Select Premium.
 
     ![Complete the Azure Databricks Service creation form with the options as outlined above.](media/azure-databricks-create-blade.png)
 
-4.  Select **Create** to finish and submit
+4.  Select **Create** to finish and submit.
 
 ### Task 4: Create Azure Storage account
 
@@ -135,19 +158,19 @@ Create a new Azure Storage account that will be used to store historic and score
 
     ![Select create a resource, type in storage, then select Storage account... from the results list](media/create-azure-storage-resource.png)
 
-2.  Select Create on the bottom of the blade that follows
+2.  Select Create on the bottom of the blade that follows.
 
 3.  Set the following configuration on the Azure Storage account creation form:
 
-    - Name: Enter a unique name as indicated by a green checkmark
+    - Name: Enter a unique name as indicated by a green checkmark.
 
     - Deployment model: Resource manager
 
     - Account kind: Blob storage
 
-    - Location: Select the same region you used for Azure Databricks
+    - Location: Select the same region you used for Azure Databricks.
 
-    - Replication: Read-access geo-redundant storage (RA-GRS)
+    - Replication: Read-access geo-redundant storage (RA-GRS).
 
     - Performance: Standard
 
@@ -155,23 +178,23 @@ Create a new Azure Storage account that will be used to store historic and score
 
     - Secure transfer required: Disabled
 
-    - Subscription: Select the subscription you are using for this hands-on lab
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    - Resource Group: Select the same resource group you created at the beginning of this lab
+    - Resource Group: Select the same resource group you created at the beginning of this lab.
 
     - Virtual networks: Disabled
 
     ![Complete the Azure storage account creation form with the options as outlined above.](media/azure-storage-create-blade.png)
 
-4.  Select **Create** to finish and submit
+4.  Select **Create** to finish and submit.
 
 ### Task 5: Retrieve Azure Storage account information and create container
 
 You will need to have the Azure Storage account name and access key when you create your Azure Databricks cluster during the lab. You will also need to create storage containers in which you will store your flight and weather data files.
 
-1.  From the side menu in the Azure portal, choose **Resource groups**, then enter your resource group name into the filter box, and select it from the list
+1.  From the side menu in the Azure portal, choose **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
-2.  Next, select your lab Azure Storage account from the list
+2.  Next, select your lab Azure Storage account from the list.
 
     ![Select the lab Azure Storage account from within your lab resource group](media/select-azure-storage-account.png)
 
@@ -191,39 +214,39 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
     ![Select create a resource, type in Data Factory, then select Data Factory from the results list](media/create-azure-data-factory.png)
 
-2.  Select Create on the bottom of the blade that follows
+2.  Select Create on the bottom of the blade that follows.
 
 3.  Set the following configuration on the Data Factory creation form:
 
-    - Name: Enter a unique name as indicated by a green checkmark
+    - Name: Enter a unique name as indicated by a green checkmark.
 
     - Deployment model: Resource manager
 
-    - Subscription: Select the subscription you are using for this hands-on lab
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    - Resource Group: Select the same resource group you created at the beginning of this lab
+    - Resource Group: Select the same resource group you created at the beginning of this lab.
 
     - Version: V2
 
-    - Location: Select the same region you used for Azure Databricks
+    - Location: Select the same region you used for Azure Databricks.
 
     ![Complete the Azure Data Factory creation form with the options as outlined above.](media/azure-data-factory-create-blade.png)
 
-4.  Select **Create** to finish and submit
+4.  Select **Create** to finish and submit.
 
 ### Task 7: Initialize Azure Machine Learning Workbench on the Lab DSVM
 
 Before using the Azure Machine Learning Workbench on the Data Science VM, you will need to take the one-time action of double-clicking on the AzureML Workbench Setup icon on the desktop to install your instance of the workbench.
 
-1.  Connect to the Lab DSVM (If you are already connected to your DSVM, skip to Step 8)
+1.  Connect to the Lab DSVM (If you are already connected to your DSVM, skip to Step 8).
 
-2.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list
+2.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
-3.  Next, select your lab Data Science Virtual Machine (DSVM) from the list
+3.  Next, select your lab Data Science Virtual Machine (DSVM) from the list.
 
     ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png)
 
-4.  On your Lab DSVM blade, select **Connect** from the top menu
+4.  On your Lab DSVM blade, select **Connect** from the top menu.
 
     ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png)
 
@@ -239,7 +262,7 @@ Before using the Azure Machine Learning Workbench on the Data Science VM, you wi
 
 7.  **If you cannot Remote Desktop into the DSVM** due to the following error, **"CredSSP encryption oracle remediation"**, do one of the following:
 
-    - Option 1: Follow this link to workaround the issue: <https://support.microsoft.com/en-us/help/4295591/credssp-encryption-oracle-remediation-error-when-to-rdp-to-azure-vm>
+    - Option 1: Follow this link to workaround the issue: <https://support.microsoft.com/en-us/help/4295591/credssp-encryption-oracle-remediation-error-when-to-rdp-to-azure-vm>.
 
     - Option 2: Install the [Microsoft Remote Desktop app](https://www.microsoft.com/store/productId/9WZDNCRFJ3PS) from the Microsoft Store. The CredSSP issue appears to only affect the Remote Desktop Connection client installed with Windows.
 
@@ -247,11 +270,11 @@ Before using the Azure Machine Learning Workbench on the Data Science VM, you wi
 
     <https://aka.ms/azureml-wb-msi>
 
-        **NOTE: Do not** use the AzureML Workbench Setup link that is present on the desktop. This will download an old version of the Workbench.
+> NOTE: **Do not** use the AzureML Workbench Setup link that is present on the desktop. This will download an old version of the Workbench.
 
-9.  Double-click the downloaded file to install the Workbench
+9.  Double-click the downloaded file to install the Workbench.
 
-10. At the **Open File – Security Warning** dialog, select **Run**
+10. At the **Open File – Security Warning** dialog, select **Run**.
 
     ![Select Run from the Azure Machine Learning Workbench security dialog](media/azure-ml-workbench-security-warning.png)
 
@@ -263,45 +286,45 @@ Before using the Azure Machine Learning Workbench on the Data Science VM, you wi
 
 In this exercise, you will setup your Azure Machine Learning Experimentation and Model Management Accounts and get your project environment setup.
 
-1.  Navigate to the Azure Portal
+1.  Navigate to the Azure Portal.
 
-2.  Select **Create a resource**
+2.  Select **Create a resource**.
 
     ![Select create a resource](media/create-a-resource.png)
 
-3.  Select **AI + Machine Learning** and then select **Machine Learning Experimentation**
+3.  Select **AI + Machine Learning** and then select **Machine Learning Experimentation**.
 
     ![Select Machine Learning Experimentation](media/select-machine-learning-experimentation.png)
 
 4.  On the ML Experimentation blade, provide the following:
 
-    - Experimentation account name: Provide a name for your experimentation account
+    - Experimentation account name: Provide a name for your experimentation account.
 
-    - Subscription: Select your Azure subscription
+    - Subscription: Select your Azure subscription.
 
-    - Resource group: Select the resource group you previously created
+    - Resource group: Select the resource group you previously created.
 
     - Location: Select the region nearest to where you deployed your Data Science VM. It’s OK if they are not in exactly the same region, but try to select a region that is close to minimize latency.
 
-    - Number of seats: Leave at 2
+    - Number of seats: Leave at 2.
 
-    - Storage account: Select create new and provide a unique name for the new storage account
+    - Storage account: Select create new and provide a unique name for the new storage account.
 
-    - Workspace for Experimentation account: Provide a unique name for the workspace
+    - Workspace for Experimentation account: Provide a unique name for the workspace.
 
-    - Assign owner for the workspace: Leave the owner assigned to you
+    - Assign owner for the workspace: Leave the owner assigned to you.
 
-    - Create Model Management account: Leave checked
+    - Create Model Management account: Leave checked.
 
-    - Account name: Provide a name for your model management account
+    - Account name: Provide a name for your model management account.
 
-    - Model Management pricing tier: Select the DEVTEST pricing tier
+    - Model Management pricing tier: Select the DEVTEST pricing tier.
 
     ![Complete the form using the options as outlined above](media/machine-learning-experimentation-creation-form.png)
 
 5.  Select **Create** to provision the Experimentation and Model Management Service. The deployment should take about 2 minutes.
 
-6.  When the deployment completes, navigate to your resource group and confirm that you see an instance of Machine Learning Experimentation and Machine Learning Model Management
+6.  When the deployment completes, navigate to your resource group and confirm that you see an instance of Machine Learning Experimentation and Machine Learning Model Management.
 
     ![You should see both the Machine Learning Experimentation and Model Management servicces in your resource group](media/machine-learning-experimentation-and-model-management.png)
 
@@ -309,13 +332,13 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
 You have provisioned an Azure Databricks workspace, and now you need to create a new cluster within the workspace. Part of the cluster configuration includes setting up an account access key to your Azure Storage account, using the Spark Config within the new cluster form. This will allow your cluster to access the lab files.
 
-1.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list
+1.  From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
-2.  Next, select your Azure Databricks service from the list
+2.  Next, select your Azure Databricks service from the list.
 
     ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png)
 
-3.  In the Overview pane of the Azure Databricks service, select **Launch Workspace**
+3.  In the Overview pane of the Azure Databricks service, select **Launch Workspace**.
 
     ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png)
 
@@ -323,7 +346,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png)
 
-4.  Select **Clusters** (1) from the menu, then select **Create Cluster** (2)
+4.  Select **Clusters** (1) from the menu, then select **Create Cluster** (2).
 
     ![Select Clusters from menu then select Create Cluster](media/azure-databricks-create-cluster-button.png)
 
@@ -337,7 +360,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     - Python Version: 3
 
-    - Driver Type: Same as worker
+    - Driver Type: Same as worker.
 
     - Worker Type: Standard_F4s
 
@@ -345,9 +368,9 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     - Max Workers: 8
 
-    - Enable Autoscaling: Leave checked
+    - Enable Autoscaling: Leave checked.
 
-    - Auto Termination: Check the box and enter 120
+    - Auto Termination: Check the box and enter 120.
 
     - Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following: `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
 
@@ -355,6 +378,6 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     ![Complete the form using the options as outlined above](media/azure-databricks-create-cluster-form.png)
 
-6.  Select **Create Cluster**
+6.  Select **Create Cluster**.
 
 You should follow all these steps provided _before_ attending the Hands-on lab.
