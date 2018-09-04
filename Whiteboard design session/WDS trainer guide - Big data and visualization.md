@@ -35,7 +35,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
   - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
   - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
-  - [Abstract](#abstract)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
     - [Customer situation](#customer-situation)
     - [Customer needs](#customer-needs)
@@ -65,83 +65,85 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
-- Creates a safe environment in which learning can take place
+- Creates a safe environment in which learning can take place.
 
-- Stimulates the participant's thinking
+- Stimulates the participant's thinking.
 
-- Involves the participant in the learning process
+- Involves the participant in the learning process.
 
-- Manages the learning process (on time, on topic, and adjusting to benefit participants)
+- Manages the learning process (on time, on topic, and adjusting to benefit participants).
 
-- Ensures individual participant accountability
+- Ensures individual participant accountability.
 
-- Ties it all together for the participant
+- Ties it all together for the participant.
 
-- Provides insight and experience to the learning process
+- Provides insight and experience to the learning process.
 
-- Effectively leads the whiteboard design session discussion
+- Effectively leads the whiteboard design session discussion.
 
-- Monitors quality and appropriateness of participant deliverables
+- Monitors quality and appropriateness of participant deliverables.
 
-- Effectively leads the feedback process
+- Effectively leads the feedback process.
 
 ## Whiteboard design session flow
 
 Each whiteboard design session uses the following flow:
 
-**Step 1: Review the customer case study**
+**Step 1: Review the customer case study (15 minutes)**
 
 **Outcome**
 
-Analyze your customer’s needs.
+Analyze your customer's needs.
 
-Timeframe: 15 minutes
+-   Customer's background, situation, needs and technical requirements
 
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
+-   Current customer infrastructure and architecture
 
-1.  Meet your table participants and trainer
-2.  Read all of the directions for steps 1–3 in the student guide
-3.  As a table team, review the following customer case study
+-   Potential issues, objectives and blockers
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
+**Outcome**
 
-- Determine your target customer audience
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
-- Determine customer's business needs to address your solution
+-   Determine your target customer audience.
 
-- Design and diagram your solution
+-   Determine customer's business needs to address your solution.
 
-- Prepare to present your solution
+-   Design and diagram your solution.
+
+-   Prepare to present your solution.
 
 **Step 3: Present the solution (30 minutes)**
 
-Outcome: Present solution to your customer
+**Outcome**
 
-- Present solution
+Present solution to your customer:
 
-- Respond to customer objections
+-   Present solution
 
-- Receive feedback
+-   Respond to customer objections
+
+-   Receive feedback
 
 **Wrap-up (15 minutes)**
 
-- Review preferred solution
+-   Review preferred solution
 
 ## Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
-- Read the Student guide (including the case study) and Trainer guide
+-   Read the Student guide (including the case study) and Trainer guide.
 
-- Become familiar with all key points and activities
+-   Become familiar with all key points and activities.
 
-- Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
 
-- Prior to the whiteboard design session, discuss the case study to pick up more ideas
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
 
-- Make notes for later
+-   Make notes for later.
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -151,13 +153,13 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
-- **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
 
-- **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
+-   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
-- **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
+-   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
-**Have fun!** Encourage participants to have fun and share!
+***Have fun**! Encourage participants to have fun and share!*
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
@@ -169,7 +171,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 # Big data and visualization whiteboard design session student guide
 
-## Abstract
+## Abstract and learning objectives
 
 In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays. 
 
@@ -185,9 +187,9 @@ Timeframe: 15 minutes
 
 Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer
-2.  Read all of the directions for steps 1–3 in the student guide
-3.  As a table team, review the following customer case study
+1.  Meet your table participants and trainer.
+2.  Read all of the directions for steps 1–3 in the student guide.
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -258,17 +260,17 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 ### Customer needs
 
-1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
+1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
 
-1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
+2.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
 
-1.  Want to understand how they will load their large quantity of historical data into Azure
+3.  Want to understand how they will load their large quantity of historical data into Azure.
 
-1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
+4.  Need to be able to query the weather forecast and use it as input to their flight delay predictions.
 
-1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
+5.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
 
-1.  Need web-based visualizations of the flight delay predictions
+6.  Need web-based visualizations of the flight delay predictions.
 
 ### Customer objections
 
@@ -302,14 +304,14 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 2.  What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart?
 
 _High-level architecture_
 
@@ -389,25 +391,25 @@ Timeframe: 30 minutes
 
 Directions
 
-1.  Pair with another table
+1.  Pair with another table.
 
-1.  One table is the Microsoft team and the other table is the customer
+2.  One table is the Microsoft team and the other table is the customer.
 
-1.  The Microsoft team presents their proposed solution to the customer
+3.  The Microsoft team presents their proposed solution to the customer.
 
-1.  The customer makes one of the objections from the list of objections
+4.  The customer makes one of the objections from the list of objections.
 
-1.  The Microsoft team responds to the objection
+5.  The Microsoft team responds to the objection.
 
-1.  The customer team gives feedback to the Microsoft team
+6.  The customer team gives feedback to the Microsoft team.
 
-1.  Tables switch roles and repeat Steps 2--6
+7.  Tables switch roles and repeat Steps 2-6.
 
 ## Wrap-up
 
 Timeframe: 15 minutes
 
-- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
+- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
 
 ## Additional references
 
