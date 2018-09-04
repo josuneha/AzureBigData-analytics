@@ -27,7 +27,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
-  - [Abstract](#abstract)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
     - [Customer situation](#customer-situation)
     - [Customer needs](#customer-needs)
@@ -42,7 +42,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 # Big data and visualization whiteboard design session student guide
 
-## Abstract
+## Abstract and learning objectives
 
 In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays. 
 
@@ -58,9 +58,9 @@ Timeframe: 15 minutes
 
 Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer
-2.  Read all of the directions for steps 1–3 in the student guide
-3.  As a table team, review the following customer case study
+1.  Meet your table participants and trainer.
+2.  Read all of the directions for steps 1–3 in the student guide.
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -131,21 +131,21 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 ### Customer needs
 
-1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
+1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
 
-1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
+2.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
 
-1.  Want to understand how they will load their large quantity of historical data into Azure
+3.  Want to understand how they will load their large quantity of historical data into Azure.
 
-1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
+4.  Need to be able to query the weather forecast and use it as input to their flight delay predictions.
 
-1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
+5.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
 
-1.  Need web-based visualizations of the flight delay predictions
+6.  Need web-based visualizations of the flight delay predictions.
 
 ### Customer objections
 
-1.  We have heard that creating a machine learning model takes a month to build and another 2--3 months to operationalize so that it is useable from our production systems. Is this true?
+1.  We have heard that creating a machine learning model takes a month to build and another 2-3 months to operationalize so that it is useable from our production systems. Is this true?
 
 2.  Once our model is operationalized, how do we retrain and redeploy it? Will this process break clients currently accessing the deployed model?
 
@@ -155,7 +155,7 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 5.  Does Azure provide any tools for visualizing our data? Ideally access to these could be managed with Active Directory.
 
-6.  While our PoC does not have any sensitive data, if it is successful we would like to include customer data that contains personally identifiable information (PII) and transaction history so we could achieve new insights combining our flight delay predictions with our customer's profile. Are there any additional services in the Azure Marketplace we could use to apply data-centric security---that is to identify data loaded that contains PII, monitor access to sensitive data, and protect the data at rest (via encryption or masking)?
+6.  While our PoC does not have any sensitive data, if it is successful we would like to include customer data that contains personally identifiable information (PII) and transaction history so we could achieve new insights combining our flight delay predictions with our customer's profile. Are there any additional services in the Azure Marketplace we could use to apply data-centric security?  That is to identify data loaded that contains PII, monitor access to sensitive data, and protect the data at rest, via encryption or masking?
 
 7.  Is Azure Databricks our only option for running SQL on Hadoop solutions in Azure?
 
@@ -175,14 +175,14 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 2.  What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 _High-level architecture_
 
@@ -242,11 +242,11 @@ _Visualization and reporting_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution
+1.  Identify any customer needs that are not addressed with the proposed solution.
 
-1.  Identify the benefits of your solution
+2.  Identify the benefits of your solution.
 
-1.  Determine how you will respond to the customer's objections
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -262,19 +262,19 @@ Timeframe: 30 minutes
 
 Directions
 
-1.  Pair with another table
+1.  Pair with another table.
 
-1.  One table is the Microsoft team and the other table is the customer
+2.  One table is the Microsoft team and the other table is the customer.
 
-1.  The Microsoft team presents their proposed solution to the customer
+3.  The Microsoft team presents their proposed solution to the customer.
 
-1.  The customer makes one of the objections from the list of objections
+4.  The customer makes one of the objections from the list of objections.
 
-1.  The Microsoft team responds to the objection
+5.  The Microsoft team responds to the objection.
 
-1.  The customer team gives feedback to the Microsoft team
+6.  The customer team gives feedback to the Microsoft team.
 
-1.  Tables switch roles and repeat Steps 2--6
+7.  Tables switch roles and repeat Steps 2-6.
 
 ## Wrap-up
 
