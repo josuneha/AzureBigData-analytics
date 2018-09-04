@@ -72,7 +72,7 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
     - User name: Enter **demouser**.
 
-    - Password: Enter **Password.1!!*
+    - Password: Enter **Password.1!!**
 
     - Subscription: Select the subscription you are using for this hands-on lab.
 
