@@ -27,7 +27,7 @@ The names of manufacturers, products, or URLs are provided for informational pur
 - [Big data and visualization before the hands-on lab setup guide](#big-data-and-visualization)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Deploy Data Science Virtual Machine (DSVM) cluster to Azure](#task-1-deploy-data-science-virtual-machine-(dsvm)- cluster-to-azure)
+        - [Task 1: Deploy Data Science Virtual Machine (DSVM) cluster to Azure](#task-1-deploy-data-science-virtual-machine-(dsvm)-cluster-to-azure)
         - [Task 2: Register for a trial API account at darksky.net](#task-2-task-register-for-a-trial-API-account-at-darksky.net)
         - [Task 3: Provision Azure Databricks](#task-3-task-provision-azure-databricks)
         - [Task 4: Create Azure Storage account](#task-4-task-create-azure-storage-account)
