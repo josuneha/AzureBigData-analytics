@@ -88,7 +88,7 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
     a. Trial subscriptions will not work.
 
-1.  Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
+2.  Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
 
 ## Exercise 1: Build a Machine Learning Model
 
@@ -126,17 +126,17 @@ In this exercise, you will implement a classification experiment. You will load 
 
     - Option 2: Install the [Microsoft Remote Desktop app](https://www.microsoft.com/store/productId/9WZDNCRFJ3PS) from the Microsoft Store. The CredSSP issue appears to only affect the Remote Desktop Connection client installed with Windows.
 
-1)  From your Lab VM (DSVM), launch the _Azure Machine Learning Workbench_. You should see a desktop icon for the application, or find it under the Start menu.
+8.  From your Lab VM (DSVM), launch the _Azure Machine Learning Workbench_. You should see a desktop icon for the application, or find it under the Start menu.
 
-2)  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md) setup.
+9.  You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md) setup.
 
-3)  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench.
+10.  Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench.
 
-4)  Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then select **Create** (5).
+11.  Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then select **Create** (5).
 
     ![Create new project in the Azure Machine Learning Workbench](media/create-new-workbench-project.png)
 
-5)  This will create the following new file path with a default project structure: C:\HOL\FlightDelays.
+12.  This will create the following new file path with a default project structure: C:\HOL\FlightDelays.
 
     ![Project structure generated after creating new Workbench project](media/new-project-structure.png)
 
@@ -148,11 +148,9 @@ In this exercise, you will implement a classification experiment. You will load 
 
 3.  Extract the ZIP and verify you have the following files:
 
-- FlightDelaysWithAirportCodes.csv
-
-- FlightWeatherWithAirportCodes.csv
-
-- AirportCodeLocationLookupClean.csv
+    - FlightDelaysWithAirportCodes.csv
+    - FlightWeatherWithAirportCodes.csv
+    - AirportCodeLocationLookupClean.csv
 
 4.  From your Lab VM (DSVM), open a browser and navigate to the Azure portal (<https://portal.azure.com>), and navigate to Azure Databricks service under the Resource Group you created when completing the prerequisites for this hands-on lab.
 
@@ -517,7 +515,11 @@ In this exercise, you will deploy your trained machine learning model to Azure C
     run("[" + testInput + "," + testInput2 + "]")
     ```
 
-10. Run the cell. This tests the `run()` method, passing in two test parameters. One should return a prediction of 1, and the other 0, though your results may vary. Your output should look similar to the following: `'{"prediction":1.0,"probability":0.560342524075},{"prediction":0.0,"probability":0.69909752}'`. If everything works as expected, then we are ready to modify the score.py file. Save and close this notebook to return to the Jupyter home page.
+10. Run the cell. This tests the `run()` method, passing in two test parameters. One should return a prediction of 1, and the other 0, though your results may vary. Your output should look similar to the following:
+
+`'{"prediction":1.0,"probability":0.560342524075},{"prediction":0.0,"probability":0.69909752}'`. 
+
+If everything works as expected, then we are ready to modify the score.py file. Save and close this notebook to return to the Jupyter home page.
 
 11. Open **score.py**. Replace the file contents with the following:
 
@@ -659,7 +661,11 @@ In this exercise, you will deploy your trained machine learning model to Azure C
     
     `{"prediction":1.0,"probability":0.560342524075}`
 
-6.  View additional usage to see your Scoring URL and how to pass authentication: `az ml service usage realtime -i pred.[flightdelays-xyz.location]`. **Copy the Scoring URL** to Notepad or similar for later reference.
+6.  View additional usage to see your Scoring URL and how to pass authentication:
+
+`az ml service usage realtime -i pred.[flightdelays-xyz.location]`. 
+
+**Copy the Scoring URL** to Notepad or similar for later reference.
 
     ![Additional usage information - copy the Scoring URL](media/aml-more-info.png 'az ml service usage realtime command')
 
