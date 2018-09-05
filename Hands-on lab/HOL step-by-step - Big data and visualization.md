@@ -663,7 +663,7 @@ If everything works as expected, then we are ready to modify the score.py file. 
 
 6.  View additional usage to see your Scoring URL and how to pass authentication:
 
-`az ml service usage realtime -i pred.[flightdelays-xyz.location]`. 
+    `az ml service usage realtime -i pred.[flightdelays-xyz.location]`
 
 **Copy the Scoring URL** to Notepad or similar for later reference.
 
