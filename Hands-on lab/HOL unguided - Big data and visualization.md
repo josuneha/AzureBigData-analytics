@@ -55,7 +55,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+  - [Exercise 8: Deploy intelligent web app](#exercise-8-deploy-intelligent-web-app)
     - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resource group](#task-1-delete-resource-group)
@@ -145,7 +145,7 @@ _Tasks to complete_:
   - [01 Prepare Flight Data.dbc](lab-files/01%20Prepare%20Flight%20Data.dbc)
   - [02 Predict Flight Delays.dbc](lab-files/02%20Predict%20Flight%20Delays.dbc)
 
-- Import those notebooks into your Azure Databricks workspace
+- Import those notebooks into your Azure Databricks workspace.
 
 - Attach your cluster to the notebooks when after opening, and complete them in order. Make sure to complete all of the **#TODO:** lines.
 
@@ -717,7 +717,7 @@ _Tasks to complete_:
 
 _Exit criteria_:
 
-- You have created a JDBC connection string similar to <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/0614-124738-doubt405> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/lab> (if you choose the aliased version)
+- You have created a JDBC connection string similar to <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/0614-124738-doubt405> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/lab> (if you choose the aliased version).
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
@@ -749,7 +749,7 @@ _Exit criteria_:
 
   ![The Report design surface now displays the map of the United States with dots, a stacked bar chart, and a Treeview.](media/pbi-desktop-full-report.png 'Report design surface')
 
-## Exercise 7: Deploy intelligent web app
+## Exercise 8: Deploy intelligent web app
 
 Duration: 20 minutes
 
@@ -759,7 +759,7 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 _Tasks to complete_:
 
-- Navigate to the AdventureWorks README page (<https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md>), and deploy a web app to Azure using an ARM template
+- Navigate to the AdventureWorks README page (<https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md>), and deploy a web app to Azure using an ARM template.
 
 - Provide your ML API details, which was captured during the Machine Learning model deployment exercise.
 
