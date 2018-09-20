@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-May 2018
+August 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -293,6 +293,6 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Data Factory              |                   <https://docs.microsoft.com/azure/data-factory/introduction/>                    |
 | Azure Databricks                |                    <https://docs.microsoft.com/en-us/azure/azure-databricks//>                     |
 | Power BI                        |       <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>       |
-| Travel data                     |                        <http://www.transtats.bts.gov/Tables.asp?DB_ID=120/>                        |
+| Travel data                     |                        <https://www.transtats.bts.gov/homepage.asp/>                        |
 | Weather data                    |                                  <https://darksky.net/dev/docs/>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |

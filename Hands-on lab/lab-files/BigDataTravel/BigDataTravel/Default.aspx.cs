@@ -188,6 +188,10 @@ namespace BigDataTravel
             where T : struct, IConvertible
         {
             var defaultIconPath = Page.ResolveUrl("~/images/cloudy.svg");
+            if (value.ToString() == "None")
+            {
+                return defaultIconPath;
+            }
             var enumType = typeof(T);
             var memInfo = enumType.GetMember(value.ToString());
             var attr = memInfo.FirstOrDefault()?.GetCustomAttributes(false).OfType<EnumMemberAttribute>().FirstOrDefault();

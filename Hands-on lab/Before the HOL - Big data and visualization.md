@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-May 2018
+August 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -46,7 +46,7 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
     - Name: Enter **LabDSVM**
 
-    - VM disk type: Select **SSD**
+    - VM disk type: Select **Premium SSD**
 
     - User name: Enter **demouser**
 
@@ -137,7 +137,7 @@ Create a new Azure Storage account that will be used to store historic and score
 
 2.  Select Create on the bottom of the blade that follows
 
-3.  Set the following configuration on the Azure Databricks Service creation form:
+3.  Set the following configuration on the Azure Storage account creation form:
 
     - Name: Enter a unique name as indicated by a green checkmark
 
@@ -179,7 +179,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
     ![Select Access keys from menu - copy storage account name - copy key](media/azure-storage-access-keys.png)
 
-4.  Select **Containers** (1) from the menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container. Please note: in some cases, you will not see Containers in the menu. Instead, select "Browse Blobs" underneath the Blob Service heading.
+4.  Select **Containers** (1) from the menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container. Please note: in some cases, you will not see Containers in the menu. Instead, select "Blobs" underneath the Blob Service heading.
 
     ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 
@@ -295,7 +295,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
     - Account name: Provide a name for your model management account
 
-    - Model Management pricing tier: Select the S1 pricing tier
+    - Model Management pricing tier: Select the DEVTEST pricing tier
 
     ![Complete the form using the options as outlined above](media/machine-learning-experimentation-creation-form.png)
 
@@ -329,15 +329,13 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 5.  On the Create New Cluster form, provide the following:
 
-    - Cluster Type: Standard
-
     - Cluster Name: lab
 
-    - Databricks Runtime Version: 3.4 (includes Apache Spark 2.2.0, Scala 2.11)
+    - Cluster Type: Standard
 
-      **Note:** Select 3.4 and not a newer version such as 4.1. This is so that the exported machine learning model will be compatible with the version of Spark currently installed on DSVM.
+    - Databricks Runtime Version: 4.1 (includes Apache Spark 2.3.0, Scala 2.11)
 
-    - Python Version: 2
+    - Python Version: 3
 
     - Driver Type: Same as worker
 

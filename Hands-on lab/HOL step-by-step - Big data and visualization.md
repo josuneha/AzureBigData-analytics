@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-May 2018
+August 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -166,7 +166,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
     ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png 'AAD Single Sign On')
 
-6.  Once signed in, select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **+** next to the Tables header.
+6.  Once signed in, select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **Add Data** above the Tables header.
 
     ![From the Azure Databricks workspace, select Data, default database, then new table](media/azure-databricks-create-tables.png 'Create new table')
 
@@ -273,9 +273,9 @@ The first thing you need to do before deploying your model is to enable the cont
 
     Replace the tokens above with appropriate values:
 
-    - For <environment name> enter flightdelays, or something similar. This value can only contain lowercase alphanumeric characters.
-    - For <location>, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
-    - For <yourresourcegroupname>, enter the resource group name you've been using for this lab.
+    - For **environment name** enter flightdelays, or something similar. This value can only contain lowercase alphanumeric characters.
+    - For **location**, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
+    - For **yourresourcegroupname**, enter the resource group name you've been using for this lab.
 
     > When you run the above command, the prompt tells you the subscription is set to XYZ. If you select "N" to continue with the subscription, you may encounter a UnicodeEncodeError when it attempts to parse your subscription list. If this happens, manually set the subscription first using the following command, then rerun the az ml env setup command:
 
@@ -369,7 +369,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     ![Select Perform data movement and dispatch activities to external computes](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
 
-8.  Select **Private Network** then select **Next**
+8.  Select **Self-Hosted** then select **Next**
 
     ![Select Private Network then Next](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
 
@@ -635,7 +635,7 @@ In this exercise, you will deploy your trained machine learning model to Azure C
 
     ![Associate model management account command](media/associate-model-management.png)
 
-3.  Set the environment. This sets the context for the remaining commands. The <environment name> is the value used in Exercise 1, Task 4, Step 8 above. The <yourresourcegroupname> value should be your lab resource group.
+3.  Set the environment. This sets the context for the remaining commands. The **yourclustername** is the value used in Exercise 1, Task 4, Step 13 above. The **yourresourcegroupname** value should be your lab resource group.
 
     ```bash
     az ml env set -n <yourclustername> -g <yourresourcegroupname>
@@ -690,6 +690,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
     - Start date time (UTC): **03/01/2017 12:00 am**
 
     - Recurrence: **Select Monthly, and every 1 month**
+    - Under the Advanced recurrence options, make sure you have a value in the textboxes for **Hours (UTC)** and **Minutes (UTC)** otherwise it will fail later during Publishing.
 
     - End: **No End**
 
@@ -768,11 +769,6 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 15. On the Destination data store page, select **Next**
 
-16. Select **Azure Blob Storage** within the Azure storage service dropdown list, then select **Next**
-
-
-    ![Select Azure Blob Storage](media/adf-copy-data-destination-connection.png 'Connection properties')
-
 17. From the **Choose the output file or folder** tab, enter the following:
 
 
@@ -784,9 +780,9 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Month: Select **MM** from the drop down
 
-    - Select **Next**
-
     - Copy behavior: **Merge files**
+    
+    - Select **Next**
 
       ![On the Copy Data Choose the output file or folder page, fields are set to the previously defined settings.](media/adf-copy-data-output-file-folder.png 'Choose the output file or folder page')
 
@@ -850,7 +846,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Type BatchScore as the Name under the General tab](media/adf-ml-notebook-general.png 'Databricks Notebook General Tab')
 
-5.  Select the **Settings** tab, and select **+ New** next to the Linked service drop down. Here, you will configure a new linked service which will serve as the connection to your Databricks cluster.
+5.  Select the **Azure Databricks** tab, and select **+ New** next to the Databricks Linked service drop down. Here, you will configure a new linked service which will serve as the connection to your Databricks cluster.
 
     ![Screenshot of the Settings tab](media/adf-ml-settings-new-link.png 'Databricks Notebook Settings Tab')
 
@@ -859,8 +855,9 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
     - Name: enter a name, such as AzureDatabricks
     - Connect via integration runtime: Leave set to Default
     - Account selection method: Select From Azure subscription
+    - Choose your Azure Subscription
+    - Pick your Databricks workspace to populate the Domain automatically
     - Select cluster: choose Existing cluster
-    - Domain/Region: select the region where your cluster resides
 
     ![Screenshot showing filled out form with defined parameters](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
 
@@ -906,7 +903,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Create a new notebook within the new adf folder](media/databricks-create-notebook.png 'Create notebook')
 
-17. For the name, enter **BatchScore** and make sure Python is selected as the language, and your cluster is selected. Select **Create**.
+17. For the name, enter **BatchScore** and make sure Python is selected as the language. Select **Create**.
 
 
     ![Enter BatchScore as the new notebook name](media/databricks-create-notebook-form.png 'Create Notebook form')
@@ -1147,7 +1144,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     a. User name: **token**
 
-    b. Password: Create a new personal access token, following the same steps you took when you connected Azure Databricks to Azure Data Factory. **Paste the new token here**.
+    b. Password: Remember that ADF Access token we generated and asked you to paste in Notepad, that is the password.
+
+     ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
 
     ![Enter "token" for the user name and paste user token into the password field](media/pbi-desktop-login.png 'Enter credentials')
 
