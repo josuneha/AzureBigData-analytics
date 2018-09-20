@@ -325,7 +325,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
 5.  Select **Create** to provision the Experimentation and Model Management Service. The deployment should take about 2 minutes.
 
-6.  When the deployment completes, navigate to your resource group and confirm that you see an instance of Machine Learning Experimentation and Machine Learning Model Management
+6.  When the deployment completes, navigate to your resource group and confirm that you see an instance of Machine Learning Experimentation and Machine Learning Model Management.
 
     ![You should see both the Machine Learning Experimentation and Model Management servicces in your resource group](media/machine-learning-experimentation-and-model-management.png)
 
@@ -339,7 +339,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png)
 
-3.  In the Overview pane of the Azure Databricks service, select **Launch Workspace**
+3.  In the Overview pane of the Azure Databricks service, select **Launch Workspace**.
 
     ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png)
 
@@ -347,7 +347,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png)
 
-4.  Select **Clusters** (1) from the menu, then select **Create Cluster** (2)
+4.  Select **Clusters** (1) from the menu, then select **Create Cluster** (2).
 
     ![Select Clusters from menu then select Create Cluster](media/azure-databricks-create-cluster-button.png)
 
@@ -373,11 +373,12 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     - Auto Termination: Check the box and enter 120.
 
-    - Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following: `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
+    - Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following:
+`spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
 
       **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
 
-    ![Complete the form using the options as outlined above](media/azure-databricks-create-cluster-form.png)
+   ![Complete the form using the options as outlined above](media/azure-databricks-create-cluster-form.png)
 
 6.  Select **Create Cluster**.
 
