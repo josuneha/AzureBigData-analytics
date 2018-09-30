@@ -11,7 +11,6 @@ They are looking to pilot a web app that their internal customer service agents 
 - [Requirements](#requirements)
 - [Before the Hands-on Lab](#before-the-hands-on-lab)
 - [Hands-on Lab](#hands-on-lab)
-- [After the Hands-on Lab](#after-the-hands-on-lab)
 
 ## Abstract
 
