@@ -27,7 +27,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
-  - [Abstract](#abstract)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
     - [Customer situation](#customer-situation)
     - [Customer needs](#customer-needs)
@@ -42,9 +42,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 # Big data and visualization whiteboard design session student guide
 
-## Abstract
+## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays. 
+In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays.
 
 At the end of this whiteboard design session you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays, and orchestrating the collection and batch scoring of historic and new flight delay data.
 
@@ -58,9 +58,9 @@ Timeframe: 15 minutes
 
 Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer
-2.  Read all of the directions for steps 1–3 in the student guide
-3.  As a table team, review the following customer case study
+1. Meet your table participants and trainer.
+2. Read all of the directions for steps 1–3 in the student guide.
+3. As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -84,7 +84,7 @@ They receive updates to this data monthly, where the flight data and other relat
 
 Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport, and provides forecasts up to 10 days. They have a history of the historical weather condition for each flight as CSV files, but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
 
-```
+```json
     {
         "date": {
         "epoch": "1444701600",
@@ -131,35 +131,35 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 ### Customer needs
 
-1.  Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL
+1. Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
 
-1.  Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes
+2. Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
 
-1.  Want to understand how they will load their large quantity of historical data into Azure
+3. Want to understand how they will load their large quantity of historical data into Azure.
 
-1.  Need to be able to query the weather forecast and use it as input to their flight delay predictions
+4. Need to be able to query the weather forecast and use it as input to their flight delay predictions.
 
-1.  Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not
+5. Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
 
-1.  Need web-based visualizations of the flight delay predictions
+6. Need web-based visualizations of the flight delay predictions.
 
 ### Customer objections
 
-1.  We have heard that creating a machine learning model takes a month to build and another 2--3 months to operationalize so that it is useable from our production systems. Is this true?
+1. We have heard that creating a machine learning model takes a month to build and another 2-3 months to operationalize so that it is useable from our production systems. Is this true?
 
-2.  Once our model is operationalized, how do we retrain and redeploy it? Will this process break clients currently accessing the deployed model?
+2. Once our model is operationalized, how do we retrain and redeploy it? Will this process break clients currently accessing the deployed model?
 
-3.  Can we query flat files in the file system using SQL?
+3. Can we query flat files in the file system using SQL?
 
-4.  Does Azure provide anything that would speed up querying (and exploration) of files in Hadoop Distributed File Systems (HDFS)?
+4. Does Azure provide anything that would speed up querying (and exploration) of files in Hadoop Distributed File Systems (HDFS)?
 
-5.  Does Azure provide any tools for visualizing our data? Ideally access to these could be managed with Active Directory.
+5. Does Azure provide any tools for visualizing our data? Ideally access to these could be managed with Active Directory.
 
-6.  While our PoC does not have any sensitive data, if it is successful we would like to include customer data that contains personally identifiable information (PII) and transaction history so we could achieve new insights combining our flight delay predictions with our customer's profile. Are there any additional services in the Azure Marketplace we could use to apply data-centric security---that is to identify data loaded that contains PII, monitor access to sensitive data, and protect the data at rest (via encryption or masking)?
+6. While our PoC does not have any sensitive data, if it is successful we would like to include customer data that contains personally identifiable information (PII) and transaction history so we could achieve new insights combining our flight delay predictions with our customer's profile. Are there any additional services in the Azure Marketplace we could use to apply data-centric security---that is to identify data loaded that contains PII, monitor access to sensitive data, and protect the data at rest, via encryption or masking?
 
-7.  Is Azure Databricks our only option for running SQL on Hadoop solutions in Azure?
+7. Is Azure Databricks our only option for running SQL on Hadoop solutions in Azure?
 
-8.  We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
+8. We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
 
 ### Infographic for common scenarios
 
@@ -175,42 +175,42 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
-2.  What customer business needs do you need to address with your solution?
+1. Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+2. What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 _High-level architecture_
 
-1.  Without getting into the details (the following sections will address the details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
+1. Without getting into the details (the following sections will address the details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
 
 _Data loading_
 
-1.  How would you recommend that MT get their historical data into Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
+1. How would you recommend that MT get their historical data into Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
 
-2.  Update your diagram with the data loading process with the steps you identified.
+2. Update your diagram with the data loading process with the steps you identified.
 
 _Data preparation_
 
-1.  What service would you recommend MT capitalize on to explore the flat files they get from the USDOT using SQL?
+1. What service would you recommend MT capitalize on to explore the flat files they get from the USDOT using SQL?
 
-2.  What specific configuration would you use? What components of Azure Databricks would you use to allow MT analysts to query and prep the data? How would they author and execute these data prep tasks?
+2. What specific configuration would you use? What components of Azure Databricks would you use to allow MT analysts to query and prep the data? How would they author and execute these data prep tasks?
 
-3.  How would you suggest MT integrate weather forecast data?
+3. How would you suggest MT integrate weather forecast data?
 
 _Machine learning modeling_
 
-1.  What technology would you recommend that MT use for implementing their machine learning model?
+1. What technology would you recommend that MT use for implementing their machine learning model?
 
-2.  How would you guide MT to load data, so it can be processed by the machine learning model?
+2. How would you guide MT to load data, so it can be processed by the machine learning model?
 
-3.  What category of machine learning algorithm would you recommend to MT for use in constructing their model? For this scenario your option is clustering, regression or two-class classification. Why?
+3. What category of machine learning algorithm would you recommend to MT for use in constructing their model? For this scenario your option is clustering, regression or two-class classification. Why?
 
-4.  Assuming you selected an algorithm that requires training, address the following model design questions:
+4. Assuming you selected an algorithm that requires training, address the following model design questions:
 
     a. What is the high-level flow of your machine learning model?
 
@@ -222,15 +222,15 @@ _Machine learning modeling_
 
 _Operationalizing machine learning_
 
-1.  How can MT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
+1. How can MT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
 
-2.  MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
+2. MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
 _Visualization and reporting_
 
-1.  Is Power BI an option for MT to use in visualizing the flight delays?
+1. Is Power BI an option for MT to use in visualizing the flight delays?
 
-2.  If so, explain:
+2. If so, explain:
 
     a. How would MT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
 
@@ -242,11 +242,11 @@ _Visualization and reporting_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution
+1. Identify any customer needs that are not addressed with the proposed solution.
 
-1.  Identify the benefits of your solution
+2. Identify the benefits of your solution.
 
-1.  Determine how you will respond to the customer's objections
+3. Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -262,19 +262,19 @@ Timeframe: 30 minutes
 
 Directions
 
-1.  Pair with another table
+1. Pair with another table.
 
-1.  One table is the Microsoft team and the other table is the customer
+2. One table is the Microsoft team and the other table is the customer.
 
-1.  The Microsoft team presents their proposed solution to the customer
+3. The Microsoft team presents their proposed solution to the customer.
 
-1.  The customer makes one of the objections from the list of objections
+4. The customer makes one of the objections from the list of objections.
 
-1.  The Microsoft team responds to the objection
+5. The Microsoft team responds to the objection.
 
-1.  The customer team gives feedback to the Microsoft team
+6. The customer team gives feedback to the Microsoft team.
 
-1.  Tables switch roles and repeat Steps 2--6
+7. Tables switch roles and repeat Steps 2-6.
 
 ## Wrap-up
 

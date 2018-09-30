@@ -22,8 +22,6 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-# Big data and visualization hands-on lab unguided
-
 **Contents**
 
 <!-- TOC -->
@@ -57,16 +55,18 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+  - [Exercise 8: Deploy intelligent web app](#exercise-8-deploy-intelligent-web-app)
     - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
 <!-- /TOC -->
 
+# Big data and visualization hands-on lab unguided
+
 ## Abstract and learning objectives
 
-This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics. 
+This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics.
 
 By the end of the lab, you will be able to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
 
@@ -84,11 +84,11 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
 ## Requirements
 
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
+1. Microsoft Azure subscription must be pay-as-you-go or MSDN.
 
-    a. Trial subscriptions will not work
+    a. Trial subscriptions will not work.
 
-1.  Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md)
+2. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
 
 ## Exercise 1: Build a Machine Learning Model
 
@@ -100,13 +100,13 @@ In this exercise, you will implement a classification experiment. You will load 
 
 _Tasks to complete_:
 
-- Launch Azure Machine Learning Workbench from within your DSVM
-- Sign in with your Azure account when prompted
-- Create a new project named "FlightDelays", setting the project directory to "C:\HOL", and using the Blank Project template
+- Launch Azure Machine Learning Workbench from within your DSVM.
+- Sign in with your Azure account when prompted.
+- Create a new project named "FlightDelays", setting the project directory to "C:\HOL", and using the Blank Project template.
 
 _Exit criteria_:
 
-- You have the following new file path with a default project structure: C:\HOL\FlightDelays
+- You have the following new file path with a default project structure: C:\HOL\FlightDelays.
 
   ![Project structure generated after creating new Workbench project](media/new-project-structure.png)
 
@@ -114,17 +114,15 @@ _Exit criteria_:
 
 _Tasks to complete_:
 
-- Download three CSV sample datasets from <http://bit.ly/2wGAqrl>
+- Download three CSV sample datasets from <http://bit.ly/2wGAqrl>.
 
 - Extract the ZIP, and verify you have the following files:
 
   - FlightDelaysWithAirportCodes.csv
-
   - FlightWeatherWithAirportCodes.csv
-
   - AirportCodeLocationClean.csv
 
-- Upload the sample CSVs as new tables within your Azure Databricks workspace
+- Upload the sample CSVs as new tables within your Azure Databricks workspace.
 
 _Exit criteria_:
 
@@ -145,7 +143,7 @@ _Tasks to complete_:
   - [01 Prepare Flight Data.dbc](lab-files/01%20Prepare%20Flight%20Data.dbc)
   - [02 Predict Flight Delays.dbc](lab-files/02%20Predict%20Flight%20Delays.dbc)
 
-- Import those notebooks into your Azure Databricks workspace
+- Import those notebooks into your Azure Databricks workspace.
 
 - Attach your cluster to the notebooks when after opening, and complete them in order. Make sure to complete all of the **#TODO:** lines.
 
@@ -175,9 +173,9 @@ _Tasks to complete_:
 
 - From your Lab VM (DSVM), browse to the download folder in File Explorer, and extract **flight_delays.zip** in place. This file was downloaded at the end of the **02 Predict Flight Delays complete** notebook.
 
-- Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder, then paste it into C:\HOL\FlightDelays
+- Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder, then paste it into C:\HOL\FlightDelays.
 
-- Open the Command Prompt using the File menu within the Azure Machine Learning Workbench (making sure your project is first selected)
+- Open the Command Prompt using the File menu within the Azure Machine Learning Workbench (making sure your project is first selected).
 
 - Execute the following to update/install the Azure CLI packages:
 
@@ -203,9 +201,9 @@ _Tasks to complete_:
       - For <location>, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
       - For <yourresourcegroupname>, enter the resource group name you've been using for this lab.
 
-- Sign into Azure using your web browser if prompted
+- Sign into Azure using your web browser if prompted.
 
-- Select your subscription name back in the command prompt
+- Select your subscription name back in the command prompt.
 
 _Exit criteria_:
 
@@ -221,19 +219,19 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 _Tasks to complete_:
 
-- Initiate an RDP connection to the Lab VM (DSVM) you created in the Before the Lab section
+- Initiate an RDP connection to the Lab VM (DSVM) you created in the Before the Lab section.
 
 - Download and extract the ZIP containing sample data to a folder named C:\\Data on your Lab VM. The data can be downloaded from <http://bit.ly/2zi4Sqa>.
 
 _Exit criteria_:
 
-- You have a folder containing sample data files, partitioned by year and month on the C:\\ drive of your Lab VM
+- You have a folder containing sample data files, partitioned by year and month on the C:\\ drive of your Lab VM.
 
 ### Task 2: Install and configure Azure Data Factory Integration Runtime on the lab VM
 
 _Tasks to complete_:
 
-- Download and install the latest version of Azure Data Factory Integration Runtime from <https://www.microsoft.com/en-us/download/details.aspx?id=39717>
+- Download and install the latest version of Azure Data Factory Integration Runtime from <https://www.microsoft.com/en-us/download/details.aspx?id=39717>.
 
 _Exit criteria_:
 
@@ -245,7 +243,7 @@ _Exit criteria_:
 
 _Tasks to complete_:
 
-- Create a new Integration Runtime (gateway), and connect it to the Azure Data Factory Integration Runtime running on your Lab VM
+- Create a new Integration Runtime (gateway), and connect it to the Azure Data Factory Integration Runtime running on your Lab VM.
 
 _Exit criteria_:
 
@@ -263,7 +261,7 @@ In this exercise, you will deploy your trained machine learning model to Azure C
 
 _Tasks to complete_:
 
-- Open the Azure Machine Learning Workbench and then open the Command Prompt
+- Open the Azure Machine Learning Workbench and then open the Command Prompt.
 
 - Execute the following to update/install the Azure CLI packages:
 
@@ -287,7 +285,7 @@ _Tasks to complete_:
 
   ![Local instance of Jupyter running within the web browser](media/jupyter-in-browser.png)
 
-- Create a new Jupyter notebook with the **Python 3 Spark - local** kernel
+- Create a new Jupyter notebook with the **Python 3 Spark - local** kernel.
 
 - Create the same methods we will use in our score.py file to test them out locally. Paste the following code into the first cell and execute:
 
@@ -405,9 +403,9 @@ _Tasks to complete_:
       return response
   ```
 
-- **Save** your changes
+- **Save** your changes.
 
-- From the Jupyter home page, open the **aml_config** folder, then open **conda_dependencies.yml**
+- From the Jupyter home page, open the **aml_config** folder, then open **conda_dependencies.yml**.
 
   ![Open the aml_config/conda_dependencies.yml file](media/jupyter-conda-dependencies.png 'Jupyter UI with file list')
 
@@ -457,9 +455,9 @@ _Tasks to complete_:
 
 _Exit criteria_:
 
-- You are able to successfully test the ML scoring in the new notebook you created
+- You are able to successfully test the ML scoring in the new notebook you created.
 
-- The score.py and conda_dependencies.yml files have been updated
+- The score.py and conda_dependencies.yml files have been updated.
 
 ### Task 2: Deploy the model
 
@@ -479,7 +477,7 @@ az ml env set -n <yourclustername> -g <yourresourcegroupname>
 az ml service create realtime --model-file pipelineModel -f score.py -n pred -c aml_config\conda_dependencies.yml -r spark-py
 ```
 
-- **Copy the Scoring URL** to Notepad or similar for later reference
+- **Copy the Scoring URL** to Notepad or similar for later reference.
 
 - Generate your service keys. **Copy the PrimaryKey value** to Notepad or similar for later reference.
 
@@ -487,7 +485,7 @@ _Exit criteria_:
 
 - You are able to successfully test your scoring service with: `az ml service run realtime -i pred.[flightdelays-xyz.location] -d "{\"OriginAirportCode\":\"SAT\",\"Month\":5,\"DayofMonth\":5,\"CRSDepHour\":13,\"DayOfWeek\":7,\"Carrier\":\"MQ\",\"DestAirportCode\":\"ORD\",\"WindSpeed\":9,\"SeaLevelPressure\":30.03,\"HourlyPrecip\":0}"`
 
-- You have recorded your Scoring URL and service key values for later reference
+- You have recorded your Scoring URL and service key values for later reference.
 
 ## Exercise 4: Develop a data factory pipeline for data movement
 
@@ -499,39 +497,39 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 _Tasks to complete_:
 
-- Use the Copy Data tool in ADF to generate a Copy Pipeline, moving data from your "on-premises" Lab VM, to the Azure Storage account that was provisioned in the lab setup
+- Use the Copy Data tool in ADF to generate a Copy Pipeline, moving data from your "on-premises" Lab VM, to the Azure Storage account that was provisioned in the lab setup.
 
-  - The pipeline should run regularly, once per month
+  - The pipeline should run regularly, once per month.
 
-  - Start date is 03/01/2017 12:00 am
+  - Start date is 03/01/2017 12:00 am.
 
   - For the source:
 
-    - Use a File System source
+    - Use a File System source.
 
-    - Choose the path C:\\Data\\FlightsAndWeather
+    - Choose the path C:\\Data\\FlightsAndWeather.
 
-    - Ensure files copied recursively
+    - Ensure files copied recursively.
 
   - For the destination:
 
-    - Use Azure Blob Storage
+    - Use Azure Blob Storage.
 
-    - Make sure you select the storage account you created during lab setup
+    - Make sure you select the storage account you created during lab setup.
 
-    - The folder path should be something like: sparkcontainer/FlightsAndWeather/{yyyy}/{MM}/
+    - The folder path should be something like: `sparkcontainer/FlightsAndWeather/{yyyy}/{MM}/`.
 
-    - Add a header to the file
+    - Add a header to the file.
 
-    - Set the Copy performance settings to have a degree of copy parallelism of 10 and to skip incompatible rows
+    - Set the Copy performance settings to have a degree of copy parallelism of 10 and to skip incompatible rows.
 
-    - Update the Copy settings to set the number of retries to 3
+    - Update the Copy settings to set the number of retries to 3.
 
-  - Deploy the pipeline
+  - Deploy the pipeline.
 
 _Exit criteria_:
 
-- On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed
+- On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed.
 
   ![Select Edit Pipeline on the bottom of the page](media/adf-copy-data-deployment.png 'Deployment page')
 
@@ -549,17 +547,17 @@ _Tasks to complete_:
 
 - Create a new Azure Databricks Linked Service in ADF by adding a new Notebook activity to the design surface, named BatchScore. Choose existing for the job cluster, selecting the same region as your Azure Databricks workspace.
 
-  - Generate an Azure Databricks user token and use that as your access token for the linked Azure Databricks service
+  - Generate an Azure Databricks user token and use that as your access token for the linked Azure Databricks service.
 
-  - Input your cluster Id, which is found within the Tags tab of your cluster within the Azure Databricks UI
+  - Input your cluster Id, which is found within the Tags tab of your cluster within the Azure Databricks UI.
 
-  - Set the Notebook path to **/adf/BatchScore**
+  - Set the Notebook path to **/adf/BatchScore**.
 
-- Publish your pipeline
+- Publish your pipeline.
 
 _Exit criteria_:
 
-- You have an Azure Databricks Notebook Activity attached to your Copy Activity, and your pipeline has been published
+- You have an Azure Databricks Notebook Activity attached to your Copy Activity, and your pipeline has been published.
 
   ![Attach the copy activity to the notebook and then publish](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
@@ -625,7 +623,7 @@ _Tasks to complete_:
   prediction = #TODO: Execute a transform from your model, passing in dfDelays
   ```
 
-1.  Paste the following into a new cell to save the scored data into a new global table, **finishing the TODO item**:
+- Paste the following into a new cell to save the scored data into a new global table, **finishing the TODO item**:
 
     ```python
     prediction.write.mode("overwrite"). #TODO: Complete this line to save as a global table named "scoredflights"
@@ -633,7 +631,7 @@ _Tasks to complete_:
 
 _Exit criteria_:
 
-- Your BatchScore notebook is completed with no errors
+- Your BatchScore notebook is completed with no errors.
 
 ### Task 3: Trigger workflow
 
@@ -643,7 +641,7 @@ _Tasks to complete_:
 
 _Exit criteria_:
 
-- When you monitor your pipeline activity, you see a successful run of your pipeline
+- When you monitor your pipeline activity, you see a successful run of your pipeline.
 
 ![View your pipeline activity](media/adf-ml-monitor.png 'Monitor')
 
@@ -657,9 +655,9 @@ In this exercise, you will prepare a summary of flight delay data using Spark SQ
 
 _Tasks to complete_:
 
-- Navigate to your Azure Databricks workspace in the Azure portal
+- Navigate to your Azure Databricks workspace in the Azure portal.
 
-- Create a new python notebook
+- Create a new python notebook.
 
 - Save a new global table named flight_delays_summary that represents the following query:
 
@@ -677,7 +675,7 @@ _Tasks to complete_:
 
 _Exit criteria_:
 
-- You have created flight delays summary global table, which can be queried from Power BI Desktop
+- You have created flight delays summary global table, which can be queried from Power BI Desktop.
 
 ## Exercise 7: Visualizing in Power BI Desktop
 
@@ -691,59 +689,59 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 _Tasks to complete_:
 
-- In Azure Databricks, go to Clusters and select your cluster
+- In Azure Databricks, go to Clusters and select your cluster.
 
-- On the cluster edit page, scroll down and select the JDBC/ODBC tab
+- On the cluster edit page, scroll down and select the JDBC/ODBC tab.
 
   ![Select the JDBC/ODBC tab](media/databricks-power-bi-jdbc.png 'JDBC strings')
 
-- On the JDBC/ODBC tab, copy and save the JDBC URL
+- On the JDBC/ODBC tab, copy and save the JDBC URL.
 
-  - Construct the JDBC server address that you will use when you set up your Spark cluster connection in Power BI Desktop
+  - Construct the JDBC server address that you will use when you set up your Spark cluster connection in Power BI Desktop.
 
   - Take the JDBC URL that you copied and saved in step 3 and do the following:
 
-  - Replace jdbc:hive2 with https
+  - Replace jdbc:hive2 with https.
 
-  - Remove everything in the path between the port number and sql, retaining the components indicated by the boxes in the image below
+  - Remove everything in the path between the port number and sql, retaining the components indicated by the boxes in the image below.
 
   ![Select the parts to create the Power BI connection string](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
 
 _Exit criteria_:
 
-- You have created a JDBC connection string similar to <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/0614-124738-doubt405> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/lab> (if you choose the aliased version)
+- You have created a JDBC connection string similar to <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/0614-124738-doubt405> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/lab> (if you choose the aliased version).
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
 _Tasks to complete_:
 
-- Launch Power BI Desktop
+- Launch Power BI Desktop.
 
-- Connect to your Azure Databricks Spark instance, and query the global tables you created in the previous exercise
+- Connect to your Azure Databricks Spark instance, and query the global tables you created in the previous exercise.
 
 _Exit criteria_:
 
-- You have successfully connected to your Azure Databricks cluster, and have the fields from the flight_delay_summary global table loaded in the report design surface
+- You have successfully connected to your Azure Databricks cluster, and have the fields from the flight_delay_summary global table loaded in the report design surface.
 
 ### Task 3: Create Power BI report
 
 _Tasks to complete_:
 
-- Generate a Power BI report containing Map, Stacked Column Chart, and Treemap visualizations of the flight delay summary data
+- Generate a Power BI report containing Map, Stacked Column Chart, and Treemap visualizations of the flight delay summary data.
 
-- The Map visualization should represent the number of delays, based on the location of the airport
+- The Map visualization should represent the number of delays, based on the location of the airport.
 
-- The Stacked Column Chart should provide information about the probability of a delay, based on the day
+- The Stacked Column Chart should provide information about the probability of a delay, based on the day.
 
-- The Treemap visual display details about the number of delays associated with a particular airport
+- The Treemap visual display details about the number of delays associated with a particular airport.
 
 _Exit criteria_:
 
-- You should have a Power BI report generated, contain three interlinked tiles, displaying flight delay details
+- You should have a Power BI report generated, contain three interlinked tiles, displaying flight delay details.
 
   ![The Report design surface now displays the map of the United States with dots, a stacked bar chart, and a Treeview.](media/pbi-desktop-full-report.png 'Report design surface')
 
-## Exercise 7: Deploy intelligent web app
+## Exercise 8: Deploy intelligent web app
 
 Duration: 20 minutes
 
@@ -753,15 +751,15 @@ In this exercise, you will deploy an intelligent web application to Azure from G
 
 _Tasks to complete_:
 
-- Navigate to the AdventureWorks README page (<https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md>), and deploy a web app to Azure using an ARM template
+- Navigate to the AdventureWorks README page (<https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md>), and deploy a web app to Azure using an ARM template.
 
-- Provide your ML API details, which was captured during the Machine Learning model deployment exercise
+- Provide your ML API details, which was captured during the Machine Learning model deployment exercise.
 
-- Enter your DarkSky API key as part of the deployment process
+- Enter your DarkSky API key as part of the deployment process.
 
 _Exit criteria_:
 
-- You are able to successfully navigate to the deployed web app, and test various airport connections to view weather and delay prediction details
+- You are able to successfully navigate to the deployed web app, and test various airport connections to view weather and delay prediction details.
 
 ## After the hands-on lab
 
@@ -771,10 +769,10 @@ In this exercise, attendees will deprovision any Azure resources that were creat
 
 ### Task 1: Delete resource group
 
-1.  Using the Azure portal, navigate to the Resource group you used throughout this hands-on lab by selecting **Resource groups** in the left menu
+1. Using the Azure portal, navigate to the Resource group you used throughout this hands-on lab by selecting **Resource groups** in the left menu.
 
-2.  Search for the name of your research group and select it from the list
+2. Search for the name of your research group and select it from the list.
 
-3.  Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**
+3. Select **Delete** in the command bar and confirm the deletion by re-typing the Resource group name and selecting **Delete**.
 
 You should follow all steps provided _after_ attending the Hands-on lab.
