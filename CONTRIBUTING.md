@@ -34,13 +34,13 @@ Have you identified a reproducible problem in a workshop? Have a feature request
 
 ### Identify Where to Report
 
-The MSW project is distributed across multiple repositories. Try to file the issue against the correct workshop. Check the list of [Related Projects](https://github.com/Microsoft/MSW/wiki/Related-Projects) if you aren't sure which repo is correct.
+The MSW project is distributed across multiple repositories. Try to file the issue against the correct workshop. Check the list of [Related Projects](https://github.com/Microsoft/MCW/wiki/Related-Projects) if you aren't sure which repo is correct.
 
 ### Look For an Existing Issue
 
-Before you create a new issue, please do a search in [open issues](https://github.com/Microsoft/MSW/issues) to see if the issue or feature request has already been filed.
+Before you create a new issue, please do a search in [open issues](https://github.com/Microsoft/MCW/issues) to see if the issue or feature request has already been filed.
 
-Be sure to scan through the [most popular](https://github.com/Microsoft/MSW/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc) feature requests.
+Be sure to scan through the [most popular](https://github.com/Microsoft/MCW/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc) feature requests.
 
 If you find your issue already exists, make relevant comments and add your [reaction](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments). Use a reaction in place of a "+1" comment:
 
@@ -77,7 +77,7 @@ Once submitted, your report will go into the [issue tracking](https://github.com
 ## Contributing Fixes
 
 If you are interested in writing code to fix issues,
-please see [How to Contribute](https://github.com/Microsoft/MSW/wiki/How-to-Contribute) in the wiki.
+please see [How to Contribute](https://github.com/Microsoft/MCW/wiki/How-to-Contribute) in the wiki.
 
 # Thank You!
 
