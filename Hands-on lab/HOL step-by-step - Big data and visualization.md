@@ -498,7 +498,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 15. Switch back to your Azure Data Factory screen. Browse to your  **04 Deploy for Batch Score** into the Notebook path field.
 
-    ![Enter /adf/BatchScore into the notebook path](media/adf-ml-notebook-path.png 'Notebook path')
+    ![browse to 04 Deploy for Batch score into the notebook path](media/adf-ml-notebook-path.png 'Notebook path')
 
 19. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All** after making the connection.
 
