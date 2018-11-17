@@ -56,7 +56,8 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
   - [Exercise 8: Deploy intelligent web app](#exercise-8-deploy-intelligent-web-app)
-    - [Task 1: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
+    - [Task 1: Register for a trial API account at darksky.net](#task-2-register-for-a-trial-api-account-at-darkskynet)
+    - [Task 2: Deploy web app from GitHub](#task-1-deploy-web-app-from-github)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
@@ -1190,13 +1191,39 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![The Power BI Save as window displays.](media/image197.png 'Power BI Save as window')
 
-## Exercise 8: Deploy intelligent web app
+## Exercise 8: Deploy intelligent web app (Optional Lab)
 
 Duration: 20 minutes
 
 In this exercise, you will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model that was deployed in Exercise 1 to bring action-oriented insight to an already existing business process.
 
-### Task 1: Deploy web app from GitHub
+### Task 1: Register for a trial API account at darksky.net
+
+To retrieve the 7-day hourly weather forecast, you will use an API from darksky.net. There is a free trial version that provides you access to the API you need for this hands-on lab.
+
+1. Navigate to <https://darksky.net/dev>.
+
+2. Select TRY FOR FREE.
+
+    ![Select the TRY FOR FREE button on the Dark Sky dev page](media/dark-sky-api-try-for-free.png)
+
+3. Complete the Register form by providing your email address and a password. Select REGISTER.
+
+    ![Complete the registration form and select REGISTER](media/dark-sky-register.png)
+
+4. Check your email account you used for registration. You should have a confirmation email from Dark Sky. Open the email and follow the confirmation link within to complete the registration process. When the welcome page loads, log in with your new account.
+
+    ![Dark Sky welcome page. Choose login to continue](media/dark-sky-welcome.png)
+
+5. After logging in, you will be directed to the Your Account page. Take note of your **Secret Key** and copy it to a text editor such as Notepad for later. You will need this key to make API calls later in the lab.
+
+    ![The Dark Sky Your Account page - copy the Secret Key](media/dark-sky-your-account.png)
+
+6. To verify that your API Key is working, follow the link on the bottom of the page located underneath Sample API Call. You should see a JSON result that looks similar to the following:
+
+    ![Sample JSON result from Dark Sky API link](media/dark-sky-sample-json-result.png)
+
+### Task 2: Deploy web app from GitHub
 
 1. Navigate to <https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal.
 
