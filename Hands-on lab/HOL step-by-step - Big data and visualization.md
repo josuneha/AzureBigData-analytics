@@ -39,13 +39,12 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
     - [Task 3: Configure Azure Data Factory](#task-3-configure-azure-data-factory)
   - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-4-develop-a-data-factory-pipeline-for-data-movement)
-    - [Task 1: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
+    - [Task: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
   - [Exercise 4: Operationalize ML scoring with Azure Databricks and Data Factory](#exercise-5-operationalize-ml-scoring-with-azure-databricks-and-data-factory)
     - [Task 1: Create Azure Databricks Linked Service](#task-1-create-azure-databricks-linked-service)
-    - [Task 2: Complete the BatchScore Azure Databricks notebook code](#task-2-complete-the-batchscore-azure-databricks-notebook-code)
-    - [Task 3: Trigger workflow](#task-3-trigger-workflow)
+    - [Task 2: Trigger workflow](#task-3-trigger-workflow)
   - [Exercise 5: Summarize data using Azure Databricks](#exercise-6-summarize-data-using-azure-databricks)
-    - [Task 1: Summarize delays by airport](#task-1-summarize-delays-by-airport)
+    - [Task: Summarize delays by airport](#task-1-summarize-delays-by-airport)
   - [Exercise 6: Visualizing in Power BI Desktop](#exercise-7-visualizing-in-power-bi-desktop)
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
@@ -504,7 +503,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Attach the copy activity to the notebook and then publish](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
-### Task 3: Trigger workflow
+### Task 2: Trigger workflow
 
 1. Switch back to Azure Data Factory. Select your pipeline if it is not already opened.
 
@@ -526,7 +525,7 @@ Duration: 20 minutes
 
 In this exercise, you will prepare a summary of flight delay data using Spark SQL.
 
-### Task 1: Summarize delays by airport
+### Task: Summarize delays by airport
 
 1. Open your Azure Databricks workspace and open the final notebook called **05 explore Data**
 2. Execute each cell and follow the instructions in the notebook that explains each step.
