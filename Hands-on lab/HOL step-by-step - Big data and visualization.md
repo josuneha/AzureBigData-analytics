@@ -427,7 +427,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![Select Edit Pipeline on the bottom of the page](media/adf-copy-data-deployment.png 'Deployment page')
 
-## Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory
+## Exercise 4: Operationalize ML scoring with Azure Databricks and Data Factory
 
 Duration: 20 minutes
 
@@ -492,9 +492,9 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Paste the cluster id and select finish](media/adf-ml-databricks-clusterid.png 'Paste cluster id')
 
-14. Switch back to Azure Databricks. Select **Workspace** in the menu. Right-click within Workspace, then select **Create** --> **Folder**.
+14. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**.
 
-    ![Right-click within workspace and select Create, Folder](media/databricks-workspace-create-folder.png 'Create folder')
+    ![Right-click within workspace and select 04 Deploy for Batch Score](media/databricks-workspace-create-folder.png 'Create folder')
 
 15. Enter **adf** as the folder name, then select **Create Folder**.
 
