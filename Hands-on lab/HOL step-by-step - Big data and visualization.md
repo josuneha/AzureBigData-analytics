@@ -31,11 +31,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Requirements](#requirements)
-  - [Exercise 1: Build a Machine Learning Model](#exercise-1-build-a-machine-learning-model)
-    - [Task 1: Create your Azure Machine Learning project](#task-1-create-your-azure-machine-learning-project)
-    - [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
-    - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
-    - [Task 4: Configure your Machine Learning environment](#task-4-configure-your-machine-learning-environment)
+  - [Exercise 1: Load Sample Data and Databricks Notebooks](#exercise-1-Load-Sample-Data-and-Databricks-Notebooks)
+    - [Task 1: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
+    - [Task 2: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
   - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
     - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
     - [Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
@@ -91,59 +89,15 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
 2. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
 
-## Exercise 1: Build a Machine Learning Model
+## Exercise 1: Load Sample Data and Databricks Notebooks
 
 Duration: 60 minutes
 
-In this exercise, you will implement a classification experiment. You will load the training data from your local machine into a dataset. Then, you will explore the data to identify the primary components you should use for prediction, and use two different algorithms for predicting the classification. You will then evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
+In this exercise, you will implement a classification experiment. You will load the training data from your local machine into a dataset. Then, you will explore the data to identify the primary components you should use for prediction, and use two different algorithms for predicting the classification. You will then evaluate the performance of both algorithms and choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the optional sample web app at the end.
 
-### Task 1: Create your Azure Machine Learning project
+### Task 1: Upload the Sample Datasets
 
-1. Connect to the Lab VM (DSVM) (If you are already connected to your DSVM, skip to Step 8).
-
-2. From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
-
-3. Next, select your lab Data Science Virtual Machine (DSVM) from the list.
-
-    ![Select the Lab DSVM from within your lab resource group](media/select-lab-dsvm.png 'Select Lab DSVM from resource group')
-
-4. On your Lab DSVM blade, select **Connect** from the top menu.
-
-    ![The Connect button is selected on the Lab DSVM blade menu bar.](media/lab-dsvm-connect.png 'Connect button')
-
-5. In the dialog that appears, accept the defaults and select **Download RDP File**. Open the file once downloaded.
-
-    ![Select Download RDP File](media/lab-dsvm-download-rdp-file.png 'Select download RDP File')
-
-6. Select Connect, and enter the following credentials (or the non-default credentials if you changed them):
-
-    - User name: demouser
-
-    - Password: Password.1!!
-
-7. **If you cannot Remote Desktop into the DSVM** due to the following error, **"CredSSP encryption oracle remediation"**, do one of the following:
-
-    - Option 1: Follow this link to workaround the issue: <https://support.microsoft.com/en-us/help/4295591/credssp-encryption-oracle-remediation-error-when-to-rdp-to-azure-vm>.
-
-    - Option 2: Install the [Microsoft Remote Desktop app](https://www.microsoft.com/store/productId/9WZDNCRFJ3PS) from the Microsoft Store. The CredSSP issue appears to only affect the Remote Desktop Connection client installed with Windows.
-
-8. From your Lab VM (DSVM), launch the _Azure Machine Learning Workbench_. You should see a desktop icon for the application, or find it under the Start menu.
-
-9. You will be prompted to log in with your Azure account. Use the same Azure account you used to provision the services in the [Before the hands-on lab](./Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md) setup.
-
-10. Once authenticated, you should see the Machine Learning Experimentation Workspace you provisioned, displayed on the welcome page of the Workbench.
-
-11. Select the **+** symbol next to the PROJECTS header above your Experimentation Workspace (1), then select **New Project**. This opens the New Project form. Within the form, enter **FlightDelays** for the project name (2), **C:\HOL** for the project directory (3), ensure your Experimentation workspace is selected, select the **Blank Project** project template (4), then select **Create** (5).
-
-    ![Create new project in the Azure Machine Learning Workbench](media/create-new-workbench-project.png)
-
-12. This will create the following new file path with a default project structure: C:\HOL\FlightDelays.
-
-    ![Project structure generated after creating new Workbench project](media/new-project-structure.png)
-
-### Task 2: Upload the Sample Datasets
-
-1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
+1. Before you begin working with machine learning services, there are three datasets you need to load.
 
 2. Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown).
 
@@ -153,7 +107,7 @@ In this exercise, you will implement a classification experiment. You will load 
     - FlightWeatherWithAirportCodes.csv
     - AirportCodeLocationLookupClean.csv
 
-4. From your Lab VM (DSVM), open a browser and navigate to the Azure portal (<https://portal.azure.com>), and navigate to Azure Databricks service under the Resource Group you created when completing the prerequisites for this hands-on lab.
+4. Open a browser and navigate to the Azure portal (<https://portal.azure.com>), and navigate to Azure Databricks service under the Resource Group you created when completing the prerequisites for this hands-on lab.
 
     ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png 'Select Azure Databricks')
 
@@ -187,7 +141,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
     ![Azure Databricks tables shown after all three files uploaded](media/uploaded-data-files.png 'Uploaded data files')
 
-### Task 3: Open Azure Databricks and complete lab notebooks
+### Task 2: Open Azure Databricks and complete lab notebooks
 
 1. Download the following files:
 
@@ -211,84 +165,6 @@ In this exercise, you will implement a classification experiment. You will load 
 6. Run each cell of the notebook individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
 7. Repeat the process for **02 Predict Flight Delays complete**.
-
-### Task 4: Configure your Machine Learning environment
-
-The first thing you need to do before deploying your model is to enable the container-based Resource Providers on your Azure subscription.
-
-1. Navigate to the Azure Portal.
-
-2. Select All Services, Subscriptions and then select your subscription from the list.
-
-3. Under the Settings grouping, select Resource Providers.
-
-    ![Select resource providers in the menu](media/resource-providers-menu.png 'Resource providers in the menu')
-
-4. Search for "container" and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
-
-    ![Search for containers and enable all resource providers](media/enable-container-resource-providers.png 'Enable container resource providers')
-
-5. Search for and enable the **Microsoft.MachineLearningServices** service provider.
-
-6. From your Lab VM (DSVM), browse to the download folder in File Explorer. Right-click **flight_delays.zip** (which was downloaded at the end of the **02 Predict Flight Delays complete** notebook), then select **Extract All...**.
-
-    ![Right-click downloaded flight_delays.zip file and select Extract All from the context menu](media/downloaded-flight-delays-zip.png 'Extract all')
-
-7. In the extract dialog, accept the default options and select **Extract**.
-
-    ![Extract dialog showing default options](media/extract-flight-delays-dialog.png 'Extract dialog')
-
-8. Within the extracted folder, navigate to dbfs\tmp\models and copy the **pipelineModel** subfolder.
-
-9. Navigate to your project folder (C:\HOL\FlightDelays) and paste the pipelineModel subfolder within.
-
-    ![Copy pipelineModel to the FlightDelays project folder](media/model-copied-to-project-folder.png 'Model copied to project folder')
-
-10. Open the Azure Machine Learning Workbench. Select File --> Open Command Prompt.
-
-    ![Open command prompt option in the workbench](media/azure-ml-workbench-open-command-prompt.png 'Open command prompt...')
-
-11. Execute the following to update/install the Azure CLI packages:
-
-    ```bash
-    pip install azure-cli azure-cli-ml azure-ml-api-sdk
-    ```
-
-12. Execute the following to upgrade the `pyspark` version:
-
-    ```bash
-    pip install pyspark --upgrade
-    ```
-
-13. Set up your machine learning environment with the following command:
-
-    ```bash
-    az ml env setup -c -n <environment name> --location <location> --resource-group <yourresourcegroupname>
-    ```
-
-    Replace the tokens above with appropriate values:
-
-    - For **environment name** enter flightdelays, or something similar. This value can only contain lowercase alphanumeric characters.
-    - For **location**, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
-    - For **yourresourcegroupname**, enter the resource group name you've been using for this lab.
-
-    > When you run the above command, the prompt tells you the subscription is set to XYZ. If you select "N" to continue with the subscription, you may encounter a UnicodeEncodeError when it attempts to parse your subscription list. If this happens, manually set the subscription first using the following command, then rerun the az ml env setup command:
-
-    `az account set –subscription <Subscription Id>`
-
-14. If prompted, copy the URL presented and sign in using your web browser.
-
-15. Enter the code provided in the command prompt.
-
-16. Return to the command prompt, which should automatically update after you log in.
-
-17. At the "Subscription set to <subscription name>" prompt, enter Y if the subscription name is correct, or N to select the subscription to use from a list.
-
-18. It will take **10-20 minutes** for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:
-
-    ```bash
-    az ml env show -g <resourceGroupName> -n <clusterName>
-    ```
 
 ## Exercise 2: Setup Azure Data Factory
 
