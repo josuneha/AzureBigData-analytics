@@ -161,7 +161,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
     ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
-6. Run each cell of the notebook 1, 2 and 3 individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
+6. Run each cell of the notebooks 01, 02 and 03 individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
 7. Do NOT run Notebooks 4 and 5 yet, they will be discussed later in the lab.
 
