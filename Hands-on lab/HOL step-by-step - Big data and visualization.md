@@ -143,28 +143,28 @@ In this exercise, you will implement a classification experiment. You will load 
 
 ### Task 2: Open Azure Databricks and complete lab notebooks
 
-1. Download the following files:
+1. Download the following file:
 
-    - [01 Prepare Flight Data complete.dbc](lab-files/01%20Prepare%20Flight%20Data%20complete.dbc)
-    - [02 Predict Flight Delays complete.dbc](lab-files/02%20Predict%20Flight%20Delays%20complete.dbc)
+    - [BigDataVis.dbc](lab-files/BigDataVis.dbc)
 
 2. Within Azure Databricks, select **Workspace** on the menu, then **Users**, select your user, then select the down arrow on the top of your user workspace. Select **Import**.
 
     ![Screenshot showing selecting import within the user workspace](media/select-import-in-user-workspace.png 'Import')
 
-3. Within the Import Notebooks dialog, select Import from: file, then drag-and-drop the files or browse to upload each individually.
+3. Within the Import Notebooks dialog, select Import from: file, then drag-and-drop the file or browse to upload it.
 
     ![Select import from file](media/import-notebooks.png 'Import from file')
 
-4. Select **01 Prepare Flight Data complete** to open the notebook.
+4. Select **BigDataVis** to open the notebook.
 
-5. Before you begin, make sure you attach your cluster to the notebook, using the dropdown. You will need to do this for each notebook you open.
+5. Before you begin, make sure you attach your cluster to the notebooks, using the dropdown. You will need to do this for each notebook you open. There are 5 notebooks included in the BigDataVis.dbc
 
     ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
-6. Run each cell of the notebook individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
+6. Run each cell of the notebook 1, 2 and 3 individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
-7. Repeat the process for **02 Predict Flight Delays complete**.
+7. Do NOT run Notebooks 4 and 5 yet, they will be discussed later in the lab.
+
 
 ## Exercise 2: Setup Azure Data Factory
 
