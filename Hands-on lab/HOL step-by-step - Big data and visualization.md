@@ -492,21 +492,11 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Paste the cluster id and select finish](media/adf-ml-databricks-clusterid.png 'Paste cluster id')
 
-14. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**.
+14. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**. Examine the content but don't run any of the cells yet.
 
     ![Right-click within workspace and select 04 Deploy for Batch Score](media/databricks-workspace-create-folder.png 'Create folder')
 
-15. Enter **adf** as the folder name, then select **Create Folder**.
-
-16. Select the down arrow next to your new folder. Select **Create** --> **Notebook**.
-
-    ![Create a new notebook within the new adf folder](media/databricks-create-notebook.png 'Create notebook')
-
-17. For the name, enter **BatchScore** and make sure Python is selected as the language. Select **Create**.
-
-    ![Enter BatchScore as the new notebook name](media/databricks-create-notebook-form.png 'Create Notebook form')
-
-18. Switch back to your Azure Data Factory screen. Enter **/adf/BatchScore** into the Notebook path field.
+15. Switch back to your Azure Data Factory screen. Browse to your  **04 Deploy for Batch Score** into the Notebook path field.
 
     ![Enter /adf/BatchScore into the notebook path](media/adf-ml-notebook-path.png 'Notebook path')
 
