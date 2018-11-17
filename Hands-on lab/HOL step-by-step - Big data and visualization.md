@@ -174,7 +174,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 ### Task 1: Download and stage data to be processed
 
-1. Sign into the Lab VM (DSVM) and open a web browser.
+1. Open a web browser.
 
 2. Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>.
 
