@@ -57,9 +57,13 @@ namespace BigDataTravel
 
         private void InitSettings()
         {
-            mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
-            mlApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["mlApiKey"];
-            weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
+            //mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
+            //mlApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["mlApiKey"];
+            //weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
+
+            mlUrl = "http://40.121.21.157:80/score";
+            mlApiKey = "wfh4LEaftGvKHPsdsKyBT1HHvaXndiyc";
+            weatherApiKey = "018efba9bde9176abf4d7b6383a1fa1c";
         }
 
         private void InitAirports()
@@ -235,17 +239,17 @@ namespace BigDataTravel
                     {
                         var result = await response.Content.ReadAsStringAsync();
                         var token = JToken.Parse(result);
-                        var parsedResult = JsonConvert.DeserializeObject<PredictionResult>((string)token);
+                        var parsedResult = JsonConvert.DeserializeObject<List<PredictionResult>>((string)token);
 
-                        if (parsedResult.prediction == 1)
+                        if (parsedResult[0].prediction == 1)
                         {
                             this.prediction.ExpectDelays = true;
-                            this.prediction.Confidence = parsedResult.probability;
+                            this.prediction.Confidence = parsedResult[0].probability;
                         }
-                        else if (parsedResult.prediction == 0)
+                        else if (parsedResult[0].prediction == 0)
                         {
                             this.prediction.ExpectDelays = false;
-                            this.prediction.Confidence = parsedResult.probability;
+                            this.prediction.Confidence = parsedResult[0].probability;
                         }
                         else
                         {
