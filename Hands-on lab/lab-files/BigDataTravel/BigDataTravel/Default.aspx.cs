@@ -57,13 +57,9 @@ namespace BigDataTravel
 
         private void InitSettings()
         {
-            //mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
-            //mlApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["mlApiKey"];
-            //weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
-
-            mlUrl = "http://40.121.21.157:80/score";
-            mlApiKey = "wfh4LEaftGvKHPsdsKyBT1HHvaXndiyc";
-            weatherApiKey = "018efba9bde9176abf4d7b6383a1fa1c";
+            mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
+            mlApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["mlApiKey"];
+            weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
         }
 
         private void InitAirports()
