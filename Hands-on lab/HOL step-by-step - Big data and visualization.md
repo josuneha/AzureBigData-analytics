@@ -95,7 +95,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
 1. Before you begin working with machine learning services, there are three datasets you need to load.
 
-2. Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown).
+2. Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown). If still having trouble, a zip file called AdventureWorksTravelDatasets.zip is included in the lab-files folders.
 
 3. Extract the ZIP and verify you have the following files:
 
@@ -283,7 +283,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 Duration: 20 minutes
 
-In this exercise, you will create an Azure Data Factory pipeline to copy data (.CSV files) from an on-premises server (Lab VM) to Azure Blob Storage. The goal of the exercise is to demonstrate data movement from an on-premises location to Azure Storage (via the Integration Runtime).
+In this exercise, you will create an Azure Data Factory pipeline to copy data (.CSV files) from an on-premises server (your machine) to Azure Blob Storage. The goal of the exercise is to demonstrate data movement from an on-premises location to Azure Storage (via the Integration Runtime).
 
 ### Task 1: Create copy pipeline using the Copy Data Wizard
 
@@ -295,7 +295,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Task name: **CopyOnPrem2AzurePipeline**
 
-    - Task description: (Optional) **"This pipeline copies timesliced CSV files from on-premises virtual machine C:\\Data to Azure Blob Storage as a continuous job"**.
+    - Task description: (Optional) **"This pipeline copies timesliced CSV files from on-premises C:\\Data to Azure Blob Storage as a continuous job"**.
 
     - Task cadence or Task schedule: **Select Run regularly on schedule**
 
