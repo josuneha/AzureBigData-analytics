@@ -573,27 +573,23 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 3. Select Get data on the screen that is displayed next.
     ![On the Power BI Desktop Sign in page, in the pane, Get data is selected.](media/image178.png 'Power BI Desktop Sign in page')
 
-4. Select **Other** from the side, and select **Spark (Beta)** from the list of available data sources.
+4. Select **Other** from the side, and select **Spark** from the list of available data sources.
 
-    ![In the pane of the Get Data page, Other is selected. In the pane, Spark (Beta) is selected.](media/pbi-desktop-get-data.png 'Get Data page')
+    ![In the pane of the Get Data page, Other is selected. In the pane, Spark is selected.](media/pbi-desktop-get-data.png 'Get Data page')
 
 5. Select **Connect**.
 
-6. You will receive a prompt warning you that the Spark connector is still in preview. Select **Continue**.
+6. On the next screen, you will be prompted for your Spark cluster information.
 
-    ![A warning reminds you that the app is still under development.](media/image180.png 'Preview connector warning')
+7. Paste the JDBC connection string you constructed a few steps ago into the **Server** field.
 
-7. On the next screen, you will be prompted for your Spark cluster information.
+8. Select the **HTTP** protocol.
 
-8. Paste the JDBC connection string you constructed a few steps ago into the **Server** field.
-
-9. Select the **HTTP** protocol.
-
-10. Select **DirectQuery** for the Data Connectivity mode, and select **OK**. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying.
+9. Select **DirectQuery** for the Data Connectivity mode, and select **OK**. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying.
 
     ![Configure your connection to the Spark cluster](media/pbi-desktop-connect-spark.png 'Spark form')
 
-11. Enter your credentials on the next screen as follows:
+10. Enter your credentials on the next screen as follows:
 
     - User name: **token**
 
@@ -603,13 +599,13 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![Enter "token" for the user name and paste user token into the password field](media/pbi-desktop-login.png 'Enter credentials')
 
-12. Select **Connect**.
+11. Select **Connect**.
 
-13. In the Navigator dialog, check the box next to **flight_delays_summary**, and select **Load**.
+12. In the Navigator dialog, check the box next to **flight_delays_summary**, and select **Load**.
 
     ![In the Navigator dialog box, in the pane under Display Options, the check box for flight_delays_summary is selected. In the pane, the table of flight delays summary information displays.](media/pbi-desktop-select-table-navigator.png 'Navigator dialog box')
 
-14. It will take several minutes for the data to load into the Power BI Desktop client.
+13. It will take several minutes for the data to load into the Power BI Desktop client.
 
 ### Task 3: Create Power BI report
 
@@ -719,11 +715,7 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
     - Either keep the default Site name, or provide one that is globally unique, and then choose a Site Location.
 
-    - Finally, enter the ML API and Weather API information.
-
-    Note: Recall that you recorded the ML API information in the Machine Learning model deployment exercise.
-
-    Note: Also, recall that you obtained the Weather API key back in the prerequisite steps for the lab. Insert that key into the Weather Api Key field.
+    - Finally, enter the ML API Primary key (we got that from Azure databricks Notebook #3, remember?) and Weather API information.
 
     ![Fields on the Deploy to Azure page are populated with the previously copied information.](media/azure-deployment-form.png 'Deploy to Azure page')
 
