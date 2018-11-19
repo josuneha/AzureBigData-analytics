@@ -564,9 +564,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
-1. On your Lab VM, launch Power BI Desktop by double-clicking on the desktop shortcut.
+1. Download Power BI Desktop from https://powerbi.microsoft.com/en-us/desktop/
 
-2. When Power BI Desktop opens, you will need to enter your personal information, or Sign in if you already have an account.
+2. When Power BI Desktop starts, you will need to enter your personal information, or Sign in if you already have an account.
 
     ![The Power BI Desktop Welcome page displays.](media/image177.png 'Power BI Desktop Welcome page')
 
