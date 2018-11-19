@@ -189,7 +189,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     - Cluster Type: Standard
 
-    - Databricks Runtime Version: 4.1 (includes Apache Spark 2.3.0, Scala 2.11)
+    - Databricks Runtime Version: 4.3 (includes Apache Spark 2.3.1, Scala 2.11)
 
     - Python Version: 3
 
