@@ -39,12 +39,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Big data and visualization before the hands-on lab setup guide
 
-## Requirements
-
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN.
-
-    a. Trial subscriptions will not work.
-
 ## Before the hands-on lab
 
 Duration: 30 minutes
