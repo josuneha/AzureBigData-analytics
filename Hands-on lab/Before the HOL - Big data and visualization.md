@@ -39,12 +39,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Big data and visualization before the hands-on lab setup guide
 
-## Requirements
-
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN.
-
-    a. Trial subscriptions will not work.
-
 ## Before the hands-on lab
 
 Duration: 30 minutes
@@ -69,7 +63,7 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
     - Resource Group: Select the same resource group you created at the beginning of this lab.
 
-    - Location: Select a region close to you.
+    - Location: Select a region close to you. ***(If you are using an Azure Pass, select South Central US)***
 
     - Pricing: Select Premium.
 
@@ -89,27 +83,21 @@ Create a new Azure Storage account that will be used to store historic and score
 
 3. Set the following configuration on the Azure Storage account creation form:
 
-    - Name: Enter a unique name as indicated by a green checkmark.
+    - Subscription: Select the subscription you are using for this hands-on lab.
 
-    - Deployment model: Resource manager
+    - Resource group: Select the same resource group you created at the beginning of this lab.
 
-    - Account kind: Blob storage
+    - Storage account name: Enter a unique name as indicated by a green checkmark.
 
     - Location: Select the same region you used for Azure Databricks.
 
-    - Replication: Read-access geo-redundant storage (RA-GRS)
-
     - Performance: Standard
 
+    - Account kind: BlobStorage
+
+    - Replication: Read-access geo-redundant storage (RA-GRS)
+
     - Access tier: Hot
-
-    - Secure transfer required: Disabled
-
-    - Subscription: Select the subscription you are using for this hands-on lab.
-
-    - Resource Group: Select the same resource group you created at the beginning of this lab.
-
-    - Virtual networks: Disabled
 
     ![Complete the Azure storage account creation form with the options as outlined above.](media/azure-storage-create-blade.png)
 
@@ -129,11 +117,11 @@ You will need to have the Azure Storage account name and access key when you cre
 
     ![Select Access keys from menu - copy storage account name - copy key](media/azure-storage-access-keys.png)
 
-4. Select **Containers** (1) from the menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container. Please note: in some cases, you will not see Containers in the menu. Instead, select "Blobs" underneath the Blob Service heading.
+4. Select **Blobs** (1) from the menu. Select **+ Container** (2) on the Blobs blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container.
 
     ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 
-### Task 4: Provision Azure Data Factory
+### Task 4: Provision Azure Data Factory (ADF)
 
 Create a new Azure Data Factory instance that will be used to orchestrate data transfers for analysis.
 
@@ -147,15 +135,18 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
     - Name: Enter a unique name as indicated by a green checkmark.
 
-    - Deployment model: Resource manager
-
     - Subscription: Select the subscription you are using for this hands-on lab.
 
     - Resource Group: Select the same resource group you created at the beginning of this lab.
 
     - Version: V2
 
-    - Location: Select the same region you used for Azure Databricks.
+    - Location: Select any region close to you.
+
+    ***Understanding Data Factory Location:***
+    The Data Factory location is where the metadata of the data factory is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
+
+    The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
 
     ![Complete the Azure Data Factory creation form with the options as outlined above.](media/azure-data-factory-create-blade.png)
 
@@ -193,17 +184,15 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
     - Python Version: 3
 
-    - Driver Type: Same as worker.
+    - Driver Type: Same as worker
 
     - Worker Type: Standard_F4s
 
-    - Min Workers: 2
+    - Workers: 1
 
-    - Max Workers: 8
+    - Enable Autoscaling: Uncheck this option
 
-    - Enable Autoscaling: Leave checked.
-
-    - Auto Termination: Check the box and enter 120.
+    - Auto Termination: Check the box and enter 120
 
     - Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following:
 
