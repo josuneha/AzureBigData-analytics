@@ -121,7 +121,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
     ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 
-### Task 4: Provision Azure Data Factory
+### Task 4: Provision Azure Data Factory (ADF)
 
 Create a new Azure Data Factory instance that will be used to orchestrate data transfers for analysis.
 
@@ -142,6 +142,11 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
     - Version: V2
 
     - Location: Select any region close to you.
+
+        **Understanding Data Factory Location:**
+        The Data Factory location is where the metadata of the data factory is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
+    
+        The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
 
     ![Complete the Azure Data Factory creation form with the options as outlined above.](media/azure-data-factory-create-blade.png)
 
