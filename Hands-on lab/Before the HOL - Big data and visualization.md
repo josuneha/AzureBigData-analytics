@@ -57,15 +57,15 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
 3. Set the following configuration on the Azure Databricks Service creation form:
 
-    - Name: Enter a unique name as indicated by a green checkmark.
+    - **Name**: Enter a unique name as indicated by a green checkmark.
 
-    - Subscription: Select the subscription you are using for this hands-on lab.
+    - **Subscription**: Select the subscription you are using for this hands-on lab.
 
-    - Resource Group: Select the same resource group you created at the beginning of this lab.
+    - **Resource Group**: Select the same resource group you created at the beginning of this lab.
 
-    - Location: Select a region close to you. ***(If you are using an Azure Pass, select South Central US)***
+    - **Location**: Select a region close to you. ***(If you are using an Azure Pass, select South Central US.)***
 
-    - Pricing: Select Premium.
+    - **Pricing**: Select Premium.
 
     ![Complete the Azure Databricks Service creation form with the options as outlined above.](media/azure-databricks-create-blade.png)
 
@@ -83,21 +83,21 @@ Create a new Azure Storage account that will be used to store historic and score
 
 3. Set the following configuration on the Azure Storage account creation form:
 
-    - Subscription: Select the subscription you are using for this hands-on lab.
+    - **Subscription**: Select the subscription you are using for this hands-on lab.
 
-    - Resource group: Select the same resource group you created at the beginning of this lab.
+    - **Resource group**: Select the same resource group you created at the beginning of this lab.
 
-    - Storage account name: Enter a unique name as indicated by a green checkmark.
+    - **Storage account name**: Enter a unique name as indicated by a green checkmark.
 
-    - Location: Select the same region you used for Azure Databricks.
+    - **Location**: Select the same region you used for Azure Databricks.
 
-    - Performance: Standard
+    - **Performance**: Standard
 
-    - Account kind: BlobStorage
+    - **Account kind**: BlobStorage
 
-    - Replication: Read-access geo-redundant storage (RA-GRS)
+    - **Replication**: Read-access geo-redundant storage (RA-GRS)
 
-    - Access tier: Hot
+    - **Access tier**: Hot
 
     ![Complete the Azure storage account creation form with the options as outlined above.](media/azure-storage-create-blade.png)
 
@@ -133,15 +133,15 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
 3. Set the following configuration on the Data Factory creation form:
 
-    - Name: Enter a unique name as indicated by a green checkmark.
+    - **Name**: Enter a unique name as indicated by a green checkmark.
 
-    - Subscription: Select the subscription you are using for this hands-on lab.
+    - **Subscription**: Select the subscription you are using for this hands-on lab.
 
-    - Resource Group: Select the same resource group you created at the beginning of this lab.
+    - **Resource Group**: Select the same resource group you created at the beginning of this lab.
 
-    - Version: V2
+    - **Version**: V2
 
-    - Location: Select any region close to you.
+    - **Location**: Select any region close to you.
 
     ***Understanding Data Factory Location:***
     The Data Factory location is where the metadata of the data factory is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
@@ -176,25 +176,25 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 5. On the Create New Cluster form, provide the following:
 
-    - Cluster Name: lab
+    - **Cluster Name**: lab
 
-    - Cluster Type: Standard
+    - **Cluster Type**: Standard
 
-    - Databricks Runtime Version: 4.3 (includes Apache Spark 2.3.1, Scala 2.11)
+    - **Databricks Runtime Version**: 4.3 (includes Apache Spark 2.3.1, Scala 2.11)
 
-    - Python Version: 3
+    - **Python Version**: 3
 
-    - Driver Type: Same as worker
+    - **Driver Type**: Same as worker
 
-    - Worker Type: Standard_F4s
+    - **Worker Type**: Standard_F4s
 
-    - Workers: 1
+    - **Workers**: 1
 
-    - Enable Autoscaling: Uncheck this option
+    - **Enable Autoscaling**: Uncheck this option.
 
-    - Auto Termination: Check the box and enter 120
+    - **Auto Termination**: Check the box and enter 120.
 
-    - Spark Config: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following:
+    - **Spark Config**: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied earlier in Task 5. This will allow your cluster to access the lab files. Enter the following:
 
         `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
 
