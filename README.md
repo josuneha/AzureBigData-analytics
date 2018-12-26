@@ -38,7 +38,7 @@ By the end of the lab, you will be able to show an end-to-end solution, leveragi
 - Azure Data Factory (ADF)
 - Azure Storage
 - Power BI Desktop
-- Azure App Service
+- Azure App Service (optional)
 
 ## Azure solution
 

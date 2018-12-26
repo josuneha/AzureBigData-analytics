@@ -235,17 +235,17 @@ namespace BigDataTravel
                     {
                         var result = await response.Content.ReadAsStringAsync();
                         var token = JToken.Parse(result);
-                        var parsedResult = JsonConvert.DeserializeObject<PredictionResult>((string)token);
+                        var parsedResult = JsonConvert.DeserializeObject<List<PredictionResult>>((string)token);
 
-                        if (parsedResult.prediction == 1)
+                        if (parsedResult[0].prediction == 1)
                         {
                             this.prediction.ExpectDelays = true;
-                            this.prediction.Confidence = parsedResult.probability;
+                            this.prediction.Confidence = parsedResult[0].probability;
                         }
-                        else if (parsedResult.prediction == 0)
+                        else if (parsedResult[0].prediction == 0)
                         {
                             this.prediction.ExpectDelays = false;
-                            this.prediction.Confidence = parsedResult.probability;
+                            this.prediction.Confidence = parsedResult[0].probability;
                         }
                         else
                         {

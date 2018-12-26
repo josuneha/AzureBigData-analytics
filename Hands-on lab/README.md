@@ -35,9 +35,5 @@ You should follow all the steps provided in the [Before the Hands-on Lab](./Befo
 
 ## Hands-on Lab
 
-Select the guide you are using to complete the Hands-on lab below.
-
 - [Step-by-step guide](./HOL%20step-by-step%20-%20Big%20data%20and%20visualization.md)
   - Provides detailed, step-by-step instructions for completing the lab.
-- [Unguided](./HOL%20unguided%20-%20Big%20data%20and%20visualization.md)
-  - This guide provides minimal instruction, and assumes a high-level of knowledge about the technologies used in this lab. This should typically only be used if you are doing this as part of a group or hackathon.
