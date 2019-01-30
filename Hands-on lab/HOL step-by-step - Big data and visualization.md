@@ -36,7 +36,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 2: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
   - [Exercise 2: Setup Azure Data Factory](#exercise-2-setup-azure-data-factory)
     - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
-    - [Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-the-lab-vm)
+    - [Task 2: Install and configure Azure Data Factory Integration Runtime](#task-2-install-and-configure-azure-data-factory-integration-runtime)
     - [Task 3: Configure Azure Data Factory](#task-3-configure-azure-data-factory)
   - [Exercise 3: Develop a data factory pipeline for data movement](#exercise-4-develop-a-data-factory-pipeline-for-data-movement)
     - [Task: Create copy pipeline using the Copy Data Wizard](#task-1-create-copy-pipeline-using-the-copy-data-wizard)
@@ -176,7 +176,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 3. Extract it to a new folder called **C:\\Data**.
 
-### Task 2: Install and configure Azure Data Factory Integration Runtime on the Lab VM
+### Task 2: Install and configure Azure Data Factory Integration Runtime on your machine 
 
 1. To download the latest version of Azure Data Factory Integration Runtime, go to <https://www.microsoft.com/en-us/download/details.aspx?id=39717>.
 
@@ -251,31 +251,29 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 11. _Don't close the current screen or browser session_.
 
-12. Go back to the Remote Desktop session of the **Lab VM**.
-
-13. Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen.
+12. Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen.
 
     ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime page displays.](media/image127.png 'Microsoft Integration Runtime Configuration Manager')
 
-14. Select **Register**.
+13. Select **Register**.
 
-15. It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
+14. It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
 
-16. The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
+15. The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
 
     ![The Microsoft Integration Runtime Configuration Manager New Integration Runtime (Self-hosted) Node page displays.](media/adf-ir-self-hosted-node.png 'Microsoft Integration Runtime Configuration Manager')
 
-17. You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
+16. You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
 
     ![The Microsoft Integration Runtime Configuration Manager Node is connected to the cloud service page displays with connection details.](media/adf-ir-launch-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
     ![The Microsoft Integration Runtime Configuration Manager details](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
-18. You can now return to the Azure portal, and view the Integration Runtime you just configured.
+17. You can now return to the Azure portal, and view the Integration Runtime you just configured.
 
     ![You can view your Integration Runtime you just configured](media/adf-ir-running.png 'Integration Runtime in running state')
 
-19. Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise.
+18. Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise.
 
     ![Select the Azure Data Factory Overview button on the menu](media/adf-overview.png 'ADF Overview')
 
