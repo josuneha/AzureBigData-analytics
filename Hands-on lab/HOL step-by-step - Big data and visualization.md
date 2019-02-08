@@ -49,7 +49,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app)
+  - [Exercise 7: Deploy intelligent web app](#exercise-7-deploy-intelligent-web-app-optional-lab)
     - [Task 1: Register for a trial API account at darksky.net](#task-1-register-for-a-trial-api-account-at-darkskynet)
     - [Task 2: Deploy web app from GitHub](#task-2-deploy-web-app-from-github)
   - [After the hands-on lab](#after-the-hands-on-lab)
