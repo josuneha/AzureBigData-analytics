@@ -129,7 +129,7 @@ namespace BigDataTravel
             }
 
             if (prediction == null)
-                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl and mlApiKey.");
+                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl.");
 
             if (prediction.ExpectDelays)
             {
