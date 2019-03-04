@@ -233,19 +233,20 @@ namespace BigDataTravel
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var result = await response.Content.ReadAsStringAsync();
-                        var token = JToken.Parse(result);
+                        var responseResult = await response.Content.ReadAsStringAsync();
+                        var token = JToken.Parse(responseResult);
                         var parsedResult = JsonConvert.DeserializeObject<List<PredictionResult>>((string)token);
-
-                        if (parsedResult[0].prediction == 1)
+                        var result = parsedResult[0];
+                        double confidence = double.Parse(result.confidence.Replace("[", string.Empty).Replace("]", string.Empty).Split(new Char[] {','})[0]);
+                        if (result.prediction == 1)
                         {
                             this.prediction.ExpectDelays = true;
-                            this.prediction.Confidence = parsedResult[0].probability;
+                            this.prediction.Confidence = confidence;
                         }
-                        else if (parsedResult[0].prediction == 0)
+                        else if (result.prediction == 0)
                         {
                             this.prediction.ExpectDelays = false;
-                            this.prediction.Confidence = parsedResult[0].probability;
+                            this.prediction.Confidence = confidence;
                         }
                         else
                         {
@@ -295,7 +296,7 @@ namespace BigDataTravel
     public class PredictionResult
     {
         public double prediction { get; set; }
-        public double probability { get; set; }
+        public string confidence { get; set; }
     }
 
     public class ForecastResult
