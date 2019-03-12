@@ -159,7 +159,9 @@ In this exercise, you will implement a classification experiment. You will load 
 
 6. Run each cell of the notebooks 01, 02 and 03 individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
-7. Do NOT run Notebooks 4 and 5 yet, they will be discussed later in the lab.
+7. Do NOT run the `Clean up` part of Notebook 3 (i.e. this command: `webservice.delete()`). You will need the URL of your Machine Learning Model exposed later in **Exercise 7: Deploy intelligent web app (Optional Lab)**. *Note: you could get this URL by updating your Notebook by adding this line `print(webservice.scoring_uri)` or by going to your Azure Machine Learning service workspace via the Azure portal and then to the "Deployments" blade.*
+
+8. Do NOT run Notebooks 4 and 5 yet, they will be discussed later in the lab.
 
 
 ## Exercise 2: Setup Azure Data Factory
@@ -713,7 +715,9 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
     - Either keep the default Site name, or provide one that is globally unique, and then choose a Site Location.
 
-    - Finally, enter the ML API Primary key (we got that from Azure databricks Notebook #3, remember?) and Weather API information.
+    - Enter Weather API information
+    
+    - Finally, enter the ML URL. We got that from Azure databricks Notebook #3, remember? If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep that web service running to get its associated URL.
 
     ![Fields on the Deploy to Azure page are populated with the previously copied information.](media/azure-deployment-form.png 'Deploy to Azure page')
 

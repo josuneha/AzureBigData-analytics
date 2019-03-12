@@ -28,7 +28,6 @@ namespace BigDataTravel
 
         // settings
         private string mlUrl;
-        private string mlApiKey;
         private string weatherApiKey;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -58,7 +57,6 @@ namespace BigDataTravel
         private void InitSettings()
         {
             mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
-            mlApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["mlApiKey"];
             weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
         }
 
@@ -131,7 +129,7 @@ namespace BigDataTravel
             }
 
             if (prediction == null)
-                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl and mlApiKey.");
+                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl.");
 
             if (prediction.ExpectDelays)
             {
@@ -227,25 +225,25 @@ namespace BigDataTravel
                         HourlyPrecip = forecast.Precipitation
                     };
 
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", mlApiKey);
                     client.BaseAddress = new Uri(mlUrl);
                     var response = await client.PostAsJsonAsync("", predictionRequest).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var result = await response.Content.ReadAsStringAsync();
-                        var token = JToken.Parse(result);
+                        var responseResult = await response.Content.ReadAsStringAsync();
+                        var token = JToken.Parse(responseResult);
                         var parsedResult = JsonConvert.DeserializeObject<List<PredictionResult>>((string)token);
-
-                        if (parsedResult[0].prediction == 1)
+                        var result = parsedResult[0];
+                        double confidence = double.Parse(result.confidence.Replace("[", string.Empty).Replace("]", string.Empty).Split(new Char[] {','})[0]);
+                        if (result.prediction == 1)
                         {
                             this.prediction.ExpectDelays = true;
-                            this.prediction.Confidence = parsedResult[0].probability;
+                            this.prediction.Confidence = confidence;
                         }
-                        else if (parsedResult[0].prediction == 0)
+                        else if (result.prediction == 0)
                         {
                             this.prediction.ExpectDelays = false;
-                            this.prediction.Confidence = parsedResult[0].probability;
+                            this.prediction.Confidence = confidence;
                         }
                         else
                         {
@@ -295,7 +293,7 @@ namespace BigDataTravel
     public class PredictionResult
     {
         public double prediction { get; set; }
-        public double probability { get; set; }
+        public string confidence { get; set; }
     }
 
     public class ForecastResult
