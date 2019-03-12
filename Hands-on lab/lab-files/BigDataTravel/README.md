@@ -10,7 +10,6 @@ You will need to have completed the requisite exercises in order to deploy this 
 
 Once you have gathered the following information, you are ready to click the "Deploy to Azure" button at the top/bottom of this page.
 
-- Your Azure ML web service API key
 - Your Azure ML web service URL
 - Your [DarkSky API key](https://darksky.net/dev)
 

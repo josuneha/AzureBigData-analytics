@@ -28,7 +28,6 @@ namespace BigDataTravel
 
         // settings
         private string mlUrl;
-        private string mlApiKey;
         private string weatherApiKey;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -58,7 +57,6 @@ namespace BigDataTravel
         private void InitSettings()
         {
             mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
-            mlApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["mlApiKey"];
             weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
         }
 
@@ -131,7 +129,7 @@ namespace BigDataTravel
             }
 
             if (prediction == null)
-                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl and mlApiKey.");
+                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl.");
 
             if (prediction.ExpectDelays)
             {
@@ -227,7 +225,6 @@ namespace BigDataTravel
                         HourlyPrecip = forecast.Precipitation
                     };
 
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", mlApiKey);
                     client.BaseAddress = new Uri(mlUrl);
                     var response = await client.PostAsJsonAsync("", predictionRequest).ConfigureAwait(false);
 

@@ -29,9 +29,6 @@
     "branch": {
       "type": "string"
     },
-    "mlApiKey": {
-      "type": "string"
-    },
     "mlUrl": {
       "type": "string"
     },
@@ -77,10 +74,6 @@
           ],
           "properties": {
             "appSettings": [
-              {
-                "name": "mlApiKey",
-                "value": "[parameters('mlApiKey')]"
-              },
               {
                 "name": "mlUrl",
                 "value": "[parameters('mlUrl')]"
