@@ -157,7 +157,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
     ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
-6. Run each cell of the notebooks 01, 02 and 03 individually by selecting within the cell, then entering **Ctrl+Shift** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
+6. Run each cell of the notebooks 01, 02 and 03 individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
 7. Do NOT run the `Clean up` part of Notebook 3 (i.e. this command: `webservice.delete()`). You will need the URL of your Machine Learning Model exposed later in **Exercise 7: Deploy intelligent web app (Optional Lab)**. *Note: you could get this URL by updating your Notebook by adding this line `print(webservice.scoring_uri)` or by going to your Azure Machine Learning service workspace via the Azure portal and then to the "Deployments" blade.*
 
