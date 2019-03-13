@@ -27,14 +27,13 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Big data and visualization before the hands-on lab setup guide](#big-data-and-visualization-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Provision Azure Databricks](#task-3-provision-azure-databricks)
-        - [Task 2: Create Azure Storage account](#task-4-create-azure-storage-account)
-        - [Task 3: Retrieve Azure Storage account information and create container](#task-5-retrieve-azure-storage-account-information-and-create-container)
-        - [Task 4: Provision Azure Data Factory](#task-6-provision-azure-data-factory)
-        - [Task 5: Create an Azure Databricks cluster](#task-9-create-an-azure-databricks-cluster)
-        
+  - [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
+    - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
+    - [Task 3: Retrieve Azure Storage account information and create container](#task-3-retrieve-azure-storage-account-information-and-create-container)
+    - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
+    - [Task 5: Create an Azure Databricks cluster](#task-5-create-an-azure-databricks-cluster)
+
 <!-- /TOC -->
 
 # Big data and visualization before the hands-on lab setup guide
@@ -75,7 +74,7 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
 Create a new Azure Storage account that will be used to store historic and scored flight and weather data sets for the lab.
 
-1. In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource**, then type "storage" into the search bar. Select **Storage account - blob, file, table, queue** from the results.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **+ Create a resource**, then type "storage" into the search bar. Select **Storage account - blob, file, table, queue** from the results.
 
     ![Select create a resource, type in storage, then select Storage account... from the results list](media/create-azure-storage-resource.png)
 
@@ -121,11 +120,11 @@ You will need to have the Azure Storage account name and access key when you cre
 
     ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 
-### Task 4: Provision Azure Data Factory (ADF)
+### Task 4: Provision Azure Data Factory
 
 Create a new Azure Data Factory instance that will be used to orchestrate data transfers for analysis.
 
-1. In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource**, then type "Data Factory" into the search bar. Select **Data Factory** from the results.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **+ Create a resource**, then type "Data Factory" into the search bar. Select **Data Factory** from the results.
 
     ![Select create a resource, type in Data Factory, then select Data Factory from the results list](media/create-azure-data-factory.png)
 
