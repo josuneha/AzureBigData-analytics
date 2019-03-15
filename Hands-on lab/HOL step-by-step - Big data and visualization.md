@@ -491,7 +491,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Paste the cluster id and select finish](media/adf-ml-databricks-clusterid.png 'Paste cluster id')
 
-14. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**. Examine the content but don't run any of the cells yet.
+14. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**. Examine the content but don't run any of the cells yet. You need to replace `STORAGE-ACCOUNT-NAME` with the name of the blob storage account you provisioned in the before-the-lab section.
 
     ![Right-click within workspace and select 04 Deploy for Batch Score](media/databricks-workspace-create-folder.png 'Create folder')
 
