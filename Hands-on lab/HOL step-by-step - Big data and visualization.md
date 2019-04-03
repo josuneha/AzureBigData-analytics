@@ -299,7 +299,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Trigger type: **Select Schedule**
 
-    - Start date time (UTC): **03/01/2017 12:00 am**
+    - Start date time (UTC): **03/01/2018 12:00 am**
 
     - Recurrence: **Select Monthly, and every 1 month**
     - Under the Advanced recurrence options, make sure you have a value in the textboxes for **Hours (UTC)** and **Minutes (UTC)** otherwise it will fail later during Publishing.
