@@ -806,8 +806,6 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
     - Either keep the default Site name, or provide one that is globally unique, and then choose a Site Location.
 
     - Enter Weather API information
-
-    - For the ML Api Key, type in anything such as "ignore" since it is no longer being used
     
     - Finally, enter the ML URL. We got that from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep that web service running to get its associated URL.
 
