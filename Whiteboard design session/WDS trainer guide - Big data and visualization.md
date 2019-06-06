@@ -517,7 +517,7 @@ _Machine learning modeling_
 
 2. How would you guide MT to load data, so it can be processed by the machine learning model?
 
-   The data used for training could either be uploaded directly to Azure Databricks, creating a new table with the data stored in DBFS (Databricks File System). Then the data can be accessed from this global persistent table using Spark SQL syntax or DataFrames. Alternately, if they need to train the model with a very large amount of data, the data can be stored in Azure Storage, then the Storage account can be mounted to an Azure Databricks cluster. From that point, the data can be accessed using the wasb/wasbs path and loaded into a DataFrame. Alternately, the data can be persistedd into a global table so that it can be easily accessed using Spark SQL syntax and across cluster sessions.
+   The data used for training could either be uploaded directly to Azure Databricks, creating a new table with the data stored in DBFS (Databricks File System). Then the data can be accessed from this global persistent table using Spark SQL syntax or DataFrames. Alternately, if they need to train the model with a very large amount of data, the data can be stored in Azure Storage, then the Storage account can be mounted to an Azure Databricks cluster. From that point, the data can be accessed using the wasb/wasbs path and loaded into a DataFrame. Alternately, the data can be persisted into a global table so that it can be easily accessed using Spark SQL syntax and across cluster sessions.
 
 3. What category of machine learning algorithm would you recommend to MT for use in constructing their model? For this scenario, your options are clustering, regression or two-class classification. Why?
 
@@ -587,11 +587,11 @@ _Visualization and reporting_
 
 1. We have heard that creating a machine learning model takes a month to build and another 2-3 months to operationalize so that it is useable from our production systems. Is this true?
 
-   This is true in the traditional process for creating machine learning models, whereby the data scientist creates a model (e.g., in R) and then hands it over to developers who translate it into Java or C\#---which can take months to get the translation correct and performant. With Azure Machine Learning services, you can deploy Docker-based container images with a single command to Azure Kubernetes Service managed by the Machine Learning services workspace. During the process, a REST API for the deployed model is generated along with a swagger document. This makes it very easy for clients to consume the model.
+   This is true in the traditional process for creating machine learning models, whereby the data scientist creates a model (e.g., in R) and then hands it over to developers who translate it into Java or C\#---which can take months to get the translation correct and performant. With Azure Machine Learning service, you can deploy Docker-based container images with a single command to Azure Kubernetes Service managed by the Machine Learning service workspace. During the process, a REST API for the deployed model is generated along with a swagger document. This makes it very easy for clients to consume the model.
 
 2. Once our model is operationalized, how do we retrain and redeploy it? Will this process break clients currently accessing the deployed model?
 
-   Azure Machine Learning services provides APIs that you can use to retrain your models. You can also use the APIs to update existing deployments with updated versions of the model. As part of the data science workflow, you recreate the model in your experimentation environment. Then, you register the model with Azure Machine Learning service model registry and update existing deployments. Updates are performed using a single UPDATE CLI command. The UPDATE command updates existing deployments without changing the API URL or the key. The applications consuming the model continue to work without any code change, and start getting better predictions using new model.
+   Azure Machine Learning service provides APIs that you can use to retrain your models. You can also use the APIs to update existing deployments with updated versions of the model. As part of the data science workflow, you recreate the model in your experimentation environment. Then, you register the model with Azure Machine Learning service model registry and update existing deployments. Updates are performed using a single UPDATE CLI command. The UPDATE command updates existing deployments without changing the API URL or the key. The applications consuming the model continue to work without any code change, and start getting better predictions using new model.
 
 3. Can we query flat files in the file system using SQL?
 
@@ -619,9 +619,9 @@ _Visualization and reporting_
 
    4. In **Cloud apps**, click **Select apps**, and then search for the application ID `2ff814a6-3304-4ab8-85cb-cd0e6f879c1d`. Select **AzureDatabricks**.
 
-   ![Selecting AzureDatabricks under Cloud Apps.](media/azure-databricks-conditional-access.png 'Cloud Apps')
+      ![Selecting AzureDatabricks under Cloud Apps.](media/azure-databricks-conditional-access.png 'Cloud Apps')
 
-   1. Fill in the other settings according to your desired conditional access configuration.
+   5. Fill in the other settings according to your desired conditional access configuration.
 
 7. Is Azure Databricks our only option for running SQL on Hadoop solutions in Azure?
 
