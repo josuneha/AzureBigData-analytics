@@ -778,7 +778,7 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 4. Check your email account you used for registration. You should have a confirmation email from Dark Sky. Open the email and follow the confirmation link within to complete the registration process. When the welcome page loads, log in with your new account.
 
-   ![Dark Sky welcome page. Choose login to continue](media/dark-sky-welcome.png 'Dark Sky welcom page')
+   ![Dark Sky welcome page. Choose login to continue](media/dark-sky-welcome.png 'Dark Sky welcome page')
 
 5. After logging in, you will be directed to the Your Account page. Take note of your **Secret Key** and copy it to a text editor such as Notepad for later. You will need this key to make API calls later in the lab.
 
