@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshop")
 
 <div class="MCWHeader1">
 Big data and visualization
@@ -27,16 +27,23 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Big data and visualization before the hands-on lab setup guide](#big-data-and-visualization-before-the-hands-on-lab-setup-guide)
-  - [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
-    - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
-    - [Task 3: Create storage container](#task-3-create-storage-container)
-    - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
-    - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
+    - [Requirements](#requirements)
+    - [Before the hands-on lab](#before-the-hands-on-lab)
+        - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
+        - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
+        - [Task 3: Create storage container](#task-3-create-storage-container)
+        - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
+        - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
 
 <!-- /TOC -->
 
 # Big data and visualization before the hands-on lab setup guide
+
+## Requirements
+
+1.  Microsoft Azure subscription must be pay-as-you-go or MSDN.
+
+    a. Trial subscriptions will not work.
 
 ## Before the hands-on lab
 
