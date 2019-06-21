@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshops')
+![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 <div class="MCWHeader1">
 Big data and visualization
@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-November 2018
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -28,13 +28,13 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 - [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
     - [Customer situation](#customer-situation)
     - [Customer needs](#customer-needs)
     - [Customer objections](#customer-objections)
     - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3--present-the-solution)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
   - [Wrap-up](#wrap-up)
   - [Additional references](#additional-references)
 
@@ -85,46 +85,46 @@ They receive updates to this data monthly, where the flight data and other relat
 Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport, and provides forecasts up to 10 days. They have a history of the historical weather condition for each flight as CSV files, but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
 
 ```json
-    {
-        "date": {
-        "epoch": "1444701600",
-        "pretty": "7:00 PM PDT on October 12, 2015",
-        "day": 12,
-        "month": 10,
-        "year": 2015,
-        "yday": 284,
-        "hour": 19,
-        "min": "00",
-        "sec": 0,
-        "ampm": "PM",
-        "tz_short": "PDT",
-        "tz_long": "America/Los_Angeles"
-        },
-        "high": {
-        "fahrenheit": "64",
-        "celsius": "18"
-        },
-        "low": {
-        "fahrenheit": "54",
-        "celsius": "12"
-        },
-        "conditions": "Overcast",
-        "maxwind": {
-        "mph": 15,
-        "kph": 24,
-        "dir": "SSW",
-        "degrees": 209
-        },
-        "avewind": {
-        "mph": 10,
-        "kph": 16,
-        "dir": "SSW",
-        "degrees": 209
-        },
-        "avehumidity": 70,
-        "maxhumidity": 0,
-        "minhumidity": 0
-    }
+{
+  "date": {
+    "epoch": "1444701600",
+    "pretty": "7:00 PM PDT on October 12, 2015",
+    "day": 12,
+    "month": 10,
+    "year": 2015,
+    "yday": 284,
+    "hour": 19,
+    "min": "00",
+    "sec": 0,
+    "ampm": "PM",
+    "tz_short": "PDT",
+    "tz_long": "America/Los_Angeles"
+  },
+  "high": {
+    "fahrenheit": "64",
+    "celsius": "18"
+  },
+  "low": {
+    "fahrenheit": "54",
+    "celsius": "12"
+  },
+  "conditions": "Overcast",
+  "maxwind": {
+    "mph": 15,
+    "kph": 24,
+    "dir": "SSW",
+    "degrees": 209
+  },
+  "avewind": {
+    "mph": 10,
+    "kph": 16,
+    "dir": "SSW",
+    "degrees": 209
+  },
+  "avehumidity": 70,
+  "maxhumidity": 0,
+  "minhumidity": 0
+}
 ```
 
 Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has heard a great deal of positive news about Spark SQL on HDInsight and its ability to query exactly the type of files he has in a performant way, but also in a way that is more familiar to his analysts and developers because they are all familiar with the SQL syntax that it supports. He would love to understand if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
@@ -155,7 +155,7 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 5. Does Azure provide any tools for visualizing our data? Ideally access to these could be managed with Active Directory.
 
-6. While our PoC does not have any sensitive data, if it is successful we would like to include customer data that contains personally identifiable information (PII) and transaction history so we could achieve new insights combining our flight delay predictions with our customer's profile. Are there any additional services in the Azure Marketplace we could use to apply data-centric security---that is to identify data loaded that contains PII, monitor access to sensitive data, and protect the data at rest, via encryption or masking?
+Can we use Azure Active Directory accounts for our users, and if so, can we restrict who can access Azure Databricks, when they can access it, require two-factor authentication, and restrict access if there is suspicious activity on their account?
 
 7. Is Azure Databricks our only option for running SQL on Hadoop solutions in Azure?
 
@@ -212,13 +212,13 @@ _Machine learning modeling_
 
 4. Assuming you selected an algorithm that requires training, address the following model design questions:
 
-    a. What is the high-level flow of your machine learning model?
+   a. What is the high-level flow of your machine learning model?
 
-    b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
+   b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
 
-    c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
+   c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
 
-    d. How would you recommend MT measure the success of their model?
+   d. How would you recommend MT measure the success of their model?
 
 _Operationalizing machine learning_
 
@@ -232,11 +232,11 @@ _Visualization and reporting_
 
 2. If so, explain:
 
-    a. How would MT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
+   a. How would MT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
 
-    b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
+   b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
 
-    c. How could they secure access to these reports to only their internal customer service agents?
+   c. How could they secure access to these reports to only their internal customer service agents?
 
 **Prepare**
 
@@ -293,6 +293,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Data Factory              |                   <https://docs.microsoft.com/azure/data-factory/introduction/>                    |
 | Azure Databricks                |                    <https://docs.microsoft.com/en-us/azure/azure-databricks//>                     |
 | Power BI                        |       <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>       |
-| Travel data                     |                        <https://www.transtats.bts.gov/homepage.asp/>                        |
+| Travel data                     |                           <https://www.transtats.bts.gov/homepage.asp/>                            |
 | Weather data                    |                                  <https://darksky.net/dev/docs/>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
+| Azure AD Conditional Access     |              <https://docs.microsoft.com/azure/active-directory/conditional-access/>               |
