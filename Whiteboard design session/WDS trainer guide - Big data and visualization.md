@@ -501,7 +501,7 @@ _Data preparation_
 
 2. What specific configuration would you use? What components of Azure Databricks would you use to allow MT analysts to query and prep the data? How would they author and execute these data prep tasks?
 
-   They should use Spark SQL within Databricks notebooks. This gives them a simple, interactive interface that allows them to use programming languages such as Python, Scala, and R to prepare their data and train their data models. When a notebook is created or an existing one is opened, they would need to attach it to a cluster. This provides them with a kernel that gives them a preset sqlContext that can be used to run Hive queries using Spark SQL syntax on the data, which allows the to leverage their existing SQL skills. They would need to create the appropriate external tables atop the flight delay files available in HDFS, which reads from the Azure Storage account attached to their Azure Databricks instance.
+   They should use Spark SQL within Databricks notebooks. This gives them a simple, interactive interface that allows them to use programming languages such as Python, Scala, and R to prepare their data and train their data models. When a notebook is created or an existing one is opened, they would need to attach it to a cluster. This provides them with a kernel that gives them a preset sqlContext that can be used to run Hive queries using Spark SQL syntax on the data, which allows them to leverage their existing SQL skills. They would need to create the appropriate external tables atop the flight delay files available in HDFS, which reads from the Azure Storage account attached to their Azure Databricks instance.
 
 3. How would you suggest MT integrate weather forecast data?
 
@@ -513,7 +513,7 @@ _Machine learning modeling_
 
 1. What technology would you recommend that MT use for implementing their machine learning model?
 
-   The model will first be built and trained within an Azure Databricks notebook. The data scientists can use the programming language of their choice (Python, Scala, R, etc.) as well as Spark SQL to featurize and fit the data into the chosen machine learning algorithm. Machine learning libraries such as Spark MLlib or SciKit-Learn can be used within the notebook to simplify things. Once the model is trained and tested with a sufficient amount of historical data, then the model can be exported for deployment to a web service. The model can also continued to be used within Azure Databricks for batch scoring.
+   The model will first be built and trained within an Azure Databricks notebook. The data scientists can use the programming language of their choice (Python, Scala, R, etc.) as well as Spark SQL to featurize and fit the data into the chosen machine learning algorithm. Machine learning libraries such as Spark MLlib or SciKit-Learn can be used within the notebook to simplify things. Once the model is trained and tested with a sufficient amount of historical data, then the model can be exported for deployment to a web service. The model can also continue to be used within Azure Databricks for batch scoring.
 
 2. How would you guide MT to load data, so it can be processed by the machine learning model?
 
@@ -563,7 +563,7 @@ _Visualization and reporting_
 
 1. Is Power BI an option for MT to use in visualizing the flight delays?
 
-   Yes, Power BI is a good option for MT. Power BI can perform what is called a Direct Query against Apache Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark. However, connecting Power BI to a Azure Databricks cluster requires it to be running any time a report is displayed. A more cost-effective solution is to write the summarized data to an Azure SQL Database each time the notebook is executed during the batch scoring process. In this case, Power BI uses Direct Query against the Azure SQL Database instead, allowing MT to terminate clusters that are not in use.
+   Yes, Power BI is a good option for MT. Power BI can perform what is called a Direct Query against Apache Spark hive data sources as well as an Import query that copies the data into Power BI managed datasets from Spark. However, connecting Power BI to an Azure Databricks cluster requires it to be running any time a report is displayed. A more cost-effective solution is to write the summarized data to an Azure SQL Database each time the notebook is executed during the batch scoring process. In this case, Power BI uses Direct Query against the Azure SQL Database instead, allowing MT to terminate clusters that are not in use.
 
 2. If so, explain:
 
