@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshops')
+![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 <div class="MCWHeader1">
 Big data and visualization
@@ -85,7 +85,7 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
 1. Microsoft Azure subscription must be pay-as-you-go or MSDN.
 
-   a. Trial subscriptions will not work.
+   - Trial subscriptions will not work.
 
 2. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
 
@@ -397,6 +397,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
    - Start date time (UTC): **03/01/2018 12:00 am**
 
    - Recurrence: Select **Month(s)**, and enter Every **1**
+   
    - Under the Advanced recurrence options, make sure you have a value of **0** in the textboxes for **Hours (UTC)** and **Minutes (UTC)**, otherwise it will fail later during Publishing.
 
    - End: **No End**
@@ -419,9 +420,9 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
    - Host: **C:\\Data**
 
-   - User name: **Use your machine's login username**
+   - User name: **Use your machine's login username**.
 
-   - Password: **Use your machine's login password**
+   - Password: **Use your machine's login password**.
 
 7. Select **Test connection** to verify you correctly entered the values. Finally, select **Finish**.
 
@@ -487,7 +488,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Copy behavior: **Merge files**
 
-    - Select **Next**
+    - Select **Next**.
 
       ![On the Copy Data Choose the output file or folder page, fields are set to the previously defined settings.](media/adf-copy-data-output-file-folder.png 'Choose the output file or folder page')
 
@@ -769,23 +770,23 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 2. Select TRY FOR FREE.
 
-   ![Select the TRY FOR FREE button on the Dark Sky dev page](media/dark-sky-api-try-for-free.png)
+   ![Select the TRY FOR FREE button on the Dark Sky dev page](media/dark-sky-api-try-for-free.png 'Dark Sky dev page')
 
 3. Complete the Register form by providing your email address and a password. Select REGISTER.
 
-   ![Complete the registration form and select REGISTER](media/dark-sky-register.png)
+   ![Complete the registration form and select REGISTER](media/dark-sky-register.png 'Registration form')
 
 4. Check your email account you used for registration. You should have a confirmation email from Dark Sky. Open the email and follow the confirmation link within to complete the registration process. When the welcome page loads, log in with your new account.
 
-   ![Dark Sky welcome page. Choose login to continue](media/dark-sky-welcome.png)
+   ![Dark Sky welcome page. Choose login to continue](media/dark-sky-welcome.png 'Dark Sky welcom page')
 
 5. After logging in, you will be directed to the Your Account page. Take note of your **Secret Key** and copy it to a text editor such as Notepad for later. You will need this key to make API calls later in the lab.
 
-   ![The Dark Sky Your Account page - copy the Secret Key](media/dark-sky-your-account.png)
+   ![The Dark Sky Your Account page - copy the Secret Key](media/dark-sky-your-account.png 'Dark Sky Your Account page')
 
 6. To verify that your API Key is working, follow the link on the bottom of the page located underneath Sample API Call. You should see a JSON result that looks similar to the following:
 
-   ![Sample JSON result from Dark Sky API link](media/dark-sky-sample-json-result.png)
+   ![Sample JSON result from Dark Sky API link](media/dark-sky-sample-json-result.png 'JSON result from Dark Sky page')
 
 ### Task 2: Deploy web app from GitHub
 
