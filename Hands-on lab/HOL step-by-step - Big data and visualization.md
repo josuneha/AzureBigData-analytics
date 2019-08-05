@@ -141,7 +141,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Cluster Type**: Standard
 
-   - **Databricks Runtime Version**: 5.3 (includes Apache Spark 2.4.0, Scala 2.11)
+   - **Databricks Runtime Version**: Runtime: 5.5 (Scala 2.11, Spark 2.4.3)
 
    - **Python Version**: 3
 
@@ -397,7 +397,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
    - Start date time (UTC): **03/01/2018 12:00 am**
 
    - Recurrence: Select **Month(s)**, and enter Every **1**
-   
+
    - Under the Advanced recurrence options, make sure you have a value of **0** in the textboxes for **Hours (UTC)** and **Minutes (UTC)**, otherwise it will fail later during Publishing.
 
    - End: **No End**
