@@ -110,7 +110,7 @@ namespace BigDataTravel
                 if (forecast == null)
                     throw new Exception("Forecast request did not succeed. Check Settings for weatherApiKey.");
 
-                PredictDelays(query, forecast).Wait();
+                await PredictDelays(query, forecast);
             }
 
             UpdateStatusDisplay(prediction, forecast);
@@ -226,7 +226,7 @@ namespace BigDataTravel
                     };
 
                     client.BaseAddress = new Uri(mlUrl);
-                    var response = await client.PostAsJsonAsync("", predictionRequest).ConfigureAwait(false);
+                    var response = await client.PostAsJsonAsync("", predictionRequest);
 
                     if (response.IsSuccessStatusCode)
                     {
