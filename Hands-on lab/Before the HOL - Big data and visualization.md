@@ -1,4 +1,4 @@
-![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshop")
+![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 <div class="MCWHeader1">
 Big data and visualization
@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-June 2019
+September 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -27,13 +27,13 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Big data and visualization before the hands-on lab setup guide](#big-data-and-visualization-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
-        - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
-        - [Task 3: Create storage container](#task-3-create-storage-container)
-        - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
-        - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
+    - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
+    - [Task 3: Create storage container](#task-3-create-storage-container)
+    - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
+    - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
 
 <!-- /TOC -->
 
@@ -57,25 +57,25 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
 1. In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource**, then type "Azure Databricks" into the search bar. Select Azure Databricks from the results.
 
-    ![Select create a resource, type in Azure Databricks, then select it from the results list](media/create-azure-databricks-resource.png)
+   ![Select create a resource, type in Azure Databricks, then select it from the results list](media/create-azure-databricks-resource.png)
 
 2. Select Create on the bottom of the blade that follows.
 
 3. Set the following configuration on the Azure Databricks Service creation form:
 
-    - **Name**: Enter a unique name as indicated by a green checkmark.
+   - **Name**: Enter a unique name as indicated by a green checkmark.
 
-    - **Subscription**: Select the subscription you are using for this hands-on lab.
+   - **Subscription**: Select the subscription you are using for this hands-on lab.
 
-    - **Resource Group**: Select **Create new** and enter a unique name, such as "hands-on-lab-bigdata".
+   - **Resource Group**: Select **Create new** and enter a unique name, such as "hands-on-lab-bigdata".
 
-    - **Location**: Select a region close to you. ***(If you are using an Azure Pass, select South Central US.)***
+   - **Location**: Select a region close to you. **_(If you are using an Azure Pass, select South Central US.)_**
 
-    - **Pricing**: Select Premium.
+   - **Pricing**: Select Premium.
 
-    - **Deploy Azure Databricks workspace in your Virtual Network**: Select No.
+   - **Deploy Azure Databricks workspace in your Virtual Network**: Select No.
 
-    ![Complete the Azure Databricks Service creation form with the options as outlined above.](media/azure-databricks-create-blade.png)
+   ![Complete the Azure Databricks Service creation form with the options as outlined above.](media/azure-databricks-create-blade.png)
 
 4. Select **Create** to finish and submit.
 
@@ -85,29 +85,29 @@ Create a new Azure Storage account that will be used to store historic and score
 
 1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **+ Create a resource**, then type "storage" into the search bar. Select **Storage account** from the results.
 
-    ![Select create a resource, type in storage, then select Storage account... from the results list](media/create-azure-storage-resource.png)
+   ![Select create a resource, type in storage, then select Storage account... from the results list](media/create-azure-storage-resource.png)
 
 2. Select Create on the bottom of the blade that follows.
 
 3. Set the following configuration on the Azure Storage account creation form:
 
-    - **Subscription**: Select the subscription you are using for this hands-on lab.
+   - **Subscription**: Select the subscription you are using for this hands-on lab.
 
-    - **Resource group**: Select the same resource group you created at the beginning of this lab.
+   - **Resource group**: Select the same resource group you created at the beginning of this lab.
 
-    - **Storage account name**: Enter a unique name as indicated by a green checkmark.
+   - **Storage account name**: Enter a unique name as indicated by a green checkmark.
 
-    - **Location**: Select the same region you used for Azure Databricks.
+   - **Location**: Select the same region you used for Azure Databricks.
 
-    - **Performance**: Standard
+   - **Performance**: Standard
 
-    - **Account kind**: BlobStorage
+   - **Account kind**: BlobStorage
 
-    - **Replication**: Read-access geo-redundant storage (RA-GRS)
+   - **Replication**: Read-access geo-redundant storage (RA-GRS)
 
-    - **Access tier**: Hot
+   - **Access tier**: Hot
 
-    ![Complete the Azure storage account creation form with the options as outlined above.](media/azure-storage-create-blade.png)
+   ![Complete the Azure storage account creation form with the options as outlined above.](media/azure-storage-create-blade.png)
 
 4. Select **Create** to finish and submit.
 
@@ -119,11 +119,11 @@ In this task, you will create a storage container in which you will store your f
 
 2. Next, select your lab Azure Storage account from the list.
 
-    ![Select the lab Azure Storage account from within your lab resource group](media/select-azure-storage-account.png)
+   ![Select the lab Azure Storage account from within your lab resource group](media/select-azure-storage-account.png)
 
 3. Select **Blobs** (1) from the menu. Select **+ Container** (2) on the Blobs blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container.
 
-    ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
+   ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 
 ### Task 4: Provision Azure Data Factory
 
@@ -131,30 +131,30 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
 1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **+ Create a resource**, then type "Data Factory" into the search bar. Select **Data Factory** from the results.
 
-    ![Select create a resource, type in Data Factory, then select Data Factory from the results list](media/create-azure-data-factory.png)
+   ![Select create a resource, type in Data Factory, then select Data Factory from the results list](media/create-azure-data-factory.png)
 
 2. Select Create on the bottom of the blade that follows.
 
 3. Set the following configuration on the Data Factory creation form:
 
-    - **Name**: Enter a unique name as indicated by a green checkmark.
+   - **Name**: Enter a unique name as indicated by a green checkmark.
 
-    - **Subscription**: Select the subscription you are using for this hands-on lab.
+   - **Subscription**: Select the subscription you are using for this hands-on lab.
 
-    - **Resource Group**: Select the same resource group you created at the beginning of this lab.
+   - **Resource Group**: Select the same resource group you created at the beginning of this lab.
 
-    - **Version**: Select V2.
+   - **Version**: Select V2.
 
-    - **Location**: Select any region close to you.
+   - **Location**: Select any region close to you.
 
-    - **Enable GIT**: Unchecked.
+   - **Enable GIT**: Unchecked.
 
-    ***Understanding Data Factory Location:***
-    The Data Factory location is where the metadata of the data factory is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
+   **_Understanding Data Factory Location:_**
+   The Data Factory location is where the metadata of the data factory is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
 
-    The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
+   The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
 
-    ![Complete the Azure Data Factory creation form with the options as outlined above.](media/azure-data-factory-create-blade.png)
+   ![Complete the Azure Data Factory creation form with the options as outlined above.](media/azure-data-factory-create-blade.png)
 
 4. Select **Create** to finish and submit.
 
