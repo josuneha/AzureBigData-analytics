@@ -283,7 +283,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 3. Run the installer, once downloaded.
 
-4. When you see the following screen, click Next.
+4. When you see the following screen, select Next.
 
    ![The Welcome page in the Microsoft Integration Runtime Setup Wizard displays.](media/image114.png 'Microsoft Integration Runtime Setup Wizard')
 
@@ -291,15 +291,15 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](media/image115.png 'End-User License Agreement page')
 
-6. Accept the default Destination Folder, and click Next.
+6. Accept the default Destination Folder, and select Next.
 
    ![On the Destination folder page, the destination folder is set to C;\Program Files\Microsoft Integration Runtime\ and the Next button is selected.](media/image116.png 'Destination folder page')
 
-7. Click Install to complete the installation.
+7. Choose Install to complete the installation.
 
    ![On the Ready to install Microsoft Integration Runtime page, the Install button is selected.](media/image117.png 'Ready to install page')
 
-8. Click Finish once the installation has completed.
+8. Select Finish once the installation has completed.
 
    ![On the Completed the Microsoft Integration Runtime Setup Wizard page, the Finish button is selected.](media/image118.png 'Completed the Wizard page')
 
