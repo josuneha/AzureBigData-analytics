@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-June 2019
+September 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -141,19 +141,19 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Cluster Type**: Standard
 
-   - **Databricks Runtime Version**: Runtime: 5.5 (Scala 2.11, Spark 2.4.3)
+   - **Databricks Runtime Version**: Runtime: 5.5 (Scala 2.11, Spark 2.4.3) (**Note**: the runtime version may have **LTS** after the version. This is also a valid selection.)
 
    - **Python Version**: 3
 
-   - **Driver Type**: Same as worker
+   - **Enable Autoscaling**: Uncheck this option.
+
+   - **Auto Termination**: Check the box and enter 120
 
    - **Worker Type**: Standard_F4s
 
+   - **Driver Type**: Same as worker
+
    - **Workers**: 1
-
-   - **Enable Autoscaling**: Uncheck this option.
-
-   - **Auto Termination**: Check the box and enter 120.
 
    - **Spark Config**: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
 
@@ -243,7 +243,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![Select import from file](media/import-notebooks.png 'Import from file')
 
-4. Select **BigDataVis** to open the notebook.
+4. After importing, expand the new **BigDataVis** folder.
 
 5. Before you begin, make sure you attach your cluster to the notebooks, using the dropdown. You will need to do this for each notebook you open. There are 5 notebooks included in the BigDataVis.dbc
 
@@ -279,11 +279,11 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 2. Select Download, then choose the download you want from the next screen.
 
-   ![Under Choose the download you want, IntegrationRuntime_3.0.6464.2 (64-bit).msi is selected.](media/image113.png 'Choose the download you want section')
+   ![Under Choose the download you want, the MSI file is selected.](media/image113.png 'Choose the download you want section')
 
 3. Run the installer, once downloaded.
 
-4. When you see the following screen, click Next.
+4. When you see the following screen, select Next.
 
    ![The Welcome page in the Microsoft Integration Runtime Setup Wizard displays.](media/image114.png 'Microsoft Integration Runtime Setup Wizard')
 
@@ -291,15 +291,15 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](media/image115.png 'End-User License Agreement page')
 
-6. Accept the default Destination Folder, and click Next.
+6. Accept the default Destination Folder, and select Next.
 
    ![On the Destination folder page, the destination folder is set to C;\Program Files\Microsoft Integration Runtime\ and the Next button is selected.](media/image116.png 'Destination folder page')
 
-7. Click Install to complete the installation.
+7. Choose Install to complete the installation.
 
    ![On the Ready to install Microsoft Integration Runtime page, the Install button is selected.](media/image117.png 'Ready to install page')
 
-8. Click Finish once the installation has completed.
+8. Select Finish once the installation has completed.
 
    ![On the Completed the Microsoft Integration Runtime Setup Wizard page, the Finish button is selected.](media/image118.png 'Completed the Wizard page')
 
@@ -617,7 +617,7 @@ In this exercise, you will prepare a summary of flight delay data using Spark SQ
 
 1. Open your Azure Databricks workspace, expand the **Exercise 6** folder and open the final notebook called **01 explore Data**.
 
-   ![The Workspace is displayed with the Exercise 6 folder and Expore Data notebook highlighted.](media/azure-databricks-explore-data.png 'Databricks workspace')
+   ![The Workspace is displayed with the Exercise 6 folder and Explore Data notebook highlighted.](media/azure-databricks-explore-data.png 'Databricks workspace')
 
 2. Execute each cell and follow the instructions in the notebook that explains each step.
 
