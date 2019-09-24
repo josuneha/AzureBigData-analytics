@@ -4,6 +4,8 @@ Margie's Travel (MT) provides concierge services for business travelers. In an i
 
 They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
+September 2019
+
 ## Target audience
 
 - Application developers
@@ -43,3 +45,16 @@ By the end of the lab, you will be able to show an end-to-end solution, leveragi
 ## Related references
 
 - [MCW](https://microsoftcloudworkshop.com)
+
+## Help & Support
+
+We welcome feedback and comments from Microsoft SMEs & learning partners who deliver MCWs.  
+
+***Having trouble?***
+- First, verify you have followed all written lab instructions (including the Before the Hands-on lab document).
+- Next, submit an issue with a detailed description of the problem.
+- Please do not submit pull requests. Our authors will review open issues and submit pull requests, as needed, for approval.  
+
+If you are planning to present a workshop, *review and test the materials early*! We recommend at least two weeks prior.
+
+### Please allow 5 - 10 business days for review and resolution of issues.
