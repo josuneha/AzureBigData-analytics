@@ -12,6 +12,7 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using DarkSky.Services;
 using System.Runtime.Serialization;
+using DarkSky.Models;
 using NodaTime;
 
 namespace BigDataTravel
@@ -150,11 +151,11 @@ namespace BigDataTravel
             try
             {
                 var weatherPrediction = await darkSky.GetForecast(departureQuery.OriginAirportLat,
-                    departureQuery.OriginAirportLong, new DarkSkyService.OptionalParameters
+                    departureQuery.OriginAirportLong, new OptionalParameters
                     {
                         ExtendHourly = true,
-                        DataBlocksToExclude = new List<ExclusionBlock> { ExclusionBlock.Flags,
-                        ExclusionBlock.Alerts, ExclusionBlock.Minutely }
+                        DataBlocksToExclude = new List<ExclusionBlocks> { ExclusionBlocks.Flags,
+                        ExclusionBlocks.Alerts, ExclusionBlocks.Minutely }
                     });
                 if (weatherPrediction.Response.Hourly.Data != null && weatherPrediction.Response.Hourly.Data.Count > 0)
                 {
