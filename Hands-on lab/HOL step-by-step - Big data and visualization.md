@@ -56,6 +56,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
   - [Exercise 8: Deploy intelligent web app (Optional Lab)](#exercise-8-deploy-intelligent-web-app-optional-lab)
     - [Task 1: Register for a trial API account at darksky.net](#task-1-register-for-a-trial-api-account-at-darkskynet)
     - [Task 2: Deploy web app from GitHub](#task-2-deploy-web-app-from-github)
+    - [Task 3: Manual deployment (optional)](#task-3-manual-deployment-optional)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resource group](#task-1-delete-resource-group)
 
@@ -87,7 +88,9 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
    - Trial subscriptions will not work.
 
-2. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
+2. If you are not a Service Administrator or Co-administrator for the Azure subscription, or if you are running the lab in a hosted environment, you will need to install [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** and **Azure development** workloads.
+
+3. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
 
 ## Exercise 1: Retrieve lab environment information and create Databricks cluster
 
@@ -762,7 +765,7 @@ Duration: 20 minutes
 
 In this exercise, you will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model that was deployed in Exercise 1 to bring action-oriented insight to an already existing business process.
 
-> **Please note:** If you are running your lab in a hosted Azure environment and you do not have permissions to create a new Azure resource group, the automated deployment task (#2 below) may fail, even if you choose an existing resource group. If this happens, we recommend that you install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater, then use the [Publish feature](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019) to publish to a new Azure web app. You will then need to create and populate two new Application Settings as outlined in the tasks that follow: `mlUrl` and `weatherApiKey`.
+> **Please note:** If you are running your lab in a hosted Azure environment and you do not have permissions to create a new Azure resource group, the automated deployment task (#2 below) may fail, even if you choose an existing resource group. The automated deployment will also fail if the user you are logged into the portal with is **not** a Service Administrator or a Co-Administrator. If this happens, we recommend that you install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater, then use the [Publish feature](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019) to publish to a new Azure web app. You will then need to create and populate two new Application Settings as outlined in the tasks that follow: `mlUrl` and `weatherApiKey`. **Skip ahead to Task 3 for further instructions.**
 
 ### Task 1: Register for a trial API account at darksky.net
 
@@ -808,9 +811,9 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
    - Either keep the default Site name, or provide one that is globally unique, and then choose a Site Location.
 
-   - Enter Weather API information
+   - Enter Weather API information.
 
-   - Finally, enter the ML URL. We got that from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep that web service running to get its associated URL.
+   - Finally, enter the ML URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
 
    ![The web service URL is output from a cell within the Databricks notebook.](media/azure-databricks-web-url.png 'Web service URL')
 
@@ -827,6 +830,59 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 8. Try a few different combinations of origin, destination, date, and time in the application. The information you are shown is the result of both the ML API you published, as well as information retrieved from the DarkSky API.
 
 9. Congratulations! You have built and deployed an intelligent system to Azure.
+
+### Task 3: Manual deployment (optional)
+
+**If the automated deployment from GitHub in the previous task failed**, follow these instructions to manually deploy.
+
+1. Install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater. Make sure you select the **ASP.NET and web development** and **Azure development** workloads.
+
+    ![The Visual Studio workloads are displayed.](media/vs-workloads.png "Visual Studio workloads")
+
+    > If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
+
+2. In a web browser, navigate to the [Big data and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-and-visualization).
+
+3. On the repo page, select **Clone or download**, then select **Download ZIP**.
+
+   ![Download .zip containing the repository](media/github-download-repo.png 'Download ZIP')
+
+4. Unzip the contents to your root hard drive (i.e. `C:\`). This will create a folder on your root drive named `C:\MCW-Big-data-and-visualization-master`.
+
+5. Open Windows Explorer and navigate to `C:\MCW-Big-data-and-visualization-master\Hands-on lab\lab-files\BigDataTravel\`, then open **BigDataTravel.sln**.
+
+6. In the Visual Studio Solution Explorer, right-click on the BigDataTravel project, then select **Publish...**.
+
+    ![The Publish menu item is highlighted in Visual Studio.](media/vs-publish-link.png "Publish")
+
+7. In the Publish dialog, select the **App Service** publish target, select **Create New**, then click **Publish**.
+
+    ![The App Service target is selected, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target.png "Pick a publish target")
+
+8. Enter the following into the App Service form that follows, then click **Create**:
+
+    - **Name**: Enter a unique value.
+    - **Subscription**: Choose the Azure subscription you are using for the lab.
+    - **Resource group**: Select the Azure resource group you are using for the lab.
+    - **Hosting Plan**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
+    - **Application Insights**: Select **None**.
+
+    ![The form fields are completed using the previously described settings.](media/vs-app-service.png "App Service dialog")
+
+9. After publishing is completed, open the new App Service located in your resource group in the [Azure portal](https://portal.azure.com).
+
+10. Select **Configuration** in the left-hand menu.
+
+    ![The Configuration menu item is highlighted.](media/app-service-configuration-link.png "App Service")
+
+11. Create the two following **Application settings**, then select **Save**:
+
+    - **mlUrl**: Enter the Machine Learning URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
+    - **weatherApiKey**: Enter the Dark Sky API key.
+
+    ![The two new application settings are shown.](media/app-service-configuration.png "Application settings")
+
+You will now be able to successfully navigate the web app.
 
 ## After the hands-on lab
 
