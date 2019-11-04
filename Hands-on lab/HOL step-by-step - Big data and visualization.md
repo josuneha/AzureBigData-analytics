@@ -330,11 +330,11 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![Select Connections at the bottom of the page, then select the Integration Runtimes tab, and select New.](media/adf-new-ir.png 'Steps to create a new Integation Runtime connection')
 
-7. In the Integration Runtime Setup blade that appears, select "Perform data movement and dispatch activities to external computes", then select **Next**.
+7. In the Integration Runtime Setup blade that appears, select "Perform data movement and dispatch activities to external computes", then select **Continue**.
 
    ![Select Perform data movement and dispatch activities to external computes](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
 
-8. Select **Self-Hosted** then select **Next**.
+8. Select **Self-Hosted** then select **Continue**.
 
    ![Select Private Network then Next](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
 
@@ -427,7 +427,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
    - Password: **Use your machine's login password**.
 
-7. Select **Test connection** to verify you correctly entered the values. Finally, select **Finish**.
+7. Select **Test connection** to verify you correctly entered the values. Finally, select **Create**.
 
    ![On the Copy Data activity, specify File server share connection page, fields are set to the previously defined values.](media/adf-copy-data-linked-service-settings.png 'New Linked Service settings')
 
@@ -449,9 +449,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Skip line count: **0**
 
-    - Column names in the first row: **Checked**
-
-    - Handle all of the data as strings: **Unchecked**
+    - First row as header: **Checked**
 
     ![Enter the form values](media/adf-copy-data-file-format.png 'File format settings')
 
@@ -463,7 +461,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![Select Azure Blob Storage, then Continue](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
 
-14. On the New Linked Service (Azure Blob Storage) account screen, enter the following and then choose **Finish**.
+14. On the New Linked Service (Azure Blob Storage) account screen, enter the following and then select **Create**.
 
     - Name: **BlobStorageOutput**
 
@@ -578,7 +576,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
 
-11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form. After a moment, select your cluster underneath **Choose from existing clusters**. Select **Finish**.
+11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form. After a moment, select your cluster underneath **Choose from existing clusters**. Select **Create**.
 
     ![Paste the generated access token](media/adf-ml-access-token.png 'Paste access token')
 
@@ -837,9 +835,9 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 1. Install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater. Make sure you select the **ASP.NET and web development** and **Azure development** workloads.
 
-    ![The Visual Studio workloads are displayed.](media/vs-workloads.png "Visual Studio workloads")
+   ![The Visual Studio workloads are displayed.](media/vs-workloads.png 'Visual Studio workloads')
 
-    > If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
+   > If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
 
 2. In a web browser, navigate to the [Big data and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-and-visualization).
 
@@ -853,34 +851,34 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 6. In the Visual Studio Solution Explorer, right-click on the BigDataTravel project, then select **Publish...**.
 
-    ![The Publish menu item is highlighted in Visual Studio.](media/vs-publish-link.png "Publish")
+   ![The Publish menu item is highlighted in Visual Studio.](media/vs-publish-link.png 'Publish')
 
 7. In the Publish dialog, select the **App Service** publish target, select **Create New**, then click **Publish**.
 
-    ![The App Service target is selected, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target.png "Pick a publish target")
+   ![The App Service target is selected, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target.png 'Pick a publish target')
 
 8. Enter the following into the App Service form that follows, then click **Create**:
 
-    - **Name**: Enter a unique value.
-    - **Subscription**: Choose the Azure subscription you are using for the lab.
-    - **Resource group**: Select the Azure resource group you are using for the lab.
-    - **Hosting Plan**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
-    - **Application Insights**: Select **None**.
+   - **Name**: Enter a unique value.
+   - **Subscription**: Choose the Azure subscription you are using for the lab.
+   - **Resource group**: Select the Azure resource group you are using for the lab.
+   - **Hosting Plan**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
+   - **Application Insights**: Select **None**.
 
-    ![The form fields are completed using the previously described settings.](media/vs-app-service.png "App Service dialog")
+   ![The form fields are completed using the previously described settings.](media/vs-app-service.png 'App Service dialog')
 
 9. After publishing is completed, open the new App Service located in your resource group in the [Azure portal](https://portal.azure.com).
 
 10. Select **Configuration** in the left-hand menu.
 
-    ![The Configuration menu item is highlighted.](media/app-service-configuration-link.png "App Service")
+    ![The Configuration menu item is highlighted.](media/app-service-configuration-link.png 'App Service')
 
 11. Create the two following **Application settings**, then select **Save**:
 
     - **mlUrl**: Enter the Machine Learning URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
     - **weatherApiKey**: Enter the Dark Sky API key.
 
-    ![The two new application settings are shown.](media/app-service-configuration.png "Application settings")
+    ![The two new application settings are shown.](media/app-service-configuration.png 'Application settings')
 
 You will now be able to successfully navigate the web app.
 
