@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-September 2019
+November 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -45,7 +45,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
     a. Trial subscriptions will not work.
 
-2. If you are not a Service Administrator or Co-administrator for the Azure subscription, or if you are running the lab in a hosted environment, you will need to install [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** and **Azure development** workloads.
+2.  If you are not a Service Administrator or Co-administrator for the Azure subscription, or if you are running the lab in a hosted environment, you will need to install [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** and **Azure development** workloads.
 
 ## Before the hands-on lab
 
@@ -57,7 +57,11 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
 Azure Databricks is an Apache Spark-based analytics platform optimized for Azure. It will be used in this lab to build and train a machine learning model used to predict flight delays.
 
-1. In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource**, then type "Azure Databricks" into the search bar. Select Azure Databricks from the results.
+> **Note**: To view the Azure portal menu, select the menu icon in the upper left-hand corner.
+
+![The Azure portal menu is highlighted.](media/portal-menu.png 'Azure portal menu')
+
+1. In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource** within the portal menu, then type "Azure Databricks" into the search bar. Select Azure Databricks from the results.
 
    ![Select create a resource, type in Azure Databricks, then select it from the results list](media/create-azure-databricks-resource.png)
 
@@ -123,7 +127,7 @@ In this task, you will create a storage container in which you will store your f
 
    ![Select the lab Azure Storage account from within your lab resource group](media/select-azure-storage-account.png)
 
-3. Select **Blobs** (1) from the menu. Select **+ Container** (2) on the Blobs blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container.
+3. Select **Containers** (1) from the menu. Select **+ Container** (2) on the Blobs blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **OK** (4) to create the container.
 
    ![Screenshot showing the steps to create a new storage container](media/azure-storage-create-container.png)
 

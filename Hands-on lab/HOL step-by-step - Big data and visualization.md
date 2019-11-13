@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-September 2019
+November 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -106,7 +106,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
 2. Next, select your lab Azure Storage account from the list.
 
-   ![Select the lab Azure Storage account from within your lab resource group](media/select-azure-storage-account.png)
+   ![Select the lab Azure Storage account from within your lab resource group.](media/select-azure-storage-account.png)
 
 3. On the Overview blade, locate and copy your Azure **Subscription Id** and save to a text editor such as Notepad for later.
 
@@ -114,7 +114,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
 4. Select **Access keys** (1) from the menu. Copy the **storage account name** (2) and the **key1** key (3) and copy the values to a text editor such as Notepad for later.
 
-   ![Select Access keys from menu - copy storage account name - copy key](media/azure-storage-access-keys.png)
+   ![Select Access keys from menu - copy storage account name - copy key.](media/azure-storage-access-keys.png)
 
 ### Task 2: Create an Azure Databricks cluster
 
@@ -124,19 +124,19 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 2. Next, select your Azure Databricks service from the list.
 
-   ![Select the Azure Databricks service from within your lab resource group](media/select-azure-databricks-service.png)
+   ![Select the Azure Databricks service from within your lab resource group.](media/select-azure-databricks-service.png)
 
 3. In the Overview pane of the Azure Databricks service, select **Launch Workspace**.
 
-   ![Select Launch Workspace within the Azure Databricks service overview pane](media/azure-databricks-launch-workspace.png)
+   ![Select Launch Workspace within the Azure Databricks service overview pane.](media/azure-databricks-launch-workspace.png)
 
    Azure Databricks will automatically log you in using Azure Active Directory Single Sign On.
 
-   ![Azure Databricks Azure Active Directory Single Sign On](media/azure-databricks-aad.png)
+   ![Azure Databricks Azure Active Directory Single Sign On.](media/azure-databricks-aad.png)
 
 4. Select **Clusters** (1) from the menu, then select **Create Cluster** (2).
 
-   ![Select Clusters from menu then select Create Cluster](media/azure-databricks-create-cluster-button.png)
+   ![Select Clusters from menu then select Create Cluster.](media/azure-databricks-create-cluster-button.png)
 
 5. On the Create New Cluster form, provide the following:
 
@@ -164,7 +164,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
 
-   ![Complete the form using the options as outlined above](media/azure-databricks-create-cluster-form.png)
+   ![Complete the form using the options as outlined above.](media/azure-databricks-create-cluster-form.png)
 
 6. Select **Create Cluster**.
 
@@ -192,17 +192,17 @@ In this exercise, you will implement a classification experiment. You will load 
 
 5. Select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **Add Data** above the Tables header.
 
-   ![From the Azure Databricks workspace, select Data, default database, then new table](media/azure-databricks-create-tables.png 'Create new table')
+   ![From the Azure Databricks workspace, select Data, default database, then new table.](media/azure-databricks-create-tables.png 'Create new table')
 
 6. Select **Upload File** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI**.
 
-   ![Create a new table using the FlightDelaysWithAirportCodes.csv file](media/create-flight-delays-table-ui.png 'Create new table')
+   ![Create a new table using the FlightDelaysWithAirportCodes.csv file.](media/create-flight-delays-table-ui.png 'Create new table')
 
 7. Select your cluster to preview the table, then select **Preview Table**.
 
 8. Change the Table Name to `flight_delays_with_airport_codes` and select the checkmark for **First row is header**. Select **Create Table**.
 
-   ![Rename table and check the first row is header checkbox](media/flight-delays-attributes.png 'Rename table')
+   ![Rename table and check the first row is header checkbox.](media/flight-delays-attributes.png 'Rename table')
 
 9. Repeat the previous steps for the FlightWeatherWithAirportCode.csv and AirportCodeLocationsClean.csv files, setting the name for each dataset in a similar fashion. There should be a total of three files that are uploaded. Each table should be named as follows:
 
@@ -210,7 +210,7 @@ In this exercise, you will implement a classification experiment. You will load 
    - flightdelayswithairportcodes_csv to **flight_delays_with_airport_codes**
    - airportcodelocationlookupclean_csv to **airport_code_location_lookup_clean**
 
-   ![Azure Databricks tables shown after all three files uploaded](media/uploaded-data-files.png 'Uploaded data files')
+   ![Azure Databricks tables shown after all three files uploaded.](media/uploaded-data-files.png 'Uploaded data files')
 
 ### Task 2: Install Azure ML library on the cluster
 
@@ -240,17 +240,17 @@ In this exercise, you will implement a classification experiment. You will load 
 
 2. Within Azure Databricks, select **Workspace** on the menu, then **Users**, select your user, then select the down arrow on the top of your user workspace. Select **Import**.
 
-   ![Screenshot showing selecting import within the user workspace](media/select-import-in-user-workspace.png 'Import')
+   ![Screenshot showing selecting import within the user workspace.](media/select-import-in-user-workspace.png 'Import')
 
 3. Within the Import Notebooks dialog, select Import from: file, then drag-and-drop the file or browse to upload it.
 
-   ![Select import from file](media/import-notebooks.png 'Import from file')
+   ![Select import from file.](media/import-notebooks.png 'Import from file')
 
 4. After importing, expand the new **BigDataVis** folder.
 
 5. Before you begin, make sure you attach your cluster to the notebooks, using the dropdown. You will need to do this for each notebook you open. There are 5 notebooks included in the BigDataVis.dbc
 
-   ![Select your cluster to attach it to the notebook](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
+   ![Select your cluster to attach it to the notebook.](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
 6. Run each cell of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
@@ -290,7 +290,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![The Welcome page in the Microsoft Integration Runtime Setup Wizard displays.](media/image114.png 'Microsoft Integration Runtime Setup Wizard')
 
-5. Check the box to accept the terms and click Next.
+5. Check the box to accept the terms and select Next.
 
    ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](media/image115.png 'End-User License Agreement page')
 
@@ -306,7 +306,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![On the Completed the Microsoft Integration Runtime Setup Wizard page, the Finish button is selected.](media/image118.png 'Completed the Wizard page')
 
-9. After clicking Finish, the following screen will appear. Keep it open for now. You will come back to this screen once the Data Factory in Azure has been provisioned, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
+9. After selecting Finish, the following screen will appear. Keep it open for now. You will come back to this screen once the Data Factory in Azure has been provisioned, and obtain the gateway key so we can connect Data Factory to this "on-premises" server.
 
    ![The Microsoft Integration Runtime Configuration Manager, Register Integration Runtime page displays.](media/image119.png 'Register Integration Runtime page')
 
@@ -324,28 +324,28 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 5. A new page will open in another tab or new window. Within the Azure Data Factory site, select **Author** (the pencil icon) on the menu.
 
-   ![Select Author from the menu](media/adf-home-author-link.png 'Author link on ADF home page')
+   ![Select Author from the menu.](media/adf-home-author-link.png 'Author link on ADF home page')
 
 6. Now, select **Connections** at the bottom of Factory Resources (1), then select the **Integration Runtimes** tab (2), and finally select **+ New** (3).
 
    ![Select Connections at the bottom of the page, then select the Integration Runtimes tab, and select New.](media/adf-new-ir.png 'Steps to create a new Integation Runtime connection')
 
-7. In the Integration Runtime Setup blade that appears, select "Perform data movement and dispatch activities to external computes", then select **Next**.
+7. In the Integration Runtime Setup blade that appears, select "Perform data movement and dispatch activities to external computes", then select **Continue**.
 
-   ![Select Perform data movement and dispatch activities to external computes](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
+   ![Select Perform data movement and dispatch activities to external computes.](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
 
-8. Select **Self-Hosted** then select **Next**.
+8. Select **Self-Hosted** then select **Continue**.
 
-   ![Select Private Network then Next](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
+   ![Select Private Network then Next.](media/adf-ir-setup-2.png 'Integration Runtime Setup step 2')
 
 9. Enter a **Name**, such as bigdatagateway-\[initials\], and select **Next**.
 
-   ![Enter a Name and select Next](media/adf-ir-setup-3.png 'Integration Runtime Setup step 3')
+   ![Enter a Name and select Next.](media/adf-ir-setup-3.png 'Integration Runtime Setup step 3')
 
 10. Under Option 2: Manual setup, copy the Key1 authentication key value by selecting the Copy button, then select **Finish**.
 
 
-    ![Copy the Key1 value](media/adf-ir-setup-4.png 'Integration Runtime Setup step 4')
+    ![Copy the Key1 value.](media/adf-ir-setup-4.png 'Integration Runtime Setup step 4')
 
 11. _Don't close the current screen or browser session_.
 
@@ -365,15 +365,15 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     ![The Microsoft Integration Runtime Configuration Manager Node is connected to the cloud service page displays with connection details.](media/adf-ir-launch-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
-    ![The Microsoft Integration Runtime Configuration Manager details](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
+    ![The Microsoft Integration Runtime Configuration Manager details.](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
 17. You can now return to the Azure Data Factory page, and view the Integration Runtime you just configured.
 
-    ![You can view your Integration Runtime you just configured](media/adf-ir-running.png 'Integration Runtime in running state')
+    ![You can view your Integration Runtime you just configured.](media/adf-ir-running.png 'Integration Runtime in running state')
 
 18. Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise.
 
-    ![Select the Azure Data Factory Overview button on the menu](media/adf-overview.png 'ADF Overview')
+    ![Select the Azure Data Factory Overview button on the menu.](media/adf-overview.png 'ADF Overview')
 
 ## Exercise 4: Develop a data factory pipeline for data movement
 
@@ -385,13 +385,13 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 1. Within the Azure Data Factory overview page, select **Copy Data**.
 
-   ![Select Copy Data from the overview page](media/adf-copy-data-link.png 'Copy Data')
+   ![Select Copy Data from the overview page.](media/adf-copy-data-link.png 'Copy Data')
 
 2. In the Copy Data properties, enter the following:
 
    - Task name: **CopyOnPrem2AzurePipeline**
 
-   - Task description: (Optional) **"This pipeline copies timesliced CSV files from on-premises C:\\Data to Azure Blob Storage as a continuous job"**.
+   - Task description: (Optional) **"This pipeline copies timesliced CSV files from on-premises C:\\Data to Azure Blob Storage as a continuous job."**
 
    - Task cadence or Task schedule: **Select Run regularly on schedule**
 
@@ -413,7 +413,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 5. Scroll through the options and select **File System**, then select **Continue**.
 
-   ![Select File System, then Continue](media/adf-copy-data-new-linked-service.png 'Select File System')
+   ![Select File System, then Continue.](media/adf-copy-data-new-linked-service.png 'Select File System')
 
 6. In the New Linked Service form, enter the following:
 
@@ -427,7 +427,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
    - Password: **Use your machine's login password**.
 
-7. Select **Test connection** to verify you correctly entered the values. Finally, select **Finish**.
+7. Select **Test connection** to verify you correctly entered the values. Finally, select **Create**.
 
    ![On the Copy Data activity, specify File server share connection page, fields are set to the previously defined values.](media/adf-copy-data-linked-service-settings.png 'New Linked Service settings')
 
@@ -449,9 +449,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Skip line count: **0**
 
-    - Column names in the first row: **Checked**
-
-    - Handle all of the data as strings: **Unchecked**
+    - First row as header: **Checked**
 
     ![Enter the form values](media/adf-copy-data-file-format.png 'File format settings')
 
@@ -461,9 +459,9 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 13. Select **Azure Blob Storage** within the New Linked Service blade, then select **Continue**.
 
-    ![Select Azure Blob Storage, then Continue](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
+    ![Select Azure Blob Storage, then Continue.](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
 
-14. On the New Linked Service (Azure Blob Storage) account screen, enter the following and then choose **Finish**.
+14. On the New Linked Service (Azure Blob Storage) account screen, enter the following and then select **Create**.
 
     - Name: **BlobStorageOutput**
 
@@ -501,7 +499,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 18. On the **Settings** screen, select **Skip incompatible rows** under Actions. Expand Advanced settings and set Degree of copy parallelism to **10**, then select **Next**.
 
-    ![Select Skip incompatible rows and set copy parallelism to 10](media/adf-copy-data-settings.png 'Settings page')
+    ![Select Skip incompatible rows and set copy parallelism to 10.](media/adf-copy-data-settings.png 'Settings page')
 
 19. Review settings on the **Summary** tab, but **DO NOT choose Next**.
 
@@ -509,7 +507,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 20. Scroll down on the summary page until you see the **Copy Settings** section. Select **Edit** next to **Copy Settings**.
 
-    ![Scroll down and select Edit within Copy Settings](media/adf-copy-data-review-page.png 'Summary page')
+    ![Scroll down and select Edit within Copy Settings.](media/adf-copy-data-review-page.png 'Summary page')
 
 21. Change the following Copy settings:
 
@@ -517,13 +515,13 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Select **Save**.
 
-      ![Set retry to 3](media/adf-copy-data-copy-settings.png 'Copy settings')
+      ![Set retry to 3.](media/adf-copy-data-copy-settings.png 'Copy settings')
 
 22. After saving the Copy settings, select **Next** on the Summary tab.
 
 23. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. Select **Edit Pipeline** to close out of the wizard.
 
-    ![Select Edit Pipeline on the bottom of the page](media/adf-copy-data-deployment.png 'Deployment page')
+    ![Select Edit Pipeline on the bottom of the page.](media/adf-copy-data-deployment.png 'Deployment page')
 
 ## Exercise 5: Operationalize ML scoring with Azure Databricks and Data Factory
 
@@ -535,23 +533,23 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 1. Return to, or reopen, the Author & Monitor page for your Azure Data Factory in a web browser, navigate to the Author view, and select the pipeline.
 
-   ![Select the ADF pipeline created in the previous exercise](media/adf-ml-select-pipeline.png 'Select the ADF pipeline')
+   ![Select the ADF pipeline created in the previous exercise.](media/adf-ml-select-pipeline.png 'Select the ADF pipeline')
 
 2. Once there, expand Databricks under Activities.
 
-   ![Expand the Databricks activity after selecting your pipeline](media/adf-ml-expand-databricks-activity.png 'Expand Databricks Activity')
+   ![Expand the Databricks activity after selecting your pipeline.](media/adf-ml-expand-databricks-activity.png 'Expand Databricks Activity')
 
 3. Drag the Notebook activity onto the design surface to the side of the Copy activity.
 
-   ![Drag the Notebook onto the design surface](media/adf-ml-drag-notebook-activity.png 'Notebook on design surface')
+   ![Drag the Notebook onto the design surface.](media/adf-ml-drag-notebook-activity.png 'Notebook on design surface')
 
 4. Select the Notebook activity on the design surface to display tabs containing its properties and settings at the bottom of the screen. On the **General** tab, enter "BatchScore" into the Name field.
 
-   ![Type BatchScore as the Name under the General tab](media/adf-ml-notebook-general.png 'Databricks Notebook General Tab')
+   ![Type BatchScore as the Name under the General tab.](media/adf-ml-notebook-general.png 'Databricks Notebook General Tab')
 
 5. Select the **Azure Databricks** tab, and select **+ New** next to the Databricks Linked service drop down. Here, you will configure a new linked service which will serve as the connection to your Databricks cluster.
 
-   ![Screenshot of the Settings tab](media/adf-ml-settings-new-link.png 'Databricks Notebook Settings Tab')
+   ![Screenshot of the Settings tab.](media/adf-ml-settings-new-link.png 'Databricks Notebook Settings Tab')
 
 6. On the New Linked Service dialog, enter the following:
 
@@ -562,25 +560,25 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
    - Pick your Databricks workspace to populate the Domain automatically.
    - Select cluster: choose **Existing interactive cluster**.
 
-   ![Screenshot showing filled out form with defined parameters](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
+   ![Screenshot showing filled out form with defined parameters.](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
 
 7. Leave the form open and open your Azure Databricks workspace in another browser tab. You will retrieve the Access token and cluster id here.
 
 8. In Azure Databricks, select the Account icon in the top corner of the window, then select **User Settings**.
 
-   ![Select account icon, then user settings](media/databricks-select-user-settings.png 'Azure Databricks user account settings')
+   ![Select account icon, then user settings.](media/databricks-select-user-settings.png 'Azure Databricks user account settings')
 
 9. Select **Generate New Token** under the Access Tokens tab. Enter **ADF access** for the comment and leave the lifetime at 90 days. Select **Generate**.
 
-   ![Generate a new token](media/databricks-generate-new-token.png 'Generate New Token')
+   ![Generate a new token.](media/databricks-generate-new-token.png 'Generate New Token')
 
 10. **Copy** the generated token and **paste it into a text editor** such as Notepad for a later step.
 
-    ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
+    ![Copy the generated token.](media/databricks-copy-token.png 'Copy generated token')
 
-11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form. After a moment, select your cluster underneath **Choose from existing clusters**. Select **Finish**.
+11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form. After a moment, select your cluster underneath **Choose from existing clusters**. Select **Create**.
 
-    ![Paste the generated access token](media/adf-ml-access-token.png 'Paste access token')
+    ![Paste the generated access token.](media/adf-ml-access-token.png 'Paste access token')
 
 12. Switch back to Azure Databricks. Select **Workspace** in the menu. Select the **Exercise 5** folder then open notebook **01 Deploy for Batch Scoring**. Examine the content but _don't run any of the cells yet_. You need to replace `STORAGE-ACCOUNT-NAME` with the name of the blob storage account you copied in Exercise 1.
 
@@ -588,11 +586,11 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 13. Switch back to your Azure Data Factory screen. Select the **Settings** tab, then browse to your **Exercise 5/01 Deploy for Batch Score** notebook into the Notebook path field.
 
-    ![browse to 04 Deploy for Batch score into the notebook path](media/adf-ml-notebook-path.png 'Notebook path')
+    ![browse to 04 Deploy for Batch score into the notebook path.](media/adf-ml-notebook-path.png 'Notebook path')
 
 14. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All** after making the connection.
 
-    ![Attach the copy activity to the notebook and then publish](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
+    ![Attach the copy activity to the notebook and then publish.](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
 ### Task 2: Trigger workflow
 
@@ -600,15 +598,15 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 2. Select **Trigger**, then **Trigger Now** located above the pipeline design surface.
 
-   ![Manually trigger the pipeline](media/adf-ml-trigger-now.png 'Trigger Now')
+   ![Manually trigger the pipeline.](media/adf-ml-trigger-now.png 'Trigger Now')
 
 3. Enter **3/1/2017** into the windowStart parameter, then select **Finish**.
 
-   ![Screenshot showing the Pipeline Run form](media/adf-ml-pipeline-run.png 'Pipeline Run')
+   ![Screenshot showing the Pipeline Run form.](media/adf-ml-pipeline-run.png 'Pipeline Run')
 
 4. Select **Monitor** in the menu. You will be able to see your pipeline activity in progress as well as the status of past runs.
 
-   ![View your pipeline activity](media/adf-ml-monitor.png 'Monitor')
+   ![View your pipeline activity.](media/adf-ml-monitor.png 'Monitor')
 
 ## Exercise 6: Summarize data using Azure Databricks
 
@@ -638,7 +636,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 2. On the cluster edit page, scroll down to the bottom of the page, expand **Advanced Options**, then select the **JDBC/ODBC** tab.
 
-   ![Select the JDBC/ODBC tab](media/databricks-power-bi-jdbc.png 'JDBC strings')
+   ![Select the JDBC/ODBC tab.](media/databricks-power-bi-jdbc.png 'JDBC strings')
 
 3. On the **JDBC/ODBC** tab, copy and save the first JDBC URL.
 
@@ -650,7 +648,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
    - Remove everything in the path between the port number and sql, retaining the components indicated by the boxes in the image below. Also remove `;AuthMech=3;UID=token;PWD=<personal-access-token>` from the end of the string.
 
-   ![Select the parts to create the Power BI connection string](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
+   ![Select the parts to create the Power BI connection string.](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
 
    - In our example, the server address would be:
 
@@ -658,7 +656,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
-1. If you did not already do so during the before the hands-on lab setup, download Power BI Desktop from https://powerbi.microsoft.com/en-us/desktop/
+1. If you did not already do so during the before the hands-on lab setup, download Power BI Desktop from https://powerbi.microsoft.com/en-us/desktop/.
 
 2. When Power BI Desktop starts, you will need to enter your personal information, or Sign in if you already have an account.
 
@@ -681,7 +679,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 9. Select **DirectQuery** for the Data Connectivity mode, and select **OK**. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying.
 
-   ![Configure your connection to the Spark cluster](media/pbi-desktop-connect-spark.png 'Spark form')
+   ![Configure your connection to the Spark cluster.](media/pbi-desktop-connect-spark.png 'Spark form')
 
 10. Enter your credentials on the next screen as follows:
 
@@ -689,9 +687,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     - Password: Remember that ADF Access token we generated and asked you to paste in Notepad, that is the password.
 
-    ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
+    ![Copy the generated token.](media/databricks-copy-token.png 'Copy generated token')
 
-    ![Enter "token" for the user name and paste user token into the password field](media/pbi-desktop-login.png 'Enter credentials')
+    ![Enter "token" for the user name and paste user token into the password field.](media/pbi-desktop-login.png 'Enter credentials')
 
 11. Select **Connect**.
 
@@ -705,7 +703,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 1. Once the data finishes loading, you will see the fields appear on the far side of the Power BI Desktop client window.
 
-   ![Power BI Desktop fields](media/pbi-desktop-fields.png 'Power BI Desktop Fields')
+   ![Power BI Desktop fields.](media/pbi-desktop-fields.png 'Power BI Desktop Fields')
 
 2. From the Visualizations area, next to Fields, select the Globe icon to add a Map visualization to the report design surface.
 
@@ -775,23 +773,23 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 2. Select TRY FOR FREE.
 
-   ![Select the TRY FOR FREE button on the Dark Sky dev page](media/dark-sky-api-try-for-free.png 'Dark Sky dev page')
+   ![Select the TRY FOR FREE button on the Dark Sky dev page.](media/dark-sky-api-try-for-free.png 'Dark Sky dev page')
 
 3. Complete the Register form by providing your email address and a password. Select REGISTER.
 
-   ![Complete the registration form and select REGISTER](media/dark-sky-register.png 'Registration form')
+   ![Complete the registration form and select REGISTER.](media/dark-sky-register.png 'Registration form')
 
 4. Check your email account you used for registration. You should have a confirmation email from Dark Sky. Open the email and follow the confirmation link within to complete the registration process. When the welcome page loads, log in with your new account.
 
-   ![Dark Sky welcome page. Choose login to continue](media/dark-sky-welcome.png 'Dark Sky welcome page')
+   ![Dark Sky welcome page. Choose login to continue.](media/dark-sky-welcome.png 'Dark Sky welcome page')
 
 5. After logging in, you will be directed to the Your Account page. Take note of your **Secret Key** and copy it to a text editor such as Notepad for later. You will need this key to make API calls later in the lab.
 
-   ![The Dark Sky Your Account page - copy the Secret Key](media/dark-sky-your-account.png 'Dark Sky Your Account page')
+   ![The Dark Sky Your Account page - copy the Secret Key.](media/dark-sky-your-account.png 'Dark Sky Your Account page')
 
 6. To verify that your API Key is working, follow the link on the bottom of the page located underneath Sample API Call. You should see a JSON result that looks similar to the following:
 
-   ![Sample JSON result from Dark Sky API link](media/dark-sky-sample-json-result.png 'JSON result from Dark Sky page')
+   ![Sample JSON result from Dark Sky API link.](media/dark-sky-sample-json-result.png 'JSON result from Dark Sky page')
 
 ### Task 2: Deploy web app from GitHub
 
@@ -823,7 +821,7 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 6. The page should begin deploying your application while showing you a status of what is currently happening.
 
-   > Note: If you run into errors during the deployment that indicate a bad request or unauthorized, verify that the user you are logged into the portal with an account that is either a Service Administrator or a Co-Administrator. You won't have permissions to deploy the website otherwise.
+   > **Note**: If you run into errors during the deployment that indicate a bad request or unauthorized, verify that the user you are logged into the portal with an account that is either a Service Administrator or a Co-Administrator. You won't have permissions to deploy the website otherwise.
 
 7. After a short time, the deployment will complete, and you will be presented with a link to your newly deployed web application. CTRL+Click to open it in a new tab.
 
@@ -837,9 +835,9 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 1. Install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater. Make sure you select the **ASP.NET and web development** and **Azure development** workloads.
 
-    ![The Visual Studio workloads are displayed.](media/vs-workloads.png "Visual Studio workloads")
+   ![The Visual Studio workloads are displayed.](media/vs-workloads.png 'Visual Studio workloads')
 
-    > If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
+   > **Note**: If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
 
 2. In a web browser, navigate to the [Big data and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-and-visualization).
 
@@ -853,34 +851,34 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
 
 6. In the Visual Studio Solution Explorer, right-click on the BigDataTravel project, then select **Publish...**.
 
-    ![The Publish menu item is highlighted in Visual Studio.](media/vs-publish-link.png "Publish")
+   ![The Publish menu item is highlighted in Visual Studio.](media/vs-publish-link.png 'Publish')
 
-7. In the Publish dialog, select the **App Service** publish target, select **Create New**, then click **Publish**.
+7. In the Publish dialog, select the **App Service** publish target, select **Create New**, then choose **Publish**.
 
-    ![The App Service target is selected, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target.png "Pick a publish target")
+   ![The App Service target is selected, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target.png 'Pick a publish target')
 
-8. Enter the following into the App Service form that follows, then click **Create**:
+8. Enter the following into the App Service form that follows, then select **Create**:
 
-    - **Name**: Enter a unique value.
-    - **Subscription**: Choose the Azure subscription you are using for the lab.
-    - **Resource group**: Select the Azure resource group you are using for the lab.
-    - **Hosting Plan**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
-    - **Application Insights**: Select **None**.
+   - **Name**: Enter a unique value.
+   - **Subscription**: Choose the Azure subscription you are using for the lab.
+   - **Resource group**: Select the Azure resource group you are using for the lab.
+   - **Hosting Plan**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
+   - **Application Insights**: Select **None**.
 
-    ![The form fields are completed using the previously described settings.](media/vs-app-service.png "App Service dialog")
+   ![The form fields are completed using the previously described settings.](media/vs-app-service.png 'App Service dialog')
 
 9. After publishing is completed, open the new App Service located in your resource group in the [Azure portal](https://portal.azure.com).
 
 10. Select **Configuration** in the left-hand menu.
 
-    ![The Configuration menu item is highlighted.](media/app-service-configuration-link.png "App Service")
+    ![The Configuration menu item is highlighted.](media/app-service-configuration-link.png 'App Service')
 
 11. Create the two following **Application settings**, then select **Save**:
 
     - **mlUrl**: Enter the Machine Learning URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
     - **weatherApiKey**: Enter the Dark Sky API key.
 
-    ![The two new application settings are shown.](media/app-service-configuration.png "Application settings")
+    ![The two new application settings are shown.](media/app-service-configuration.png 'Application settings')
 
 You will now be able to successfully navigate the web app.
 
