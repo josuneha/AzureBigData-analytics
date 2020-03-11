@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-November 2019
+March 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -80,7 +80,7 @@ They are looking to pilot a web app that their internal customer service agents 
 
 Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
 
-![This is the high-level overview diagram of the end-to-end solution.](../Whiteboard%20design%20session/media/high-level-overview.png 'High-level overview diagram')
+![The high-level overview diagram of the end-to-end solution is displayed. Flight delay data and historical airport weather data are provided to Azure Data Factory. Azure Data Factory provides this data to both blob storage and Azure Databricks. Azure Databricks scores the data and saves the results to an Azure SQL Database. Azure Databricks also creates, trains, and exports a machine learning model to the Azure Machine Learning Service. Azure Machine Learning service provides a containerized services that is consumed by the web portal. The web portal also consumes 3rd party API data for forecasted weather. Map data visualization is provided by Power BI using web portal information and the Azure SQL database.](../Whiteboard%20design%20session/media/high-level-overview.png 'High-level overview diagram')
 
 ## Requirements
 
@@ -106,15 +106,15 @@ You will need to have the Azure Storage account name and access key when you cre
 
 2. Next, select your lab Azure Storage account from the list.
 
-   ![Select the lab Azure Storage account from within your lab resource group.](media/select-azure-storage-account.png)
+   ![The lab Azure Storage account is selected from within your lab resource group.](media/select-azure-storage-account.png)
 
-3. On the Overview blade, locate and copy your Azure **Subscription Id** and save to a text editor such as Notepad for later.
+3. On the left menu, select **Overview**, locate and copy your Azure **Subscription ID** and save to a text editor such as Notepad for later.
 
-   ![Copy the Azure Subscription Id on the Overview blade.](media/azure-storage-subscription-id.png)
+   ![On the left menu, Overview is selected and the Subscription ID is highlighted.](media/azure-storage-subscription-id.png)
 
 4. Select **Access keys** (1) from the menu. Copy the **storage account name** (2) and the **key1** key (3) and copy the values to a text editor such as Notepad for later.
 
-   ![Select Access keys from menu - copy storage account name - copy key.](media/azure-storage-access-keys.png)
+   ![On the left menu, located in the Settings section, Access keys is selected. The copy button next to the Storage account name textbox is highlighted, as well as the copy button next to the key 1 key textbox.](media/azure-storage-access-keys.png)
 
 ### Task 2: Create an Azure Databricks cluster
 
@@ -124,39 +124,37 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 2. Next, select your Azure Databricks service from the list.
 
-   ![Select the Azure Databricks service from within your lab resource group.](media/select-azure-databricks-service.png)
+   ![The Azure Databricks Service is selected from within your lab resource group.](media/select-azure-databricks-service.png)
 
 3. In the Overview pane of the Azure Databricks service, select **Launch Workspace**.
 
-   ![Select Launch Workspace within the Azure Databricks service overview pane.](media/azure-databricks-launch-workspace.png)
+   ![The Launch Workspace button is selected within the Azure Databricks service overview pane.](media/azure-databricks-launch-workspace.png)
 
    Azure Databricks will automatically log you in using Azure Active Directory Single Sign On.
 
-   ![Azure Databricks Azure Active Directory Single Sign On.](media/azure-databricks-aad.png)
+   ![The Azure Databricks Azure Active Directory Single Sign On dialog.](media/azure-databricks-aad.png)
 
-4. Select **Clusters** (1) from the menu, then select **Create Cluster** (2).
+4. Select **Clusters** (1) from the menu, then select **+ Create Cluster** (2).
 
-   ![Select Clusters from menu then select Create Cluster.](media/azure-databricks-create-cluster-button.png)
+   ![From the left menu, Clusters is selected. The + Create Cluster button is selected.](media/azure-databricks-create-cluster-button.png)
 
-5. On the Create New Cluster form, provide the following:
+5. On the New Cluster form, provide the following:
 
-   - **Cluster Name**: lab
+   - **Cluster Name**: `lab`
 
-   - **Cluster Type**: Standard
+   - **Cluster Type**: **Standard**
 
-   - **Databricks Runtime Version**: Runtime: 5.5 (Scala 2.11, Spark 2.4.3) (**Note**: the runtime version may have **LTS** after the version. This is also a valid selection.)
+   - **Databricks Runtime Version**: **Runtime: 6.3 (Scala 2.11, Spark 2.4.4)** (**Note**: the runtime version may have **LTS** after the version. This is also a valid selection.)
 
-   - **Python Version**: 3
+   - **Enable Autoscaling**: **Uncheck** this option.
 
-   - **Enable Autoscaling**: Uncheck this option.
+   - **Terminate after**: **Check** the box and enter `120`
 
-   - **Auto Termination**: Check the box and enter 120
+   - **Worker Type**: **Standard_F4s**
 
-   - **Worker Type**: Standard_F4s
+   - **Driver Type**: **Same as worker**
 
-   - **Driver Type**: Same as worker
-
-   - **Workers**: 1
+   - **Workers**: `1`
 
    - **Spark Config**: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
 
@@ -164,7 +162,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
 
-   ![Complete the form using the options as outlined above.](media/azure-databricks-create-cluster-form.png)
+   ![The New Cluster form is populated with the values as outlined above.](media/azure-databricks-create-cluster-form.png)
 
 6. Select **Create Cluster**.
 
@@ -178,7 +176,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
 1. Before you begin working with machine learning services, there are three datasets you need to load.
 
-2. Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown). If still having trouble, a zip file called AdventureWorksTravelDatasets.zip is included in the lab-files folders.
+2. Download the three CSV sample datasets from here: <http://bit.ly/2wGAqrl> (If you get an error, or the page won't open, try pasting the URL into a new browser window and verify the case sensitive URL is exactly as shown). If you are still having trouble, a zip file called AdventureWorksTravelDatasets.zip is included in the lab-files folders.
 
 3. Extract the ZIP and verify you have the following files:
 
@@ -188,11 +186,11 @@ In this exercise, you will implement a classification experiment. You will load 
 
 4. Open your Azure Databricks workspace. Before continuing to the next step, verify that your new cluster is running. Do this by navigating to **Clusters** on the left-hand menu and ensuring that the state of your cluster is **Running**.
 
-   ![The cluster is shown in the Running state.](media/azure-databricks-clusters-running.png 'Clusters')
+   ![The Clusters menu item is selected and the cluster is shown beneath the Interactive Clusters section indicating that it is in the Running state.](media/azure-databricks-clusters-running.png 'Clusters')
 
 5. Select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **Add Data** above the Tables header.
 
-   ![From the Azure Databricks workspace, select Data, default database, then new table.](media/azure-databricks-create-tables.png 'Create new table')
+   ![From the Azure Databricks workspace, Data is selected from the menu, default database is selected from a list of available databases, the Add Data button is selected.](media/azure-databricks-create-tables.png 'Create new table')
 
 6. Select **Upload File** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI**.
 
