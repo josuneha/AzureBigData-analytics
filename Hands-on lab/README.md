@@ -6,11 +6,13 @@ They are looking to pilot a web app that their internal customer service agents 
 
 ## Contents
 
-- [Abstract](#abstract)
-- [Solution architecture](#solution-architecture)
-- [Requirements](#requirements)
-- [Before the Hands-on Lab](#before-the-hands-on-lab)
-- [Hands-on Lab](#hands-on-lab)
+- [Big data and visualization hands-on lab](#big-data-and-visualization-hands-on-lab)
+  - [Contents](#contents)
+  - [Abstract](#abstract)
+  - [Solution architecture](#solution-architecture)
+  - [Requirements](#requirements)
+  - [Before the Hands-on Lab](#before-the-hands-on-lab)
+  - [Hands-on Lab](#hands-on-lab)
 
 ## Abstract
 

@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-November 2019
+March 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -341,7 +341,7 @@ _Machine learning modeling_
 
    b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
 
-   c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
+   c. Some of the data may need a little touching up: columns need to be removed; data types need to be changed. How would these steps be applied in your model?
 
    d. How would you recommend MT measure the success of their model?
 
@@ -479,7 +479,7 @@ _High-level architecture_
 
    After speaking with its supportive team at Microsoft, MT decided that Azure would in fact be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using Spark SQL on Azure Databricks; train a model within Azure Databricks; export the model, save it to Azure Machine Learning service model registry and deploy it as a containerized web service in Azure Kubernetes Service; and visualize the result using a map visualization in Power BI.
 
-   ![This is the high-level overview diagram of the end-to-end solution.](media/high-level-overview.png 'High-level overview diagram')
+   ![The high-level overview diagram of the end-to-end solution is displayed. Flight delay data and historical airport weather data are provided to Azure Data Factory. Azure Data Factory provides this data to both blob storage and Azure Databricks. Azure Databricks scores the data and saves the results to an Azure SQL Database. Azure Databricks also creates, trains, and exports a machine learning model to the Azure Machine Learning Service. Azure Machine Learning service provides a containerized services that is consumed by the web portal. The web portal also consumes 3rd party API data for forecasted weather. Map data visualization is provided by Power BI using web portal information and the Azure SQL database.](media/high-level-overview.png 'High-level overview diagram')
 
 _NOTE: The preferred solution is only one of many possible, viable approaches._
 
@@ -489,7 +489,7 @@ _Data loading_
 
    MT should consider using Azure Data Factory (ADF) for copying their historical data into Azure. By setting up a continuous pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, MT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Once in place, this would allow ADF to copy data from their local data store to a container in blob storage. Their pipeline would be configured to run monthly, as that is the frequency at which new data is received, and this would still allow for all their historical data to be copied without delay.
 
-2. Update your diagram with the data loading process with the steps you identified
+2. Update your diagram with the data loading process with the steps you identified.
 
    ![The Data loading process diagram begins with Flight Delay Data and Historical Airport Weather Data flat files. An arrow points from there to ADF Copy Pipeline, which in turn points to Blob Storage.](media/data-loading.png 'Data loading process')
 
@@ -535,7 +535,7 @@ _Machine learning modeling_
 
    There are multiple approaches MT could use to perform feature selection and to identify the data attributes that are the most helpful in accurately predicting a delay. They should start with any domain knowledge they have---this would likely point in the direction of the flight attribute's airline, departure airport, destination airport, and time of day as well as the weather attribute's wind speed, temperature, and precipitation conditions. Additionally, they should identify and remove fields that do not add value (i.e., because they are mostly empty or only have a constant value). They should use Python or R functions, such as `replace` or `na.omit`, respectively, to remove empty rows or replace constant values (such as 'M' for missing data) within the important feature columns. From there, they could construct a preliminary model and validate how it performs against the training data. In additional passes, they might choose to score the effectiveness of their trained model against training and testing data sets to see whether their baseline score is improving or regressing.
 
-   c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
+   c. Some of the data may need a little touching up: columns need to be removed; data types need to be changed. How would these steps be applied in your model?
 
    Data munging can be best accomplished using R or Python, languages familiar to data scientists and developers. These languages provide powerful data transformation capabilities, and allow for flexibility in how data cleanup occurs, while reducing the overall complexity of ML models. These steps should be performed before featurization. You can use a Spark Pipeline to organize your data transformation steps in order.
 
