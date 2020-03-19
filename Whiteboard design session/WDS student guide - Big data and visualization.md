@@ -216,7 +216,7 @@ _Machine learning modeling_
 
    b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
 
-   c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
+   c. Some of the data may need a little touching up: columns need to be removed; data types need to be changed. How would these steps be applied in your model?
 
    d. How would you recommend MT measure the success of their model?
 
