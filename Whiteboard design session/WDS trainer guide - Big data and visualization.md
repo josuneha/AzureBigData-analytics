@@ -341,7 +341,7 @@ _Machine learning modeling_
 
    b. What attributes of the flight and weather data do you think MT should use in predicting flight delays? How would you recommend that MT identify the columns that provide the most predictive value in determining if a flight will be delayed? Be specific on the particular modules or libraries they could use and how they would apply them against the data.
 
-   c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
+   c. Some of the data may need a little touching up: columns need to be removed; data types need to be changed. How would these steps be applied in your model?
 
    d. How would you recommend MT measure the success of their model?
 
@@ -489,7 +489,7 @@ _Data loading_
 
    MT should consider using Azure Data Factory (ADF) for copying their historical data into Azure. By setting up a continuous pipeline containing a copy activity configured to copy time partitioned source data, they could pull all their historical information, as well as ingest any future data, into Azure blob storage through a scheduled, and continuously running pipeline. Because their historical data is stored on-premises, MT would need to install and configure an Azure Data Factory Integration Runtime (formerly known as a Data Management Gateway). Once in place, this would allow ADF to copy data from their local data store to a container in blob storage. Their pipeline would be configured to run monthly, as that is the frequency at which new data is received, and this would still allow for all their historical data to be copied without delay.
 
-2. Update your diagram with the data loading process with the steps you identified
+2. Update your diagram with the data loading process with the steps you identified.
 
    ![The Data loading process diagram begins with Flight Delay Data and Historical Airport Weather Data flat files. An arrow points from there to ADF Copy Pipeline, which in turn points to Blob Storage.](media/data-loading.png 'Data loading process')
 
@@ -535,7 +535,7 @@ _Machine learning modeling_
 
    There are multiple approaches MT could use to perform feature selection and to identify the data attributes that are the most helpful in accurately predicting a delay. They should start with any domain knowledge they have---this would likely point in the direction of the flight attribute's airline, departure airport, destination airport, and time of day as well as the weather attribute's wind speed, temperature, and precipitation conditions. Additionally, they should identify and remove fields that do not add value (i.e., because they are mostly empty or only have a constant value). They should use Python or R functions, such as `replace` or `na.omit`, respectively, to remove empty rows or replace constant values (such as 'M' for missing data) within the important feature columns. From there, they could construct a preliminary model and validate how it performs against the training data. In additional passes, they might choose to score the effectiveness of their trained model against training and testing data sets to see whether their baseline score is improving or regressing.
 
-   c. Some of the data may need a little touching up: columns need to be removed, data types need to be changed. How would these steps be applied in your model?
+   c. Some of the data may need a little touching up: columns need to be removed; data types need to be changed. How would these steps be applied in your model?
 
    Data munging can be best accomplished using R or Python, languages familiar to data scientists and developers. These languages provide powerful data transformation capabilities, and allow for flexibility in how data cleanup occurs, while reducing the overall complexity of ML models. These steps should be performed before featurization. You can use a Spark Pipeline to organize your data transformation steps in order.
 
