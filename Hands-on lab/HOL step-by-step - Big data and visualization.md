@@ -53,7 +53,6 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-  - [Exercise 8: Deploy intelligent web app (Optional Lab)](#exercise-8-deploy-intelligent-web-app-optional-lab)
     - [Task 1: Register for a trial API account at darksky.net](#task-1-register-for-a-trial-api-account-at-darkskynet)
     - [Task 2: Deploy web app from GitHub](#task-2-deploy-web-app-from-github)
     - [Task 3: Manual deployment (optional)](#task-3-manual-deployment-optional)
@@ -763,7 +762,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![The Power BI Save as window displays.](media/image197.png 'Power BI Save as window')
 
-## Exercise 8: Deploy intelligent web app (Optional Lab)
+<!-- ## Exercise 8: Deploy intelligent web app (Optional Lab)
 
 Duration: 20 minutes
 
@@ -892,6 +891,7 @@ To retrieve the 7-day hourly weather forecast, you will use an API from darksky.
     ![In the Application settings section, the two new application settings described above are highlighted.](media/app-service-configuration.png 'Application settings')
 
 You will now be able to successfully navigate the web app.
+ -->
 
 ## After the hands-on lab
 
