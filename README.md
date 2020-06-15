@@ -36,7 +36,7 @@ By the end of the lab, you will be able to show an end-to-end solution, leveragi
 ## Azure services and related products
 
 - Azure Databricks
-- Azure Machine Learning services
+- Azure Machine Learning
 - Azure Data Factory (ADF)
 - Azure Storage
 - Power BI Desktop
