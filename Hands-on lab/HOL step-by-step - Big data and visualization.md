@@ -229,33 +229,29 @@ In this exercise, you will implement a classification experiment. You will load 
 
 ### Task 3: Open Azure Databricks and complete lab notebooks
 
-1. Download the following file:
-
-   - [BigDataVis.dbc](lab-files/BigDataVis.dbc)
-
-2. Within Azure Databricks, select **Workspace** on the menu, then **Users**, select your user, then select the down arrow on the top of your user workspace. Select **Import**.
+1. Within Azure Databricks, select **Workspace** on the menu, then **Users**, then select the down arrow next to your user name. Select **Import**.
 
    ![In the left menu, the Workspace item is selected. Beneath the Workspaces pane, the Users item is selected. Beneath the Users pane, the current user is selected. The menu carat next to the username of the user is expanded with the Import item selected.](media/select-import-in-user-workspace.png 'Import')
 
-3. Within the Import Notebooks dialog, select Import from: file, then drag-and-drop the file or browse to upload it.
+2. Within the Import Notebooks dialog, select Import from: **URL**, then paste the following into the URL textbox: `https://github.com/microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataVis.dbc?raw=true`.
 
    ![The Import Notebooks dialog is shown that will allow the user to import notebooks via a file upload or URL.](media/import-notebooks.png 'Import from file')
 
-4. After importing, expand the new **BigDataVis** folder.
+3. After importing, expand the new **BigDataVis** folder.
 
-5. Before you begin, make sure you attach your cluster to the notebooks, using the dropdown. You will need to do this for each notebook you open. There are 5 notebooks included in the BigDataVis.dbc
+4. Before you begin, make sure you attach your cluster to the notebooks, using the dropdown. You will need to do this for each notebook you open. There are 5 notebooks included in the BigDataVis.dbc
 
    ![In the taskbar for a notebook, the cluster that is currently attached is highlighted.](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
-6. Run each cell of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
+5. Run each cell of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
 
    ![In the Workspace screen, beneath BigDataVis the Exercise 2 folder is selected. Beneath Exercise 2, three notebooks are displayed 01 Data Preparation, 02 Train and Evaluate Models, and 03 Deploy as Web Service.](media/azure-databricks-exercise-2.png 'Exercise 2 folder')
 
-7. Do NOT run the `Clean up` part of Notebook 3 (i.e. this command: `service.delete()`). You will need the URL of your Machine Learning Model exposed later in **Exercise 8: Deploy intelligent web app (Optional Lab)**.
+6. Do NOT run the `Clean up` part of Notebook 3 (i.e. this command: `service.delete()`). You will need the URL of your Machine Learning Model exposed later in **Exercise 8: Deploy intelligent web app (Optional Lab)**.
 
    > **Note**: you could get this URL by updating your Notebook and adding this line `print(service.scoring_uri)`, or by going to your Azure Machine Learning service workspace via the Azure portal and then to the "Deployments" blade.
 
-8. Do NOT run any notebooks within the Exercise 5 or 6 folders. They will be discussed later in the lab.
+7. Do NOT run any notebooks within the Exercise 5 or 6 folders. They will be discussed later in the lab.
 
 ## Exercise 3: Setup Azure Data Factory
 
