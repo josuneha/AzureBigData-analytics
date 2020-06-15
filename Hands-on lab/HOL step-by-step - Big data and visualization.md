@@ -138,9 +138,11 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Cluster Name**: `lab`
 
-   - **Cluster Type**: **Standard**
+   - **Cluster Mode**: **Standard**
 
-   - **Databricks Runtime Version**: **Runtime: 6.3 (Scala 2.11, Spark 2.4.4)** (**Note**: the runtime version may have **LTS** after the version. This is also a valid selection.)
+   - **Pool**: Select **None**
+
+   - **Databricks Runtime Version**: **Runtime: 6.5 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version may have **LTS** after the version. This is also a valid selection.)
 
    - **Enable Autoscaling**: **Uncheck** this option.
 
@@ -152,7 +154,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Workers**: `1`
 
-   - **Spark Config**: Edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
+   - **Spark Config**: Expand Advanced Options and edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
 
      `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
 
