@@ -271,11 +271,9 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 1. To download the latest version of Azure Data Factory Integration Runtime, go to <https://www.microsoft.com/en-us/download/details.aspx?id=39717>.
 
-   ![The Azure Data Factory Integration Runtime Download webpage displays. A language selection list and download button are shown.](media/image112.png 'Azure Data Factory Integration Runtime Download webpage')
-
 2. Select Download, then choose the download you want from the next screen.
 
-   ![Under Choose the download you want, the latest version MSI file is selected.](media/image113.png 'Choose the download you want section')
+   ![Under Choose the download you want, the latest version MSI file is selected.](media/download-ir.png 'Choose the download you want section')
 
 3. Run the installer, once downloaded.
 
@@ -315,15 +313,15 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![In the Azure Data Factory resource screen, Overview is selected from the left menu. The Author & Monitor tile is selected.](media/adf-author-monitor.png 'Author & Monitor')
 
-5. A new page will open in another tab or new window. Within the Azure Data Factory site, select **Author** (the pencil icon) on the menu.
+5. A new page will open in another tab or new window. Within the Azure Data Factory site, select **Manage** on the menu.
 
-   ![In the left menu, the Author icon is selected.](media/adf-home-author-link.png 'Author link on ADF home page')
+   ![In the left menu, the Manage icon is selected.](media/adf-home-manage-link.png 'Manage link on ADF home page')
 
-6. Now, select **Connections** at the bottom of Factory Resources (1), then select the **Integration Runtimes** tab (2), and finally select **+ New** (3).
+6. Now, select **Integration runtimes** in the menu beneath Connections (1), then select **+ New** (2).
 
-   ![The Connections button at the bottom of the page is selected, the Integration Runtimes tab is selected, and the + New button is selected.](media/adf-new-ir.png 'Steps to create a new Integration Runtime connection')
+   ![The Integration runtimes menu item is selected selected, and the + New button is selected.](media/adf-new-ir.png 'Steps to create a new Integration Runtime connection')
 
-7. In the Integration Runtime Setup blade that appears, select "Azure, Self-Hosted", then select **Continue**.
+7. In the Integration Runtime Setup blade that appears, select **Azure, Self-Hosted**, then select **Continue**.
 
    ![In the Integration runtime setup options, select Azure, Self-Hosted. Perform data flows, data movement, and dispatch activities to external compute.The Continue button is selected.](media/adf-ir-setup-1.png 'Integration Runtime Setup step 1')
 
@@ -347,7 +345,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 13. Select **Register**.
 
-14. It will take a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
+14. It can take up to a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
 
 15. The next screen will be New Integration Runtime (Self-hosted) Node. Select Finish.
 
@@ -359,7 +357,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     ![The Microsoft Integration Runtime Configuration Manager indicates the Self-hosted note is connected to the cloud service.](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
-17. You can now return to the Azure Data Factory page, and view the Integration Runtime you just configured.
+17. You can now return to the Azure Data Factory page, and view the Integration Runtime you just configured. You may need to select **Refresh** to view the Running status for the IR.
 
     ![In the Connections tab in Azure Data Factory, the Integration runtimes tab is selected and the integration runtime bigdatagateway-initials is shown in the list.](media/adf-ir-running.png 'Integration Runtime in running state')
 
