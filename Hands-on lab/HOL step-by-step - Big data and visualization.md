@@ -649,7 +649,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
    - In our example, the server address would be:
 
-      <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/7808025395942303/0316-142407-types579>
+      <https://adb-6784833592075405.5.azuredatabricks.net:443/sql/protocolv1/o/6784833592075405/0615-225254-need937>
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
@@ -695,8 +695,6 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![In the Navigator dialog box, in the pane under Display Options, the check box for flight_delays_summary is selected. In the pane, the table of flight delays summary information displays.](media/pbi-desktop-select-table-navigator.png 'Navigator dialog box')
 
-13. It will take several minutes for the data to load into the Power BI Desktop client.
-
 ### Task 3: Create Power BI report
 
 1. Once the data finishes loading, you will see the fields appear on the far side of the Power BI Desktop client window.
@@ -705,7 +703,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 2. From the Visualizations area, next to Fields, select the Globe icon to add a Map visualization to the report design surface.
 
-   ![On the Power BI Desktop Visualizations palette, the globe icon is selected.](media/image187.png 'Power BI Desktop Visualizations palette')
+   ![On the Power BI Desktop Visualizations palette, the globe icon is selected.](media/pbi-vis-map.png 'Power BI Desktop Visualizations palette')
 
 3. With the Map visualization still selected, drag the **OriginLatLong** field to the **Location** field under Visualizations. Then Next, drag the **NumDelays** field to the **Size** field under Visualizations.
 
@@ -719,7 +717,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 6. From the Visualizations area, select the **Stacked Column Chart** icon to add a bar chart visual to the report's design surface.
 
-   ![The stacked column chart icon is selected on the Visualizations palette.](media/image190.png 'Visualizations palette')
+   ![The stacked column chart icon is selected on the Visualizations palette.](media/pbi-vis-stacked.png 'Visualizations palette')
 
 7. With the Stacked Column Chart still selected, drag the **DayofMonth** field and drop it into the **Axis** field located under Visualizations.
 
@@ -735,7 +733,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 11. From the Visualizations area, select the Treemap icon to add this visualization to the report.
 
-    ![On the Visualizations palette, the Treemap icon is selected.](media/image193.png 'Visualizations palette')
+    ![On the Visualizations palette, the Treemap icon is selected.](media/pbi-vis-treemap.png 'Visualizations palette')
 
 12. With the Treemap visualization selected, drag the **OriginAirportCode** field into the **Group** field under Visualizations.
 
