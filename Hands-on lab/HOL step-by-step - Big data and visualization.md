@@ -381,13 +381,13 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
    - **Task name**: `CopyOnPrem2AzurePipeline`
 
-   - **Task description**: (Optional) `This pipeline copies timesliced CSV files from on-premises C:\\Data to Azure Blob Storage as a continuous job.`
+   - **Task description**: (Optional) `This pipeline copies time-sliced CSV files from on-premises C:\\Data to Azure Blob Storage as a continuous job.`
 
    - **Task cadence or Task schedule**: Select **Run regularly on schedule**
 
    - **Trigger type**: **Select Schedule**
 
-   - **Start date time (UTC)**: Accept the default.
+   - **Start date time (UTC)**: Enter **03/01/2018 12:00 AM**
 
    - **Recurrence**: Every `1`, and select **Month(s)**
 
@@ -425,7 +425,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
    ![On the Source data store page, OnPremServer is selected and the Next button is highlighted.](media/adf-copy-data-source-next.png 'Select Next')
 
-9. On the **Choose the input file or folder** screen, select **Browse**, then select the **FlightsAndWeather** folder. Next, select **Load all files** under file loading behavior, check **Copy file recursively**, then select **Next**.
+9. On the **Choose the input file or folder** screen, select **Browse**, then select the **FlightsAndWeather** folder. Next, select **Load all files** under file loading behavior, check **Recursively**, then select **Next**.
 
    ![In the Choose the input file or folder screen, the Browse button and Next button are highlighted. The File or Folder is set to FlightsAndWeather, the File loading behavior is set to Load all files, and the checkbox for Recursively is checked.](media/adf-copy-data-source-choose-input.png 'Choose the input file or folder page')
 
@@ -451,7 +451,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![In the New linked service list, Azure Blob Storage is selected and the Continue button is highlighted.](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
 
-14. On the New Linked Service (Azure Blob Storage) account screen, enter the following and then select **Create**.
+14. On the New Linked Service (Azure Blob Storage) account screen, enter the following, test your connection, and then select **Create**.
 
     - **Name**: `BlobStorageOutput`
 
@@ -487,7 +487,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     ![On the File format settings page, File format is set to Text format and the check box for Add header to file is selected. The Next button is selected.](media/adf-copy-data-file-format-settings.png 'File format settings page')
 
-18. On the **Settings** screen, select **Skip incompatible rows** under Actions. Expand Advanced settings and set Degree of copy parallelism to `10`, then select **Next**.
+18. On the **Settings** screen, select **Skip incompatible rows** under Fault tolerance, and uncheck **Enable logging**. Expand Advanced settings and set Degree of copy parallelism to `10`, then select **Next**.
 
     ![In the Fault tolerance drop down Skip incompatible rows is selected and the Degree of copy parallelism is set to 10. The Next button is selected.](media/adf-copy-data-settings.png 'Settings page')
 
@@ -509,7 +509,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 22. After saving the Copy settings, select **Next** on the Summary tab.
 
-23. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. Select **Edit Pipeline** to close out of the wizard.
+23. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. Select **Edit Pipeline** to close out of the wizard and navigate to the pipeline editing blade.
 
     ![The Deployment screen indicates the deployment is complete.](media/adf-copy-data-deployment.png 'Deployment page')
 
