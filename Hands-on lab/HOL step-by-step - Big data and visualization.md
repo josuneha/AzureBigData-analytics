@@ -607,7 +607,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 ## Exercise 6: Summarize data using Azure Databricks
 
-Duration: 20 minutes
+Duration: 10 minutes
 
 In this exercise, you will prepare a summary of flight delay data using Spark SQL.
 
