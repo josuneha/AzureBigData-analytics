@@ -419,7 +419,7 @@ Timeframe: 15 minutes
 | Azure Databricks                |                    <https://docs.microsoft.com/en-us/azure/azure-databricks//>                     |
 | Power BI                        |       <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>       |
 | Travel data                     |                           <https://www.transtats.bts.gov/homepage.asp/>                            |
-| Weather data                    |                                  <https://darksky.net/dev/docs/>                                   |
+| Weather data                    |                                  <https://openweathermap.org/api/one-call-api>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
 | Azure AD Conditional Access     |              <https://docs.microsoft.com/azure/active-directory/conditional-access/>               |
 
@@ -505,7 +505,7 @@ _Data preparation_
 
 3. How would you suggest MT integrate weather forecast data?
 
-   They could retrieve the weather forecast data from a third-party service that provides a REST API. An example of such a service is [darksky.net](https://darksky.net).
+   They could retrieve the weather forecast data from a third-party service that provides a REST API. An example of such a service is [OpenWeather](https://openweathermap.org/).
 
    ![The Historical Data Preparation flowchart begins with both Flight Delay Data flat files, and Historical Airport Weather Data flat files. Arrows point from the flat files to Blob Storage.](media/historical-data-preparation.png 'Historical Data Preparation flowchart')
 

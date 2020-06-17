@@ -879,7 +879,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
     - **mlUrl**: Enter the Machine Learning URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
   
-    - **weatherApiKey**: Enter the Dark Sky API key.
+    - **weatherApiKey**: Enter the OpenWeather API key.
 
     ![In the Application settings section, the two new application settings described above are highlighted.](media/app-service-configuration.png 'Application settings')
 

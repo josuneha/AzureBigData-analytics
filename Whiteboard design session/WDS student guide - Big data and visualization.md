@@ -294,6 +294,6 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Databricks                |                    <https://docs.microsoft.com/en-us/azure/azure-databricks//>                     |
 | Power BI                        |       <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>       |
 | Travel data                     |                           <https://www.transtats.bts.gov/homepage.asp/>                            |
-| Weather data                    |                                  <https://darksky.net/dev/docs/>                                   |
+| Weather data                    |                                  <https://openweathermap.org/api/one-call-api>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
 | Azure AD Conditional Access     |              <https://docs.microsoft.com/azure/active-directory/conditional-access/>               |
