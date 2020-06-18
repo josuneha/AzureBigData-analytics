@@ -286,6 +286,8 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 8. We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
 
+9. We are hiring a data scientist who prefers to use MLflow to track model training run metrics and artifacts. Can the proposed Azure-based solution support this library?
+
 ### Infographic for common scenarios
 
 ![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
@@ -351,6 +353,8 @@ _Operationalizing machine learning_
 
 2. MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
+3. MT wants a cost-effective data store to serve the results from the batch scoring process. The reporting and visualization service should use this data store as opposed to connecting to costly compute clusters. Which data store do you propose, and how will the compute environment that performs batch scoring securely connect to this serving layer without exposing connection strings or other secrets?
+
 _Visualization and reporting_
 
 1. Is Power BI an option for MT to use in visualizing the flight delays?
@@ -362,6 +366,8 @@ _Visualization and reporting_
    b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
 
    c. How could they secure access to these reports to only their internal customer service agents?
+
+3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to monitor for problems such as performance bottlenecks? How can they easily access the logs from a single location?
 
 **Prepare**
 
@@ -559,6 +565,8 @@ _Operationalizing machine learning_
 
    The notebook that is executed also writes the summarized flight delay predictions to an Azure SQL Database. This data will be used by Power BI to display the predictions in a series of reports and dashboards.
 
+3. MT wants a cost-effective data store to serve the results from the batch scoring process. The reporting and visualization service should use this data store as opposed to connecting to costly compute clusters. Which data store do you propose, and how will the compute environment that performs batch scoring securely connect to this serving layer without exposing connection strings or other secrets?
+
 _Visualization and reporting_
 
 1. Is Power BI an option for MT to use in visualizing the flight delays?
@@ -582,6 +590,8 @@ _Visualization and reporting_
    By utilizing the Power BI service, they can create a Content Pack that contains only the desired Dashboards, Reports, and Datasets and restrict access to those Groups in Azure Active Directory to which the customer service agents belong.
 
    ![In the Visualizing Bulk Delay Predictions diagram, Flight Delays Web Portal has an arrow labeled "1. Load Power BI embedded report," pointing to a Power BI icon labeled Visualize Delay Predictions on a Map. An arrow labeled "2. Report uses Power BI Direct Query against source and caches it," points from the Power BI icon to an Azure SQL Database icon.](media/visualizing-bulk-delay-predictions.png 'Visualizing Bulk Delay Predictions diagram')
+
+3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to monitor for problems such as performance bottlenecks? How can they easily access the logs from a single location?
 
 ## Checklist of preferred objection handling
 
@@ -636,6 +646,8 @@ _Visualization and reporting_
    Another differentiator between the two storage services is that Blob Storage uses a flat storage schema with path names as part of the bob file names. This makes the WASB driver Spark uses to connect to Blob Storage for HDFS access do extra work to map file structures to blob paths. This can lead to degraded performance in cases of high volume and many small files. In contrast, ADLS Gen2 has hierarchical storage that provides granular POSIX permissions and Access Control Lists (ACLs). This provides greater flexibility in controlling access to files, and Spark uses the newer ABFS driver which can provide higher performance. However, MT's requirements do not include fine-grained permissions and hierarchical storage, and the size and velocity of their data will mean that they would likely never notice a significant performance difference between the two options.
 
    Given their requirements and comparison of services, Blob Storage is recommended as it meets MT's requirements, and is a more cost-effective solution.
+
+9. We are hiring a data scientist who prefers to use MLflow to track model training run metrics and artifacts. Can the proposed Azure-based solution support this library?
 
 ## Customer quote (to be read back to the attendees at the end)
 
