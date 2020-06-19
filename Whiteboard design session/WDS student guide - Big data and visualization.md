@@ -161,6 +161,8 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 8. We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
 
+9. We are hiring a data scientist who prefers to use MLflow to track model training run metrics and artifacts. Can the proposed Azure-based solution support this library?
+
 ### Infographic for common scenarios
 
 ![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
@@ -226,6 +228,8 @@ _Operationalizing machine learning_
 
 2. MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
+3. MT wants a cost-effective data store to serve the results from the batch scoring process. The reporting and visualization service should use this data store as opposed to connecting to costly compute clusters. Which data store do you propose, and how will the compute environment that performs batch scoring securely connect to this serving layer without exposing connection strings or other secrets?
+
 _Visualization and reporting_
 
 1. Is Power BI an option for MT to use in visualizing the flight delays?
@@ -237,6 +241,8 @@ _Visualization and reporting_
    b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
 
    c. How could they secure access to these reports to only their internal customer service agents?
+
+3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to monitor for problems such as performance bottlenecks? How can they easily access the logs from a single location?
 
 **Prepare**
 
@@ -280,7 +286,7 @@ Directions
 
 Timeframe: 15 minutes
 
-Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
+- Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
 
 ## Additional references
 
@@ -297,3 +303,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Weather data                    |                                  <https://openweathermap.org/api/one-call-api>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
 | Azure AD Conditional Access     |              <https://docs.microsoft.com/azure/active-directory/conditional-access/>               |
+| Azure SQL Database | <https://docs.microsoft.com/azure/azure-sql/database/sql-database-paas-overview> |
+| Write to Azure SQL Database from a DataFrame | <https://docs.microsoft.com/azure/databricks/data/data-sources/sql-databases#write-data-to-jdbc> |
+| Azure Key Vault | <https://docs.microsoft.com/azure/key-vault/key-vault-overview> |
+| Azure Monitor | <https://docs.microsoft.com/azure/azure-monitor/overview> |
