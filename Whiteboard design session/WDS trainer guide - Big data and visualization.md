@@ -577,6 +577,8 @@ _Operationalizing machine learning_
 
    Azure Databricks has two types of secret scopes: Key Vault-backed and Databricks-backed. These secret scopes allow you to store secrets, such as database connection strings, securely. If someone tries to output a secret to a notebook, it is replaced by `[REDACTED]`. This helps prevent someone from viewing the secret or accidentally leaking it when displaying or sharing the notebook.
 
+   ![An Azure Databricks notebook uses a JDBC connection that is securely stored in Azure Key Vault to connect to an Azure SQL Database and write bulk prediction data for reporting and visualization.](media/databricks-to-sql-database.png "Databricks to Sql Database")
+
 _Visualization and reporting_
 
 1. Is Power BI an option for MT to use in visualizing the flight delays?
