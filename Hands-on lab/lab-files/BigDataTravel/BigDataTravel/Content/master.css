@@ -1037,3 +1037,7 @@ input:-webkit-autofill {
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
+
+#MainContent_PanelPredictInputs, #MainContent_PanelPredictResults {
+    padding: 15px;
+}

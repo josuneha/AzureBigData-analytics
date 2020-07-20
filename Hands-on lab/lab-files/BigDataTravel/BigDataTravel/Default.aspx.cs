@@ -10,21 +10,18 @@ using System.Collections.Specialized;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
-using DarkSky.Services;
 using System.Runtime.Serialization;
-using DarkSky.Models;
 using NodaTime;
+using Unidevel.OpenWeather;
 
 namespace BigDataTravel
 {
     public partial class _Default : Page
     {
-        private const string BASE_WEATHER_URI = "http://api.wunderground.com/api/{0}/hourly10day/q/{1}.json";
-
         private List<Airport> aiports = null;
         private ForecastResult forecast = null;
         private DelayPrediction prediction = null;
-        private static DarkSkyService darkSky;
+        private static IOpenWeatherClient openWeatherClient;
 
         // settings
         private string mlUrl;
@@ -39,7 +36,7 @@ namespace BigDataTravel
             {
                 txtDepartureDate.Text = DateTime.Now.AddDays(5).ToShortDateString();
 
-                darkSky = new DarkSkyService(weatherApiKey);
+                openWeatherClient = new OpenWeatherClient(apiKey: weatherApiKey);
 
                 ddlOriginAirportCode.DataSource = aiports;
                 ddlOriginAirportCode.DataTextField = "AirportCode";
@@ -150,29 +147,25 @@ namespace BigDataTravel
 
             try
             {
-                var weatherPrediction = await darkSky.GetForecast(departureQuery.OriginAirportLat,
-                    departureQuery.OriginAirportLong, new OptionalParameters
-                    {
-                        ExtendHourly = true,
-                        DataBlocksToExclude = new List<ExclusionBlocks> { ExclusionBlocks.Flags,
-                        ExclusionBlocks.Alerts, ExclusionBlocks.Minutely }
-                    });
-                if (weatherPrediction.Response.Hourly.Data != null && weatherPrediction.Response.Hourly.Data.Count > 0)
+                var weatherPrediction = await openWeatherClient.GetWeatherForecast5d3hAsync(
+                    (float)departureQuery.OriginAirportLong,
+                    (float)departureQuery.OriginAirportLat);
+                if (weatherPrediction != null && weatherPrediction.List.Any())
                 {
-                    var timeZone = DateTimeZoneProviders.Tzdb[weatherPrediction.Response.TimeZone];
-                    var zonedDepartureDate = LocalDateTime.FromDateTime(departureDate)
-                        .InZoneLeniently(timeZone);
-
-                    forecast = (from f in weatherPrediction.Response.Hourly.Data
-                                where f.DateTime == zonedDepartureDate.ToDateTimeOffset()
-                                select new ForecastResult()
-                                {
-                                    WindSpeed = f.WindSpeed ?? 0,
-                                    Precipitation = f.PrecipIntensity ?? 0,
-                                    Pressure = f.Pressure ?? 0,
-                                    ForecastIconUrl = GetImagePathFromIcon(f.Icon),
-                                    Condition = f.Summary
-                                }).FirstOrDefault();
+                    // Extract the dates from the prediction, then find the closest matching date and time based on the departure date.
+                    var dates = weatherPrediction.List.Select(x => x.DateTimeUtc).ToList();
+                    var nearestDiff = dates.Min(date => Math.Abs((date - departureDate).Ticks));
+                    var nearestDate = dates.First(date => Math.Abs((date - departureDate).Ticks) == nearestDiff);
+                    forecast = (from f in weatherPrediction.List
+                        where f.DateTimeUtc == nearestDate
+                        select new ForecastResult()
+                        {
+                            WindSpeed = f.Wind?.SpeedKmph ?? 0,
+                            Precipitation = f.Rain?.OneHourMm ?? 0,
+                            Pressure = f.Main?.PressurehPa ?? 0,
+                            ForecastIconUrl = GetImagePathFromIcon(f.Weather[0].Icon),
+                            Condition = f.Weather[0].Description
+                        }).FirstOrDefault();
                 }
 
             }
@@ -194,6 +187,16 @@ namespace BigDataTravel
             var memInfo = enumType.GetMember(value.ToString());
             var attr = memInfo.FirstOrDefault()?.GetCustomAttributes(false).OfType<EnumMemberAttribute>().FirstOrDefault();
             return attr != null ? Page.ResolveUrl($"~/images/{attr.Value}.svg") : defaultIconPath;
+        }
+
+        private string GetImagePathFromIcon(string value)
+        {
+            var defaultIconPath = "http://openweathermap.org/img/wn/02d@2x.png";
+            if (string.IsNullOrEmpty(value))
+            {
+                return defaultIconPath;
+            }
+            return $"http://openweathermap.org/img/wn/{value}@2x.png";
         }
 
         private async Task PredictDelays(DepartureQuery query, ForecastResult forecast)

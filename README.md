@@ -4,7 +4,7 @@ Margie's Travel (MT) provides concierge services for business travelers. In an i
 
 They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
 
-March 2020
+June 2020
 
 ## Target audience
 
@@ -36,7 +36,7 @@ By the end of the lab, you will be able to show an end-to-end solution, leveragi
 ## Azure services and related products
 
 - Azure Databricks
-- Azure Machine Learning services
+- Azure Machine Learning
 - Azure Data Factory (ADF)
 - Azure Storage
 - Power BI Desktop

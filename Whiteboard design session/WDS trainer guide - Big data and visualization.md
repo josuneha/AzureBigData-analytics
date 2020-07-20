@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-March 2020
+June 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -286,6 +286,8 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 8. We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
 
+9. We are hiring a data scientist who prefers to use MLflow to track model training run metrics and artifacts. Can the proposed Azure-based solution support this library?
+
 ### Infographic for common scenarios
 
 ![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
@@ -351,6 +353,8 @@ _Operationalizing machine learning_
 
 2. MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
+3. MT wants a cost-effective data store to serve the results from the batch scoring process. The reporting and visualization service should use this data store as opposed to connecting to costly compute clusters. Which data store do you propose, and how will the compute environment that performs batch scoring securely connect to this serving layer without exposing connection strings or other secrets?
+
 _Visualization and reporting_
 
 1. Is Power BI an option for MT to use in visualizing the flight delays?
@@ -362,6 +366,8 @@ _Visualization and reporting_
    b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
 
    c. How could they secure access to these reports to only their internal customer service agents?
+
+3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to monitor for problems such as performance bottlenecks? How can they easily access the logs from a single location?
 
 **Prepare**
 
@@ -419,9 +425,13 @@ Timeframe: 15 minutes
 | Azure Databricks                |                    <https://docs.microsoft.com/en-us/azure/azure-databricks//>                     |
 | Power BI                        |       <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>       |
 | Travel data                     |                           <https://www.transtats.bts.gov/homepage.asp/>                            |
-| Weather data                    |                                  <https://darksky.net/dev/docs/>                                   |
+| Weather data                    |                                  <https://openweathermap.org/api/one-call-api>                                   |
 | ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
 | Azure AD Conditional Access     |              <https://docs.microsoft.com/azure/active-directory/conditional-access/>               |
+| Azure SQL Database | <https://docs.microsoft.com/azure/azure-sql/database/sql-database-paas-overview> |
+| Write to Azure SQL Database from a DataFrame | <https://docs.microsoft.com/azure/databricks/data/data-sources/sql-databases#write-data-to-jdbc> |
+| Azure Key Vault | <https://docs.microsoft.com/azure/key-vault/key-vault-overview> |
+| Azure Monitor | <https://docs.microsoft.com/azure/azure-monitor/overview> |
 
 # Big data and visualization whiteboard design session trainer guide
 
@@ -477,7 +487,7 @@ _High-level architecture_
 
 1. Without getting into the details (the following sections will address the details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
 
-   After speaking with its supportive team at Microsoft, MT decided that Azure would in fact be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using Spark SQL on Azure Databricks; train a model within Azure Databricks; export the model, save it to Azure Machine Learning service model registry and deploy it as a containerized web service in Azure Kubernetes Service; and visualize the result using a map visualization in Power BI.
+   After speaking with its supportive team at Microsoft, MT decided that Azure would in fact be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using Spark SQL on Azure Databricks; train a model within Azure Databricks; export the model, save it to Azure Machine Learning service model registry and deploy it as a containerized web service in Azure Kubernetes Service; and visualize the result using a map visualization in Power BI. Batch-scored predictions are stored in Azure SQL Database, which operates as the serving layer for Power BI reports. Azure Key Vault is used as a secret store to centrally manage and securely provide access to secrets, such as connection strings and application keys, to Azure Databricks notebooks and other services, such as Azure Data Factory and the Web App. Azure Monitor provides centralized monitoring and logging of all Azure components of the solution.
 
    ![The high-level overview diagram of the end-to-end solution is displayed. Flight delay data and historical airport weather data are provided to Azure Data Factory. Azure Data Factory provides this data to both blob storage and Azure Databricks. Azure Databricks scores the data and saves the results to an Azure SQL Database. Azure Databricks also creates, trains, and exports a machine learning model to the Azure Machine Learning Service. Azure Machine Learning service provides a containerized services that is consumed by the web portal. The web portal also consumes 3rd party API data for forecasted weather. Map data visualization is provided by Power BI using web portal information and the Azure SQL database.](media/high-level-overview.png 'High-level overview diagram')
 
@@ -505,7 +515,7 @@ _Data preparation_
 
 3. How would you suggest MT integrate weather forecast data?
 
-   They could retrieve the weather forecast data from a third-party service that provides a REST API. An example of such a service is [darksky.net](https://darksky.net).
+   They could retrieve the weather forecast data from a third-party service that provides a REST API. An example of such a service is [OpenWeather](https://openweathermap.org/).
 
    ![The Historical Data Preparation flowchart begins with both Flight Delay Data flat files, and Historical Airport Weather Data flat files. Arrows point from the flat files to Blob Storage.](media/historical-data-preparation.png 'Historical Data Preparation flowchart')
 
@@ -513,7 +523,7 @@ _Machine learning modeling_
 
 1. What technology would you recommend that MT use for implementing their machine learning model?
 
-   The model will first be built and trained within an Azure Databricks notebook. The data scientists can use the programming language of their choice (Python, Scala, R, etc.) as well as Spark SQL to featurize and fit the data into the chosen machine learning algorithm. Machine learning libraries such as Spark MLlib or SciKit-Learn can be used within the notebook to simplify things. Once the model is trained and tested with a sufficient amount of historical data, then the model can be exported for deployment to a web service. The model can also continue to be used within Azure Databricks for batch scoring.
+   The model will first be built and trained within an Azure Databricks notebook. The data scientists can use the programming language of their choice (Python, Scala, R, etc.) as well as Spark SQL to feature and fit the data into the chosen machine learning algorithm. Machine learning libraries such as Spark MLlib or SciKit-Learn can be used within the notebook to simplify things. Once the model is trained and tested with a sufficient amount of historical data, then the model can be exported for deployment to a web service. The model can also continue to be used within Azure Databricks for batch scoring.
 
 2. How would you guide MT to load data, so it can be processed by the machine learning model?
 
@@ -555,9 +565,19 @@ _Operationalizing machine learning_
 
 2. MT has shown interest in not only scoring a flight at a time (based on a customer's request), but also doing scoring in large chunks so that they could show summaries of predicted flight delays across the United States. What changes would you need to make to your ML model to support this?
 
-   The model should be created in such a way that data is prepared and featurized in a consistent way each time it is executed. This way, it can be used equally well for both interactive and batch scoring. The model should be provided within an Azure Databricks notebook that accepts input parameters that point to the file location of the data that needs to be batch processed. This can be implemented via Azure Data Factory (v2) by adding a Linked Service to Azure Databricks and configuring the path and parameters to send to the notebook. By using ADF, they can apply the operational model to data as it is moved to the proper location in Azure storage. The scored results will be available in Blob storage after processing, and with the scheduled pipeline new data will be processed automatically, on the schedule indicated by the pipeline.
+   The model should be created in such a way that data is prepared and featured in a consistent way each time it is executed. This way, it can be used equally well for both interactive and batch scoring. The model should be provided within an Azure Databricks notebook that accepts input parameters that point to the file location of the data that needs to be batch processed. This can be implemented via Azure Data Factory (v2) by adding a Linked Service to Azure Databricks and configuring the path and parameters to send to the notebook. By using ADF, they can apply the operational model to data as it is moved to the proper location in Azure storage. The scored results will be available in Blob storage after processing, and with the scheduled pipeline new data will be processed automatically, on the schedule indicated by the pipeline.
 
    The notebook that is executed also writes the summarized flight delay predictions to an Azure SQL Database. This data will be used by Power BI to display the predictions in a series of reports and dashboards.
+
+3. MT wants a cost-effective data store to serve the results from the batch scoring process. The reporting and visualization service should use this data store as opposed to connecting to costly compute clusters. Which data store do you propose, and how will the compute environment that performs batch scoring securely connect to this serving layer without exposing connection strings or other secrets?
+
+   The data can be stored in Azure SQL Database, which is a platform-as-a-service (PaaS) offering that minimizes operational overhead and provides a cost-effective way to store and serve the data for reporting and visualization. MT can create a JDBC connection to the Azure SQL Database within an Azure Databricks notebook and [write data from a DataFrame](https://docs.microsoft.com/azure/databricks/data/data-sources/sql-databases#write-data-to-jdbc), using the JDBC connection. They would use the `SaveMode.Append` write mode to append data to an existing SQL table, rather than overwriting the table each time.
+
+   To securely store the JDBC connection with SQL account details and other secrets, use Azure Key Vault, in addition to Key Vault-backed secret scopes within Azure Databricks. Azure Key Vault provides a service that allows you to securely centralize application secrets. The benefit of it being a centralized store of secrets, is that you only need to define those secrets, like connection strings or account keys, in one place which can be accessed by several Azure services as well as custom applications.
+
+   Azure Databricks has two types of secret scopes: Key Vault-backed and Databricks-backed. These secret scopes allow you to store secrets, such as database connection strings, securely. If someone tries to output a secret to a notebook, it is replaced by `[REDACTED]`. This helps prevent someone from viewing the secret or accidentally leaking it when displaying or sharing the notebook.
+
+   ![An Azure Databricks notebook uses a JDBC connection that is securely stored in Azure Key Vault to connect to an Azure SQL Database and write bulk prediction data for reporting and visualization.](media/databricks-to-sql-database.png "Databricks to Sql Database")
 
 _Visualization and reporting_
 
@@ -582,6 +602,29 @@ _Visualization and reporting_
    By utilizing the Power BI service, they can create a Content Pack that contains only the desired Dashboards, Reports, and Datasets and restrict access to those Groups in Azure Active Directory to which the customer service agents belong.
 
    ![In the Visualizing Bulk Delay Predictions diagram, Flight Delays Web Portal has an arrow labeled "1. Load Power BI embedded report," pointing to a Power BI icon labeled Visualize Delay Predictions on a Map. An arrow labeled "2. Report uses Power BI Direct Query against source and caches it," points from the Power BI icon to an Azure SQL Database icon.](media/visualizing-bulk-delay-predictions.png 'Visualizing Bulk Delay Predictions diagram')
+
+3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to monitor for problems such as performance bottlenecks? How can they easily access the logs from a single location?
+
+   MT should use Azure Monitor to collect, analyze, and act on telemetry from [Azure Data Factory](https://docs.microsoft.com/azure/data-factory/monitor-using-azure-monitor), [Azure Databricks](https://docs.microsoft.com/azure/architecture/databricks-monitoring/), [Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/monitor-azure-machine-learning), and [AKS](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview). Configuring these services to send application logs and other telemetry to Azure Monitor enables MT's operators to monitor the end-to-end data pipeline, including model training and deployments, from a central location.
+
+   - Azure Data Factory:
+     - At a glance summary of data factory pipeline, activity and trigger runs
+     - Ability to drill into data factory activity runs by type
+     - Summary of data factory top pipeline, activity errors
+   - Azure Databricks:
+     - View application logs and metrics stored in a Log Analytics workspace
+     - Deploy Grafana in a VM to visualize time series metrics stored in Log Analytics
+     - Find and troubleshoot performance bottlenecks
+   - Azure Machine Learning:
+     - Capture and query service metrics
+     - Monitor and create alerts for model deployment failures
+     - Keep track of quota utilization
+     - Discover unusable nodes
+   - Azure Monitor for containers (AKS/ACI monitoring):
+     - Collect and view performance data (memory and processor metrics) to identify resource bottlenecks
+     - Understand the behavior of the cluster under average and heaviest loads
+
+   Azure Machine Learning provides additional monitoring capabilities for data scientists and data engineers to view model training run history, model versions, model accuracy, run details, and information to detect data drift.
 
 ## Checklist of preferred objection handling
 
@@ -637,8 +680,14 @@ _Visualization and reporting_
 
    Given their requirements and comparison of services, Blob Storage is recommended as it meets MT's requirements, and is a more cost-effective solution.
 
+9. We are hiring a data scientist who prefers to use MLflow to track model training run metrics and artifacts. Can the proposed Azure-based solution support this library?
+
+   Yes, it is possible to [track model metrics and deploy ML models](https://docs.microsoft.com/azure/machine-learning/how-to-use-mlflow) with both MLflow and Azure Machine Learning. MLflow is an open source project that is widely used by data scientists and developers to instrument their machine learning code to track metrics and artifacts. Since MLflow keeps training code cloud-agnostic, the data scientist can continue to use MLflow while integrating with Azure Machine Learning to securely manage and track runs and artifacts.
+
+   The integration between MLflow and Azure Machine Learning is simple to use. The data scientist can take their existing code, instrumented using MLflow, and submit it as a training run to Azure Machine Learning. When they submit the training run, the Azure Machine Learning plug-in for MLflow recognizes they're within a managed training run and connects MLflow tracking to their Azure Machine Learning Workspace. Once the training run has completed, they can view the metrics and artifacts from the run within the Azure Portal. The run history allows them to query the experimentation later on to compare the models and find the best ones. Once the best model has been identified, it can be deployed to an AKS cluster from within the same environment, using MLflow.
+
 ## Customer quote (to be read back to the attendees at the end)
 
-_"We are flying into the future with Azure, helping our customers more aggressively schedule their travel and optimize their non-travel time."_
+"We are flying into the future with Azure, helping our customers more aggressively schedule their travel and optimize their non-travel time."
 
 Jack Tradewinds, CIO of Margie's Travel
