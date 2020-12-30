@@ -146,7 +146,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Pool**: Select **None**
 
-   - **Databricks Runtime Version**: **Runtime: 6.5 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
+   - **Databricks Runtime Version**: **Runtime: 6.4 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
 
    - **Enable Autoscaling**: **Uncheck** this option.
 
@@ -487,11 +487,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
       ![On the Choose the output file or folder form, fields are set to the previously defined values.](media/adf-copy-data-output-file-folder.png 'Choose the output file or folder page')
 
-17. On the File format settings screen, select the **Text format** file format, and check the **Add header to file** checkbox, then select **Next**.
+17. On the File format settings screen, select the **Text format** file format, and check the **Add header to file** checkbox, then select **Next**. If present, leave **Max rows per file** and **File name prefix** at their defaults.
 
     ![On the File format settings page, File format is set to Text format and the check box for Add header to file is selected. The Next button is selected.](media/adf-copy-data-file-format-settings.png 'File format settings page')
 
-18. On the **Settings** screen, select **Skip incompatible rows** under Fault tolerance, and uncheck **Enable logging**. Expand Advanced settings and set Degree of copy parallelism to `10`, then select **Next**.
+18. On the **Settings** screen, select **Skip incompatible rows** under Fault tolerance, and uncheck **Enable logging**. If present, keep **Data concistency verification** unchecked. Expand Advanced settings and set Degree of copy parallelism to `10`, then select **Next**.
 
     ![In the Fault tolerance drop down Skip incompatible rows is selected and the Degree of copy parallelism is set to 10. The Next button is selected.](media/adf-copy-data-settings.png 'Settings page')
 

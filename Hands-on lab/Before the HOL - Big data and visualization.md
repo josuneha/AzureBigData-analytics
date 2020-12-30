@@ -34,6 +34,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 3: Create storage container](#task-3-create-storage-container)
     - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
     - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
+    - [Task 6: (Optional) Provision a VM to install the Integration Runtime On](#task-6-(optional)-provision-a-vm-to-install-the-integration-runtime-on)
 
 <!-- /TOC -->
 
@@ -162,7 +163,11 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
    The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
 
-   ![The Azure Data Factory creation form is populated with the values as outlined above.](media/azure-data-factory-create-blade.png)
+   ![The Azure Data Factory creation form is populated with the values as outlined above.](media/azure-data-factory-create-blade-updated.PNG)
+
+      >**Note:** To disable Git, you may need to navigate to the **Git configuration** blade and select **Configure Git later**.
+
+      ![The Azure Data Factory Git configuration may need to be opened to disable Git.](media/azure-data-factory-configure-git-later.PNG)
 
 4. Select **Create** to finish and submit.
 
@@ -172,4 +177,59 @@ Power BI desktop is required to make a connection to your Azure Databricks envir
 
 1. Download and install [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
+### Task 6: (Optional) Provision a VM to install the Integration Runtime On
+
+An integration runtime agent for Azure Data Factory will need to be installed on your hardware for the hands-on lab. Since you will need to provide your user credentials, we suggest you provision an Azure VM to act as your "on-premises" hardware.
+
+1. Select **Windows Server 2016 Datacenter** from Azure Marketplace.
+
+   ![Selecting the Windows Server 2016 Datacenter VM image from Azure Marketplace.](media/windows-server-2016-for-ir.png)
+
+2. On the **Create a virtual machine** page, specify the following parameters:
+
+   - **Subscription**: Provide the subscription you have been using for this lab.
+
+   - **Resource group**: Provide your resource group.
+
+   - **Virtual machine name**: Provide something descriptive.
+
+   - **Region**: Provide the same location as your ADF instance.
+
+   - **Availability options**: No infrastructure redundancy required
+
+   - **Image**: Windows Server 2016 Datacenter - Gen1
+
+   - **Azure Spot instance**: Unselected
+
+   - **Size**: Standard_D2s_v3
+
+   - **Username**: demouser
+
+   - **Password/Confirm password**: Password.1!!
+
+   - **Public inbound ports**: Allow selected ports
+
+   - **Select inbound ports**: RDP (3389)
+
+   - **Would you like to use an existing Windows Server license?** No
+
+   ![Setting the configuration details for the Windows Server 2016 integration runtime virtual machine.](media/ir-vm-config.PNG)
+
+3. Navigate to your VM in your resource group. Select **Connect** from the upper left-hand corner of the page. Then, select **RDP**. Finally, select **Download RDP File**.
+
+   ![Download the RDP connection file for the virtual machine from Azure portal.](media/rdp-into-ir-vm.PNG)
+
+4. Open the RDP file. Enter the username and password you configured earlier. Disregard any certificate issues that RDP presents. 
+
+   ![Entering virtual machine credentials to access it.](media/vm-rdp-credentials.PNG)
+
+5. When you access the VM, **Server Manager** should open automatically. If not, open it manually using the search bar. Then, locate **Local Server**.
+
+   ![Accessing the Local Server tab within Server Manager.](media/local-server-server-manager.PNG)
+
+6. Select **IE Enhanced Security Configuration**. Then, disable this feature for Administrators.
+
+   ![Disabling IE Enhanced Security Configuration for administrative users to permit access to online resources.](media/disabled-ie-enhanced-security.PNG)
+
 You should follow all these steps provided _before_ attending the Hands-on lab.
+
