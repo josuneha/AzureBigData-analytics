@@ -269,11 +269,15 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 2. Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>.
 
+   >**Note**: If you are using the optional VM provisioned in the Before the HOL document, ensure that you download and extract the data on the VM.
+
 3. Extract it to a new folder called **C:\\Data**.
 
 ### Task 2: Install and configure Azure Data Factory Integration Runtime on your machine
 
 1. To download the latest version of Azure Data Factory Integration Runtime, go to <https://www.microsoft.com/en-us/download/details.aspx?id=39717>.
+
+   >**Note**: If you are using the optional VM provisioned in the Before the HOL document, ensure that you install the IR on the VM.
 
 2. Select Download, then choose the download you want from the next screen.
 
