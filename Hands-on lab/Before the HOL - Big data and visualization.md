@@ -34,7 +34,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 3: Create storage container](#task-3-create-storage-container)
     - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
     - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
-    - [Task 6: (Optional) Provision a VM to install the Integration Runtime On](#task-6-(optional)-provision-a-vm-to-install-the-integration-runtime-on)
+    - [Task 6: (Optional) Provision a VM to install the Integration Runtime On](#task-6-optional-provision-a-vm-to-install-the-integration-runtime-on)
 
 <!-- /TOC -->
 
