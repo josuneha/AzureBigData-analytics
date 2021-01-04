@@ -892,10 +892,10 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 You will now be able to successfully navigate the web app.
 
    > **Note**: If you receive an error concerning the Roslyn compiler, open the NuGet package manager interface (**Tools --> NuGet Package Manager --> Package Manager Console**) and run the command below to update the package. Then, publish the application again.
-
-   ```PowerShell
-   Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
-   ```
+   >
+   > ```PowerShell
+   > Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+   > ```
 
 ## After the hands-on lab
 
