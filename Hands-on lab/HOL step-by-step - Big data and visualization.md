@@ -146,7 +146,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Pool**: Select **None**
 
-   - **Databricks Runtime Version**: **Runtime: 6.5 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
+   - **Databricks Runtime Version**: **Runtime: 6.4 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
 
    - **Enable Autoscaling**: **Uncheck** this option.
 
@@ -269,11 +269,15 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
 2. Download the AdventureWorks sample data from <http://bit.ly/2zi4Sqa>.
 
+   >**Note**: If you are using the optional VM provisioned in the Before the HOL document, ensure that you download and extract the data on the VM.
+
 3. Extract it to a new folder called **C:\\Data**.
 
 ### Task 2: Install and configure Azure Data Factory Integration Runtime on your machine
 
 1. To download the latest version of Azure Data Factory Integration Runtime, go to <https://www.microsoft.com/en-us/download/details.aspx?id=39717>.
+
+   >**Note**: If you are using the optional VM provisioned in the Before the HOL document, ensure that you install the IR on the VM.
 
 2. Select Download, then choose the download you want from the next screen.
 
@@ -487,11 +491,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
       ![On the Choose the output file or folder form, fields are set to the previously defined values.](media/adf-copy-data-output-file-folder.png 'Choose the output file or folder page')
 
-17. On the File format settings screen, select the **Text format** file format, and check the **Add header to file** checkbox, then select **Next**.
+17. On the File format settings screen, select the **Text format** file format, and check the **Add header to file** checkbox, then select **Next**. If present, leave **Max rows per file** and **File name prefix** at their defaults.
 
     ![On the File format settings page, File format is set to Text format and the check box for Add header to file is selected. The Next button is selected.](media/adf-copy-data-file-format-settings.png 'File format settings page')
 
-18. On the **Settings** screen, select **Skip incompatible rows** under Fault tolerance, and uncheck **Enable logging**. Expand Advanced settings and set Degree of copy parallelism to `10`, then select **Next**.
+18. On the **Settings** screen, select **Skip incompatible rows** under Fault tolerance, and uncheck **Enable logging**. If present, keep **Data concistency verification** unchecked. Expand Advanced settings and set Degree of copy parallelism to `10`, then select **Next**.
 
     ![In the Fault tolerance drop down Skip incompatible rows is selected and the Degree of copy parallelism is set to 10. The Next button is selected.](media/adf-copy-data-settings.png 'Settings page')
 
@@ -579,7 +583,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![In the New linked service form, the access token is pasted into the Access Token field and the Azure Databricks Cluster (lab) is selected.](media/adf-ml-access-token.png 'Paste access token')
 
-12. Switch back to Azure Databricks. Select **Workspace** in the menu. Select the **Exercise 5** folder then open notebook **01 Deploy for Batch Scoring**. Examine the content but _don't run any of the cells yet_. You need to **replace `STORAGE-ACCOUNT-NAME`** with the name of the blob storage account you copied in Exercise 1 into Cmd 4.
+12. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu. Select the **Exercise 5** folder then open notebook **01 Deploy for Batch Scoring**. Examine the content but _don't run any of the cells yet_. You need to **replace `STORAGE-ACCOUNT-NAME`** with the name of the blob storage account you copied in Exercise 1 into Cmd 4.
 
     ![In the Azure Databricks workspaces, beneath BigDataVis, the Exercise 5 folder is selected. Beneath Exercise 5 the 01 Deploy for Batch Score notebook is selected.](media/databricks-workspace-create-folder.png 'Create folder')
 
@@ -587,7 +591,7 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![In the Azure Data Factory pipeline designer, with the Notebook activity selected, the Settings tab is the active tab. The Browse button is selected next to the Notebook path.](media/adf-ml-notebook-path.png 'Notebook path')
 
-14. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All**, then **Publish**, after making the connection.
+14. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All**, then **Publish** the **CopyOnPrem2AzurePipeline**, after making the connection.
 
     ![In the Azure Data Factory pipeline designer. The Copy Data activity is attached to the Notebook activity.](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
@@ -787,6 +791,8 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    ![The OpenWeather API call displays JSON data for an API call for Los Angeles weather.](media/openweather-api-results.png "OpenWeather API results")
 
+   >**Note**: If you send this request immediately after key creation, you may encounter a 401 response code. If so, wait for a couple of minutes.
+
 ### Task 2: Deploy web app from GitHub
 
 1. Navigate to <https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal.
@@ -884,6 +890,12 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
     ![In the Application settings section, the two new application settings described above are highlighted.](media/app-service-configuration.png 'Application settings')
 
 You will now be able to successfully navigate the web app.
+
+   > **Note**: If you receive an error concerning the Roslyn compiler, open the NuGet package manager interface (**Tools --> NuGet Package Manager --> Package Manager Console**) and run the command below to update the package. Then, publish the application again.
+   >
+   > ```PowerShell
+   > Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+   > ```
 
 ## After the hands-on lab
 
