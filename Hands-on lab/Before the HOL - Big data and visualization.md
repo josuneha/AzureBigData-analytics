@@ -72,7 +72,7 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
    - **Subscription**: Select the subscription you are using for this hands-on lab.
   
-   - **Resource Group**: Select **Create new** and enter a unique name, such as `hands-on-lab-bigdata`
+   - **Resource Group**: Select **Create new** and enter a unique name, such as `hands-on-lab-bigdata`.
 
    - **Workspace name**: Enter a unique name, this is indicated by a green checkmark.
   
