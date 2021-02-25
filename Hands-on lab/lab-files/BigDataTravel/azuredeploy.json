@@ -4,20 +4,11 @@
   "parameters": {
     "siteName": {
       "type": "string",
+      "defaultValue": "[newGuid()]"
       "minLength": 2,
       "metadata": {
         "description": "Web site's host name - must be unique across Azure App Service."
       }      
-    },
-    "location": {
-      "type": "string",
-      "metadata": {
-        "description": "Location for web site."
-      }
-    },    
-    "hostingPlanName": {
-      "type": "string",
-      "minLength": 1
     },
     "sku": {
       "type": "string",
@@ -35,7 +26,8 @@
   },
 
   "variables": {
-    "appServicePlanPortalName": "[concat('AppServicePlan-', parameters('siteName'))]",
+    "appServicePlanName": "[concat('AppServicePlan-', parameters('siteName'))]",
+    "location": "[resourceGroup().location]",
     "gitRepoUrl": "https://github.com/microsoft/MCW-Big-data-and-visualization"
   },
 
@@ -43,8 +35,8 @@
     {
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2020-06-01",
-      "name": "[variables('appServicePlanPortalName')]",
-      "location": "[parameters('location')]",
+      "name": "[variables('appServicePlanName')]",
+      "location": "[variables('location')]",
       "sku": {
         "name": "[parameters('sku')]"
       }
@@ -53,12 +45,12 @@
       "type": "Microsoft.Web/sites",
       "apiVersion": "2020-06-01",
       "name": "[parameters('siteName')]",
-      "location": "[parameters('location')]",
+      "location": "[variables('location')]",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanPortalName'))]"
+        "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       ],
       "properties": {
-         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanPortalName'))]"
+         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       },
       "resources": [
         {
