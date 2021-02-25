@@ -4,7 +4,7 @@
   "parameters": {
     "siteName": {
       "type": "string",
-      "defaultValue": "[concat('webapp', newGuid())]",
+      "defaultValue": "[concat('webapp-', newGuid())]",
       "minLength": 2,
       "metadata": {
         "description": "Web site's host name - must be unique across Azure App Service."
@@ -26,7 +26,7 @@
   },
 
   "variables": {
-    "appServicePlanName": "[concat('AppServicePlan-', parameters('siteName'))]",
+    "appServicePlanName": "[concat('app-service-plan-', parameters('siteName'))]",
     "location": "[resourceGroup().location]",
     "gitRepoUrl": "https://github.com/microsoft/MCW-Big-data-and-visualization"
   },
