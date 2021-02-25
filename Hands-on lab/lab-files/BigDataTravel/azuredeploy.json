@@ -4,7 +4,7 @@
   "parameters": {
     "siteName": {
       "type": "string",
-      "defaultValue": "[newGuid()]"
+      "defaultValue": "[newGuid()]",
       "minLength": 2,
       "metadata": {
         "description": "Web site's host name - must be unique across Azure App Service."
