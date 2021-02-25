@@ -4,7 +4,6 @@
   "parameters": {
     "siteName": {
       "type": "string",
-      "defaultValue": "[concat('webApp-', uniqueString(resourceGroup().id))]",
       "minLength": 2,
       "metadata": {
         "description": "Web site's host name - must be unique across Azure App Service."
@@ -37,8 +36,8 @@
   },
 
   "variables": {
-    "appServicePlanPortalName": "[concat('AppServicePlan-', parameters('webAppName'))]",
-    "gitRepoUrl": "https://github.com/aszego/MCW-Big-data-and-visualization"
+    "appServicePlanPortalName": "[concat('AppServicePlan-', parameters('siteName'))]",
+    "gitRepoUrl": "https://github.com/microsoft/MCW-Big-data-and-visualization"
   },
 
   "resources": [
