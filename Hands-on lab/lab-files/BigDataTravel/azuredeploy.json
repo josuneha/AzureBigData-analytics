@@ -1,27 +1,21 @@
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "siteName": {
-      "type": "string"
-    },
-    "hostingPlanName": {
       "type": "string",
-      "minLength": 1
-    },
-    "siteLocation": {
-      "type": "string"
+      "defaultValue": "[concat('webapp-', newGuid())]",
+      "minLength": 2,
+      "metadata": {
+        "description": "Web site's host name - must be unique across Azure App Service."
+      }      
     },
     "sku": {
       "type": "string",
-      "allowedValues": ["F1"],
-      "defaultValue": "F1"
-    },
-    "repoUrl": {
-      "type": "string"
-    },
-    "branch": {
-      "type": "string"
+      "defaultValue": "F1",
+      "metadata": {
+        "description": "The SKU of App Service Plan."
+      }
     },
     "mlUrl": {
       "type": "string"
@@ -31,32 +25,32 @@
     }
   },
 
-  "variables": {},
+  "variables": {
+    "appServicePlanName": "[concat('app-service-plan-', parameters('siteName'))]",
+    "location": "[resourceGroup().location]",
+    "gitRepoUrl": "https://github.com/microsoft/MCW-Big-data-and-visualization"
+  },
 
   "resources": [
     {
-      "apiVersion": "2015-08-01",
-      "name": "[parameters('hostingPlanName')]",
       "type": "Microsoft.Web/serverfarms",
-      "location": "[parameters('siteLocation')]",
+      "apiVersion": "2020-06-01",
+      "name": "[variables('appServicePlanName')]",
+      "location": "[variables('location')]",
       "sku": {
         "name": "[parameters('sku')]"
-      },
-      "properties": {
-        "name": "[parameters('hostingPlanName')]"
       }
     },
     {
-      "apiVersion": "2015-08-01",
-      "name": "[parameters('siteName')]",
       "type": "Microsoft.Web/sites",
-      "location": "[parameters('siteLocation')]",
+      "apiVersion": "2020-06-01",
+      "name": "[parameters('siteName')]",
+      "location": "[variables('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+        "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       ],
       "properties": {
-        "name": "[parameters('siteName')]",
-        "serverFarmId": "[parameters('hostingPlanName')]"
+         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       },
       "resources": [
         {
@@ -72,7 +66,7 @@
           }
         },
         {
-          "apiVersion": "2015-08-01",
+          "apiVersion": "2020-06-01",
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
@@ -80,8 +74,8 @@
             "[concat('Microsoft.Web/Sites/', parameters('siteName'), '/config/appsettings')]"
           ],
           "properties": {
-            "RepoUrl": "[parameters('repoUrl')]",
-            "branch": "[parameters('branch')]",
+            "repoUrl": "[variables('gitRepoUrl')]",
+            "branch": "master",
             "IsManualIntegration": true
           }
         }
