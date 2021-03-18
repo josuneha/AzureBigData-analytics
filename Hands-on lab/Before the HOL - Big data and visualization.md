@@ -3,7 +3,7 @@
 <div class="MCWHeader1">
 Big data and visualization
 </div>
-    
+
 <div class="MCWHeader2">
 Before the hands-on lab setup guide
 </div>
@@ -31,7 +31,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Before the hands-on lab](#before-the-hands-on-lab)
     - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
     - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
-    - [Task 3: Create storage container](#task-3-create-storage-container)
+    - [Task 3: Create a storage container](#task-3-create-a-storage-container)
     - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
     - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
     - [Task 6: (Optional) Provision a VM to install the Integration Runtime On](#task-6-optional-provision-a-vm-to-install-the-integration-runtime-on)
@@ -58,31 +58,29 @@ In this exercise, you will set up your environment for use in the rest of the ha
 
 Azure Databricks is an Apache Spark-based analytics platform optimized for Azure. It will be used in this lab to build and train a machine learning model used to predict flight delays.
 
-> **Note**: To view the Azure portal menu, select the menu icon in the upper left-hand corner.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Azure Databricks" into the search bar. Select **Azure Databricks** from the results.
 
-![The Azure portal menu is highlighted.](media/portal-menu.png 'Azure portal menu')
-
-1. In the [Azure Portal](https://portal.azure.com) (https://portal.azure.com), select **+ Create a resource** within the portal menu, then type "Azure Databricks" into the search bar. Select Azure Databricks from the results.
-
-   ![The + Create a resource item is selected from the Azure portal menu, Azure Databricks is entered in the search field, and Azure Databricks is selected from the search results list.](media/create-azure-databricks-resource.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
 
 2. Select **Create**.
 
+   ![Azure Databricks page is open. Create button is highlighted.](media/create-azure-databricks-resource.png)
+
 3. Set the following configuration on the Azure Databricks Service creation form:
 
-   - **Subscription**: Select the subscription you are using for this hands-on lab.
+   - **Subscription (1)**: Select the subscription you are using for this hands-on lab.
   
-   - **Resource Group**: Select **Create new** and enter a unique name, such as `hands-on-lab-bigdata`.
+   - **Resource Group (2)**: Select **Create new** and enter a unique name, such as `hands-on-lab-bigdata`.
 
-   - **Workspace name**: Enter a unique name, this is indicated by a green checkmark.
+   - **Workspace name (3)**: Enter a unique name, this is indicated by a green checkmark.
   
-   - **Location**: Select a region close to you. **_(If you are using an Azure Pass, select South Central US.)_**
+   - **Location (4)**: Select a region close to you. **_(If you are using an Azure Pass, select South Central US.)_**
 
-   - **Pricing**: Select **Premium (+ Role-based access controls)**
+   - **Pricing (5)**: Select **Premium (+ Role-based access controls)**
 
    ![The Azure Databricks Service creation form is filled out with the values as outlined above.](media/azure-databricks-create-blade.png)
 
-4. Select **Review + Create**.
+4. Select **Review + Create (6)**.
 
 5. Wait for validation to pass, then select **Create**.
 
@@ -90,90 +88,94 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
 Create a new Azure Storage account that will be used to store historic and scored flight and weather data sets for the lab.
 
-1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **+ Create a resource**, then type "storage" into the search bar. Select **Storage account** from the results.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "storage" into the search bar.
 
-   ![The + Create a resource menu item is selected, storage is entered into the search field, and Storage account is selected from the results list.](media/create-azure-storage-resource.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
 
-2. Select **Create**.
+2. Select Select **Create (2)** and select **Storage Account (3)**.
+
+   ![Azure Marketplace is shown. The search box is filled with "storage". Storage Account Create button clicked. Storage Account button is highlighted from the dropdown list.](media/create-azure-storage-resource.png)
 
 3. Set the following configuration on the Azure Storage account creation form:
 
-   - **Subscription**: Select the subscription you are using for this hands-on lab.
+   - **Subscription (1)**: Select the subscription you are using for this hands-on lab.
 
-   - **Resource group**: Select the same resource group you created at the beginning of this lab.
+   - **Resource group (2)**: Select the same resource group you created at the beginning of this lab.
 
-   - **Storage account name**: Enter a unique name, this is indicated by a green checkmark.
+   - **Storage account name (3)**: Enter a unique name, this is indicated by a green checkmark.
 
-   - **Location**: Select the same region you used for Azure Databricks.
+   - **Location (4)**: Select the same region you used for Azure Databricks.
 
-   - **Performance**: **Standard**
+   - **Performance (5)**: **Standard**
 
-   - **Account kind**: **BlobStorage**
+   - **Account kind (6)**: **StorageV2**
 
-   - **Replication**: **Read-access geo-redundant storage (RA-GRS)**
-
-   - **Access tier**: **Hot**
+   - **Replication (7)**: **Read-access geo-redundant storage (RA-GRS)**
 
    ![The Azure storage account creation form is filled out with values as outlined above.](media/azure-storage-create-blade.png)
 
-4. Select **Review + create**.
+4. Select **Review + create (8)**.
 
 5. Wait for validation to pass, then select **Create**.
 
-### Task 3: Create storage container
+### Task 3: Create a storage container
 
-In this task, you will create a storage container in which you will store your flight and weather data files.
+In this task, you will create a storage container to store your flight and weather data files.
 
-1. From the side menu in the Azure portal, choose **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
+1. From the home page in the Azure portal, choose **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
+
+   ![Azure Portal is open. Resource Groups button is highlighted.](media/select-resource-groups.png)
 
 2. Next, select your lab Azure Storage account from the list.
 
    ![The Azure Storage account that you created in the previous task is selected from within your lab resource group.](media/select-azure-storage-account.png)
 
-3. Select **Containers** (1) from the menu. Select **+ Container** (2) on the Containers blade, enter **sparkcontainer** for the name (3), leaving the public access level set to Private. Select **Create** (4) to create the container.
+3. Select **Containers (1)** from the menu. Select **+ Container (2)** on the Containers blade, enter **sparkcontainer** for the name **(3)**, leaving the public access level set to Private. Select **Create (4)** to create the container.
 
-   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png)
+   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png)
 
 ### Task 4: Provision Azure Data Factory
 
 Create a new Azure Data Factory instance that will be used to orchestrate data transfers for analysis.
 
-1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **+ Create a resource**, then type "Data Factory" into the search bar. Select **Data Factory** from the results.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Data Factory" into the search bar.
 
-   ![The + Create a resource item is selected from the Azure Portal menu, Data Factory is entered into the search textbox, and Data Factory is selected from the results list.](media/create-azure-data-factory.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
 
 2. Select **Create**.
 
+   ![Data Factory Page is open. Create button is highlighted.](media/create-azure-data-factory.png)
+
 3. Set the following configuration on the Data Factory creation form:
 
-   - **Name**: Enter a unique name, this is indicated by a green checkmark.
+   - **Subscription (1)**: Select the subscription you are using for this hands-on lab.
 
-   - **Subscription**: Select the subscription you are using for this hands-on lab.
+   - **Resource Group (2)**: Select the same resource group you created at the beginning of this lab.
 
-   - **Resource Group**: Select the same resource group you created at the beginning of this lab.
+   - **Region (3)**: Select any region close to you.
 
-   - **Version**: Select **V2**
+   - **Name (4)**: Enter a unique name, this is indicated by a green checkmark.
 
-   - **Location**: Select any region close to you.
-
-   - **Enable GIT**: **Unchecked**
+   - **Version (5)**: Select **V2**
 
    **_Understanding Data Factory Location:_**
-   The Data Factory location is where the metadata of the data factory is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
+   The Data Factory location is where the data factory's metadata is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
 
    The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
 
    ![The Azure Data Factory creation form is populated with the values as outlined above.](media/azure-data-factory-create-blade-updated.PNG "Configuring the correct settings for ADF")
 
-   > **Note:** To disable Git, you may need to navigate to the **Git configuration** blade and select **Configure Git later**.
-   >
-   > ![The Azure Data Factory Git configuration may need to be opened to disable Git.](media/azure-data-factory-configure-git-later.PNG "Accessing the Git configuration tab to prevent it from being enabled during ADF creation")
+4. Select **Next: Git configuration > (6)** to continue.
 
-4. Select **Create** to finish and submit.
+5. Check **Configure Git later (1)** and select **Review + create (2)** to proceed.
+
+   ![The Azure Data Factory Git configuration is disabled.](media/azure-data-factory-configure-git-later.PNG "Accessing the Git configuration tab to prevent it from being enabled during ADF creation")
+
+6. Select **Create** to finish and submit.
 
 ### Task 5: Download and install Power BI Desktop
 
-Power BI desktop is required to make a connection to your Azure Databricks environment when creating the Power BI dashboard.
+Power BI desktop is required to connect to your Azure Databricks environment when creating the Power BI dashboard.
 
 1. Download and install [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
@@ -181,19 +183,23 @@ Power BI desktop is required to make a connection to your Azure Databricks envir
 
 An integration runtime agent for Azure Data Factory will need to be installed on your hardware for the hands-on lab. Since you will need to provide your user credentials, we suggest you provision an Azure VM to act as your "on-premises" hardware.
 
-1. Select **Windows Server 2016 Datacenter** from Azure Marketplace.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Data Factory" into the search bar.
+
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
+
+2. Select **Windows Server 2016 Datacenter** from Azure Marketplace.
 
    ![Selecting the Windows Server 2016 Datacenter VM image from Azure Marketplace.](media/windows-server-2016-for-ir.png "Choosing a marketplace VM image to host the IR")
 
-2. On the **Create a virtual machine** page, specify the following parameters:
+3. On the **Create a virtual machine** page, specify the following parameters:
 
-   - **Subscription**: Provide the subscription you have been using for this lab.
+   - **Subscription (1)**: Provide the subscription you have been using for this lab.
 
-   - **Resource group**: Provide your resource group.
+   - **Resource group (2)**: Provide your resource group.
 
-   - **Virtual machine name**: Provide something descriptive.
+   - **Virtual machine name (3)**: Provide something descriptive.
 
-   - **Region**: Provide the same location as your ADF instance.
+   - **Region (4)**: Provide the same location as your ADF instance.
 
    - **Availability options**: No infrastructure redundancy required
 
@@ -201,11 +207,11 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    - **Azure Spot instance**: Unselected
 
-   - **Size**: Standard_D2s_v3
+   - **Size (5)**: Standard_D2s_v3
 
-   - **Username**: demouser
+   - **Username (6)**: demouser
 
-   - **Password/Confirm password**: Password.1!!
+   - **Password/Confirm password (6)**: Password.1!!
 
    - **Public inbound ports**: Allow selected ports
 
@@ -215,21 +221,22 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    ![Setting the configuration details for the Windows Server 2016 integration runtime virtual machine.](media/ir-vm-config.PNG "Providing VM configuration information prior to creating it")
 
-3. Navigate to your VM in your resource group. Select **Connect** from the upper left-hand corner of the page. Then, select **RDP**. Finally, select **Download RDP File**.
+4. select **Review + create (7)** to proceed.
+
+5. Select **Create** on the validation page to finish and start provisioning your VM. When the deployment is complete **(1)**, select **Go to resource (2)** to navigate to your VM.
+
+   ![Deployment complete dialog is shown. Go to resource button is highlighted.](media/vm-deployment-complete.png)
+
+6. Select **Connect** from the upper left-hand corner of the page. Then, select **RDP**. Finally, select **Download RDP File**.
 
    ![Download the RDP connection file for the virtual machine from Azure portal.](media/rdp-into-ir-vm.PNG "Downloading an RDP file to access the VM")
 
-4. Open the RDP file. Enter the username and password you configured earlier. Disregard any certificate issues that RDP presents. 
+7. Open the RDP file. Enter the username and password you configured earlier. Disregard any certificate issues that RDP presents.
 
    ![Entering virtual machine credentials to access it.](media/vm-rdp-credentials.PNG "Providing user credentials to access the VM over RDP")
 
-5. When you access the VM, **Server Manager** should open automatically. If not, open it manually using the search bar. Then, locate **Local Server**.
+8. When you access the VM, **Server Manager** should open automatically. If not, open it manually using the search bar. Then, locate **Local Server (1)**. Select **IE Enhanced Security Configuration**. Then, disable this feature for Administrators.
 
-   ![Accessing the Local Server tab within Server Manager.](media/local-server-server-manager.PNG "Entering the Local Server configuration tab of Server Manager")
-
-6. Select **IE Enhanced Security Configuration**. Then, disable this feature for Administrators.
-
-   ![Disabling IE Enhanced Security Configuration for administrative users to permit access to online resources.](media/disabled-ie-enhanced-security.PNG "Disabling IE Enhanced Security Configuration to access websites")
+   ![Accessing the Local Server tab within Server Manager. Disabling IE Enhanced Security Configuration for administrative users to permit access to online resources.](media/disabled-ie-enhanced-security.PNG "Disabling IE Enhanced Security Configuration to access websites")
 
 You should follow all these steps provided _before_ attending the Hands-on lab.
-
