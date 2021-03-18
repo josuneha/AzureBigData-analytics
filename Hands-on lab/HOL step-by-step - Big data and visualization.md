@@ -20,7 +20,7 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 © 2020 Microsoft Corporation. All rights reserved.
 
-Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
 
@@ -172,7 +172,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 Duration: 60 minutes
 
-In this exercise, you will implement a classification experiment. You will load the training data from your local machine into a dataset. Then, you will explore the data to identify the primary components you should use for prediction, and use two different algorithms for predicting the classification. You will then evaluate the performance of both algorithms and choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the optional sample web app at the end.
+In this exercise, you will implement a classification experiment. You will load the training data from your local machine into a dataset. Then, you will explore the data to identify the primary components you should use for prediction and use two different algorithms for predicting the classification. You will then evaluate the performance of both algorithms and choose the algorithm that performs best. The model selected will be exposed as a web service integrated with the optional sample web app at the end.
 
 ### Task 1: Upload the Sample Datasets
 
@@ -186,21 +186,21 @@ In this exercise, you will implement a classification experiment. You will load 
    - FlightWeatherWithAirportCodes.csv
    - AirportCodeLocationLookupClean.csv
 
-4. Open your Azure Databricks workspace. Before continuing to the next step, verify that your new cluster is running. Do this by navigating to **Clusters** on the left-hand menu and ensuring that the state of your cluster is **Running**.
+4. Open your Azure Databricks workspace. Before continuing to the next step, verify that your new cluster is running. Do this by navigating to **Clusters (1)** on the left-hand menu and ensuring that the state of your cluster is **Running (2)**.
 
-   ![The Clusters menu item is selected and the cluster is shown beneath the Interactive Clusters section indicating that it is in the Running state.](media/azure-databricks-clusters-running.png 'Clusters')
+   ![The Clusters menu item is selected and the cluster is shown indicating that it is in the Running state.](media/azure-databricks-clusters-running.png 'Clusters')
 
-5. Select **Data** from the menu. Next, select **default** under Databases (if this does not appear, start your cluster). Finally, select **Add Data** above the Tables header.
+5. Select **Data (1)** from the menu. Next, select **default (2)** under Databases (if this does not appear, start your cluster). Finally, select **Create Table (3)** above the Tables header.
 
-   ![From the Azure Databricks workspace, Data is selected from the menu, default database is selected from a list of available databases, the Add Data button is selected.](media/azure-databricks-create-tables.png 'Create new table')
+   ![From the Azure Databricks workspace, Data is selected from the menu, default database is selected from a list of available databases, the Create Table button is selected.](media/azure-databricks-create-tables.png 'Create new table')
 
-6. Select **Upload File** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI**.
+6. Select **Upload File (1)** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI (3)**.
 
    ![In the Create New Table form, the Upload File button is highlighted and the FlightDelaysWithAirportCodes.csv shows as uploaded. The Create Table with UI button is shown at the bottom of the form.](media/create-flight-delays-table-ui.png 'Create new table')
 
-7. Select your cluster to preview the table, then select **Preview Table**.
+7. Select your cluster **(1)** to preview the table, then select **Preview Table (2)**.
 
-8. Change the Table Name to `flight_delays_with_airport_codes` and select the checkmark for **First row is header**. Select **Create Table**.
+8. Change the Table Name to `flight_delays_with_airport_codes` **(3)** and select the checkmark for **First row is header (4)**. Select **Create Table (5)**.
 
    ![The Specify Table Attributes form is displayed, flight_delays_with_airport_codes is highlighted in the Table Name field and the First row is header checkbox is checked. The Table Preview displays the Column Names and types along with a sampling of data.](media/flight-delays-attributes.png 'Rename table')
 
@@ -213,9 +213,9 @@ In this exercise, you will implement a classification experiment. You will load 
 
 ### Task 2: Install Azure ML library on the cluster
 
-1. Select **Clusters** on the left-hand menu, then select your lab cluster to open it.
+1. Select **Clusters (1)** on the left-hand menu, then select your lab cluster **(2)** to open it.
 
-   ![From the left menu, the Clusters item is selected, and beneath the Interactive Clusters section the lab cluster is highlighted.](media/azure-databricks-cluster.png 'Lab cluster')
+   ![From the left menu, the Clusters item is selected, and the lab cluster is highlighted.](media/azure-databricks-cluster.png 'Lab cluster')
 
 2. Select the **Libraries** tab. If you **do not** see the Azure ML library already installed on the cluster, continue to the next step. Otherwise, continue to Task 3.
 
@@ -223,7 +223,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![The Libraries tab is selected and Install New button is highlighted.](media/azure-databricks-cluster-install-new.png 'Libraries')
 
-4. In the Install Library dialog, select **PyPi** for the Library Source, then enter the following in the Package field: `azureml-sdk[databricks]`. Select **Install**.
+4. In the Install Library dialog, select **PyPi (1)** for the Library Source, then enter the following in the Package field: `azureml-sdk[databricks]` **(2)**. Select **Install (3)**.
 
    ![The Install Library dialog is displayed with PyPi selected as the Library Source, and the azureml-sdk package name is entered into the Package field.](media/azure-databricks-cluster-install-library-pypi.png 'Install Library')
 
@@ -233,29 +233,33 @@ In this exercise, you will implement a classification experiment. You will load 
 
 ### Task 3: Open Azure Databricks and complete lab notebooks
 
-1. Within Azure Databricks, select **Workspace** on the menu, then **Users**, then select the down arrow next to your user name. Select **Import**.
+1. Within Azure Databricks, select **Workspace (1)** on the menu, then **Users (2)**, then select the down arrow next to your user name **(3)**. Select **Import (4)**.
 
    ![In the left menu, the Workspace item is selected. Beneath the Workspaces pane, the Users item is selected. Beneath the Users pane, the current user is selected. The menu carat next to the username of the user is expanded with the Import item selected.](media/select-import-in-user-workspace.png 'Import')
 
-2. Within the Import Notebooks dialog, select Import from: **URL**, then paste the following into the URL textbox: `https://github.com/microsoft/MCW-Big-data-and-visualization/blob/master/BigDataVis.dbc?raw=true`.
+2. Within the Import Notebooks dialog, select Import from: **URL (1)**, then paste the following into the URL textbox **(2)**: `https://github.com/microsoft/MCW-Big-data-and-visualization/blob/master/BigDataVis.dbc?raw=true`. Select **Import (3)** to continue.
 
    ![The Import Notebooks dialog is shown that will allow the user to import notebooks via a file upload or URL.](media/import-notebooks.png 'Import from file')
 
 3. After importing, expand the new **BigDataVis** folder.
 
-4. Before you begin, make sure you attach your cluster to the notebooks, using the dropdown. You will need to do this for each notebook you open. There are 5 notebooks included in the BigDataVis.dbc
+   ![Workspace is open. The current user is selected. BigDataVis folder is highlighted.](media/adf-selecting-bigdatavis.png)
 
-   ![In the taskbar for a notebook, the cluster that is currently attached is highlighted.](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
+   > **WARNING:** When you open a notebook, make sure you attach your cluster to the notebook using the **Attach to cluster** dropdown. You will need to do this for each notebook you open.
+   >
+   >![In the taskbar for a notebook, the cluster that is currently attached is highlighted.](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
-5. Run each cell of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook so you understand each step of the data preparation process.
+4. Run each cell (except `Clean up` section in Notebook 3) of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook, so you understand each step of the data preparation process.
+
+   > **WARNING:** If you plan on running the web app in the optional exercise: **Exercise 8: Deploy intelligent web app (Optional Lab)**, then do **NOT** run the cells in the `Clean up` section of Notebook `03 Deploy as Web Service`.
 
    ![In the Workspace screen, beneath BigDataVis the Exercise 2 folder is selected. Beneath Exercise 2, three notebooks are displayed 01 Data Preparation, 02 Train and Evaluate Models, and 03 Deploy as Web Service.](media/azure-databricks-exercise-2.png 'Exercise 2 folder')
 
-6. Do NOT run the `Clean up` part of Notebook 3 (i.e. this command: `service.delete()`). You will need the URL of your Machine Learning Model exposed later in **Exercise 8: Deploy intelligent web app (Optional Lab)**.
+5. Make sure you take note of the web service URL to be used later in **Exercise 8: Deploy intelligent web app (Optional Lab)**. Copy the URL to a text editor such as Notepad for later use.
 
-   > **Note**: you could get this URL by updating your Notebook and adding this line `print(service.scoring_uri)`, or by going to your Azure Machine Learning service workspace via the Azure portal and then to the "Deployments" blade.
+   ![Web Service URL Retrieval section of Notebook 3 runs. The resulting URL is highlighted.](media/adf-notebook3-web-service-url.png)
 
-7. Do NOT run any notebooks within the Exercise 5 or 6 folders. They will be discussed later in the lab.
+6. Do NOT run any notebooks within the Exercise 5 or 6 folders. They will be discussed later in the lab.
 
 ## Exercise 3: Setup Azure Data Factory
 
