@@ -68,17 +68,17 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics.
 
-By the end of the lab, you will be able to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
+By the end of the lab, you will be able to show an end-to-end solution, leveraging many of these technologies but not necessarily doing work in every component possible.
 
 ## Overview
 
-Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
+Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
 
-They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
+They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecast for the departure hour.
 
 ## Solution architecture
 
-Below is a diagram of the solution architecture you will build in this lab. Please study this carefully so you understand the whole of the solution as you are working on the various components.
+Below is a diagram of the solution architecture you will build in this lab. Please study this carefully, so you understand the whole of the solution as you are working on the various components.
 
 ![The high-level overview diagram of the end-to-end solution is displayed. Flight delay data and historical airport weather data are provided to Azure Data Factory. Azure Data Factory provides this data to both blob storage and Azure Databricks. Azure Databricks scores the data and saves the results to an Azure SQL Database. Azure Databricks also creates, trains, and exports a machine learning model to the Azure Machine Learning Service. Azure Machine Learning service provides a containerized services that is consumed by the web portal. The web portal also consumes 3rd party API data for forecasted weather. Map data visualization is provided by Power BI using web portal information and the Azure SQL database.](../Whiteboard%20design%20session/media/high-level-overview.png 'High-level overview diagram')
 
@@ -108,11 +108,11 @@ You will need to have the Azure Storage account name and access key when you cre
 
    ![The lab Azure Storage account is selected from within your lab resource group.](media/select-azure-storage-account.png)
 
-3. On the left menu, select **Overview**, locate and copy your Azure **Subscription ID** and save to a text editor such as Notepad for later.
+3. On the left menu, select **Overview (1)**, locate and copy your Azure **Subscription ID (2)** and save to a text editor such as Notepad for later use.
 
    ![On the left menu, Overview is selected and the Subscription ID is highlighted.](media/azure-storage-subscription-id.png)
 
-4. Select **Access keys** (1) from the menu. Copy the **storage account name** (2) and the **key1** key (3) and copy the values to a text editor such as Notepad for later.
+4. Select **Access keys (1)** from the menu and select **Show keys (2)**. Copy the **storage account name (3)** and the **key1 (3)** to a text editor such as Notepad for later use.
 
    ![On the left menu, located in the Settings section, Access keys is selected. The copy button next to the Storage account name textbox is highlighted, as well as the copy button next to the key 1 key textbox.](media/azure-storage-access-keys.png)
 
@@ -134,39 +134,39 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    ![The Azure Databricks Azure Active Directory Single Sign On dialog.](media/azure-databricks-aad.png)
 
-4. Select **Clusters** (1) from the menu, then select **+ Create Cluster** (2).
+4. Select **Clusters (1)** from the menu, then select **+ Create Cluster (2)** .
 
    ![From the left menu, Clusters is selected. The + Create Cluster button is selected.](media/azure-databricks-create-cluster-button.png)
 
 5. On the New Cluster form, provide the following:
 
-   - **Cluster Name**: `lab`
+   - **Cluster Name (1)**: `lab`
 
-   - **Cluster Mode**: **Standard**
+   - **Cluster Mode (2)**: **Standard**
 
    - **Pool**: Select **None**
 
-   - **Databricks Runtime Version**: **Runtime: 6.4 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
+   - **Databricks Runtime Version (3)**: **Runtime: 6.4 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
 
-   - **Enable Autoscaling**: **Uncheck** this option.
+   - **Enable Autoscaling (4)**: **Uncheck** this option.
 
    - **Terminate after**: **Check** the box and enter `120`
 
-   - **Worker Type**: **Standard_F4s**
+   - **Worker Type (5)**: **Standard_F4s**
 
    - **Driver Type**: **Same as worker**
 
-   - **Workers**: `1`
+   - **Workers (6)**: `1`
 
-   - **Spark Config**: Expand Advanced Options and edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
+   - **Spark Config**: Expand **Advanced Options (7)** and edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
 
      `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
 
-   **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
+   **Example: (8)** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
 
    ![The New Cluster form is populated with the values as outlined above.](media/azure-databricks-create-cluster-form.png)
 
-6. Select **Create Cluster**.
+6. Select **Create Cluster (9)**.
 
 ## Exercise 2: Load Sample Data and Databricks Notebooks
 
