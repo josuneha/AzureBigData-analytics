@@ -647,7 +647,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 1. In Azure Databricks, go to Clusters and select your cluster.
 
-2. On the cluster edit page, in the **Configuration** tab scroll down to the bottom of the page, expand **Advanced Options**, then select the **JDBC/ODBC** tab.
+2. On the cluster edit page, in the **Configuration** tab, scroll down to the bottom of the page, expand **Advanced Options**, then select the **JDBC/ODBC** tab.
 
 3. On the **JDBC/ODBC** tab, copy and save the **Server Hostname (1)** and **HTTP Path (2)** to be used during the next task. You can use a text editor such as Notepad to keep the values for later use.
 
@@ -657,13 +657,13 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 1. If you did not already do so during the before the hands-on lab setup, download Power BI Desktop from <https://powerbi.microsoft.com/en-us/desktop/>.
 
-2. When Power BI Desktop starts, you will need to enter your personal information, or Sign in if you already have an account.
+2. When Power BI Desktop starts, you will need to enter your personal information or Sign in if you already have an account.
 
-   ![The Power BI Desktop Welcome page displays prompting user for personal details.](media/image177.png 'Power BI Desktop Welcome page')
+   ![The Power BI Desktop Welcome page displays prompting the user for personal details.](media/image177.png 'Power BI Desktop Welcome page')
 
 3. Select Get data on the screen that is displayed next.
 
-   ![On the Power BI Desktop Sign in page the Get data item is selected.](media/powerbi-getdata.png 'Power BI Desktop Sign in page')
+   ![On the Power BI Desktop Sign-in page, the Get data item is selected.](media/powerbi-getdata.png 'Power BI Desktop Sign in page')
 
 4. Select **Azure Databricks** from the list of available data sources. You may enter `databricks` into the search field **(1)** to find it faster.
 
@@ -679,7 +679,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
   
    - **HTTP Path**: Paste the JDBC **HTTP Path** value you copied in the previous task.
   
-   - **Data Connectivity mode**: Select **DirectQuery (2)** for the Data Connectivity mode. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying.
+   - **Data Connectivity mode**: Select **DirectQuery (2)** for the Data Connectivity mode. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real-time querying.
   
    ![The Spark form is populated with the Server, Protocol, and Data Connectivity mode specified in the previous steps.](media/pbi-desktop-connect-databricks.png 'Spark form')
 
@@ -693,7 +693,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![The Generate New Token form from when we generated the access token.](media/databricks-copy-token.png 'Copy generated token')
 
-    !["token" is entered for the username and the access token is pasted into the password field.](media/pbi-desktop-login.png 'Enter credentials')
+    !["token" is entered for the username, and the access token is pasted into the password field.](media/pbi-desktop-login.png 'Enter credentials')
 
 10. Select **Connect**.
 
@@ -713,7 +713,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 3. With the Map visualization still selected, drag the **OriginLatLong** field to the **Location** field under Visualizations. Then Next, drag the **NumDelays** field to the **Size** field under Visualizations.
 
-   ![In the Fields column, the check boxes for NumDelays and OriginLatLong are selected. An arrow points from OriginLatLong in the Fields column, to OriginLatLong in the Visualization's Location field. A second arrow points from NumDelays in the Fields column, to NumDelays in the Visualization's Size field.](media/pbi-desktop-configure-map-vis.png 'Visualizations and Fields columns')
+   ![In the Fields column, the checkboxes for NumDelays and OriginLatLong are selected. An arrow points from OriginLatLong in the Fields column to OriginLatLong in the Visualization's Location field. A second arrow points from NumDelays in the Fields column to NumDelays in the Visualization's Size field.](media/pbi-desktop-configure-map-vis.png 'Visualizations and Fields columns')
 
 4. You should now see a map that looks similar to the following (resize and zoom on your map if necessary):
 
@@ -729,13 +729,13 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 8. Next, drag the **NumDelays** field over, and drop it into the **Value** field.
 
-   ![In the Fields column, the check boxes for NumDelays and DayofMonth are selected. An arrow points from NumDelays in the Fields column, to NumDelays in the Visualization's Axis field. A second arrow points from DayofMonth in the Fields column, to DayofMonth in the Visualization's Value field.](media/pbi-desktop-configure-stacked-vis.png 'Visualizations and Fields columns')
+   ![In the Fields column, the checkboxes for NumDelays and DayofMonth are selected. An arrow points from NumDelays in the Fields column to NumDelays in the Visualization's Axis field. A second arrow points from DayofMonth in the Fields column to DayofMonth in the Visualization's Value field.](media/pbi-desktop-configure-stacked-vis.png 'Visualizations and Fields columns')
 
 9. Grab the corner of the new Stacked Column Chart visual on the report design surface, and drag it out to make it as wide as the bottom of your report design surface. It should look something like the following.
 
-   ![On the Report Design Surface, under the map of the United States with dots, a stacked bar chart displays.](media/pbi-desktop-stacked-vis.png 'Report Design Surface')
+   ![On the Report Design Surface, under the United States map with dots, a stacked bar chart displays.](media/pbi-desktop-stacked-vis.png 'Report Design Surface')
 
-10. Unselect the Stacked Column Chart visual by selecting on the white space next to the map on the design surface.
+10. Unselect the Stacked Column Chart visual by selecting the white space next to the map on the design surface.
 
 11. From the Visualizations area, select the Treemap icon to add this visualization to the report.
 
@@ -745,17 +745,17 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 13. Next, drag the **NumDelays** field over, and drop it into the **Values** field.
 
-    ![In the Fields column, the check boxes for NumDelays and OriginAirportcode are selected. An arrow points from NumDelays in the Fields column, to NumDelays in the Visualization's Values field. A second arrow points from OriginAirportcode in the Fields column, to OriginAirportcode in the Visualization's Group field.](media/pbi-desktop-config-treemap-vis.png 'Visualizations and Fields columns')
+    ![In the Fields column, the checkboxes for NumDelays and OriginAirportcode are selected. An arrow points from NumDelays in the Fields column to NumDelays in the Visualization's Values field. A second arrow points from OriginAirportcode in the Fields column to OriginAirportcode in the Visualization's Group field.](media/pbi-desktop-config-treemap-vis.png 'Visualizations and Fields columns')
 
 14. Grab the corner of the Treemap visual on the report design surface, and expand it to fill the area between the map and the side edge of the design surface. The report should now look similar to the following.
 
     ![The Report design surface now displays the map of the United States with dots, a stacked bar chart, and a Treeview.](media/pbi-desktop-full-report.png 'Report design surface')
 
-15. You can cross filter any of the visualizations on the report by selecting one of the other visuals within the report, as shown below (This may take a few seconds to change, as the data is loaded).
+15. You can cross filter any of the visualizations on the report by selecting one of the other visuals within the report, as shown below (This may take a few seconds to change as the data is loaded).
 
     ![The map on the Report design surface is now zoomed in on the northeast section of the United States, and the only dot on the map is on Chicago. In the Treeview, all cities except ORD are grayed out. In the stacked bar graph, each bar is now divided into a darker and a lighter color, with the darker color representing the airport.](media/pbi-desktop-full-report-filter.png 'Report design surface')
 
-16. You can save the report, by choosing Save from the File menu, and entering a name and location for the file.
+16. You can save the report by choosing Save from the File menu and entering a name and location for the file.
 
     ![The Power BI Save as window displays.](media/image197.png 'Power BI Save as window')
 
@@ -763,9 +763,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 Duration: 20 minutes
 
-In this exercise, you will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model that was deployed in Exercise 1 to bring action-oriented insight to an already existing business process.
+In this exercise, you will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model deployed in Exercise 1 to bring action-oriented insight into an already existing business process.
 
-> **Please note**: If you are running your lab in a hosted Azure environment and you do not have permissions to create a new Azure resource group, the automated deployment task (#2 below) may fail, even if you choose an existing resource group. The automated deployment will also fail if the user you are logged into the portal with is **not** a Service Administrator or a Co-Administrator. If this happens, we recommend that you install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater, then use the [Publish feature](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019) to publish to a new Azure web app. You will then need to create and populate two new Application Settings as outlined in the tasks that follow: `mlUrl` and `weatherApiKey`. **Skip ahead to Task 3 for further instructions.**
+> **Please note**: If you are running your lab in a hosted Azure environment and do not have permissions to create a new Azure resource group, the automated deployment task (#2 below) may fail, even if you choose an existing resource group. The automated deployment will also fail if the user you are logged into the portal with is **not** a Service Administrator or a Co-Administrator. If this happens, we recommend that you install [Visual Studio 2017/2019 Community](https://visualstudio.microsoft.com/downloads/) or greater, then use the [Publish feature](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019) to publish to a new Azure web app. You will then need to create and populate two new Application Settings as outlined in the tasks that follow: `mlUrl` and `weatherApiKey`. **Skip ahead to Task 3 for further instructions.**
 
 ### Task 1: Register for an OpenWeather account
 
@@ -787,9 +787,9 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
 5. To verify that your API Key is working, replace **{YOUR API KEY}** in the following URL and paste the updated path to your browser's navigation bar: `https://api.openweathermap.org/data/2.5/onecall?lat=37.8267&lon=-122.4233&appid={YOUR API KEY}`. You should see a JSON result that looks similar to the following:
 
-   ![The OpenWeather API call displays JSON data for an API call for Los Angeles weather.](media/openweather-api-results.png "OpenWeather API results")
-
    >**Note**: If you send this request immediately after key creation, you may encounter a 401 response code. If so, wait for a couple of minutes.
+
+   ![The OpenWeather API call displays JSON data for an API call for Los Angeles weather.](media/openweather-api-results.png "OpenWeather API results")
 
 ### Task 2: Deploy web app from GitHub
 
@@ -797,7 +797,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
 2. Read through the README information on the GitHub page.
 
-3. Select **Deploy to Azure**.
+3. Select **Deploy to Azure** button in the Readme.md file.
 
    ![Screenshot of the Deploy to Azure button.](media/deploy-to-azure-button.png 'Deploy to Azure button')
 
@@ -805,25 +805,25 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    - Ensure the correct Directory and Subscription are selected.
 
-   - Select the Resource Group that you have been using throughout this lab.
+   - Select the Resource Group **(1)** that you have been using throughout this lab.
 
    - Either keep the default Site name, or provide one that is globally unique, and then choose a Site Location.
 
-   - Enter the OpenWeather API Key.
+   - Enter the **OpenWeather API Key (3)**.
 
-   - Finally, enter the ML URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
+   - Finally, enter the **ML URL (3)**. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
 
-   ![The web service URL is output from a cell within the Databricks notebook.](media/azure-databricks-web-url.png 'Web service URL')
+      ![The web service URL is output from a cell within the Databricks notebook.](media/azure-databricks-web-url.png 'Web service URL')
 
    ![Fields on the Deploy to Azure page are populated with the previously copied information.](media/azure-deployment-form.png 'Deploy to Azure page')
 
-5. Select **Next**, and on the following screen, select **Deploy**.
+5. Select **Review + create (4)**, and on the following screen, select **Create**.
 
 6. The page should begin deploying your application while showing you a status of what is currently happening.
 
    > **Note**: If you run into errors during the deployment that indicate a bad request or unauthorized, verify that the user you are logged into the portal with an account that is either a Service Administrator or a Co-Administrator. You won't have permissions to deploy the website otherwise.
 
-7. After a short time, the deployment will complete, and you will be presented with a link to your newly deployed web application. CTRL+Click to open it in a new tab.
+7. After a short time, the deployment will complete, and you will be able to access the web site.
 
 8. Try a few different combinations of origin, destination, date, and time in the application. The information you are shown is the result of both the ML API you published, as well as information retrieved from the OpenWeather API.
 
