@@ -435,11 +435,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 8. On the Source data store page, select **Next**.
 
-   ![On the Source data store page, OnPremServer is selected and the Next button is highlighted.](media/adf-copy-data-source-next.png 'Select Next')
+   ![On the Source data store page, OnPremServer is selected, and the Next button is highlighted.](media/adf-copy-data-source-next.png 'Select Next')
 
 9. On the **Choose the input file or folder** screen, select **Browse (1)**, then select the **FlightsAndWeather (2)** folder. Next, select **Load all files** under file loading behavior, check **Recursively**, then select **Next (3)**.
 
-   ![In the Choose the input file or folder screen, the Browse button and Next button are highlighted. The File or Folder is set to FlightsAndWeather, the File loading behavior is set to Load all files, and the checkbox for Recursively is checked.](media/adf-copy-data-source-choose-input.png 'Choose the input file or folder page')
+   ![In the Choose the input file or folder screen, the Browse button, and Next button are highlighted. The File or Folder is set to FlightsAndWeather, the File loading behavior is set to Load all files, and the checkbox for Recursively is checked.](media/adf-copy-data-source-choose-input.png 'Choose the input file or folder page')
 
 10. On the File format settings page, select the following options:
 
@@ -461,7 +461,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 13. Select **Azure Blob Storage (1)** within the New Linked Service blade, then select **Continue (2)**.
 
-    ![In the New linked service list, Azure Blob Storage is selected and the Continue button is highlighted.](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
+    ![In the New linked service list, Azure Blob Storage is selected, and the Continue button is highlighted.](media/adf-copy-data-blob-storage.png 'Select Blob Storage')
 
 14. On the New Linked Service (Azure Blob Storage) account screen, enter the following, test your connection **(4)**, and then select **Create (5)**.
 
@@ -497,11 +497,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 17. On the File format settings screen, select the **Text format (1)** file format, and check the **Add header to file (2)** checkbox, then select **Next (3)**. If present, leave **Max rows per file** and **File name prefix** at their defaults.
 
-    ![On the File format settings page, File format is set to Text format and the check box for Add header to file is selected. The Next button is selected.](media/adf-copy-data-file-format-settings.png 'File format settings page')
+    ![On the File format settings page, the File Format is set to Text format, and the check box for Add header to file is selected. The Next button is selected.](media/adf-copy-data-file-format-settings.png 'File format settings page')
 
-18. On the **Settings** screen, select **Skip incompatible rows (1)** under Fault tolerance, and uncheck **Enable logging (2)**. If present, keep **Data concistency verification** unchecked. Expand Advanced settings and set Degree of copy parallelism to `10` **(3)**, then select **Next (4)**.
+18. On the **Settings** screen, select **Skip incompatible rows (1)** under Fault tolerance, and uncheck **Enable logging (2)**. If present, keep **Data consistency verification** unchecked. Expand Advanced Settings and set Degree of copy parallelism to `10` **(3)**, then select **Next (4)**.
 
-    ![In the Fault tolerance drop down Skip incompatible rows is selected and the Degree of copy parallelism is set to 10. The Next button is selected.](media/adf-copy-data-settings.png 'Settings page')
+    ![In the Fault tolerance drop-down Skip incompatible rows is selected, and the Degree of copy parallelism is set to 10. The Next button is selected.](media/adf-copy-data-settings.png 'Settings page')
 
 19. Review settings on the **Summary** tab, but **DO NOT choose Next**.
 
@@ -517,11 +517,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - Select **Save (2)**.
 
-      ![In the Copy settings form the Retry textbox is set to 3 and the Save link is highlighted.](media/adf-copy-data-copy-settings.png 'Copy settings')
+      ![In the Copy settings form, the Retry textbox is set to 3, and the Save link is highlighted.](media/adf-copy-data-copy-settings.png 'Copy settings')
 
 22. After saving the Copy settings, select **Next (3)** on the Summary tab.
 
-23. On the **Deployment** screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. Select **Edit Pipeline** to close out of the wizard and navigate to the pipeline editing blade.
+23. On the **Deployment** screen, you will see a message that the deployment is in progress, and after a minute or two, the deployment is completed. Select **Edit Pipeline** to close out of the wizard and navigate to the pipeline editing blade.
 
     ![The Deployment screen indicates the deployment is complete.](media/adf-copy-data-deployment.png 'Deployment page')
 
@@ -529,11 +529,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 Duration: 20 minutes
 
-In this exercise, you will extend the Data Factory to operationalize the scoring of data using the previously created machine learning model within an Azure Databricks notebook.
+In this exercise, you will extend the Data Factory to operationalize data scoring using the previously created machine learning model within an Azure Databricks notebook.
 
 ### Task 1: Create Azure Databricks Linked Service
 
-1. Return to, or reopen, the Author & Monitor page for your Azure Data Factory in a web browser, navigate to the Author view, and select the pipeline.
+1. Return to, or reopen the Author & Monitor page for your Azure Data Factory in a web browser, navigate to the Author view **(1)**, and select the `CopyOnPrem2AzurePipeline` pipeline **(2)**.
 
    ![Under Factory Resources, the CopyOnPrem2AzurePipeline pipeline is selected.](media/adf-ml-select-pipeline.png 'Select the ADF pipeline')
 
@@ -545,57 +545,61 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
    ![The Notebook activity is dragged onto the design surface.](media/adf-ml-drag-notebook-activity.png 'Notebook on design surface')
 
-4. Select the Notebook activity on the design surface to display tabs containing its properties and settings at the bottom of the screen. On the **General** tab, enter `BatchScore` into the Name field.
+4. Select the Notebook activity **(1)** on the design surface to display tabs containing its properties and settings at the bottom of the screen. On the **General (2)** tab, enter `BatchScore` into the Name **(3)** field.
 
    ![BatchScore is entered into the Name textbox under the General tab.](media/adf-ml-notebook-general.png 'Databricks Notebook General Tab')
 
-5. Select the **Azure Databricks** tab, and select **+ New** next to the Databricks Linked service drop down. Here, you will configure a new linked service which will serve as the connection to your Databricks cluster.
+5. Select the **Azure Databricks (1)** tab, and select **+ New (2)** next to the Databricks Linked service drop-down. Here, you will configure a new linked service that will serve as the connection to your Databricks cluster.
 
    ![In the Azure Databricks tab, the + New button is selected next to the Databricks Linked Service textbox.](media/adf-ml-settings-new-link.png 'Databricks Notebook Settings Tab')
 
 6. On the New Linked Service dialog, enter the following:
 
-   - **Name**: `AzureDatabricks`
+   - **Name (1)**: `AzureDatabricks`
   
    - **Connect via integration runtime**: Leave set to Default.
   
    - **Account selection method**: **From Azure subscription**
   
-   - **Azure subscription**: Choose your Azure Subscription.
+   - **Azure subscription (2)**: Choose your Azure Subscription.
   
-   - **Databricks workspace**: Pick your Databricks workspace to populate the Domain automatically.
+   - **Databricks workspace (3)**: Pick your Databricks workspace to populate the Domain automatically.
   
-   - **Select cluster**: **Existing interactive cluster**
+   - **Select cluster (4)**: **Existing interactive cluster**
 
    ![The New linked service form is shown populated with the previously listed values.](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
 
 7. Leave the form open and open your Azure Databricks workspace in another browser tab. You will generate and retrieve the Access token here.
 
-8. In Azure Databricks, select the Account icon in the top corner of the window, then select **User Settings**.
+8. In Azure Databricks, select the **BigDataLab (1)** in the top corner of the window, then select **User Settings (2)**.
 
-   ![The Account icon is selected in Azure Databricks. User Settings is selected from the list of Account options.](media/databricks-select-user-settings.png 'Azure Databricks user account settings')
+   ![The BigDataLab button is selected in Azure Databricks. User Settings is selected from the list of Account options.](media/databricks-select-user-settings.png 'Azure Databricks user account settings')
 
-9. Select **Generate New Token** under the Access Tokens tab. Enter **ADF access** for the comment and leave the lifetime at 90 days. Select **Generate**.
+9. Select **Generate New Token (1)** under the Access Tokens tab. Enter **ADF access (2)** for the comment and leave the lifetime at 90 days. Select **Generate (3)**.
 
    ![The Generate New Token modal is shown with the previously specified values.](media/databricks-generate-new-token.png 'Generate New Token')
 
-10. **Copy** the generated token and **paste it into a text editor** such as Notepad for a later step.
+10. **Copy** the generated token and **paste it into a text editor** such as Notepad for a later step. Select **Done**.
 
-    ![Copy the generated token.](media/databricks-copy-token.png 'Copy generated token')
+    ![The generated token is shown. The done button is highlighted.](media/databricks-copy-token.png 'Copy generated token')
 
-11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token** field within the form. After a moment, select your cluster underneath **Choose from existing clusters**. Select **Create**.
+11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token (1)** field within the form. After a moment, select your cluster underneath **Choose from existing clusters (2)**. Select **Create (3)**.
 
-    ![In the New linked service form, the access token is pasted into the Access Token field and the Azure Databricks Cluster (lab) is selected.](media/adf-ml-access-token.png 'Paste access token')
+    ![In the New linked service form, the access token is pasted into the Access Token field, and the Azure Databricks Cluster (lab) is selected.](media/adf-ml-access-token.png 'Paste access token')
 
-12. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu. Select the **Exercise 5** folder then open notebook **01 Deploy for Batch Scoring**. Examine the content but _don't run any of the cells yet_. You need to **replace `STORAGE-ACCOUNT-NAME`** with the name of the blob storage account you copied in Exercise 1 into Cmd 4.
+12. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu. Select the **Exercise 5 (2)** folder, then open notebook **01 Deploy for Batch Scoring (3)**. Examine the content, but _don't run any of the cells yet_.
 
-    ![In the Azure Databricks workspaces, beneath BigDataVis, the Exercise 5 folder is selected. Beneath Exercise 5 the 01 Deploy for Batch Score notebook is selected.](media/databricks-workspace-create-folder.png 'Create folder')
+    ![In the Azure Databricks workspaces, beneath BigDataVis, the Exercise 5 folder is selected. Beneath Exercise 5, the 01 Deploy for Batch Score notebook is selected.](media/databricks-workspace-create-folder.png 'Create folder')
 
-13. Switch back to your Azure Data Factory screen. Select the **Settings** tab, then browse to your **Exercise 5/01 Deploy for Batch Score** notebook into the Notebook path field.
+13. Replace **`STORAGE-ACCOUNT-NAME`** with the name of the blob storage account you copied in Exercise 1 into Cmd 4.
+
+    ![Cmd 4 is shown. Storage account name placeholder is replaced with bigdatalabstore10.](media/databricks-storage-name.png)
+
+14. Switch back to your Azure Data Factory screen. Select the **Settings (1)** tab, then browse **(2)** to your **Exercise 5/01 Deploy for Batch Score** notebook **(3)** into the Notebook path field.
 
     ![In the Azure Data Factory pipeline designer, with the Notebook activity selected, the Settings tab is the active tab. The Browse button is selected next to the Notebook path.](media/adf-ml-notebook-path.png 'Notebook path')
 
-14. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All**, then **Publish** the **CopyOnPrem2AzurePipeline**, after making the connection.
+15. The final step is to connect the **Copy data** activity with the **Notebook** activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All (1)**, then **Publish** the **CopyOnPrem2AzurePipeline**, after making the connection.
 
     ![In the Azure Data Factory pipeline designer. The Copy Data activity is attached to the Notebook activity.](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
@@ -605,13 +609,13 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
 2. Select **Trigger**, then **Trigger Now** located above the pipeline design surface.
 
-   ![In the taskbar for the Azure Data Factory pipeline designer, Trigger is selected and Trigger Now is selected from the dropdown options.](media/adf-ml-trigger-now.png 'Trigger Now')
+   ![In the taskbar for the Azure Data Factory pipeline designer, Trigger is selected, and Trigger Now is selected from the drop-down options.](media/adf-ml-trigger-now.png 'Trigger Now')
 
 3. Enter `3/1/2017` into the **windowStart** parameter, then select **OK**.
 
    ![The Pipeline Run form is displayed with the windowStart parameter set to 3/1/2017.](media/adf-ml-pipeline-run.png 'Pipeline Run')
 
-4. Select **Monitor** in the menu. You will be able to see your pipeline activity in progress as well as the status of past runs.
+4. Select **Monitor (1)** in the menu. You will be able to see your pipeline activity in progress **(4)** as well as the status of past runs.
 
    ![From the left menu in Azure Data Factory, Monitor is selected. The current status of the pipeline run is displayed in the table.](media/adf-ml-monitor.png 'Monitor')
 
