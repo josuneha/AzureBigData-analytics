@@ -14,11 +14,11 @@
                             <asp:Panel ID="PanelPredictInputs" runat="server" Visible="true">
                                 <div class="form-group m-b-30">
                                     <p>From</p>
-                                    <asp:DropDownList ID="ddlOriginAirportCode" class="form-control" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlOriginAirportCode" class="form-control" runat="server" style="height:40px"></asp:DropDownList>
                                 </div>
                                 <div class="form-group m-b-30">
                                     <p>To</p>
-                                    <asp:DropDownList ID="ddlDestAirportCode" class="form-control" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlDestAirportCode" class="form-control" runat="server" style="height:40px"></asp:DropDownList>
                                 </div>
                                 <div class="form-group m-b-30">
                                     <p>Date</p>
