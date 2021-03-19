@@ -855,31 +855,53 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    ![In Solution Explorer, the BigDataTravel project context menu is expanded with the Publish menu item selected.](media/vs-publish-link.png 'Publish')
 
-7. In the Publish dialog, select the **App Service** publish target, select **Create New**, then choose **Publish**.
+7. In the Publish dialog, select the **Azure (1)** as your publish target, select **Next (2)** to continue.
 
-   ![In the Pick a publish target window, the App Service item is selected. In the Azure App Service form, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target.png 'Pick a publish target')
+   ![In the Pick a publish target window, Azure is selected. The Next button is highlighted.](media/vs-publish-target.png 'Pick a publish target')
 
-8. Enter the following into the App Service form that follows, then select **Create**:
+8. In the Specific target step, select the **Azure App Service (Windows) (1)** as your publish target, select **Next (2)** to continue.
 
-   - **Name**: Enter a unique value.
+   ![In the Pick a publish target window, the App Service item is selected. In the Azure App Service form, Create New is selected, and the Publish button is highlighted.](media/vs-publish-target-app-service.png 'Pick a publish target')
 
-   - **Subscription**: Choose the Azure subscription you are using for the lab.
+9. In the App Service selection step, select the **+** **(1)** plus button to create a new App Service instance.
 
-   - **Resource group**: Select the Azure resource group you are using for the lab.
+   > **WARNING**: When asked login with your Azure Subscription credentials.
 
-   - **Hosting Plan**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
+   ![App Service selection screen is open. Plus button to create a new app service instance is highlighted.](media/vs-publish-new-app-service.png 'Create new app service instance.')
 
-   - **Application Insights**: Select **None**.
+10. Enter the following into the App Service form that follows, then select **Create**:
 
-   ![The App Service Create new form is displayed populated with the values listed above.](media/vs-app-service.png 'App Service dialog')
+    - **Name (1)**: Enter a unique value.
 
-9. After publishing is completed, open the new App Service located in your resource group in the [Azure portal](https://portal.azure.com).
+    - **Subscription (2)**: Choose the Azure subscription you are using for the lab.
 
-10. Select **Configuration** in the left-hand menu.
+    - **Resource group (3)**: Select the Azure resource group you are using for the lab.
+
+    - **Hosting Plan (4)**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
+
+    ![The App Service Create new form is displayed populated with the values listed above.](media/vs-app-service.png 'App Service dialog')
+
+11. Select the newly created App Service instance **(1)** and select **Finish (2)** to go back to Visual Studio.
+
+    ![The newly create App Service Instance is selected. Finish button is highlighted.](media/vs-publish-app-service-select.png 'App Service Selection')
+
+12. Once you are back in Visual Studio select **Publish** to start the publishing process.
+
+    ![Visual Studio publish screen is visible. Publish button is highlighted.](media/vs-publish-start.png 'Visual Studio Publish')
+
+    > **Note**: If you receive an error concerning the Roslyn compiler, open the NuGet package manager interface (**Tools --> NuGet Package Manager --> Package Manager Console**) and run the command below to update the package. Then, publish the application again.
+    >
+    > ```PowerShell
+    > Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+    > ```
+
+13. After publishing is completed, open the new App Service located in your resource group in the [Azure portal](https://portal.azure.com).
+
+14. Select **Configuration** in the left-hand menu.
 
     ![In the App Service resource screen, the Configuration menu item is highlighted.](media/app-service-configuration-link.png 'App Service')
 
-11. Create the two following **Application settings**, then select **Save**:
+15. Select **Configuration (1)** in the left-hand menu. Create the two following **Application settings (3)**, then select **Save (4)**:
 
     - **mlUrl**: Enter the Machine Learning URL. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
   
@@ -888,12 +910,6 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
     ![In the Application settings section, the two new application settings described above are highlighted.](media/app-service-configuration.png 'Application settings')
 
 You will now be able to successfully navigate the web app.
-
-   > **Note**: If you receive an error concerning the Roslyn compiler, open the NuGet package manager interface (**Tools --> NuGet Package Manager --> Package Manager Console**) and run the command below to update the package. Then, publish the application again.
-   >
-   > ```PowerShell
-   > Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
-   > ```
 
 ## After the hands-on lab
 
