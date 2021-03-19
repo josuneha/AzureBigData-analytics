@@ -647,25 +647,11 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 1. In Azure Databricks, go to Clusters and select your cluster.
 
-2. On the cluster edit page, scroll down to the bottom of the page, expand **Advanced Options**, then select the **JDBC/ODBC** tab.
+2. On the cluster edit page, in the **Configuration** tab scroll down to the bottom of the page, expand **Advanced Options**, then select the **JDBC/ODBC** tab.
 
-   ![Beneath Advanced Options, the JDBC/ODBC tab is selected.](media/databricks-power-bi-jdbc.png 'JDBC strings')
+3. On the **JDBC/ODBC** tab, copy and save the **Server Hostname (1)** and **HTTP Path (2)** to be used during the next task. You can use a text editor such as Notepad to keep the values for later use.
 
-3. On the **JDBC/ODBC** tab, copy and save the first JDBC URL.
-
-   - Construct the JDBC server address that you will use when you set up your Spark cluster connection in Power BI Desktop.
-
-   - Take the JDBC URL and do the following:
-
-   - Replace `jdbc:spark` with `https`.
-
-   - Remove everything in the path between the port number and sql, retaining the components indicated by the boxes in the image below. Also remove `;AuthMech=3;UID=token;PWD=<personal-access-token>` from the end of the string.
-
-      ![An image of the JDBC URL with the necessary values for the new Power BI connection string selected.](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
-
-   - In our example, the server address would be:
-
-      <https://adb-6784833592075405.5.azuredatabricks.net:443/sql/protocolv1/o/6784833592075405/0615-225254-need937>
+   ![An image of the JDBC URL with the necessary values for the new Power BI connection string selected.](media/databricks-power-bi-spark-information.png 'Construct Power BI connection string')
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
@@ -677,25 +663,29 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 3. Select Get data on the screen that is displayed next.
 
-   ![On the Power BI Desktop Sign in page the Get data item is selected.](media/image178.png 'Power BI Desktop Sign in page')
+   ![On the Power BI Desktop Sign in page the Get data item is selected.](media/powerbi-getdata.png 'Power BI Desktop Sign in page')
 
-4. Select **Spark** from the list of available data sources. You may enter Spark into the search field to find it faster.
+4. Select **Azure Databricks** from the list of available data sources. You may enter `databricks` into the search field **(1)** to find it faster.
 
    ![In the Get Data screen, Spark is selected from the list of available sources.](media/pbi-desktop-get-data.png 'Get Data page')
 
 5. Select **Connect**.
 
-6. On the next screen, you will be prompted for your Spark cluster information.
+6. On the next screen, you will be prompted for your Azure Databricks cluster information.
 
-7. Paste the JDBC connection string you constructed  into the **Server** field.
+7. On the Azure Databricks connection information dialog, enter the following:
 
-8. Select the **HTTP** protocol.
+   - **Server Hostname (1)**: Paste the JDBC **Server Hostname** value you copied in the previous task.
+  
+   - **HTTP Path**: Paste the JDBC **HTTP Path** value you copied in the previous task.
+  
+   - **Data Connectivity mode**: Select **DirectQuery (2)** for the Data Connectivity mode. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying.
+  
+   ![The Spark form is populated with the Server, Protocol, and Data Connectivity mode specified in the previous steps.](media/pbi-desktop-connect-databricks.png 'Spark form')
 
-9. Select **DirectQuery** for the Data Connectivity mode, and select **OK**. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real time querying.
+8. Select **OK (3)**.
 
-   ![The Spark form is populated with the Server, Protocol, and Data Connectivity mode specified in the previous steps.](media/pbi-desktop-connect-spark.png 'Spark form')
-
-10. Enter your credentials on the next screen as follows:
+9. Enter your credentials on the next screen as follows:
 
     - **User name**: `token`
 
@@ -705,9 +695,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     !["token" is entered for the username and the access token is pasted into the password field.](media/pbi-desktop-login.png 'Enter credentials')
 
-11. Select **Connect**.
+10. Select **Connect**.
 
-12. In the Navigator dialog, check the box next to **flight_delays_summary**, and select **Load**.
+11. In the Navigator dialog, check the box next to **flight_delays_summary (1)**, and select **Load (2)**.
 
     ![In the Navigator dialog box, in the pane under Display Options, the check box for flight_delays_summary is selected. In the pane, the table of flight delays summary information displays.](media/pbi-desktop-select-table-navigator.png 'Navigator dialog box')
 
