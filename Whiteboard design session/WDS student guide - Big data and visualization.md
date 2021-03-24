@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-June 2020
+March 2021
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,9 +18,9 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2020 Microsoft Corporation. All rights reserved.
+© 2021 Microsoft Corporation. All rights reserved.
 
-Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
 
@@ -44,15 +44,15 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays.
+In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data and creating, training, and deploying a machine learning model that can predict flight delays.
 
-At the end of this whiteboard design session you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays, and orchestrating the collection and batch scoring of historic and new flight delay data.
+At the end of this whiteboard design session, you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end-users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays and orchestrating the collection and batch scoring of historic and new flight delay data.
 
 ## Step 1: Review the customer case study
 
 **Outcome**
 
-Analyze your customer’s needs.
+Analyze your customer's needs.
 
 Timeframe: 15 minutes
 
@@ -66,13 +66,13 @@ Directions: With all participants in the session, the facilitator or SME present
 
 Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
 
-MT is investigating ways that they can capitalize on their existing data assets to provide new insights that provide them a strategic advantage against their competition. In planning their product, they heard much fanfare about machine learning and came up with the idea of using predictive analytics to help customers best select their travels based on the likelihood of a delay. When reviewing their customer transaction histories, they discovered that their most premium customers often book their travel within 7 days of departure. In speaking with customer service, they learned that these customers often ask questions like, "I don't have to be there until Tuesday, so is it better for me to fly out on Sunday or Monday?"
+MT is investigating ways to capitalize on their existing data assets to provide new insights that provide them a strategic advantage against their competition. In planning their product, they heard much fanfare about machine learning and came up with the idea of using predictive analytics to help customers best select their travels based on the likelihood of a delay. When reviewing their customer transaction histories, they discovered that their most premium customers often book their travel within seven days of departure. In speaking with customer service, they learned that these customers often ask questions like, "I don't have to be there until Tuesday, so is it better for me to fly out on Sunday or Monday?"
 
-While there are many factors that customer service uses to tailor their guidance to the customer (such as cost and travel duration), MT believes an innovative solution might come in the form of giving the customer an assessment of the risk of encountering flight delays. For low risk flights, the customer may choose to book with a narrower travel window, giving them more precious time at home and less on the road spent arriving too early to a destination. MT is interested in applying data science to the problem to discover if the weather forecast coupled with their historical flight delay data could be used to provide a meaningful input into the customer's decision-making process.
+While there are many factors that customer service uses to tailor their guidance to the customer (such as cost and travel duration), MT believes an innovative solution might come in the form of giving the customer an assessment of the risk of encountering flight delays. The customer may choose to book with a narrower travel window for low-risk flights, giving them more precious time at home and less on the road spent arriving too early to a destination. MT is interested in applying data science to the problem to discover if the weather forecast and their historical flight delay data could provide meaningful input into the customer's decision-making process.
 
 MT plans to pilot this solution internally, whereby the small population of customer support who service MT's premium tier of business travelers would begin using the solution and offering it as an additional data point for travel optimization. They would like to provide their customer support agents a web-based solution that enables them to map the predicted delays for a particular customer's departure airport(s) of choice.
 
-MT has over 30 years of historical flight data provided to them by the United States Department of Transportation (USDOT), which among other data points includes flight delay information for every flight. The data arrives in flat, comma separated value (CSV) files with a schema of the following:
+MT has over 30 years of historical flight data provided to them by the United States Department of Transportation (USDOT), which among other data points, includes flight delay information for every flight. The data arrives in flat, comma-separated value (CSV) files with a schema of the following:
 
 (Year, Month, DayOfMonth, Airline, TailNum, FlightNum, OriginAirport, DestinationAirport, ScheduledDepartureTime, ActualDepartureTime, ScheduledArrivalTime, DepartureDelay, AirTime, Distance, Cancelled, CancellationCode)
 
@@ -80,9 +80,9 @@ In addition, for all data since 2003, each row includes new fields describing th
 
 (CarrierDelay, WeatherDelay, NationalAirSystemDelay, SecurityDelay, LateAircraftDelay)
 
-They receive updates to this data monthly, where the flight data and other related files total about 1 GB. In total their solution currently manages about 2 TB worth of data.
+They receive updates to this data monthly, where the flight data and other related files total about 1 GB. In total, their solution currently manages about 2 TB worth of data.
 
-Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport, and provides forecasts up to 10 days. They have a history of the historical weather condition for each flight as CSV files, but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
+Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport and provides forecasts for up to 10 days. They have a history of each flight's historical weather condition as CSV files, but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
 
 ```json
 {
@@ -127,19 +127,19 @@ Additionally, they receive current and forecasted weather data from a third-part
 }
 ```
 
-Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has heard a great deal of positive news about Spark SQL on HDInsight and its ability to query exactly the type of files he has in a performant way, but also in a way that is more familiar to his analysts and developers because they are all familiar with the SQL syntax that it supports. He would love to understand if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
+Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has heard a great deal of positive news about Spark SQL on HDInsight and its ability to query exactly the type of files he has in a performant way, but also in a way that is more familiar to his analysts and developers because they are all familiar with the SQL syntax that it supports. He would love to understand if they can move this data away from their on-premises data center into the cloud and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
 
 ### Customer needs
 
-1. Want to modernize their analytics platform, without sacrificing the ability to query their data using SQL.
+1. Want to modernize their analytics platform without sacrificing the ability to query their data using SQL.
 
-2. Need an approach that can store all of their data, including the unmodified source data and the cleansed data from which they query for production purposes.
+2. Need an approach that can store all of their data, including the unmodified source data and the cleansed data they query for production purposes.
 
 3. Want to understand how they will load their large quantity of historical data into Azure.
 
 4. Need to be able to query the weather forecast and use it as input to their flight delay predictions.
 
-5. Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions in order to identify whether a flight is likely to be delayed or not.
+5. Desire a proof of concept (PoC) machine learning model that takes as input their historical data on flight delays and weather conditions to identify whether a flight is likely to be delayed or not.
 
 6. Need web-based visualizations of the flight delay predictions.
 
@@ -151,21 +151,21 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 3. Can we query flat files in the file system using SQL?
 
-4. Does Azure provide anything that would speed up querying (and exploration) of files in Hadoop Distributed File Systems (HDFS)?
+4. Does Azure provide anything that would speed up querying (and exploration) files in Hadoop Distributed File Systems (HDFS)?
 
-5. Does Azure provide any tools for visualizing our data? Ideally access to these could be managed with Active Directory.
+5. Does Azure provide any tools for visualizing our data? Ideally, access to these could be managed with Active Directory.
 
-6. Can we use Azure Active Directory accounts for our users, and if so, can we restrict who can access Azure Databricks, when they can access it, require two-factor authentication, and restrict access if there is suspicious activity on their account?
+6. Can we use Azure Active Directory accounts for our users? If so, can we restrict who can access Azure Databricks when they can access it, require two-factor authentication, and restrict access if there is suspicious activity on their account?
 
 7. Is Azure Databricks our only option for running SQL on Hadoop solutions in Azure?
 
-8. We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution, or whether we should be using it for interactive analysis of our data.
+8. We have heard of Azure Data Lake, but we are not clear about whether this is currently a good fit for our PoC solution or whether we should be using it for interactive analysis of our data.
 
 9. We are hiring a data scientist who prefers to use MLflow to track model training run metrics and artifacts. Can the proposed Azure-based solution support this library?
 
 ### Infographic for common scenarios
 
-![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files, and an end user with a computer and a portable device. The Azure section includes three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence, and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
+![The Data Analytics diagram is broken into three sections: On-Premises, Azure, and End Users. On-Premises includes a Web Server with log files and an end-user with a computer and a portable device. The Azure section contains three parts: Generation (Azure website and log files), Storage (Azure SQL Database and Blob Storage), and Data Processing (SQL Data Warehouse, Machine Learning, and HDInsight (Hadoop). The End Users section has Business Intelligence and End Users with portable devices.](media/common-scenarios.png 'Data Analytics diagram')
 
 ## Step 2: Design a proof of concept solution
 
@@ -179,7 +179,7 @@ Timeframe: 60 minutes
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1. Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+1. Who should you present this solution to? Who is your target customer audience? Who are the decision-makers?
 2. What customer business needs do you need to address with your solution?
 
 **Design**
@@ -208,9 +208,9 @@ _Machine learning modeling_
 
 1. What technology would you recommend that MT use for implementing their machine learning model?
 
-2. How would you guide MT to load data, so it can be processed by the machine learning model?
+2. How would you guide MT to load data so that the machine learning model can process it?
 
-3. What category of machine learning algorithm would you recommend to MT for use in constructing their model? For this scenario your option is clustering, regression or two-class classification. Why?
+3. What category of machine learning algorithm would you recommend to MT to construct their model? For this scenario, your option is clustering, regression, or two-class classification. Why?
 
 4. Assuming you selected an algorithm that requires training, address the following model design questions:
 
@@ -236,13 +236,13 @@ _Visualization and reporting_
 
 2. If so, explain:
 
-   a. How would MT load the data and plot it on a map? What specific components would you use and how would you configure them to display the data?
+   a. How would MT load the data and plot it on a map? What specific components would you use, and how would you configure them to display the data?
 
    b. If they need to make minor changes, such as a change to the data types of a column in the model, how would they perform this in Power BI?
 
    c. How could they secure access to these reports to only their internal customer service agents?
 
-3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to monitor for problems such as performance bottlenecks? How can they easily access the logs from a single location?
+3. MT wants a way to monitor their data pipeline, including ETL, data preparation, and model training activities. How can they capture and visualize metrics to watch for problems such as performance bottlenecks? How can they quickly access the logs from a single location?
 
 **Prepare**
 
@@ -270,7 +270,7 @@ Directions
 
 1. Pair with another table.
 
-2. One table is the Microsoft team and the other table is the customer.
+2. One table is the Microsoft team, and the other table is the customer.
 
 3. The Microsoft team presents their proposed solution to the customer.
 
@@ -290,20 +290,20 @@ Timeframe: 15 minutes
 
 ## Additional references
 
-|                                 |                                                                                                    |
-| ------------------------------- | :------------------------------------------------------------------------------------------------: |
-| **Description**                 |                                             **Links**                                              |
-| Azure solution architectures    |                    <https://azure.microsoft.com/en-us/solutions/architecture/>                     |
-| Azure Machine Learning services |                 <https://docs.microsoft.com/en-us/azure/machine-learning/service/>                 |
-| Machine Learning algorithms     | <https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/> |
-| Azure Data Factory              |                   <https://docs.microsoft.com/azure/data-factory/introduction/>                    |
-| Azure Databricks                |                    <https://docs.microsoft.com/en-us/azure/azure-databricks//>                     |
-| Power BI                        |       <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>       |
-| Travel data                     |                           <https://www.transtats.bts.gov/homepage.asp/>                            |
-| Weather data                    |                                  <https://openweathermap.org/api/one-call-api>                                   |
-| ARM Templates                   |   <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>    |
-| Azure AD Conditional Access     |              <https://docs.microsoft.com/azure/active-directory/conditional-access/>               |
-| Azure SQL Database | <https://docs.microsoft.com/azure/azure-sql/database/sql-database-paas-overview> |
-| Write to Azure SQL Database from a DataFrame | <https://docs.microsoft.com/azure/databricks/data/data-sources/sql-databases#write-data-to-jdbc> |
-| Azure Key Vault | <https://docs.microsoft.com/azure/key-vault/key-vault-overview> |
-| Azure Monitor | <https://docs.microsoft.com/azure/azure-monitor/overview> |
+|                                              |                                                                                                    |
+|----------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Description**                              | **Links**                                                                                          |
+| Azure solution architectures                 | <https://azure.microsoft.com/en-us/solutions/architecture/>                                        |
+| Azure Machine Learning services              | <https://docs.microsoft.com/en-us/azure/machine-learning/service/>                                 |
+| Machine Learning algorithms                  | <https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/> |
+| Azure Data Factory                           | <https://docs.microsoft.com/azure/data-factory/introduction/>                                      |
+| Azure Databricks                             | <https://docs.microsoft.com/en-us/azure/azure-databricks//>                                        |
+| Power BI                                     | <https://support.powerbi.com/knowledgebase/articles/430814-get-started-with-power-bi/>             |
+| Travel data                                  | <https://www.transtats.bts.gov/homepage.asp/>                                                      |
+| Weather data                                 | <https://openweathermap.org/api/one-call-api>                                                      |
+| ARM Templates                                | <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates/>      |
+| Azure AD Conditional Access                  | <https://docs.microsoft.com/azure/active-directory/conditional-access/>                            |
+| Azure SQL Database                           | <https://docs.microsoft.com/azure/azure-sql/database/sql-database-paas-overview>                   |
+| Write to Azure SQL Database from a DataFrame | <https://docs.microsoft.com/azure/databricks/data/data-sources/sql-databases#write-data-to-jdbc>   |
+| Azure Key Vault                              | <https://docs.microsoft.com/azure/key-vault/key-vault-overview>                                    |
+| Azure Monitor                                | <https://docs.microsoft.com/azure/azure-monitor/overview>                                          |
