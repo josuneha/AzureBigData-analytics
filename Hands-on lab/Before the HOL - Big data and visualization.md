@@ -60,11 +60,11 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
 1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Azure Databricks" into the search bar. Select **Azure Databricks** from the results.
 
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create new resource')
 
 2. Select **Create**.
 
-   ![Azure Databricks page is open. Create button is highlighted.](media/create-azure-databricks-resource.png)
+   ![Azure Databricks page is open. Create button is highlighted.](media/create-azure-databricks-resource.png 'Azure Databricks')
 
 3. Set the following configuration on the Azure Databricks Service creation form:
 
@@ -78,7 +78,7 @@ Azure Databricks is an Apache Spark-based analytics platform optimized for Azure
 
    - **Pricing (5)**: Select **Premium (+ Role-based access controls)**
 
-   ![The Azure Databricks Service creation form is filled out with the values as outlined above.](media/azure-databricks-create-blade.png)
+   ![The Azure Databricks Service creation form is filled out with the values as outlined above.](media/azure-databricks-create-blade.png 'Azure Databricks Creation')
 
 4. Select **Review + Create (6)**.
 
@@ -90,11 +90,11 @@ Create a new Azure Storage account that will be used to store historic and score
 
 1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "storage" into the search bar.
 
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create resource')
 
 2. Select Select **Create (2)** and select **Storage Account (3)**.
 
-   ![Azure Marketplace is shown. The search box is filled with "storage". Storage Account Create button clicked. Storage Account button is highlighted from the dropdown list.](media/create-azure-storage-resource.png)
+   ![Azure Marketplace is shown. The search box is filled with "storage". Storage Account Create button clicked. Storage Account button is highlighted from the dropdown list.](media/create-azure-storage-resource.png 'Storage Account')
 
 3. Set the following configuration on the Azure Storage account creation form:
 
@@ -112,7 +112,7 @@ Create a new Azure Storage account that will be used to store historic and score
 
    - **Replication (7)**: **Read-access geo-redundant storage (RA-GRS)**
 
-   ![The Azure storage account creation form is filled out with values as outlined above.](media/azure-storage-create-blade.png)
+   ![The Azure storage account creation form is filled out with values as outlined above.](media/azure-storage-create-blade.png 'Storage Account Creation')
 
 4. Select **Review + create (8)**.
 
@@ -124,15 +124,15 @@ In this task, you will create a storage container to store your flight and weath
 
 1. From the home page in the Azure portal, choose **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
-   ![Azure Portal is open. Resource Groups button is highlighted.](media/select-resource-groups.png)
+   ![Azure Portal is open. Resource Groups button is highlighted.](media/select-resource-groups.png 'Resource Groups')
 
 2. Next, select your lab Azure Storage account from the list.
 
-   ![The Azure Storage account that you created in the previous task is selected from within your lab resource group.](media/select-azure-storage-account.png)
+   ![The Azure Storage account that you created in the previous task is selected from within your lab resource group.](media/select-azure-storage-account.png 'Storage Account Selection')
 
 3. Select **Containers (1)** from the menu. Select **+ Container (2)** on the Containers blade, enter **sparkcontainer** for the name **(3)**, leaving the public access level set to Private. Select **Create (4)** to create the container.
 
-   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png)
+   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png Container creation')
 
 ### Task 4: Provision Azure Data Factory
 
@@ -140,11 +140,11 @@ Create a new Azure Data Factory instance that will be used to orchestrate data t
 
 1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Data Factory" into the search bar.
 
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create resource')
 
 2. Select **Create**.
 
-   ![Data Factory Page is open. Create button is highlighted.](media/create-azure-data-factory.png)
+   ![Data Factory Page is open. Create button is highlighted.](media/create-azure-data-factory.png 'Data factory')
 
 3. Set the following configuration on the Data Factory creation form:
 
@@ -185,7 +185,7 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
 1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Data Factory" into the search bar.
 
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png)
+   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create Resource')
 
 2. Select **Windows Server 2016 Datacenter** from Azure Marketplace.
 
@@ -225,7 +225,7 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
 5. Select **Create** on the validation page to finish and start provisioning your VM. When the deployment is complete **(1)**, select **Go to resource (2)** to navigate to your VM.
 
-   ![Deployment complete dialog is shown. Go to resource button is highlighted.](media/vm-deployment-complete.png)
+   ![Deployment complete dialog is shown. Go to resource button is highlighted.](media/vm-deployment-complete.png 'Deployment Complete')
 
 6. Select **Connect** from the upper left-hand corner of the page. Then, select **RDP**. Finally, select **Download RDP File**.
 
