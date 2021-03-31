@@ -223,9 +223,9 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![The Libraries tab is selected and Install New button is highlighted.](media/azure-databricks-cluster-install-new.png 'Libraries')
 
-4. In the Install Library dialog, select **PyPi (1)** for the Library Source, then enter the following in the Package field: `azureml-sdk[databricks]` **(2)**. Select **Install (3)**.
+4. In the Install Library dialog, select **PyPI (1)** for the Library Source, then enter the following in the Package field: `azureml-sdk[databricks]` **(2)**. Select **Install (3)**.
 
-   ![The Install Library dialog is displayed with PyPi selected as the Library Source, and the azureml-sdk package name is entered into the Package field.](media/azure-databricks-cluster-install-library-pypi.png 'Install Library')
+   ![The Install Library dialog is displayed with PyPI selected as the Library Source, and the azureml-sdk package name is entered into the Package field.](media/azure-databricks-cluster-install-library-pypi.png 'Install Library')
 
 5. **Wait** until the library's status shows as **Installed** before continuing.
 
@@ -847,7 +847,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    ![The Github repository page is displayed with the Clone or Download item expanded and the Download Zip button highlighted.](media/github-download-repo.png 'Download ZIP')
 
-4. Unzip the contents to your root hard drive (i.e. `C:\`). This will create a folder on your root drive named `C:\MCW-Big-data-and-visualization-master`.
+4. Unzip the contents to your root hard drive (i.e., `C:\`). This will create a folder on your root drive named `C:\MCW-Big-data-and-visualization-master`.
 
 5. Open Windows Explorer and navigate to `C:\MCW-Big-data-and-visualization-master\Hands-on lab\lab-files\BigDataTravel\`, then open **BigDataTravel.sln**.
 
