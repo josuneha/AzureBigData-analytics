@@ -132,7 +132,7 @@ In this task, you will create a storage container to store your flight and weath
 
 3. Select **Containers (1)** from the menu. Select **+ Container (2)** on the Containers blade, enter **sparkcontainer** for the name **(3)**, leaving the public access level set to Private. Select **Create (4)** to create the container.
 
-   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png Container creation')
+   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png 'Container creation')
 
 ### Task 4: Provision Azure Data Factory
 
