@@ -162,7 +162,7 @@ namespace BigDataTravel
                         {
                             WindSpeed = f.Wind?.SpeedKmph ?? 0,
                             Precipitation = f.Rain?.OneHourMm ?? 0,
-                            Pressure = f.Main?.PressurehPa ?? 0,
+                            Pressure = f.Main?.PressurehPa*0.029529983071445 ?? 0, //Conversion from inHg to kPa
                             ForecastIconUrl = GetImagePathFromIcon(f.Weather[0].Icon),
                             Condition = f.Weather[0].Description
                         }).FirstOrDefault();
