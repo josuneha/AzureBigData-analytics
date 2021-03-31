@@ -44,7 +44,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 1. Microsoft Azure subscription must be pay-as-you-go or MSDN.
 
-    a. Trial subscriptions will not work.
+   - Trial subscriptions will not work.
 
 2. If you are not a Service Administrator or Co-administrator for the Azure subscription, or if you are running the lab in a hosted environment, you will need to install [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** and **Azure development** workloads.
 
@@ -92,7 +92,7 @@ Create a new Azure Storage account that will be used to store historic and score
 
    ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create resource')
 
-2. Select Select **Create (2)** and select **Storage Account (3)**.
+2. Select **Create (2)** and select **Storage Account (3)**.
 
    ![Azure Marketplace is shown. The search box is filled with "storage". Storage Account Create button clicked. Storage Account button is highlighted from the dropdown list.](media/create-azure-storage-resource.png 'Storage Account')
 
