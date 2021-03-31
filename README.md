@@ -3,11 +3,11 @@ Let us know how we’re doing!  Please take a moment to fill out the [Microsoft 
 
 # Big data and visualization
 
-Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves, and provide added value to their corporate customers.
+Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
 
-They are looking to pilot a web app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecasted for the departure hour.
+They are looking to pilot a web app that their internal customer service agents can use to provide additional valuable information to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecast for the departure hour.
 
-June 2020
+March 2021
 
 ## Target audience
 
@@ -26,15 +26,15 @@ At the end of this workshop, you will be better able to build a complete machine
 
 ### Whiteboard design session
 
-In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data, and creating, training, and deploying a machine learning model that can predict flight delays.
+In this whiteboard design session, you will work with a group to design a solution for ingesting and preparing historic flight delay and weather data and creating, training, and deploying a machine learning model that can predict flight delays.
 
-At the end of this whiteboard design session you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays, and orchestrating the collection and batch scoring of historic and new flight delay data.
+At the end of this whiteboard design session, you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end-users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays and orchestrating the collection and batch scoring of historic and new flight delay data.
 
 ### Hands-on lab
 
 This hands-on lab is designed to provide exposure to many of Microsoft's transformative line of business applications built using Microsoft big data and advanced analytics.
 
-By the end of the lab, you will be able to show an end-to-end solution, leveraging many of these technologies, but not necessarily doing work in every component possible.
+By the end of the lab, you will be able to show an end-to-end solution, leveraging many of these technologies but not necessarily doing work in every component possible.
 
 ## Azure services and related products
 
