@@ -146,7 +146,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    - **Pool**: Select **None**
 
-   - **Databricks Runtime Version (3)**: **Runtime: 6.4 (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
+   - **Databricks Runtime Version (3)**: **Runtime: 6.4 Extended Support (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
 
    - **Enable Autoscaling (4)**: **Uncheck** this option.
 
@@ -365,17 +365,21 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     ![The Microsoft Integration Runtime Configuration Manager New Integration Runtime (Self-hosted) Node page displays with a Finish button.](media/adf-ir-self-hosted-node.png 'Microsoft Integration Runtime Configuration Manager')
 
-15. You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
+15. Depending on your version of the Integration Runtime, you will be asked to specify a backup file. Select **Skip** and **OK**.
+
+   ![The Integration Runtime Configuration Manager requests a backup credentials. Configuring backup settings is unncessary for this lab.](./media/skip_ir_backup.png 'Skipping Integration Runtime backup settings')
+
+16. You will then get a screen with a confirmation message. Select the **Launch Configuration Manager** button to view the connection details.
 
     ![The Microsoft Integration Runtime Configuration Manager Indicates the Integration Runtime (Self-hosted) node has been successfully registered. The Launch Configuration Manager button is highlighted.](media/adf-ir-launch-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
     ![The Microsoft Integration Runtime Configuration Manager indicates the Self-hosted note is connected to the cloud service.](media/adf-ir-config-manager.png 'Microsoft Integration Runtime Configuration Manager')
 
-16. You can now return to the Azure Data Factory page and view the Integration Runtime you just configured. You may need to select **Refresh** to view the Running status for the IR.
+17. You can now return to the Azure Data Factory page and view the Integration Runtime you just configured. You may need to select **Refresh** to view the Running status for the IR.
 
     ![In the Connections tab in Azure Data Factory, the Integration runtimes tab is selected, and the integration runtime bigdatagateway-initials is shown in the list.](media/adf-ir-running.png 'Integration Runtime in running state')
 
-17. Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise.
+18. Select the Azure Data Factory Overview button on the menu. Leave this open for the next exercise.
 
     ![The Azure Data Factory Overview button is selected from the left menu.](media/adf-overview.png 'ADF Overview')
 
