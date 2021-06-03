@@ -114,6 +114,8 @@ Create a new Azure Storage account that will be used to store historic and score
 
    ![The Azure storage account creation form is filled out with values as outlined above.](media/azure-storage-create-blade.png 'Storage Account Creation')
 
+   >**Note**: There may be changes in the Azure UI. If you do not see the option to provision **RA-GRS** replication, choose **GRS** and select **Make read access to data available in the event of regional unavailability**. You may also not have the option to select the storage account type.
+
 4. Select **Review + create (8)**.
 
 5. Wait for validation to pass, then select **Create**.
@@ -183,7 +185,7 @@ Power BI desktop is required to connect to your Azure Databricks environment whe
 
 An integration runtime agent for Azure Data Factory will need to be installed on your hardware for the hands-on lab. Since you will need to provide your user credentials, we suggest you provision an Azure VM to act as your "on-premises" hardware.
 
-1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Data Factory" into the search bar.
+1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu.
 
    ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create Resource')
 
