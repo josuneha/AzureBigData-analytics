@@ -134,7 +134,7 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
    ![The Azure Databricks Azure Active Directory Single Sign On dialog.](media/azure-databricks-aad.png 'Databricks Sign In')
 
-4. Select **Clusters (1)** from the menu, then select **+ Create Cluster (2)** .
+4. Select **Compute (1)** from the menu, then select **+ Create Cluster (2)** .
 
    ![From the left menu, Clusters is selected. The + Create Cluster button is selected.](media/azure-databricks-create-cluster-button.png 'Databricks Clusters')
 
@@ -183,10 +183,10 @@ In this exercise, you will implement a classification experiment. You will load 
 3. Extract the ZIP and verify you have the following files:
 
    - FlightDelaysWithAirportCodes.csv
-   - FlightWeatherWithAirportCodes.csv
+   - FlightWeatherWithAirportCode.csv
    - AirportCodeLocationLookupClean.csv
 
-4. Open your Azure Databricks workspace. Before continuing to the next step, verify that your new cluster is running. Do this by navigating to **Clusters (1)** on the left-hand menu and ensuring that the state of your cluster is **Running (2)**.
+4. Open your Azure Databricks workspace. Before continuing to the next step, verify that your new cluster is running. Do this by navigating to **Compute (1)** on the left-hand menu and ensuring that the state of your cluster is **Running (2)**.
 
    ![The Clusters menu item is selected and the cluster is shown indicating that it is in the Running state.](media/azure-databricks-clusters-running.png 'Clusters')
 
@@ -204,7 +204,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![The Specify Table Attributes form is displayed, flight_delays_with_airport_codes is highlighted in the Table Name field and the First row is header checkbox is checked. The Table Preview displays the Column Names and types along with a sampling of data.](media/flight-delays-attributes.png 'Rename table')
 
-9. Repeat steps 5 through 8 for the FlightWeatherWithAirportCode.csv and AirportCodeLocationsClean.csv files, setting the name for each dataset in a similar fashion:
+9. Repeat steps 5 through 8 for the FlightWeatherWithAirportCode.csv and AirportCodeLocationLookupClean.csv files, setting the name for each dataset in a similar fashion:
 
    - flightweatherwithairportcode_csv renamed to **flight_weather_with_airport_code**
    - airportcodelocationlookupclean_csv renamed to **airport_code_location_lookup_clean**
@@ -213,7 +213,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
 ### Task 2: Install Azure ML library on the cluster
 
-1. Select **Clusters (1)** on the left-hand menu, then select your lab cluster **(2)** to open it.
+1. Select **Compute (1)** on the left-hand menu, then select your lab cluster **(2)** to open it.
 
    ![From the left menu, the Clusters item is selected, and the lab cluster is highlighted.](media/azure-databricks-cluster.png 'Lab cluster')
 
