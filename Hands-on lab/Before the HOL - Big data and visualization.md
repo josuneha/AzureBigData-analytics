@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-March 2021
+November 2021
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -29,12 +29,10 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Big data and visualization before the hands-on lab setup guide](#big-data-and-visualization-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Task 1: Provision Azure Databricks](#task-1-provision-azure-databricks)
-    - [Task 2: Create Azure Storage account](#task-2-create-azure-storage-account)
-    - [Task 3: Create a storage container](#task-3-create-a-storage-container)
-    - [Task 4: Provision Azure Data Factory](#task-4-provision-azure-data-factory)
-    - [Task 5: Download and install Power BI Desktop](#task-5-download-and-install-power-bi-desktop)
-    - [Task 6: (Optional) Provision a VM to install the Integration Runtime On](#task-6-optional-provision-a-vm-to-install-the-integration-runtime-on)
+    - [Task 1: Create an Azure resource group using the Azure Portal](#task-1-create-an-azure-resource-group-using-the-azure-portal)
+    - [Task 2: Deploy Azure resources](#task-2-deploy-azure-resources)
+    - [Task 3: Download and install Power BI Desktop](#task-3-download-and-install-power-bi-desktop)
+    - [Task 4: (Optional) Provision a VM to install the Integration Runtime On](#task-4-optional-provision-a-vm-to-install-the-integration-runtime-on)
 
 <!-- /TOC -->
 
@@ -54,134 +52,55 @@ Duration: 30 minutes
 
 In this exercise, you will set up your environment for use in the rest of the hands-on lab. You should follow all the steps provided in the Before the Hands-on Lab section to prepare your environment _before_ attending the hands-on lab.
 
-### Task 1: Provision Azure Databricks
+### Task 1: Create an Azure resource group using the Azure Portal
 
-Azure Databricks is an Apache Spark-based analytics platform optimized for Azure. It will be used in this lab to build and train a machine learning model used to predict flight delays.
+In this task, you will use the Azure Portal to create a new Azure Resource Group for this lab.
 
-1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Azure Databricks" into the search bar. Select **Azure Databricks** from the results.
+1. Log into the [Azure Portal](https://portal.azure.com).
 
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create new resource')
+2. On the top-left corner of the portal, select the menu icon to display the menu.
 
-2. Select **Create**.
+    ![The portal menu icon is displayed.](media/portal-menu-icon.png "Menu icon")
 
-   ![Azure Databricks page is open. Create button is highlighted.](media/create-azure-databricks-resource.png 'Azure Databricks')
+3. In the left-hand menu, select **Resource Groups**.
 
-3. Set the following configuration on the Azure Databricks Service creation form:
+4. At the top of the screen select the **+ New** option to add a new resource group.
 
-   - **Subscription (1)**: Select the subscription you are using for this hands-on lab.
-  
-   - **Resource Group (2)**: Select **Create new** and enter a unique name, such as `hands-on-lab-bigdata`.
+   ![The Add Resource Group Menu is displayed.](media/add-resource-group-menu.png 'Resource Group Menu')
 
-   - **Workspace name (3)**: Enter a unique name, this is indicated by a green checkmark.
-  
-   - **Location (4)**: Select a region close to you. **_(If you are using an Azure Pass, select South Central US.)_**
+5. Create a new resource group with the name **hands-on-lab-bigdata**, ensuring that the proper subscription and region nearest you are selected.  Once you have chosen a location, select **Review + Create**.
 
-   - **Pricing (5)**: Select **Premium (+ Role-based access controls)**
+   ![How to Create a resource group is displayed.](media/create-resource-group.png 'Resource Group')
 
-   ![The Azure Databricks Service creation form is filled out with the values as outlined above.](media/azure-databricks-create-blade.png 'Azure Databricks Creation')
+6. On the Summary blade, select **Create** to provision your resource group.
 
-4. Select **Review + Create (6)**.
+### Task 2: Deploy Azure resources
 
-5. Wait for validation to pass, then select **Create**.
+The below ARM template deploys several Azure resources for the labs, including Azure Synapse Analytics, Azure Database for PostgreSQL, storage accounts, Event Hubs, Stream Analytics, Key Vault, Azure Cosmos DB, Azure Machine Learning, etc.
 
-### Task 2: Create Azure Storage account
+1. Deploy the workspace through the following Azure ARM template (select the button below):
 
-Create a new Azure Storage account that will be used to store historic and scored flight and weather data sets for the lab.
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FMCW-Big-data-and-visualization%2Fmain%2FHands-on%20lab%2Fsetup%2F%2Farm.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton" /></a>
 
-1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "storage" into the search bar.
+2. On the **Custom deployment** form fill in the fields described below.
 
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create resource')
+   - **Subscription**: Select your desired subscription for the deployment.
+   - **Resource group**: Select the resource group you previously created.
+   - **Region**: The region where your Azure resources will be created.
 
-2. Select **Create (2)** and select **Storage Account (3)**.
+   - **Unique Suffix**: This unique suffix will be used naming resources that will created as part of your deployment, such as your initials followed by the current date in YYYYMMDD format (ex. `klf20211031`). Make sure you follow correct Azure [Resource naming](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#resource-naming) conventions.
 
-   ![Azure Marketplace is shown. The search box is filled with "storage". Storage Account Create button clicked. Storage Account button is highlighted from the dropdown list.](media/create-azure-storage-resource.png 'Storage Account')
+   ![The form is configured as described.](media/arm-template.png "Deploy Azure resources")
 
-3. Set the following configuration on the Azure Storage account creation form:
+3. Select the **Review + create** button, then **Create**. The provisioning of your deployment resources will take approximately 5 minutes.
 
-   - **Subscription (1)**: Select the subscription you are using for this hands-on lab.
-
-   - **Resource group (2)**: Select the same resource group you created at the beginning of this lab.
-
-   - **Storage account name (3)**: Enter a unique name, this is indicated by a green checkmark.
-
-   - **Location (4)**: Select the same region you used for Azure Databricks.
-
-   - **Performance (5)**: **Standard**
-
-   - **Account kind (6)**: **StorageV2**
-
-   - **Replication (7)**: **Read-access geo-redundant storage (RA-GRS)**
-
-   ![The Azure storage account creation form is filled out with values as outlined above.](media/azure-storage-create-blade.png 'Storage Account Creation')
-
-   >**Note**: There may be changes in the Azure UI. If you do not see the option to provision **RA-GRS** replication, choose **GRS** and select **Make read access to data available in the event of regional unavailability**. You may also not have the option to select the storage account type.
-
-4. Select **Review + create (8)**.
-
-5. Wait for validation to pass, then select **Create**.
-
-### Task 3: Create a storage container
-
-In this task, you will create a storage container to store your flight and weather data files.
-
-1. From the home page in the Azure portal, choose **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
-
-   ![Azure Portal is open. Resource Groups button is highlighted.](media/select-resource-groups.png 'Resource Groups')
-
-2. Next, select your lab Azure Storage account from the list.
-
-   ![The Azure Storage account that you created in the previous task is selected from within your lab resource group.](media/select-azure-storage-account.png 'Storage Account Selection')
-
-3. Select **Containers (1)** from the menu. Select **+ Container (2)** on the Containers blade, enter **sparkcontainer** for the name **(3)**, leaving the public access level set to Private. Select **Create (4)** to create the container.
-
-   ![The Containers menu item located in the Blob service section is selected from the menu. The + Container item is selected in the toolbar. The New container form is populated with the values outlined above.](media/azure-storage-create-container.png 'Container creation')
-
-### Task 4: Provision Azure Data Factory
-
-Create a new Azure Data Factory instance that will be used to orchestrate data transfers for analysis.
-
-1. In the [Azure Portal](https://portal.azure.com) (<https://portal.azure.com>), select **Create a resource** within the portal menu, then type "Data Factory" into the search bar.
-
-   ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create resource')
-
-2. Select **Create**.
-
-   ![Data Factory Page is open. Create button is highlighted.](media/create-azure-data-factory.png 'Data factory')
-
-3. Set the following configuration on the Data Factory creation form:
-
-   - **Subscription (1)**: Select the subscription you are using for this hands-on lab.
-
-   - **Resource Group (2)**: Select the same resource group you created at the beginning of this lab.
-
-   - **Region (3)**: Select any region close to you.
-
-   - **Name (4)**: Enter a unique name, this is indicated by a green checkmark.
-
-   - **Version (5)**: Select **V2**
-
-   **_Understanding Data Factory Location:_**
-   The Data Factory location is where the data factory's metadata is stored and where the triggering of the pipeline is initiated from. Meanwhile, a data factory can access data stores and compute services in other Azure regions to move data between data stores or process data using compute services. This behavior is realized through the [globally available IR](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=data-factory) to ensure data compliance, efficiency, and reduced network egress costs.
-
-   The IR Location defines the location of its back-end compute, and essentially the location where the data movement, activity dispatching, and SSIS package execution are performed. The IR location can be different from the location of the data factory it belongs to.
-
-   ![The Azure Data Factory creation form is populated with the values as outlined above.](media/azure-data-factory-create-blade-updated.PNG "Configuring the correct settings for ADF")
-
-4. Select **Next: Git configuration > (6)** to continue.
-
-5. Check **Configure Git later (1)** and select **Review + create (2)** to proceed.
-
-   ![The Azure Data Factory Git configuration is disabled.](media/azure-data-factory-configure-git-later.PNG "Accessing the Git configuration tab to prevent it from being enabled during ADF creation")
-
-6. Select **Create** to finish and submit.
-
-### Task 5: Download and install Power BI Desktop
+### Task 3: Download and install Power BI Desktop
 
 Power BI desktop is required to connect to your Azure Databricks environment when creating the Power BI dashboard.
 
 1. Download and install [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
-### Task 6: (Optional) Provision a VM to install the Integration Runtime On
+### Task 4: (Optional) Provision a VM to install the Integration Runtime On
 
 An integration runtime agent for Azure Data Factory will need to be installed on your hardware for the hands-on lab. Since you will need to provide your user credentials, we suggest you provision an Azure VM to act as your "on-premises" hardware.
 
