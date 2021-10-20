@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -231,8 +232,7 @@ namespace BigDataTravel
                     };
 
                     client.BaseAddress = new Uri(mlUrl);
-                    string authvalue = "Bearer " + pat;
-                    client.DefaultRequestHeaders.Add("Authorization", authvalue);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
                     var response = await client.PostAsJsonAsync("", predictionRequest);
 
                     if (response.IsSuccessStatusCode)
