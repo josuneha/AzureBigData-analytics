@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-March 2021
+November 2021
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -36,8 +36,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 2: Create an Azure Databricks cluster](#task-2-create-an-azure-databricks-cluster)
   - [Exercise 2: Load Sample Data and Databricks Notebooks](#exercise-2-load-sample-data-and-databricks-notebooks)
     - [Task 1: Upload the Sample Datasets](#task-1-upload-the-sample-datasets)
-    - [Task 2: Install Azure ML library on the cluster](#task-2-install-azure-ml-library-on-the-cluster)
-    - [Task 3: Open Azure Databricks and complete lab notebooks](#task-3-open-azure-databricks-and-complete-lab-notebooks)
+    - [Task 2: Open Azure Databricks and complete lab notebooks](#task-2-open-azure-databricks-and-complete-lab-notebooks)
   - [Exercise 3: Setup Azure Data Factory](#exercise-3-setup-azure-data-factory)
     - [Task 1: Download and stage data to be processed](#task-1-download-and-stage-data-to-be-processed)
     - [Task 2: Install and configure Azure Data Factory Integration Runtime on your machine](#task-2-install-and-configure-azure-data-factory-integration-runtime-on-your-machine)
@@ -118,7 +117,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
 ### Task 2: Create an Azure Databricks cluster
 
-You have provisioned an Azure Databricks workspace, and now you need to create a new cluster within the workspace. Part of the cluster configuration includes setting up an account access key to your Azure Storage account, using the Spark Config within the new cluster form. This will allow your cluster to access the lab files.
+You have provisioned an Azure Databricks workspace, and now you need to create a new cluster within the workspace. Part of the cluster configuration includes setting up an account access key to your Azure Storage account using the Spark Config within the new cluster form. This will allow your cluster to access the lab files.
 
 1. From the side menu in the Azure portal, select **Resource groups**, then enter your resource group name into the filter box, and select it from the list.
 
@@ -140,33 +139,31 @@ You have provisioned an Azure Databricks workspace, and now you need to create a
 
 5. On the New Cluster form, provide the following:
 
-   - **Cluster Name (1)**: `lab`
+   - **Cluster Name**: `lab`
 
-   - **Cluster Mode (2)**: **Standard**
+   - **Cluster Mode**: **Standard**
 
-   - **Pool**: Select **None**
+   - **Databricks Runtime Version**: **Runtime: 9.1 LTS ML (Scala 2.12, Spark 3.1.2)**
 
-   - **Databricks Runtime Version (3)**: **Runtime: 6.4 Extended Support (Scala 2.11, Spark 2.4.5)** (**Note**: the runtime version CANNOT be > 6.6, due to compatibility issues with the supplied notebooks.)
-
-   - **Enable Autoscaling (4)**: **Uncheck** this option.
+   - **Enable Autoscaling**: **Uncheck** this option.
 
    - **Terminate after**: **Check** the box and enter `120`
 
-   - **Worker Type (5)**: **Standard_F4s**
+   - **Worker Type**: **Standard_F4**
 
    - **Driver Type**: **Same as worker**
 
-   - **Workers (6)**: `1`
+   - **Workers**: `1`
 
-   - **Spark Config**: Expand **Advanced Options (7)** and edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
+   - **Spark Config**: Expand **Advanced Options** and edit the Spark Config by entering the connection information for your Azure Storage account that you copied above in Task 1. This will allow your cluster to access the lab files. Enter the following:
 
      `spark.hadoop.fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net <ACCESS_KEY>`, where <STORAGE_ACCOUNT_NAME> is your Azure Storage account name, and <ACCESS_KEY> is your storage access key.
 
-   **Example: (8)** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
+   **Example:** `spark.hadoop.fs.azure.account.key.bigdatalabstore.blob.core.windows.net HD+91Y77b+TezEu1lh9QXXU2Va6Cjg9bu0RRpb/KtBj8lWQa6jwyA0OGTDmSNVFr8iSlkytIFONEHLdl67Fgxg==`
 
    ![The New Cluster form is populated with the values as outlined above.](media/azure-databricks-create-cluster-form.png 'Create Cluster')
 
-6. Select **Create Cluster (9)**.
+6. Select **Create Cluster**.
 
 ## Exercise 2: Load Sample Data and Databricks Notebooks
 
@@ -211,37 +208,33 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![In the Data section, the default database is selected and the list of tables shows the three tables that were created based on the spreadsheet data.](media/uploaded-data-files.png 'Uploaded data files')
 
-### Task 2: Install Azure ML library on the cluster
+### Task 2: Open Azure Databricks and complete lab notebooks
 
-1. Select **Compute (1)** on the left-hand menu, then select your lab cluster **(2)** to open it.
+1. In Azure Databricks, select the **Settings** menu in the bottom left corner of the window, then select **User Settings**.
 
-   ![From the left menu, the Clusters item is selected, and the lab cluster is highlighted.](media/azure-databricks-cluster.png 'Lab cluster')
+   ![The Settings menu option is selected in Azure Databricks. User Settings is selected from the list of Account options.](media/databricks-select-user-settings.png 'Azure Databricks user account settings')
 
-2. Select the **Libraries** tab. If you **do not** see the Azure ML library already installed on the cluster, continue to the next step. Otherwise, continue to Task 3.
+2. Select **Generate New Token** under the Access Tokens tab. Enter **MCW lab** for the comment and leave the lifetime at 90 days. Select **Generate** to generate a Personal Access Token, or PAT.
 
-3. Select **Install New**.
+   ![The Generate New Token modal is shown with the previously specified values.](media/databricks-generate-new-token.png 'Generate New Token')
 
-   ![The Libraries tab is selected and Install New button is highlighted.](media/azure-databricks-cluster-install-new.png 'Libraries')
+3. **Copy** the generated token and **paste it into a text editor** such as Notepad for use later in this exercise as well as in future exercises. Select **Done** once you are finished.
 
-4. In the Install Library dialog, select **PyPI (1)** for the Library Source, then enter the following in the Package field: `azureml-sdk[databricks]` **(2)**. Select **Install (3)**.
+    ![The generated token is shown. The done button is highlighted.](media/databricks-copy-token.png 'Copy generated token')
 
-   ![The Install Library dialog is displayed with PyPI selected as the Library Source, and the azureml-sdk package name is entered into the Package field.](media/azure-databricks-cluster-install-library-pypi.png 'Install Library')
+4. Within Azure Databricks, select **Data Science & Engineering** and choose **Machine Learning** from the list.  You will need to be in this view before completing one of the notebooks later in this exercise.
 
-5. **Wait** until the library's status shows as **Installed** before continuing.
+   ![The Machine Learning view is selected.](media/databricks-machine-learning.png 'Machine Learning')
 
-   ![The azureml-sdk databricks library is shown in the list of packages with a status of Installed.](media/azure-databricks-cluster-libraries-installed.png 'Libraries')
-
-### Task 3: Open Azure Databricks and complete lab notebooks
-
-1. Within Azure Databricks, select **Workspace (1)** on the menu, then **Users (2)**, then select the down arrow next to your user name **(3)**. Select **Import (4)**.
+5. Within Azure Databricks, select **Workspace (1)** on the menu, then **Users (2)**, then select the down arrow next to your user name **(3)**. Select **Import (4)**.
 
    ![In the left menu, the Workspace item is selected. Beneath the Workspaces pane, the Users item is selected. Beneath the Users pane, the current user is selected. The menu carat next to the username of the user is expanded with the Import item selected.](media/select-import-in-user-workspace.png 'Import')
 
-2. Within the Import Notebooks dialog, select Import from: **URL (1)**, then paste the following into the URL textbox **(2)**: `https://github.com/microsoft/MCW-Big-data-and-visualization/blob/master/BigDataVis.dbc?raw=true`. Select **Import (3)** to continue.
+6. Within the Import Notebooks dialog, select Import from: **URL (1)**, then paste the following into the URL textbox **(2)**: `https://github.com/microsoft/MCW-Big-data-and-visualization/blob/master/BigDataVis.dbc?raw=true`. Select **Import (3)** to continue.
 
    ![The Import Notebooks dialog is shown that will allow the user to import notebooks via a file upload or URL.](media/import-notebooks.png 'Import from file')
 
-3. After importing, expand the new **BigDataVis** folder.
+7. After importing, expand the new **BigDataVis** folder.
 
    ![Workspace is open. The current user is selected. BigDataVis folder is highlighted.](media/adf-selecting-bigdatavis.png 'BigDataVis')
 
@@ -249,17 +242,13 @@ In this exercise, you will implement a classification experiment. You will load 
    >
    >![In the taskbar for a notebook, the cluster that is currently attached is highlighted.](media/attach-cluster-to-notebook.png 'Attach cluster to notebook')
 
-4. Run each cell (except `Clean up` section in Notebook 3) of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook, so you understand each step of the data preparation process.
+8. Run each cell (except `Clean up` section in Notebook 3) of the notebooks located in the **Exercise 2** folder (01, 02 and 03) individually by selecting within the cell, then entering **Ctrl+Enter** on your keyboard. Pay close attention to the instructions within the notebook, so you understand each step of the data preparation process.
 
    > **WARNING:** If you plan on running the web app in the optional exercise: **Exercise 8: Deploy intelligent web app (Optional Lab)**, then do **NOT** run the cells in the `Clean up` section of Notebook `03 Deploy as Web Service`.
 
    ![In the Workspace screen, beneath BigDataVis the Exercise 2 folder is selected. Beneath Exercise 2, three notebooks are displayed 01 Data Preparation, 02 Train and Evaluate Models, and 03 Deploy as Web Service.](media/azure-databricks-exercise-2.png 'Exercise 2 folder')
 
-5. Make sure you take note of the web service URL to be used later in **Exercise 8: Deploy intelligent web app (Optional Lab)**. Copy the URL to a text editor such as Notepad for later use.
-
-   ![Web Service URL Retrieval section of Notebook 3 runs. The resulting URL is highlighted.](media/adf-notebook3-web-service-url.png 'Web Service URL')
-
-6. Do NOT run any notebooks within the Exercise 5 or 6 folders. They will be discussed later in the lab.
+9. Do NOT run any notebooks within the Exercise 5 or 6 folders. They will be discussed later in the lab.
 
 ## Exercise 3: Setup Azure Data Factory
 
@@ -469,7 +458,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
     - **Account selection method (3)**: **From Azure subscription**
 
-    - **Storage account name (3)**: Select the blob storage account you provisioned in the before-the-lab section.
+    - **Storage account name (3)**: Select the blob storage account you provisioned in the before-the-lab section.  It will begin with **asastoremcw**.
 
     ![On the New linked service (Azure Blob storage) page, the fields are set to the previously defined values.](media/adf-copy-data-blob-storage-linked.png 'New Linked Service Blob Storage')
 
@@ -565,39 +554,27 @@ In this exercise, you will extend the Data Factory to operationalize data scorin
   
    - **Select cluster (4)**: **Existing interactive cluster**
 
+   - **Access token**:  Paste your Personal Access Token (PAT) that you saved earlier.
+
+   - **Choose from existing clusters**:  Select **lab** from the drop-down list.
+
+   Once you have entered this information, select **Create**.
+
    ![The New linked service form is shown populated with the previously listed values.](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
 
-7. Leave the form open and open your Azure Databricks workspace in another browser tab. You will generate and retrieve the Access token here.
-
-8. In Azure Databricks, select the **BigDataLab (1)** in the top corner of the window, then select **User Settings (2)**.
-
-   ![The BigDataLab button is selected in Azure Databricks. User Settings is selected from the list of Account options.](media/databricks-select-user-settings.png 'Azure Databricks user account settings')
-
-9. Select **Generate New Token (1)** under the Access Tokens tab. Enter **ADF access (2)** for the comment and leave the lifetime at 90 days. Select **Generate (3)**.
-
-   ![The Generate New Token modal is shown with the previously specified values.](media/databricks-generate-new-token.png 'Generate New Token')
-
-10. **Copy** the generated token and **paste it into a text editor** such as Notepad for a later step. Select **Done**.
-
-    ![The generated token is shown. The done button is highlighted.](media/databricks-copy-token.png 'Copy generated token')
-
-11. Switch back to your Azure Data Factory screen and paste the generated token into the **Access token (1)** field within the form. After a moment, select your cluster underneath **Choose from existing clusters (2)**. Select **Create (3)**.
-
-    ![In the New linked service form, the access token is pasted into the Access Token field, and the Azure Databricks Cluster (lab) is selected.](media/adf-ml-access-token.png 'Paste access token')
-
-12. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu. Select the **Exercise 5 (2)** folder, then open notebook **01 Deploy for Batch Scoring (3)**. Examine the content, but _don't run any of the cells yet_.
+7. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu. Select the **Exercise 5 (2)** folder, then open notebook **01 Deploy for Batch Scoring (3)**. Examine the content, but _don't run any of the cells yet_.
 
     ![In the Azure Databricks workspaces, beneath BigDataVis, the Exercise 5 folder is selected. Beneath Exercise 5, the 01 Deploy for Batch Score notebook is selected.](media/databricks-workspace-create-folder.png 'Create folder')
 
-13. Replace **`STORAGE-ACCOUNT-NAME`** with the name of the blob storage account you copied in Exercise 1 into Cmd 4.
+8.  Replace **`STORAGE-ACCOUNT-NAME`** with the name of the blob storage account you copied in Exercise 1 into Cmd 4.
 
     ![Cmd 4 is shown. Storage account name placeholder is replaced with bigdatalabstore10.](media/databricks-storage-name.png 'Storage Account Name')
 
-14. Switch back to your Azure Data Factory screen. Select the **Settings (1)** tab, then browse **(2)** to your **Exercise 5/01 Deploy for Batch Score** notebook **(3)** into the Notebook path field.
+9.  Switch back to your Azure Data Factory screen. Select the **Settings (1)** tab, then browse **(2)** to your **Exercise 5/01 Deploy for Batch Score** notebook **(3)** into the Notebook path field.
 
     ![In the Azure Data Factory pipeline designer, with the Notebook activity selected, the Settings tab is the active tab. The Browse button is selected next to the Notebook path.](media/adf-ml-notebook-path.png 'Notebook path')
 
-15. The final step is to connect the **Copy data** activity with the **Notebook** activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All (1)**, then **Publish** the **CopyOnPrem2AzurePipeline**, after making the connection.
+10. The final step is to connect the **Copy data** activity with the **Notebook** activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All (1)**, then **Publish** the **CopyOnPrem2AzurePipeline**, after making the connection.
 
     ![In the Azure Data Factory pipeline designer. The Copy Data activity is attached to the Notebook activity.](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
@@ -643,7 +620,7 @@ In this exercise, you will create visualizations in Power BI Desktop.
 
 Before you begin, you must first obtain the JDBC connection string to your Azure Databricks cluster.
 
-1. In Azure Databricks, go to Clusters and select your cluster.
+1. In Azure Databricks, go to **Compute** and select your cluster.
 
 2. On the cluster edit page, in the **Configuration** tab, scroll down to the bottom of the page, expand **Advanced Options**, then select the **JDBC/ODBC** tab.
 
@@ -683,7 +660,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 8. Select **OK (3)**.
 
-9. Enter your credentials on the next screen as follows:
+9. Select the **Username/Password** option from the credentials menu and then enter your credentials on the next screen as follows:
 
     - **User name**: `token`
 
@@ -803,15 +780,13 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    - Ensure the correct Directory and Subscription are selected.
 
-   - Select the Resource Group **(1)** that you have been using throughout this lab.
+   - Select the Resource Group that you have been using throughout this lab.
 
    - Either keep the default Site name, or provide one that is globally unique, and then choose a Site Location.
 
-   - Enter the **OpenWeather API Key (3)**.
+   - Enter the **OpenWeather API Key**.
 
-   - Finally, enter the **ML URL (3)**. We got this from Azure databricks Notebook #3 in the Exercise 2 folder. If you cleaned your resources at the end of this Notebook #3, you will need to re-run it and keep the web service running to get its associated URL.
-
-      ![The web service URL is output from a cell within the Databricks notebook.](media/azure-databricks-web-url.png 'Web service URL')
+   - Finally, enter the **ML URL**. We got this from Azure databricks Notebook #3 in the Exercise 2 folder.
 
    ![Fields on the Deploy to Azure page are populated with the previously copied information.](media/azure-deployment-form.png 'Deploy to Azure page')
 

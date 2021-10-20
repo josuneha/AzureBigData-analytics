@@ -108,9 +108,9 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    ![The Create a resource item is selected from the Azure portal page](media/azure-portal-create-resource.png 'Create Resource')
 
-2. Select **Windows Server 2016 Datacenter** from Azure Marketplace.
+2. Select **Windows Server 2019 Datacenter** from Azure Marketplace.
 
-   ![Selecting the Windows Server 2016 Datacenter VM image from Azure Marketplace.](media/windows-server-2016-for-ir.png "Choosing a marketplace VM image to host the IR")
+   ![Selecting the Windows Server 2019 Datacenter VM image from Azure Marketplace.](media/windows-server-2016-for-ir.png "Choosing a marketplace VM image to host the IR")
 
 3. On the **Create a virtual machine** page, specify the following parameters:
 
@@ -124,7 +124,7 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    - **Availability options**: No infrastructure redundancy required
 
-   - **Image**: Windows Server 2016 Datacenter - Gen1
+   - **Image**: Windows Server 2016 Datacenter - Gen2
 
    - **Azure Spot instance**: Unselected
 
@@ -142,7 +142,7 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    ![Setting the configuration details for the Windows Server 2016 integration runtime virtual machine.](media/ir-vm-config.PNG "Providing VM configuration information prior to creating it")
 
-4. select **Review + create (7)** to proceed.
+4. select **Review + create** to proceed.
 
 5. Select **Create** on the validation page to finish and start provisioning your VM. When the deployment is complete **(1)**, select **Go to resource (2)** to navigate to your VM.
 

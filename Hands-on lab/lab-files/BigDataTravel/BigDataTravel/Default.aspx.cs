@@ -18,13 +18,14 @@ namespace BigDataTravel
 {
     public partial class _Default : Page
     {
-        private List<Airport> aiports = null;
+        private List<Airport> airports = null;
         private ForecastResult forecast = null;
         private DelayPrediction prediction = null;
         private static IOpenWeatherClient openWeatherClient;
 
         // settings
         private string mlUrl;
+        private string pat;
         private string weatherApiKey;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -38,12 +39,12 @@ namespace BigDataTravel
 
                 openWeatherClient = new OpenWeatherClient(apiKey: weatherApiKey);
 
-                ddlOriginAirportCode.DataSource = aiports;
+                ddlOriginAirportCode.DataSource = airports;
                 ddlOriginAirportCode.DataTextField = "AirportCode";
                 ddlOriginAirportCode.DataValueField = "AirportCode";
                 ddlOriginAirportCode.DataBind();
 
-                ddlDestAirportCode.DataSource = aiports;
+                ddlDestAirportCode.DataSource = airports;
                 ddlDestAirportCode.DataTextField = "AirportCode";
                 ddlDestAirportCode.DataValueField = "AirportCode";
                 ddlDestAirportCode.DataBind();
@@ -59,7 +60,7 @@ namespace BigDataTravel
 
         private void InitAirports()
         {
-            aiports = new List<Airport>()
+            airports = new List<Airport>()
             {
                 new Airport() { AirportCode ="SEA", Latitude = 47.44900, Longitude = -122.30899 },
                 new Airport() { AirportCode ="ABQ", Latitude = 35.04019, Longitude = -106.60900 },
@@ -87,7 +88,7 @@ namespace BigDataTravel
             var departureDate = DateTime.Parse(txtDepartureDate.Text);
             departureDate = departureDate.AddHours(double.Parse(txtDepartureHour.Text));
 
-            var selectedAirport = aiports.FirstOrDefault(a => a.AirportCode == ddlOriginAirportCode.SelectedItem.Value);
+            var selectedAirport = airports.FirstOrDefault(a => a.AirportCode == ddlOriginAirportCode.SelectedItem.Value);
 
             if (selectedAirport != null)
             {
@@ -118,7 +119,7 @@ namespace BigDataTravel
             weatherForecast.ImageUrl = forecast.ForecastIconUrl;
             weatherForecast.ToolTip = forecast.Condition;
 
-            if (String.IsNullOrWhiteSpace(mlUrl))
+            if (String.IsNullOrWhiteSpace(mlUrl) || String.IsNullOrWhiteSpace(pat))
             {
                 lblPrediction.Text = "(not configured)";
                 lblConfidence.Text = "(not configured)";
@@ -126,7 +127,7 @@ namespace BigDataTravel
             }
 
             if (prediction == null)
-                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl.");
+                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl and pat.");
 
             if (prediction.ExpectDelays)
             {
@@ -201,7 +202,7 @@ namespace BigDataTravel
 
         private async Task PredictDelays(DepartureQuery query, ForecastResult forecast)
         {
-            if (string.IsNullOrEmpty(mlUrl))
+            if (string.IsNullOrWhiteSpace(mlUrl) || string.IsNullOrWhiteSpace(pat))
             {
                 return;
             }
@@ -229,6 +230,8 @@ namespace BigDataTravel
                     };
 
                     client.BaseAddress = new Uri(mlUrl);
+                    string authvalue = "Bearer " + pat;
+                    client.DefaultRequestHeaders.Add("Authorization", authvalue);
                     var response = await client.PostAsJsonAsync("", predictionRequest);
 
                     if (response.IsSuccessStatusCode)
