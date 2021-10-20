@@ -55,6 +55,7 @@ namespace BigDataTravel
         private void InitSettings()
         {
             mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
+            pat = System.Web.Configuration.WebConfigurationManager.AppSettings["pat"];
             weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
         }
 
