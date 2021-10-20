@@ -10,10 +10,10 @@ using System.Net.Http.Headers;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using NodaTime;
 using Unidevel.OpenWeather;
+using System.Reflection;
 
 namespace BigDataTravel
 {
@@ -124,7 +124,6 @@ namespace BigDataTravel
             if (String.IsNullOrWhiteSpace(mlUrl) || String.IsNullOrWhiteSpace(pat))
             {
                 lblPrediction.Text = "(not configured)";
-                lblConfidence.Text = "(not configured)";
                 return;
             }
 
@@ -139,8 +138,6 @@ namespace BigDataTravel
             {
                 lblPrediction.Text = "no delays expected";
             }
-
-            lblConfidence.Text = $"{(prediction.Confidence * 100.0):N2}";
         }
 
         private async Task GetWeatherForecast(DepartureQuery departureQuery)
@@ -201,6 +198,18 @@ namespace BigDataTravel
             }
             return $"http://openweathermap.org/img/wn/{value}@2x.png";
         }
+        private string SerializePredictionRequestForPandasDataFrame(PredictionRequest pr)
+        {
+            string[] columns = { "OriginAirportCode", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "WindSpeed", "SeaLevelPressure", "HourlyPrecip" };
+            object[] dataRow = { pr.OriginAirportCode, pr.Month, pr.DayofMonth, pr.CRSDepHour, pr.DayOfWeek, pr.Carrier, pr.DestAirportCode, pr.WindSpeed, pr.SeaLevelPressure, pr.HourlyPrecip };
+            object[][] data = new object[][] { dataRow };
+
+            var predictionRequestDF = new PredictionRequestDataFrame();
+            predictionRequestDF.columns = columns;
+            predictionRequestDF.data = data;
+            string json = JsonConvert.SerializeObject(predictionRequestDF);
+            return json;
+        }
 
         private async Task PredictDelays(DepartureQuery query, ForecastResult forecast)
         {
@@ -233,21 +242,23 @@ namespace BigDataTravel
 
                     client.BaseAddress = new Uri(mlUrl);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
-                    var response = await client.PostAsJsonAsync("", predictionRequest);
+                    string json = SerializePredictionRequestForPandasDataFrame(predictionRequest);
+                    var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync("", content);
 
                     if (response.IsSuccessStatusCode)
                     {
                         var responseResult = await response.Content.ReadAsStringAsync();
                         var token = JToken.Parse(responseResult);
-                        var parsedResult = JsonConvert.DeserializeObject<List<PredictionResult>>((string)token);
+                        var parsedResult = JsonConvert.DeserializeObject<List<double>>(token.ToString());
                         var result = parsedResult[0];
-                        double confidence = double.Parse(result.confidence.Replace("[", string.Empty).Replace("]", string.Empty).Split(new Char[] {','})[0]);
-                        if (result.prediction == 1)
+                        double confidence = 0;
+                        if (result == 1)
                         {
                             this.prediction.ExpectDelays = true;
                             this.prediction.Confidence = confidence;
                         }
-                        else if (result.prediction == 0)
+                        else if (result == 0)
                         {
                             this.prediction.ExpectDelays = false;
                             this.prediction.Confidence = confidence;
@@ -297,10 +308,12 @@ namespace BigDataTravel
         public double HourlyPrecip { get; set; }
     }
 
-    public class PredictionResult
+    // Our model requires JSON-serialized data in a particular Pandas DataFrame format, with a structure like:
+    // '{"columns":["OriginAirportCode", "Month", ...],"data":[["ATL", 09, ...]]}'
+    public class PredictionRequestDataFrame
     {
-        public double prediction { get; set; }
-        public string confidence { get; set; }
+        public string[] columns { get; set; }
+        public object[][] data { get; set; }
     }
 
     public class ForecastResult
