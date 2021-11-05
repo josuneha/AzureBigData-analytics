@@ -491,7 +491,7 @@ _High-level architecture_
 
    ![The high-level overview diagram of the end-to-end solution is displayed. Flight delay data and historical airport weather data are provided to Azure Data Factory. Azure Data Factory provides this data to both blob storage and Azure Databricks. Azure Databricks scores the data and saves the results to an Azure SQL Database. Azure Databricks also creates, trains, and serves a machine learning model that is consumed by the web portal. The web portal also consumes 3rd party API data for forecasted weather. Map data visualization is provided by Power BI using web portal information and the Azure SQL database.](media/high-level-overview.png 'High-level overview diagram')
 
-_NOTE: The preferred solution is only one of many possible, viable approaches._
+   This solution is only one of many possible, viable approaches.  In a production scenario, it may make sense to use Azure Data Lake Storage Gen2 instead of Blob Storage, as it provides additional flexibility and security options over Azure Blob Storage.  Another potential swap would be to incorporate Azure Synapse Analytics, using Synapse Pipelines instead of Azure Data Factory to move data from on-premises storage into ADLS Gen2.  Databricks can then read data from ADLS Gen2, perform machine learning operations, and write data back to ADLS Gen2.  Finally, instead of using Azure SQL Database or directly querying Spark tables in Databricks, another viable option would be to use the Azure Synapse Analytics serverless SQL pool to expose data to Power BI.
 
 _Data loading_
 
