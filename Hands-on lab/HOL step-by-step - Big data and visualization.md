@@ -234,7 +234,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![The Import Notebooks dialog is shown that will allow the user to import notebooks via a file upload or URL.](media/import-notebooks.png 'Import from file')
 
-   > **Note:**  This Databricks archive is available within the `Hands-on lab\lab-files` directory of this repository.  In the `BigDataVis` subfolder, you can see the individual notebooks as separate .ipynb files. 
+   > **Note:**  This Databricks archive is available within the `Hands-on lab\lab-files` directory of this repository.  In the `BigDataVis` subfolder, you can also see the individual notebooks as separate files in .ipynb format.
 
 7. After importing, expand the new **BigDataVis** folder.
 
