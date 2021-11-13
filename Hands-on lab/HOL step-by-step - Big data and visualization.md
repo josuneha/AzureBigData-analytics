@@ -1,7 +1,7 @@
 ![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 <div class="MCWHeader1">
-Big data and visualization
+Big data analytics and visualization
 </div>
 
 <div class="MCWHeader2">
@@ -26,7 +26,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Big data and visualization hands-on lab step-by-step](#big-data-and-visualization-hands-on-lab-step-by-step)
+- [Big data analytics and visualization hands-on lab step-by-step](#big-data-analytics-and-visualization-hands-on-lab-step-by-step)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
@@ -61,7 +61,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# Big data and visualization hands-on lab step-by-step
+# Big data analytics and visualization hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
@@ -814,7 +814,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    > **Note**: If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
 
-2. In a web browser, navigate to the [Big data and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-and-visualization).
+2. In a web browser, navigate to the [Big data analytics and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-and-visualization).
 
 3. On the repo page, select **Clone or download**, then select **Download ZIP**.
 

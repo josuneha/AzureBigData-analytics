@@ -1,7 +1,7 @@
 ![Microsoft Cloud Workshop](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png 'Microsoft Cloud Workshop')
 
 <div class="MCWHeader1">
-Big data and visualization
+Big data analytics and visualization
 </div>
 
 <div class="MCWHeader2">
@@ -22,19 +22,19 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-# Big data and visualization whiteboard design session trainer guide
+# Big data analytics and visualization whiteboard design session trainer guide
 
 **Contents**
 
 <!-- TOC -->
 
-- [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide)
+- [Big data analytics and visualization whiteboard design session trainer guide](#big-data-analytics-and-visualization-whiteboard-design-session-trainer-guide)
 - [Trainer information](#trainer-information)
   - [Role of the trainer](#role-of-the-trainer)
   - [Whiteboard design session flow](#whiteboard-design-session-flow)
   - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
   - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
-- [Big data and visualization whiteboard design session student guide](#big-data-and-visualization-whiteboard-design-session-student-guide)
+- [Big data analytics and visualization whiteboard design session student guide](#big-data-analytics-and-visualization-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
     - [Customer situation](#customer-situation)
@@ -45,7 +45,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Step 3: Present the solution](#step-3-present-the-solution)
   - [Wrap-up](#wrap-up)
   - [Additional references](#additional-references)
-- [Big data and visualization whiteboard design session trainer guide](#big-data-and-visualization-whiteboard-design-session-trainer-guide-1)
+- [Big data analytics and visualization whiteboard design session trainer guide](#big-data-analytics-and-visualization-whiteboard-design-session-trainer-guide-1)
   - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
   - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
   - [Step 3: Present the solution](#step-3-present-the-solution-1)
@@ -165,7 +165,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a bit of silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-# Big data and visualization whiteboard design session student guide
+# Big data analytics and visualization whiteboard design session student guide
 
 ## Abstract and learning objectives
 
@@ -433,7 +433,7 @@ Tables reconvene with the larger group to hear an SME share the case study's pre
 | Azure Key Vault | <https://docs.microsoft.com/azure/key-vault/key-vault-overview> |
 | Azure Monitor | <https://docs.microsoft.com/azure/azure-monitor/overview> |
 
-# Big data and visualization whiteboard design session trainer guide
+# Big data analytics and visualization whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
