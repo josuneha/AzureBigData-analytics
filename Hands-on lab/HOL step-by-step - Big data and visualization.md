@@ -230,7 +230,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![In the left menu, the Workspace item is selected. Beneath the Workspaces pane, the Users item is selected. Beneath the Users pane, the current user is selected. The menu carat next to the username of the user is expanded with the Import item selected.](media/select-import-in-user-workspace.png 'Import')
 
-6. Within the Import Notebooks dialog, select Import from: **URL (1)**, then paste the following into the URL textbox **(2)**: `https://github.com/microsoft/MCW-Big-data-and-visualization/blob/main/Hands-on%20lab/lab-files/BigDataVis.dbc?raw=true`. Select **Import (3)** to continue.
+6. Within the Import Notebooks dialog, select Import from: **URL (1)**, then paste the following into the URL textbox **(2)**: `https://github.com/microsoft/MCW-Big-data-analytics-and-visualization/blob/main/Hands-on%20lab/lab-files/BigDataVis.dbc?raw=true`. Select **Import (3)** to continue.
 
    ![The Import Notebooks dialog is shown that will allow the user to import notebooks via a file upload or URL.](media/import-notebooks.png 'Import from file')
 
