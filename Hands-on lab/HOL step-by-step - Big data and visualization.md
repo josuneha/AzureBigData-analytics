@@ -52,7 +52,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 1: Obtain the JDBC connection string to your Azure Databricks cluster](#task-1-obtain-the-jdbc-connection-string-to-your-azure-databricks-cluster)
     - [Task 2: Connect to Azure Databricks using Power BI Desktop](#task-2-connect-to-azure-databricks-using-power-bi-desktop)
     - [Task 3: Create Power BI report](#task-3-create-power-bi-report)
-  - [Exercise 8: Deploy intelligent web app (Optional Lab)](#exercise-8-deploy-intelligent-web-app-optional-lab)
+  - [Exercise 8: Deploy intelligent web app (Optional)](#exercise-8-deploy-intelligent-web-app-optional)
     - [Task 1: Register for an OpenWeather account](#task-1-register-for-an-openweather-account)
     - [Task 2: Deploy web app from GitHub](#task-2-deploy-web-app-from-github)
     - [Task 3: Manual deployment (optional)](#task-3-manual-deployment-optional)
@@ -89,7 +89,7 @@ Below is a diagram of the solution architecture you will build in this lab. Plea
 
 2. If you are not a Service Administrator or Co-administrator for the Azure subscription, or if you are running the lab in a hosted environment, you will need to install [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** and **Azure development** workloads.
 
-3. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20and%20visualization.md).
+3. Follow all the steps provided in [Before the Hands-on Lab](Before%20the%20HOL%20-%20Big%20data%20analytics%20and%20visualization.md).
 
 ## Exercise 1: Retrieve lab environment information and create Databricks cluster
 
@@ -111,7 +111,7 @@ You will need to have the Azure Storage account name and access key when you cre
 
    ![On the left menu, Overview is selected and the Subscription ID is highlighted.](media/azure-storage-subscription-id.png 'Subscription ID')
 
-4. Select **Access keys (1)** from the menu and select **Show keys (2)**. Copy the **storage account name (3)** and the **key1 (3)** to a text editor such as Notepad for later use.
+4. Select **Access keys (1)** from the menu and select **Show keys (2)**. Copy the **storage account name (3)** and the **key1 (4)** to a text editor such as Notepad for later use.
 
    ![On the left menu, located in the Settings section, Access keys is selected. The copy button next to the Storage account name textbox is highlighted, as well as the copy button next to the key 1 key textbox.](media/azure-storage-access-keys.png 'Storage Access Keys')
 
@@ -191,7 +191,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![From the Azure Databricks workspace, Data is selected from the menu, default database is selected from a list of available databases, the Create Table button is selected.](media/azure-databricks-create-tables.png 'Create new table')
 
-6. Select **Upload File (1)** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area. Select **Create Table with UI (3)**.
+6. Select **Upload File (1)** under Create New Table, and then select either select or drag-and-drop the FlightDelaysWithAirportCodes.csv file into the file area **(2)**. Select **Create Table with UI (3)**.
 
    ![In the Create New Table form, the Upload File button is highlighted and the FlightDelaysWithAirportCodes.csv shows as uploaded. The Create Table with UI button is shown at the bottom of the form.](media/create-flight-delays-table-ui.png 'Create new table')
 
@@ -226,7 +226,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
    ![The Machine Learning view is selected.](media/databricks-machine-learning.png 'Machine Learning')
 
-5. Within Azure Databricks, select **Workspace (1)** on the menu, then **Users (2)**, then select the down arrow next to your user name **(3)**. Select **Import (4)**.
+5. Within Azure Databricks, select **Workspace (1)** on the menu, then **Users (2)**, then select the down arrow next to your username **(3)**. Select **Import (4)**.
 
    ![In the left menu, the Workspace item is selected. Beneath the Workspaces pane, the Users item is selected. Beneath the Users pane, the current user is selected. The menu carat next to the username of the user is expanded with the Import item selected.](media/select-import-in-user-workspace.png 'Import')
 
@@ -286,7 +286,7 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
    ![On the End-User License Agreement page, the check box to accept the license agreement is selected, as is the Next button.](media/image115.png 'End-User License Agreement page')
 
-6. Accept the default Destination Folder, and select Next.
+6. Accept the default Destination Folder and select Next.
 
    ![On the Destination folder page, the destination folder is set to C:\Program Files\Microsoft Integration Runtime\ and the Next button is selected.](media/image116.png 'Destination folder page')
 
@@ -342,11 +342,11 @@ In this exercise, you will create a baseline environment for Azure Data Factory 
 
     > **WARNING**: Don't close the current screen or browser session.
 
-11. Paste the **Key1** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen.
+11. Paste the **Key1 (1)** value into the box in the middle of the Microsoft Integration Runtime Configuration Manager screen.
 
     ![The Microsoft Integration Runtime Configuration Manager Register Integration Runtime page displays with the Key1 value pasted into the textbox. A green checkmark next to the textbox denotes it's a valid key.](media/adf-ir-vm-register.png 'Microsoft Integration Runtime Configuration Manager')
 
-12. Select **Register**.
+12. Select **Register (2)**.
 
 13. It can take up to a minute or two to register. If it takes more than a couple of minutes, and the screen does not respond or returns an error message, close the screen by selecting the **Cancel** button.
 
@@ -386,11 +386,11 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 2. Enter the **Properties** page
   
-   - Select **Built-in copy task** (1)
-   - Select **Schedule** below **Task cadence or task schedule** (2)
-   - Set the **Start Date (UTC)** to **01/01/2021 12:00 AM** (3) 
-   - Set the **Recurrence** to **Every 1 month** (4)
-   - Below **Advanced recurrence options**, set **Hours** and **Minutes** to 0 (5)
+   - Select **Built-in copy task (1)**
+   - Select **Schedule** below **Task cadence or task schedule (2)**
+   - Set the **Start Date (UTC)** to **01/01/2021 12:00 AM (3)** 
+   - Set the **Recurrence** to **Every 1 month (4)**
+   - Below **Advanced recurrence options**, set **Hours** and **Minutes** to 0 **(5)**.
 
    ![The Properties form for the copy data task is shown populated with the values outlined above.](media/adf-copy-data-properties.png 'Properties dialog box')
 
@@ -412,7 +412,7 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
    - **Host (3)**: **C:\\Data**
 
-   - **User name (4)**: Use your machine's login username.
+   - **User name (4)**: Use your machine's login user name.
 
    - **Password (5)**: Use your machine's login password.
 
@@ -450,15 +450,15 @@ In this exercise, you will create an Azure Data Factory pipeline to copy data (.
 
 14. On the New Linked Service (Azure Blob Storage) account screen, enter the following, test your connection **(4)**, and then select **Create (5)**.
 
-    - **Name (1)**: `BlobStorageOutput`
+    - **Name**: `BlobStorageOutput`
 
-    - **Connect via integration runtime (2)**: Select your Integration Runtime.
+    - **Connect via integration runtime**: Select your Integration Runtime.
 
     - **Authentication method**: Select **Account key**
 
-    - **Account selection method (3)**: **From Azure subscription**
+    - **Account selection method**: **From Azure subscription**
 
-    - **Storage account name (3)**: Select the blob storage account you provisioned in the before-the-lab section.  It will begin with **asastoremcw**.
+    - **Storage account name**: Select the blob storage account you provisioned in the before-the-lab section.  It will begin with **asastoremcw**.
 
     ![On the New linked service (Azure Blob storage) page, the fields are set to the previously defined values.](media/adf-copy-data-blob-storage-linked.png 'New Linked Service Blob Storage')
 
@@ -532,7 +532,7 @@ In this exercise, you will extend the Data Factory to operationalize data scorin
 
    ![The Notebook activity is dragged onto the design surface.](media/adf-ml-drag-notebook-activity.png 'Notebook on design surface')
 
-4. Select the Notebook activity **(1)** on the design surface to display tabs containing its properties and settings at the bottom of the screen. On the **General (2)** tab, enter `BatchScore` into the Name **(3)** field.
+4. Select the Notebook activity **(1)** on the design surface to display tabs containing its properties and settings at the bottom of the screen. On the **General (2)** tab, enter `BatchScore` into the **Name (3)** field.
 
    ![BatchScore is entered into the Name textbox under the General tab.](media/adf-ml-notebook-general.png 'Databricks Notebook General Tab')
 
@@ -542,17 +542,17 @@ In this exercise, you will extend the Data Factory to operationalize data scorin
 
 6. On the New Linked Service dialog, enter the following:
 
-   - **Name (1)**: `AzureDatabricks`
+   - **Name**: `AzureDatabricks`
   
    - **Connect via integration runtime**: Leave set to Default.
   
    - **Account selection method**: **From Azure subscription**
   
-   - **Azure subscription (2)**: Choose your Azure Subscription.
+   - **Azure subscription**: Choose your Azure Subscription.
   
-   - **Databricks workspace (3)**: Pick your Databricks workspace to populate the Domain automatically.
+   - **Databricks workspace**: Pick your Databricks workspace to populate the Domain automatically.
   
-   - **Select cluster (4)**: **Existing interactive cluster**
+   - **Select cluster**: **Existing interactive cluster**
 
    - **Access token**:  Paste your Personal Access Token (PAT) that you saved earlier.
 
@@ -562,7 +562,7 @@ In this exercise, you will extend the Data Factory to operationalize data scorin
 
    ![The New linked service form is shown populated with the previously listed values.](media/adf-ml-databricks-service-settings.png 'Databricks Linked Service settings')
 
-7. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu. Select the **Exercise 5 (2)** folder, then open notebook **01 Deploy for Batch Scoring (3)**. Examine the content, but _don't run any of the cells yet_.
+7. Switch back to Azure Databricks. Select **Workspace > Users > BigDataVis** in the menu **(1)**. Select the **Exercise 5 (2)** folder, then open notebook **01 Deploy for Batch Scoring (3)**. Examine the content, but _don't run any of the cells yet_.
 
     ![In the Azure Databricks workspaces, beneath BigDataVis, the Exercise 5 folder is selected. Beneath Exercise 5, the 01 Deploy for Batch Score notebook is selected.](media/databricks-workspace-create-folder.png 'Create folder')
 
@@ -586,11 +586,11 @@ In this exercise, you will extend the Data Factory to operationalize data scorin
 
    ![In the taskbar for the Azure Data Factory pipeline designer, Trigger is selected, and Trigger Now is selected from the drop-down options.](media/adf-ml-trigger-now.png 'Trigger Now')
 
-3. Enter `3/1/2017` into the **windowStart** parameter, then select **OK**.
+3. Enter `3/1/2017` into the **windowStart (1)** parameter, then select **OK (2)**.
 
    ![The Pipeline Run form is displayed with the windowStart parameter set to 3/1/2017.](media/adf-ml-pipeline-run.png 'Pipeline Run')
 
-4. Select **Monitor (1)** in the menu. You will be able to see your pipeline activity in progress **(4)** as well as the status of past runs.
+4. Select **Monitor** in the menu. You will be able to see your pipeline activity in progress as well as the status of past runs.
 
    ![From the left menu in Azure Data Factory, Monitor is selected. The current status of the pipeline run is displayed in the table.](media/adf-ml-monitor.png 'Monitor')
 
@@ -604,7 +604,7 @@ In this exercise, you will prepare a summary of flight delay data using Spark SQ
 
 ### Task 1: Summarize delays by airport
 
-1. Open your Azure Databricks workspace, expand the **Exercise 6** **(2)** folder, and open the final notebook called **01 Explore Data** **(03)**.
+1. Open your Azure Databricks workspace **(1)**, expand the **Exercise 6** **(2)** folder, and open the final notebook called **01 Explore Data** **(03)**.
 
    ![Beneath the BigDataVis workspace, the Exercise 6 folder is selected. Beneath the Exercise 6 folder, the 01 Explore Data notebook highlighted.](media/azure-databricks-explore-data.png 'Databricks workspace')
 
@@ -640,7 +640,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
    ![On the Power BI Desktop Sign-in page, the Get data item is selected.](media/powerbi-getdata.png 'Power BI Desktop Sign in page')
 
-4. Select **Azure Databricks** from the list of available data sources. You may enter `databricks` into the search field **(1)** to find it faster.
+4. Select **Azure Databricks** from the list of available data sources. You may enter `databricks` into the search field to find it faster.
 
    ![In the Get Data screen, Spark is selected from the list of available sources.](media/pbi-desktop-get-data.png 'Get Data page')
 
@@ -650,27 +650,27 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 7. On the Azure Databricks connection information dialog, enter the following:
 
-   - **Server Hostname (1)**: Paste the JDBC **Server Hostname** value you copied in the previous task.
+   - **Server Hostname (1)**: Paste the JDBC **Server Hostname (1)** value you copied in the previous task.
   
-   - **HTTP Path**: Paste the JDBC **HTTP Path** value you copied in the previous task.
+   - **HTTP Path (2)**: Paste the JDBC **HTTP Path** value you copied in the previous task.
   
-   - **Data Connectivity mode**: Select **DirectQuery (2)** for the Data Connectivity mode. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real-time querying.
+   - **Data Connectivity mode**: Select **DirectQuery (3)** for the Data Connectivity mode. This option will offload query tasks to the Azure Databricks Spark cluster, providing near-real-time querying.
   
    ![The Spark form is populated with the Server, Protocol, and Data Connectivity mode specified in the previous steps.](media/pbi-desktop-connect-databricks.png 'Spark form')
 
-8. Select **OK (3)**.
+8. Select **OK (4)**.
 
 9. Select the **Username/Password** option from the credentials menu and then enter your credentials on the next screen as follows:
 
-    - **User name**: `token`
+    - **User name (1)**: `token`
 
-    - **Password**: Remember that ADF Access token we generated for the Azure Data Factory notebook activity? Paste the same value here for the password.
+    - **Password (2)**: Remember that ADF Access token we generated for the Azure Data Factory notebook activity? Paste the same value here for the password.
 
     ![The Generate New Token form from when we generated the access token.](media/databricks-copy-token.png 'Copy generated token')
 
     !["token" is entered for the username, and the access token is pasted into the password field.](media/pbi-desktop-login.png 'Enter credentials')
 
-10. Select **Connect**.
+10. Select **Connect (3)**.
 
 11. In the Navigator dialog, check the box next to **flight_delays_summary (1)**, and select **Load (2)**.
 
@@ -734,7 +734,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![The Power BI Save as window displays.](media/image197.png 'Power BI Save as window')
 
-## Exercise 8: Deploy intelligent web app (Optional Lab)
+## Exercise 8: Deploy intelligent web app (Optional)
 
 Duration: 20 minutes
 
@@ -814,7 +814,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    > **Note**: If you are prompted to sign in to Visual Studio for the first time, enter the Azure account credentials you are using for this lab.
 
-2. In a web browser, navigate to the [Big data analytics and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-and-visualization).
+2. In a web browser, navigate to the [Big data analytics and visualization MCW repo](https://github.com/microsoft/MCW-Big-data-analytics-and-visualization).
 
 3. On the repo page, select **Clone or download**, then select **Download ZIP**.
 
@@ -850,7 +850,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
     - **Resource group (3)**: Select the Azure resource group you are using for the lab.
 
-    - **Hosting Plan (4)**: Select **New**, then create a new Hosting Plan in the same location and the **Free** size.
+    - **Hosting Plan (4)**: Select **New**, then **Create (5)** a new Hosting Plan in the same location and the **Free** size.
 
     ![The App Service Create new form is displayed populated with the values listed above.](media/vs-app-service.png 'App Service dialog')
 
