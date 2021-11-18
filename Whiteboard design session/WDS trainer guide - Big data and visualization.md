@@ -173,7 +173,7 @@ In this whiteboard design session, you will work with a group to design a soluti
 
 At the end of this whiteboard design session, you will have learned how to include a web application that obtains weather forecasts from a 3rd party, collects flight information from end-users, and sends that information to the deployed machine learning model for scoring. Part of the exercise will include providing visualizations of historic flight delays and orchestrating the collection and batch scoring of historic and new flight delay data.
 
-## Step 1: Review the customer case study
+## Step 1: Review the customer case study 
 
 **Outcome**
 
@@ -181,11 +181,13 @@ Analyze your customer's needs.
 
 Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1. Meet your table participants and trainer.
-2. Read all of the directions for steps 1–3 in the student guide.
-3. As a table team, review the following customer case study.
+1. Meet your team members and trainer.
+
+2. Read all directions for steps 1-3 in the student guide.
+
+3. As a team, review the following customer case study.
 
 ### Customer situation
 
@@ -207,7 +209,7 @@ In addition, for all data since 2003, each row includes new fields describing th
 
 They receive updates to this data monthly, where the flight data and other related files total about 1 GB. In total, their solution currently manages about 2 TB worth of data.
 
-Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport and provides forecasts for up to 10 days. They have a history of each flight's historical weather condition as CSV files, but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
+Additionally, they receive current and forecasted weather data from a third-party service. This service gives them the ability to receive weather forecasts around any airport and provides forecasts for up to 10 days. They have a history of each flight's historical weather condition as CSV files but acquiring the weather forecasts requires a call to a REST API that returns a JSON (JavaScript Object Notation) structure. Each airport of interest needs to be queried individually. An excerpt of the weather forecast for a single day at the Seattle-Tacoma International airport is as follows:
 
 ```json
 {
@@ -258,7 +260,7 @@ Jack Tradewinds, the CIO of MT, is looking to modernize their data story. He has
 
 1. Want to modernize their analytics platform without sacrificing the ability to query their data using SQL.
 
-2. Need an approach that can store all of their data, including the unmodified source data and the cleansed data they query for production purposes.
+2. Need an approach that can store all their data, including the unmodified source data and the cleansed data they query for production purposes.
 
 3. Want to understand how they will load their large quantity of historical data into Azure.
 
@@ -302,14 +304,15 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
+Directions: With your team, answer the following questions and be prepared to present your solution to others:
 
-1. Who should you present this solution to? Who is your target customer audience? Who are the decision-makers?
+1. Who will you present this solution to? Who is your target customer audience? Who are the decision makers?
+
 2. What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart:
+Directions: With your team, respond to the following questions:
 
 _High-level architecture_
 
@@ -371,7 +374,7 @@ _Visualization and reporting_
 
 **Prepare**
 
-Directions: With all participants at your table:
+Directions: As a team:
 
 1. Identify any customer needs that are not addressed with the proposed solution.
 
@@ -391,11 +394,11 @@ Timeframe: 30 minutes
 
 **Presentation**
 
-Directions
+Directions:
 
-1. Pair with another table.
+1. Pair with another team.
 
-2. One table is the Microsoft team, and the other table is the customer.
+2. One group is the Microsoft team and the other is the customer.
 
 3. The Microsoft team presents their proposed solution to the customer.
 
@@ -405,13 +408,13 @@ Directions
 
 6. The customer team gives feedback to the Microsoft team.
 
-7. Tables switch roles and repeat Steps 2-6.
+7. Switch roles and repeat Steps 2-6.
 
 ## Wrap-up
 
 Timeframe: 15 minutes
 
-Tables reconvene with the larger group to hear an SME share the case study's preferred solution.
+Directions: Reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ## Additional references
 
@@ -437,19 +440,19 @@ Tables reconvene with the larger group to hear an SME share the case study's pre
 
 ## Step 1: Review the customer case study
 
-- Check-in with your table participants to introduce yourself as the trainer.
+- Check in with your participants to introduce yourself as the trainer.
 
 - Ask, "What questions do you have about the customer case study?"
 
 - Briefly review the steps and timeframes of the whiteboard design session.
 
-- Ready, set, go! Let the table participants begin.
+- Ready, set, go! Let participants begin.
 
 ## Step 2: Design a proof of concept solution
 
-- Check-in with your tables to ensure that they are transitioning from step to step on time.
+- Check in with your teams to ensure that they are transitioning from step to step on time.
 
-- Provide some feedback on their responses to the business needs and design.
+- Provide feedback on their responses to the business needs and design.
 
   - Try asking questions first that will lead the participants to discover the answers on their own.
 
@@ -459,21 +462,21 @@ Tables reconvene with the larger group to hear an SME share the case study's pre
 
 ## Step 3: Present the solution
 
-- Determine which table will be paired with your table before Step 3 begins.
+- Determine which groups will be paired together before Step 3 begins.
 
-- For the first round, assign one table as the Microsoft team and the other table as the customer.
+- For the first round, assign one group as the presenting team and the other as the customer.
 
-- Have the Microsoft team present their solution to the customer team.
+- Have the presenting team present their solution to the customer team.
 
-  - Have the customer team provide one objection for the Microsoft team to respond to.
+  - Have the customer team provide one objection for the presenting team to respond to.
 
-  - The presentation, objections, and feedback should be no longer than 15 minutes.
+  - The presentation, objections, and feedback should take no longer than 15 minutes.
 
   - If needed, the trainer may also provide feedback.
 
 ## Wrap-up
 
-Directions: Tables reconvene with the larger group to hear the facilitator/SME share the case study's preferred solution.
+- Have participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
 
 ## Preferred target audience
 
@@ -559,7 +562,7 @@ _Operationalizing machine learning_
 
 1. How can MT release their model for production use and avoid their concerns about extremely long delays operationalizing the model? Be specific on how your model is packaged, hosted, and invoked.
 
-   Once they have trained their model, it can be exported to any number of common file formats from within Azure Databricks. Because the model is already saved to DBFS and available within a notebook, the easiest way to deploy the model is to use the MLflow Model Serving capability in Azure Databricks ato deploy a registered model on a hosted Databricks cluster. This creates a web service that any REST client can invoke, and the cluster can scale to meet demand as needed. This deployed web service takes the weather conditions and flight information as input and returns a response with the classification.
+   Once they have trained their model, it can be exported to any number of common file formats from within Azure Databricks. Because the model is already saved to DBFS and available within a notebook, the easiest way to deploy the model is to use the MLflow Model Serving capability in Azure Databricks to deploy a registered model on a hosted Databricks cluster. This creates a web service that any REST client can invoke, and the cluster can scale to meet demand as needed. This deployed web service takes the weather conditions and flight information as input and returns a response with the classification.
 
    ![In the On-Demand Delay Predictions flowchart, a Flight Delays Web Portal icon has one arrow labeled "1. Query for weather forecast," pointing to a 3rd Party API, labeled "Forecasted Airport Weather Data (API). A second arrow labeled "2. Query for delay prediction providing weather forecast and flight data" points to containerized AI Services.](media/on-demand-delay-predictions.png 'On-Demand Delay Predictions flowchart')
 
@@ -629,7 +632,7 @@ _Visualization and reporting_
 
 2. Once our model is operationalized, how do we retrain and redeploy it? Will this process break clients currently accessing the deployed model?
 
-   Azure Databricks allows you to retrain your models using notebooks.  Then, you can use the model deployment command to deploy an updated version of the model. As part of the data science workflow, you recreate the model in your experimentation environment. Then, you register the model with the Azure Databricks model registry. Updates are performed using a function call. This call replaces the active version of a model without changing the API URL or the key. The applications consuming the model continue to work without any code change, and start getting better predictions using the new model.
+   Azure Databricks allows you to retrain your models using notebooks.  Then, you can use the model deployment command to deploy an updated version of the model. As part of the data science workflow, you recreate the model in your experimentation environment. Then, you register the model with the Azure Databricks model registry. Updates are performed using a function call. This call replaces the active version of a model without changing the API URL or the key. The applications consuming the model continue to work without any code change and start getting better predictions using the new model.
 
 3. Can we query flat files in the file system using SQL?
 
