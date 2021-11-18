@@ -114,13 +114,13 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
 3. On the **Create a virtual machine** page, specify the following parameters:
 
-   - **Subscription (1)**: Provide the subscription you have been using for this lab.
+   - **Subscription**: Provide the subscription you have been using for this lab.
 
-   - **Resource group (2)**: Provide your resource group.
+   - **Resource group**: Provide your resource group.
 
-   - **Virtual machine name (3)**: Provide something descriptive.
+   - **Virtual machine name**: Provide something descriptive.
 
-   - **Region (4)**: Provide the same location as your ADF instance.
+   - **Region**: Provide the same location as your ADF instance.
 
    - **Availability options**: No infrastructure redundancy required
 
@@ -128,11 +128,11 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    - **Azure Spot instance**: Unselected
 
-   - **Size (5)**: Standard_D2s_v3
+   - **Size**: Standard_D2s_v3
 
-   - **Username (6)**: demouser
+   - **Username**: demouser
 
-   - **Password/Confirm password (6)**: Password.1!!
+   - **Password/Confirm password**: Password.1!!
 
    - **Public inbound ports**: Allow selected ports
 
@@ -156,7 +156,7 @@ An integration runtime agent for Azure Data Factory will need to be installed on
 
    ![Entering virtual machine credentials to access it.](media/vm-rdp-credentials.PNG "Providing user credentials to access the VM over RDP")
 
-8. When you access the VM, **Server Manager** should open automatically. If not, open it manually using the search bar. Then, locate **Local Server (1)**. Select **IE Enhanced Security Configuration**. Then, disable this feature for Administrators.
+8. When you access the VM, **Server Manager** should open automatically. If not, open it manually using the search bar. Then, locate **Local Server**. Select **IE Enhanced Security Configuration**. Then, disable this feature for Administrators.
 
    ![Accessing the Local Server tab within Server Manager. Disabling IE Enhanced Security Configuration for administrative users to permit access to online resources.](media/disabled-ie-enhanced-security.PNG "Disabling IE Enhanced Security Configuration to access websites")
 
