@@ -20,6 +20,9 @@
     "mlUrl": {
       "type": "string"
     },
+    "pat": {
+      "type": "string"
+    },
     "weatherApiKey": {
       "type": "string"
     }
@@ -62,7 +65,8 @@
           ],
           "properties": {
             "mlUrl": "[parameters('mlUrl')]",
-            "weatherApiKey":  "[parameters('weatherApiKey')]"
+            "weatherApiKey":  "[parameters('weatherApiKey')]",
+            "pat": "[parameters('pat')]"
           }
         },
         {
@@ -75,7 +79,7 @@
           ],
           "properties": {
             "repoUrl": "[variables('gitRepoUrl')]",
-            "branch": "master",
+            "branch": "main",
             "IsManualIntegration": true
           }
         }

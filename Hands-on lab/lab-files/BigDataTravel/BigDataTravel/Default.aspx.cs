@@ -6,25 +6,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using NodaTime;
 using Unidevel.OpenWeather;
+using System.Reflection;
 
 namespace BigDataTravel
 {
     public partial class _Default : Page
     {
-        private List<Airport> aiports = null;
+        private List<Airport> airports = null;
         private ForecastResult forecast = null;
         private DelayPrediction prediction = null;
         private static IOpenWeatherClient openWeatherClient;
 
         // settings
         private string mlUrl;
+        private string pat;
         private string weatherApiKey;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -38,12 +40,12 @@ namespace BigDataTravel
 
                 openWeatherClient = new OpenWeatherClient(apiKey: weatherApiKey);
 
-                ddlOriginAirportCode.DataSource = aiports;
+                ddlOriginAirportCode.DataSource = airports;
                 ddlOriginAirportCode.DataTextField = "AirportCode";
                 ddlOriginAirportCode.DataValueField = "AirportCode";
                 ddlOriginAirportCode.DataBind();
 
-                ddlDestAirportCode.DataSource = aiports;
+                ddlDestAirportCode.DataSource = airports;
                 ddlDestAirportCode.DataTextField = "AirportCode";
                 ddlDestAirportCode.DataValueField = "AirportCode";
                 ddlDestAirportCode.DataBind();
@@ -54,12 +56,13 @@ namespace BigDataTravel
         private void InitSettings()
         {
             mlUrl = System.Web.Configuration.WebConfigurationManager.AppSettings["mlUrl"];
+            pat = System.Web.Configuration.WebConfigurationManager.AppSettings["pat"];
             weatherApiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["weatherApiKey"];
         }
 
         private void InitAirports()
         {
-            aiports = new List<Airport>()
+            airports = new List<Airport>()
             {
                 new Airport() { AirportCode ="SEA", Latitude = 47.44900, Longitude = -122.30899 },
                 new Airport() { AirportCode ="ABQ", Latitude = 35.04019, Longitude = -106.60900 },
@@ -87,7 +90,7 @@ namespace BigDataTravel
             var departureDate = DateTime.Parse(txtDepartureDate.Text);
             departureDate = departureDate.AddHours(double.Parse(txtDepartureHour.Text));
 
-            var selectedAirport = aiports.FirstOrDefault(a => a.AirportCode == ddlOriginAirportCode.SelectedItem.Value);
+            var selectedAirport = airports.FirstOrDefault(a => a.AirportCode == ddlOriginAirportCode.SelectedItem.Value);
 
             if (selectedAirport != null)
             {
@@ -118,15 +121,14 @@ namespace BigDataTravel
             weatherForecast.ImageUrl = forecast.ForecastIconUrl;
             weatherForecast.ToolTip = forecast.Condition;
 
-            if (String.IsNullOrWhiteSpace(mlUrl))
+            if (String.IsNullOrWhiteSpace(mlUrl) || String.IsNullOrWhiteSpace(pat))
             {
                 lblPrediction.Text = "(not configured)";
-                lblConfidence.Text = "(not configured)";
                 return;
             }
 
             if (prediction == null)
-                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl.");
+                throw new Exception("Prediction did not succeed. Check the Settings for mlUrl and pat.");
 
             if (prediction.ExpectDelays)
             {
@@ -136,8 +138,6 @@ namespace BigDataTravel
             {
                 lblPrediction.Text = "no delays expected";
             }
-
-            lblConfidence.Text = $"{(prediction.Confidence * 100.0):N2}";
         }
 
         private async Task GetWeatherForecast(DepartureQuery departureQuery)
@@ -198,10 +198,22 @@ namespace BigDataTravel
             }
             return $"http://openweathermap.org/img/wn/{value}@2x.png";
         }
+        private string SerializePredictionRequestForPandasDataFrame(PredictionRequest pr)
+        {
+            string[] columns = { "OriginAirportCode", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "WindSpeed", "SeaLevelPressure", "HourlyPrecip" };
+            object[] dataRow = { pr.OriginAirportCode, pr.Month, pr.DayofMonth, pr.CRSDepHour, pr.DayOfWeek, pr.Carrier, pr.DestAirportCode, pr.WindSpeed, pr.SeaLevelPressure, pr.HourlyPrecip };
+            object[][] data = new object[][] { dataRow };
+
+            var predictionRequestDF = new PredictionRequestDataFrame();
+            predictionRequestDF.columns = columns;
+            predictionRequestDF.data = data;
+            string json = JsonConvert.SerializeObject(predictionRequestDF);
+            return json;
+        }
 
         private async Task PredictDelays(DepartureQuery query, ForecastResult forecast)
         {
-            if (string.IsNullOrEmpty(mlUrl))
+            if (string.IsNullOrWhiteSpace(mlUrl) || string.IsNullOrWhiteSpace(pat))
             {
                 return;
             }
@@ -229,21 +241,24 @@ namespace BigDataTravel
                     };
 
                     client.BaseAddress = new Uri(mlUrl);
-                    var response = await client.PostAsJsonAsync("", predictionRequest);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
+                    string json = SerializePredictionRequestForPandasDataFrame(predictionRequest);
+                    var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync("", content);
 
                     if (response.IsSuccessStatusCode)
                     {
                         var responseResult = await response.Content.ReadAsStringAsync();
                         var token = JToken.Parse(responseResult);
-                        var parsedResult = JsonConvert.DeserializeObject<List<PredictionResult>>((string)token);
+                        var parsedResult = JsonConvert.DeserializeObject<List<double>>(token.ToString());
                         var result = parsedResult[0];
-                        double confidence = double.Parse(result.confidence.Replace("[", string.Empty).Replace("]", string.Empty).Split(new Char[] {','})[0]);
-                        if (result.prediction == 1)
+                        double confidence = 0;
+                        if (result == 1)
                         {
                             this.prediction.ExpectDelays = true;
                             this.prediction.Confidence = confidence;
                         }
-                        else if (result.prediction == 0)
+                        else if (result == 0)
                         {
                             this.prediction.ExpectDelays = false;
                             this.prediction.Confidence = confidence;
@@ -293,10 +308,12 @@ namespace BigDataTravel
         public double HourlyPrecip { get; set; }
     }
 
-    public class PredictionResult
+    // Our model requires JSON-serialized data in a particular Pandas DataFrame format, with a structure like:
+    // '{"columns":["OriginAirportCode", "Month", ...],"data":[["ATL", 09, ...]]}'
+    public class PredictionRequestDataFrame
     {
-        public double prediction { get; set; }
-        public string confidence { get; set; }
+        public string[] columns { get; set; }
+        public object[][] data { get; set; }
     }
 
     public class ForecastResult

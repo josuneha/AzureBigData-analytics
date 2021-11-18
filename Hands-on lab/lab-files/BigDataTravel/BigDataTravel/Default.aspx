@@ -58,7 +58,6 @@
                                         <p>
                                             <asp:Label ID="lblPrediction" runat="server" Text=""></asp:Label>
                                         </p>
-                                        (<asp:Label ID="lblConfidence" runat="server" Text=""></asp:Label>% confidence)
                                     </div>
                                 </div>
                             </div>

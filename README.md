@@ -1,14 +1,10 @@
-## Microsoft Cloud Workshops - Retirement Survey  
-
-As we look to streamline content and improve training, we are considering retiring the Microsoft Cloud Workshop (MCW) program. Please take a moment to fill out the [Microsoft Cloud Workshop Survey](https://forms.office.com/r/834zwtaNtK) and give us your feedback.
-
-# Big data and visualization
+# Big data analytics and visualization
 
 Margie's Travel (MT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
 
 They are looking to pilot a web app that their internal customer service agents can use to provide additional valuable information to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to whether the departing flight will encounter a 15-minute or longer delay, considering the weather forecast for the departure hour.
 
-March 2021
+November 2021
 
 ## Target audience
 
@@ -40,7 +36,6 @@ By the end of the lab, you will be able to show an end-to-end solution, leveragi
 ## Azure services and related products
 
 - Azure Databricks
-- Azure Machine Learning
 - Azure Data Factory (ADF)
 - Azure Storage
 - Power BI Desktop
