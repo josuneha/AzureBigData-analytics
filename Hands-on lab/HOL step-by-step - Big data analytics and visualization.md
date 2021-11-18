@@ -768,7 +768,7 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
 ### Task 2: Deploy web app from GitHub
 
-1. Navigate to <https://github.com/Microsoft/MCW-Big-data-and-visualization/blob/master/Hands-on%20lab/lab-files/BigDataTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal.
+1. Navigate to <https://github.com/Microsoft/MCW-Big-data-analytics-and-visualization/blob/main/Hands-on%20lab/lab-files/BigDataTravel/README.md> in your browser of choice, but where you are already authenticated to the Azure portal.
 
 2. Read through the README information on the GitHub page.
 
@@ -820,9 +820,9 @@ To retrieve the 5-day hourly weather forecast, you will use an API from OpenWeat
 
    ![The Github repository page is displayed with the Clone or Download item expanded and the Download Zip button highlighted.](media/github-download-repo.png 'Download ZIP')
 
-4. Unzip the contents to your root hard drive (i.e., `C:\`). This will create a folder on your root drive named `C:\MCW-Big-data-and-visualization-master`.
+4. Unzip the contents to your root hard drive (i.e., `C:\`). This will create a folder on your root drive named `C:\MCW-Big-data-analytics-and-visualization-main`.
 
-5. Open Windows Explorer and navigate to `C:\MCW-Big-data-and-visualization-master\Hands-on lab\lab-files\BigDataTravel\`, then open **BigDataTravel.sln**.
+5. Open Windows Explorer and navigate to `C:\MCW-Big-data-analytics-and-visualization-main\Hands-on lab\lab-files\BigDataTravel\`, then open **BigDataTravel.sln**.
 
 6. In the Visual Studio Solution Explorer, right-click on the BigDataTravel project, then select **Publish...**.
 
